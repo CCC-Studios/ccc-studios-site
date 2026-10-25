@@ -1,40 +1,350 @@
 <!doctype html>
-<html lang="fr">
+<html lang="fr" data-lang="fr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CCC Studios · Collaborative Character Creation</title>
-<meta name="description" content="CCC Studios crée des personnages par IA au Québec, toujours déclarés comme IA. Rencontrez Jennifer, notre actrice IA pour les pubs des PME.">
+<title>Jennifer Shems-Mylie · Actrice IA · CCC Studios</title>
+<meta name="description" content="Jennifer est une actrice IA créée au Québec, toujours déclarée comme IA. Des pubs de 15 secondes en français et en anglais pour les PME, sans tournage, prêtes en 5 jours ouvrables.">
+<meta property="og:title" content="Jennifer Shems-Mylie · Actrice IA">
+<meta property="og:description" content="Votre pub en français et en anglais, sans tournage. Jennifer est une actrice IA, toujours déclarée comme IA.">
+<meta property="og:image" content="https://ccc-studios.com/jennshems/media/og-jennifer.jpg">
+<meta property="og:url" content="https://ccc-studios.com/jennshems/">
+<meta property="og:type" content="website">
 <link rel="icon" href="/favicon.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
 <style>
+:root{
+  --cream:#E2DAD3; --paper:#F6F1EC; --charcoal:#272930; --ink:#1A1B20; --cognac:#6F4F44; --steel:#5B676E;
+  --line:#d6ccc3; --muted:#5d5f66;
+}
 *{box-sizing:border-box;margin:0}
-body{font-family:Inter,system-ui,sans-serif;background:#000;color:#f2eee9;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px;text-align:center;line-height:1.55}
-img.logo{width:min(320px,70vw);height:auto}
-h1{font-size:clamp(28px,5vw,40px);letter-spacing:.02em;margin-top:10px}
-.tag{color:#b9b4ae;letter-spacing:.18em;text-transform:uppercase;font-size:13px;margin-top:6px}
-p.lead{max-width:34em;margin:22px auto 0;color:#d9d5d0}
-a.card{display:flex;align-items:center;gap:16px;margin:34px auto 0;max-width:440px;text-align:left;text-decoration:none;color:inherit;border:1px solid #3a3a40;border-radius:16px;padding:14px 18px 14px 14px;background:#121317}
-a.card:hover{border-color:#E2DAD3}
-a.card img{width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:top}
-a.card b{font-family:Lora,Georgia,serif;font-style:italic;font-weight:500;font-size:21px;display:block}
-a.card span{font-size:14px;color:#b9b4ae}
-footer{margin-top:40px;font-size:13.5px;color:#8f8b86}
-footer a{color:#d9d5d0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.55;-webkit-font-smoothing:antialiased}
+img,video{display:block;max-width:100%;height:auto}
+a{color:inherit}
+html[data-lang="fr"] [lang="en"]{display:none!important}
+html[data-lang="en"] [lang="fr"]{display:none!important}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.serif{font-family:Lora,Georgia,serif;font-style:italic;font-weight:500}
+
+/* top bar */
+.top{position:sticky;top:0;z-index:10;background:rgba(26,27,32,.94);backdrop-filter:blur(8px);color:#fff}
+.top .wrap{display:flex;align-items:center;gap:12px;height:60px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:600;letter-spacing:.02em}
+.brand img{width:36px;height:36px;border-radius:50%}
+.top nav{margin-left:auto;display:flex;align-items:center;gap:18px;font-size:14px}
+.top nav a{text-decoration:none;opacity:.85}
+.top nav a:hover{opacity:1}
+.navlinks{display:none}
+@media(min-width:760px){.navlinks{display:flex;gap:18px}}
+.langs{display:flex;border:1px solid rgba(255,255,255,.35);border-radius:999px;overflow:hidden}
+.langs button{background:none;border:0;color:#fff;font:600 12px Inter,sans-serif;padding:6px 11px;cursor:pointer;letter-spacing:.06em}
+.langs button[aria-pressed="true"]{background:var(--cream);color:var(--ink)}
+
+.pill{display:inline-block;background:rgba(255,255,255,.88);color:#111;font-size:12.5px;font-weight:600;padding:5px 12px;border-radius:999px}
+
+/* hero */
+.hero{background:var(--ink);color:#fff;overflow:hidden}
+.hero .wrap{display:grid;gap:28px;padding-top:36px;padding-bottom:44px}
+@media(min-width:860px){.hero .wrap{grid-template-columns:1.1fr .9fr;align-items:center;padding-top:56px;padding-bottom:64px}}
+.kicker{color:var(--cream);font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+.hero h1{font-size:clamp(34px,6vw,56px);line-height:1.06;letter-spacing:-.02em;margin:14px 0 16px;font-weight:700}
+.hero p.lead{font-size:18px;color:#d9d6d2;max-width:34em}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 22px;border-radius:10px;font-weight:600;font-size:15.5px;text-decoration:none;border:1px solid transparent}
+.btn-main{background:var(--cream);color:var(--ink)}
+.btn-main:hover{background:#fff}
+.btn-ghost{border-color:rgba(255,255,255,.4);color:#fff}
+.btn-ghost:hover{border-color:#fff}
+.launch{margin-top:22px;font-size:14.5px;color:var(--cream)}
+.launch b{color:#fff}
+.portrait{position:relative;border-radius:18px;overflow:hidden;max-width:400px;justify-self:center;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.45)}
+.portrait .pill{position:absolute;top:14px;left:50%;transform:translateX(-50%);white-space:nowrap}
+.sign{font-size:clamp(20px,3vw,26px);color:var(--cream);margin-top:22px}
+
+section{padding:64px 0}
+h2{font-size:clamp(26px,4vw,36px);letter-spacing:-.015em;line-height:1.15;margin-bottom:10px}
+.sub{color:var(--muted);max-width:40em;margin-bottom:30px}
+
+/* demos */
+.demos{display:grid;gap:22px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
+.demo{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.demo video{width:100%;aspect-ratio:9/16;background:#111;object-fit:cover}
+.demo .meta{padding:14px 16px 16px}
+.demo .meta b{font-family:Lora,Georgia,serif;font-style:italic;font-weight:500;font-size:20px;display:block}
+.demo .meta span{font-size:13.5px;color:var(--muted)}
+.note{font-size:13.5px;color:var(--muted);margin-top:16px}
+
+/* offers */
+.offers{background:var(--cream)}
+.cards{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+.card{background:var(--paper);border-radius:16px;padding:22px;border:1px solid var(--line);display:flex;flex-direction:column}
+.card.star{background:var(--ink);color:#fff;border-color:var(--ink)}
+.card .tag{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--cognac)}
+.card.star .tag{color:var(--cream)}
+.card h3{font-size:21px;margin:6px 0 4px}
+.price{font-size:34px;font-weight:700;letter-spacing:-.02em;margin:8px 0 2px}
+.price s{font-size:18px;font-weight:500;opacity:.6;margin-left:6px}
+.per{font-size:14px;color:var(--muted)}
+.card.star .per{color:#c9c5c0}
+.card ul{padding-left:18px;margin:14px 0 0;font-size:14.5px}
+.card li{margin:5px 0}
+.fine{margin-top:26px;font-size:14px;color:#3d3f45;display:grid;gap:6px}
+
+/* steps */
+.steps{counter-reset:s;display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(190px,1fr))}
+.step{border-top:2px solid var(--ink);padding-top:14px}
+.step::before{counter-increment:s;content:counter(s);font-family:Lora,Georgia,serif;font-style:italic;font-size:30px;display:block;color:var(--cognac)}
+.step b{display:block;margin:4px 0}
+.step p{font-size:14.5px;color:var(--muted)}
+
+/* commitments */
+.commit{background:var(--charcoal);color:#fff}
+.commit .sub{color:#c9c5c0}
+.rules{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.rule{border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:18px}
+.rule b{display:block;margin-bottom:4px;color:var(--cream)}
+.rule p{font-size:14.5px;color:#dedad6}
+.about{display:grid;gap:26px;margin-top:40px}
+@media(min-width:760px){.about{grid-template-columns:260px 1fr;align-items:center}}
+.about img{border-radius:14px;max-width:260px;width:100%}
+.about p{color:#dedad6;max-width:36em}
+
+/* faq */
+details{border-bottom:1px solid var(--line);padding:16px 0}
+summary{cursor:pointer;font-weight:600;font-size:16.5px;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";float:right;color:var(--cognac);font-weight:700}
+details[open] summary::after{content:"–"}
+details p{margin-top:10px;color:#3d3f45;max-width:44em}
+
+/* contact */
+.contact{background:var(--ink);color:#fff;text-align:center}
+.contact h2{max-width:18em;margin:0 auto 12px}
+.contact p{color:#d9d6d2}
+.contact .ctas{justify-content:center}
+footer{background:#111216;color:#a9a7a4;font-size:13.5px;padding:30px 0}
+footer .wrap{display:grid;gap:12px}
+@media(min-width:760px){footer .wrap{grid-template-columns:1fr auto;align-items:center}}
+.social{display:flex;gap:16px}
+.social a{text-decoration:none;color:#e9e6e2}
 </style>
 </head>
 <body>
-  <img class="logo" src="/logo-ccc.png" width="512" height="512" alt="CCC Studios">
-  <h1>CCC Studios</h1>
-  <div class="tag">Collaborative Character Creation</div>
-  <p class="lead">Des personnages créés par IA au Québec, toujours déclarés comme IA.<br><span style="color:#a7a29c">AI-made characters from Quebec, always declared as AI.</span></p>
-  <a class="card" href="/jennshems/">
-    <img src="/jennshems/media/jennifer-studio.jpg" alt="">
-    <div><b>Jennifer Shems-Mylie</b><span>Actrice IA · pubs FR + EN pour les PME<br>AI actress · FR + EN ads for small businesses</span></div>
-  </a>
-  <footer>CCC Studios Inc. · <a href="mailto:bonjour@ccc-studios.com">bonjour@ccc-studios.com</a></footer>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/logo-ccc.png" alt="">CCC Studios</a>
+    <nav>
+      <div class="navlinks">
+        <a href="#demos"><span lang="fr">Démos</span><span lang="en">Demos</span></a>
+        <a href="#offres"><span lang="fr">Offres</span><span lang="en">Offers</span></a>
+        <a href="#engagements"><span lang="fr">Engagements</span><span lang="en">Commitments</span></a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="langs" role="group" aria-label="Langue / Language">
+        <button type="button" data-set="fr" aria-pressed="true">FR</button>
+        <button type="button" data-set="en" aria-pressed="false">EN</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" style="padding:0">
+  <div class="wrap">
+    <div>
+      <div class="kicker"><span lang="fr">Actrice IA · créée au Québec</span><span lang="en">AI actress · made in Quebec</span></div>
+      <h1><span lang="fr">Votre pub en français et en anglais, sans tournage.</span><span lang="en">Your ad in French and English, no shoot.</span></h1>
+      <p class="lead"><span lang="fr">Jennifer est une actrice IA, toujours déclarée comme IA. Elle présente votre entreprise dans une pub de 15 secondes, prête en 5 jours ouvrables. Un personnage fictif, pas une remplaçante.</span><span lang="en">Jennifer is an AI actress, always declared as AI. She presents your business in a 15-second ad, ready in 5 business days. A fictional character, not a replacement.</span></p>
+      <div class="ctas">
+        <a class="btn btn-main js-mail" href="mailto:bonjour@ccc-studios.com"><span lang="fr">Réserver un appel de 10 minutes</span><span lang="en">Book a 10-minute call</span></a>
+        <a class="btn btn-ghost" href="#demos"><span lang="fr">Voir les démos</span><span lang="en">See the demos</span></a>
+      </div>
+      <p class="launch"><span lang="fr"><b>Forfait Lancement :</b> 250 $ au lieu de 399 $ pour les 3 premières entreprises.</span><span lang="en"><b>Launch package:</b> $250 instead of $399 for the first 3 businesses.</span></p>
+      <p class="sign serif"><span lang="fr">« Moi, je suis virtuelle. Vos clients, eux, sont ben réels. »</span><span lang="en">"I'm virtual. Your customers are the real deal."</span></p>
+    </div>
+    <figure class="portrait">
+      <img src="media/jennifer-hero.jpg" width="720" height="1280" alt="Jennifer Shems-Mylie, actrice IA, dans une rue de Montréal en automne">
+      <span class="pill"><span lang="fr">Jennifer est une actrice IA</span><span lang="en">Jennifer is an AI actress</span></span>
+    </figure>
+  </div>
+</section>
+
+<section id="demos">
+  <div class="wrap">
+    <h2><span lang="fr">Des démos, en vrai format</span><span lang="en">Demos, in the real format</span></h2>
+    <p class="sub"><span lang="fr">Trois pubs de 15 secondes pour des entreprises fictives. La vôtre aurait votre nom, votre offre, vos coordonnées et votre logo. Le son est inclus.</span><span lang="en">Three 15-second ads for fictional businesses. Yours would carry your name, your offer, your contact details and your logo. Sound on.</span></p>
+    <div class="demos">
+      <article class="demo">
+        <video controls playsinline preload="none" data-base="media/demo-cafe" poster="media/demo-cafe-fr.jpg"><source src="media/demo-cafe-fr.mp4" type="video/mp4"></video>
+        <div class="meta"><b>Café Annie</b><span lang="fr">Café · démo, entreprise fictive</span><span lang="en">Café · demo, fictional business</span></div>
+      </article>
+      <article class="demo">
+        <video controls playsinline preload="none" data-base="media/demo-reno" poster="media/demo-reno-fr.jpg"><source src="media/demo-reno-fr.mp4" type="video/mp4"></video>
+        <div class="meta"><b>Rénovations Pignon</b><span lang="fr">Rénovation · démo, entreprise fictive</span><span lang="en">Renovation · demo, fictional business</span></div>
+      </article>
+      <article class="demo">
+        <video controls playsinline preload="none" data-base="media/demo-location" poster="media/demo-location-fr.jpg"><source src="media/demo-location-fr.mp4" type="video/mp4"></video>
+        <div class="meta"><b>Appartements Bérénice</b><span lang="fr">Location meublée · démo, entreprise fictive</span><span lang="en">Furnished rental · demo, fictional business</span></div>
+      </article>
+      <article class="demo">
+        <video controls playsinline preload="none" poster="media/jennifer-15s-fr.jpg"><source src="media/jennifer-15s-fr.mp4" type="video/mp4"></video>
+        <div class="meta"><b>Jennifer</b><span lang="fr">Qui elle est, en 15 secondes</span><span lang="en">Who she is, in 15 seconds (French)</span></div>
+      </article>
+    </div>
+    <p class="note"><span lang="fr">Changez la langue en haut de la page pour voir les versions anglaises.</span><span lang="en">The demos above now play in English; switch to FR at the top for the French versions.</span></p>
+  </div>
+</section>
+
+<section class="offers" id="offres">
+  <div class="wrap">
+    <h2><span lang="fr">Les offres</span><span lang="en">Offers</span></h2>
+    <p class="sub"><span lang="fr">Prix fixes, en dollars canadiens. Chaque pub inclut une licence de 12 mois pour vos comptes et vos publicités payantes.</span><span lang="en">Fixed prices, in Canadian dollars. Every ad includes a 12-month licence for your accounts and your paid ads.</span></p>
+    <div class="cards">
+      <div class="card star">
+        <span class="tag"><span lang="fr">3 places</span><span lang="en">3 spots</span></span>
+        <h3><span lang="fr">Forfait Lancement</span><span lang="en">Launch package</span></h3>
+        <div class="price">250 $<s>399 $</s></div>
+        <div class="per"><span lang="fr">pour les 3 premières entreprises</span><span lang="en">for the first 3 businesses</span></div>
+        <ul lang="fr"><li>Pub de 15 à 20 secondes</li><li>Français et anglais</li><li>Deux accroches, donc 4 fichiers</li><li>Une ronde de modifications</li><li>En échange, la permission de montrer le travail et vos commentaires honnêtes</li></ul>
+        <ul lang="en"><li>15 to 20-second ad</li><li>French and English</li><li>Two openings, so 4 files</li><li>One round of revisions</li><li>In return, permission to show the work and your honest feedback</li></ul>
+      </div>
+      <div class="card">
+        <span class="tag"><span lang="fr">Simple</span><span lang="en">Simple</span></span>
+        <h3><span lang="fr">Pub express</span><span lang="en">Express ad</span></h3>
+        <div class="price">179 $</div>
+        <div class="per"><span lang="fr">une pub, une langue</span><span lang="en">one ad, one language</span></div>
+        <ul lang="fr"><li>10 à 15 secondes</li><li>Une révision</li><li>Deuxième langue : 100 $ de plus</li></ul>
+        <ul lang="en"><li>10 to 15 seconds</li><li>One revision</li><li>Second language: $100 more</li></ul>
+      </div>
+      <div class="card">
+        <span class="tag"><span lang="fr">Saisons</span><span lang="en">Seasons</span></span>
+        <h3><span lang="fr">Pub du mois</span><span lang="en">Ad of the month</span></h3>
+        <div class="price">349 $</div>
+        <div class="per"><span lang="fr">par mois, minimum 3 mois</span><span lang="en">per month, 3-month minimum</span></div>
+        <ul lang="fr"><li>Une nouvelle pub chaque mois choisi</li><li>Vous choisissez les mois</li><li>Moitié à la signature, le reste à l'acceptation de la première pub</li></ul>
+        <ul lang="en"><li>A new ad for each month you pick</li><li>You choose the months</li><li>Half at signing, the rest when the first ad is accepted</li></ul>
+      </div>
+      <div class="card">
+        <span class="tag"><span lang="fr">Chaque vendredi</span><span lang="en">Every Friday</span></span>
+        <h3>Vendredi pub</h3>
+        <div class="price">99 $</div>
+        <div class="per"><span lang="fr">votre entreprise sur les comptes de Jennifer</span><span lang="en">your business on Jennifer's accounts</span></div>
+        <ul lang="fr"><li>Une pub publiée sur ses comptes Instagram et TikTok</li><li>80 $ de plus pour l'utiliser dans vos propres pubs</li></ul>
+        <ul lang="en"><li>One ad posted on her Instagram and TikTok</li><li>$80 more to use it in your own ads</li></ul>
+      </div>
+    </div>
+    <div class="fine">
+      <p lang="fr"><b>Livraison :</b> 5 jours ouvrables après l'approbation du script. Plus vite : 72 h +15 %, 48 h +30 %, 24 h +100 %.</p>
+      <p lang="en"><b>Delivery:</b> 5 business days after the script is approved. Faster: 72 h +15%, 48 h +30%, 24 h +100%.</p>
+      <p lang="fr"><b>Paiement :</b> la moitié pour réserver, la moitié pour approuver. Les fichiers finaux partent au paiement du solde. Moins de 200 $ : payé d'avance.</p>
+      <p lang="en"><b>Payment:</b> half to book, half to approve. Final files go out when the balance is paid. Under $200: paid upfront.</p>
+    </div>
+  </div>
+</section>
+
+<section id="comment">
+  <div class="wrap">
+    <h2><span lang="fr">Comment ça marche</span><span lang="en">How it works</span></h2>
+    <p class="sub"><span lang="fr">Pas de tournage, pas d'équipe chez vous. Vous parlez à une vraie personne du début à la fin.</span><span lang="en">No shoot, no crew at your place. You deal with a real person from start to finish.</span></p>
+    <div class="steps">
+      <div class="step"><b lang="fr">Un appel de 10 minutes</b><b lang="en">A 10-minute call</b><p lang="fr">Votre offre, votre public, où la pub va jouer.</p><p lang="en">Your offer, your audience, where the ad will run.</p></div>
+      <div class="step"><b lang="fr">Soumission et dépôt</b><b lang="en">Quote and deposit</b><p lang="fr">Une soumission claire; la moitié réserve votre place.</p><p lang="en">A clear quote; half books your spot.</p></div>
+      <div class="step"><b lang="fr">Le script</b><b lang="en">The script</b><p lang="fr">Envoyé en un jour ouvrable. Vous l'approuvez avant la production.</p><p lang="en">Sent within one business day. You approve it before production.</p></div>
+      <div class="step"><b lang="fr">L'aperçu</b><b lang="en">The preview</b><p lang="fr">En 5 jours ouvrables, avec filigrane. Une ronde de modifications.</p><p lang="en">In 5 business days, watermarked. One round of revisions.</p></div>
+      <div class="step"><b lang="fr">Vos fichiers</b><b lang="en">Your files</b><p lang="fr">Au paiement du solde : les fichiers finaux et la licence.</p><p lang="en">When the balance is paid: the final files and the licence.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="commit" id="engagements">
+  <div class="wrap">
+    <h2><span lang="fr">Nos engagements</span><span lang="en">Our commitments</span></h2>
+    <p class="sub"><span lang="fr">Jennifer suit une charte publique. Les grandes lignes :</span><span lang="en">Jennifer follows a public charter. The main points:</span></p>
+    <div class="rules">
+      <div class="rule"><b lang="fr">Toujours déclarée comme IA</b><b lang="en">Always declared as AI</b><p lang="fr">L'étiquette reste à l'écran du début à la fin de chaque pub, et ses comptes portent la mention IA.</p><p lang="en">The label stays on screen from start to finish of every ad, and her accounts carry the AI label.</p></div>
+      <div class="rule"><b lang="fr">Conçue pour ne ressembler à personne</b><b lang="en">Designed to look like no one</b><p lang="fr">Aucun visage, aucune voix ni aucun nom d'une vraie personne.</p><p lang="en">No real person's face, voice or name.</p></div>
+      <div class="rule"><b lang="fr">Elle ne remplace personne</b><b lang="en">She replaces no one</b><p lang="fr">Seulement des pubs IA pour les PME sans budget pour des comédiens, et des productions entièrement IA. Jamais un rôle offert à un humain.</p><p lang="en">Only AI ads for small businesses without a budget for actors, and fully AI productions. Never a role offered to a human.</p></div>
+      <div class="rule"><b lang="fr">Pas de faux témoignage</b><b lang="en">No fake testimonials</b><p lang="fr">Elle ne dit jamais avoir essayé un produit ni ce qu'elle ressent. Elle présente, elle ne témoigne pas.</p><p lang="en">She never claims to have tried a product or how it feels. She presents; she doesn't testify.</p></div>
+      <div class="rule"><b lang="fr">Les règles d'ici</b><b lang="en">Local rules</b><p lang="fr">Une version française de chaque pub, et le numéro RBQ ou CITQ quand la loi l'exige.</p><p lang="en">A French version of every ad, and the RBQ or CITQ number where the law requires it.</p></div>
+    </div>
+    <div class="about">
+      <img src="media/jennifer-studio.jpg" width="720" height="1280" loading="lazy" alt="Jennifer Shems-Mylie, actrice IA, assise près d'une fenêtre">
+      <div>
+        <p class="serif" style="font-size:26px;color:#fff;margin-bottom:10px">Jennifer Shems-Mylie</p>
+        <p lang="fr">21 ans, du West Island, étudiante en théâtre à Montréal. Un personnage fictif créé par CCC Studios, bilingue, qui parle aux Québécois de ce qu'ils vivent. Zéro expérience personnelle, beaucoup de potentiel publicitaire.</p>
+        <p lang="en">21, from the West Island, drama student in Montreal. A fictional character created by CCC Studios, bilingual, talking to Quebecers about what they're living through. Zero personal experience, plenty of ad potential.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <h2><span lang="fr">Questions</span><span lang="en">Questions</span></h2>
+    <details><summary><span lang="fr">Mes clients vont-ils savoir que c'est de l'IA?</span><span lang="en">Will my customers know it's AI?</span></summary><p lang="fr">Oui, et c'est voulu. Jennifer le dit elle-même, souvent dès la première phrase, et l'étiquette reste à l'écran. L'IA, c'est elle; votre entreprise, votre offre et vos coordonnées sont réelles.</p><p lang="en">Yes, on purpose. Jennifer says it herself, often in the first line, and the label stays on screen. She's the AI; your business, your offer and your contact details are real.</p></details>
+    <details><summary><span lang="fr">Pourquoi en français et en anglais?</span><span lang="en">Why French and English?</span></summary><p lang="fr">Au Québec, une publication commerciale en anglais doit avoir une version française accessible dans des conditions au moins équivalentes. On livre les deux.</p><p lang="en">In Quebec, an English commercial post needs a French version that's at least as accessible. We deliver both.</p></details>
+    <details><summary><span lang="fr">Qu'est-ce que je dois fournir?</span><span lang="en">What do I need to provide?</span></summary><p lang="fr">Votre offre, votre adresse ou votre secteur, votre logo et, si vous en avez, des photos de vos produits ou de vos lieux. Le reste, on s'en occupe.</p><p lang="en">Your offer, your address or service area, your logo and, if you have them, photos of your products or place. We handle the rest.</p></details>
+    <details><summary><span lang="fr">Où puis-je utiliser la pub?</span><span lang="en">Where can I use the ad?</span></summary><p lang="fr">Sur vos comptes et dans vos publicités payantes en ligne, pendant 12 mois. Pour la télé ou l'affichage, on en parle à l'appel.</p><p lang="en">On your accounts and in your paid online ads, for 12 months. For TV or signage, let's talk on the call.</p></details>
+    <details><summary><span lang="fr">Et si je ne suis pas satisfait de l'aperçu?</span><span lang="en">What if I don't like the preview?</span></summary><p lang="fr">Vous avez une ronde de modifications, à demander dans les 14 jours suivant l'aperçu. On ajuste le texte, les images ou le rythme.</p><p lang="en">You get one round of revisions, requested within 14 days of the preview. We adjust the wording, images or pacing.</p></details>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2><span lang="fr">Dix minutes pour voir si c'est pour vous</span><span lang="en">Ten minutes to see if it fits</span></h2>
+    <p><span lang="fr">Écrivez-nous; Dan vous répond et fixe l'appel.</span><span lang="en">Write to us; Dan replies and sets up the call.</span></p>
+    <div class="ctas">
+      <a class="btn btn-main js-mail" href="mailto:bonjour@ccc-studios.com"><span lang="fr">Réserver un appel de 10 minutes</span><span lang="en">Book a 10-minute call</span></a>
+    </div>
+    <p style="margin-top:16px;font-size:14px">bonjour@ccc-studios.com</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <p>CCC Studios Inc. · bonjour@ccc-studios.com</p>
+      <p lang="fr">Jennifer est un personnage virtuel créé par IA. Démos : entreprises fictives.</p>
+      <p lang="en">Jennifer is a virtual character created with AI. Demos: fictional businesses.</p>
+    </div>
+    <div class="social">
+      <a href="https://www.instagram.com/jennshems/" rel="noopener">Instagram</a>
+      <a href="https://www.tiktok.com/@jennshems" rel="noopener">TikTok</a>
+      <a href="https://www.youtube.com/@jennshems" rel="noopener">YouTube</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  var mail={
+    fr:{s:"Appel de 10 minutes · [votre entreprise]",b:"Bonjour Dan,\n\nEntreprise :\nCe que je veux annoncer :\nMeilleur moment pour un appel :\nTéléphone :\n\nMerci!"},
+    en:{s:"10-minute call · [your business]",b:"Hi Dan,\n\nBusiness:\nWhat I want to advertise:\nBest time for a call:\nPhone:\n\nThanks!"}
+  };
+  function setLang(l){
+    root.setAttribute("data-lang",l); root.lang=l;
+    document.querySelectorAll(".langs button").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.set===l?"true":"false");});
+    document.querySelectorAll("video[data-base]").forEach(function(v){
+      var base=v.dataset.base, src=base+"-"+l+".mp4";
+      if(v.querySelector("source").getAttribute("src")!==src){v.pause();v.querySelector("source").setAttribute("src",src);v.setAttribute("poster",base+"-"+l+".jpg");v.load();}
+    });
+    var m=mail[l], href="mailto:bonjour@ccc-studios.com?subject="+encodeURIComponent(m.s)+"&body="+encodeURIComponent(m.b);
+    document.querySelectorAll(".js-mail").forEach(function(a){a.href=href;});
+    document.title=l==="fr"?"Jennifer Shems-Mylie · Actrice IA · CCC Studios":"Jennifer Shems-Mylie · AI actress · CCC Studios";
+    try{localStorage.setItem("lang",l);}catch(e){}
+  }
+  var start="fr", q=new URLSearchParams(location.search).get("lang");
+  if(q==="en"||q==="fr"){start=q;} else {try{var s=localStorage.getItem("lang"); if(s==="en"||s==="fr")start=s;}catch(e){}}
+  document.querySelectorAll(".langs button").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.set);});});
+  setLang(start);
+})();
+</script>
 </body>
 </html>
