@@ -10,11 +10,18 @@
 <link rel="stylesheet" href="/fonts/fonts.css">
 <style>
 *{box-sizing:border-box;margin:0}
-body{font-family:Inter,system-ui,sans-serif;background:#000;color:#e9e5e0;line-height:1.65;padding:40px 16px 64px}
-main{max-width:720px;margin:0 auto}
+body{font-family:Inter,system-ui,sans-serif;background:#000;color:#e9e5e0;line-height:1.65;padding:0 0 64px}
+.top{position:sticky;top:0;z-index:10;background:rgba(26,27,32,.94);backdrop-filter:blur(8px);color:#fff}
+.top .wrap{max-width:1080px;margin:0 auto;padding:0 20px;display:flex;align-items:center;gap:12px;height:60px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:600;letter-spacing:.02em;color:#fff}
+.brand img{width:36px;height:36px;border-radius:50%}
+.top nav{margin-left:auto;font-size:14px}
+.top nav a{text-decoration:none;opacity:.85;color:#fff}
+.top nav a:hover{opacity:1}
+main{max-width:720px;margin:0 auto;padding:28px 16px 0}
 a{color:#f2eee9}
 .retour{font-size:14px;color:#b9b4ae}
-h1{font-family:Lora,Georgia,serif;font-style:italic;font-weight:500;font-size:clamp(30px,6vw,40px);line-height:1.15;margin:18px 0 6px}
+h1{font-family:Lora,Georgia,serif;font-style:italic;font-weight:500;font-size:clamp(30px,6vw,40px);line-height:1.15;margin:0 0 6px}
 .maj{color:#8f8b86;font-size:14px}
 .encadre{border:1px solid #3a3a40;background:#121317;border-radius:14px;padding:16px 18px;margin:26px 0 8px}
 .encadre strong{display:block;font-size:17px;margin-bottom:4px}
@@ -27,8 +34,13 @@ footer{margin-top:44px;font-size:13.5px;color:#8f8b86}
 </style>
 </head>
 <body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/logo-ccc.png" alt="">CCC Studios</a>
+    <nav><a href="/jennshems/">Jennifer</a></nav>
+  </div>
+</header>
 <main>
-  <a class="retour" href="/">← CCC Studios</a>
   <h1>Politique de confidentialité</h1>
   <p class="maj">En vigueur le 27 octobre 2026</p>
 
