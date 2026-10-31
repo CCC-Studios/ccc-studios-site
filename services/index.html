@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="fr" data-lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Visibilité locale · Services aux entreprises · CCC Studios</title>
+<meta name="description" content="Fiche Google, réseaux sociaux, site web et vidéos avec Jennifer, notre actrice IA déclarée. Remis en état, puis entretenus chaque mois, pour les entreprises de services du Québec. En français, en anglais et en espagnol.">
+<meta property="og:title" content="Visibilité locale · CCC Studios">
+<meta property="og:description" content="Qu'on vous trouve sur Google, qu'on vous appelle. Fiche Google, réseaux, site et vidéos pour les entreprises de services du Québec.">
+<meta property="og:image" content="https://ccc-studios.com/jennshems/media/og-jennifer.jpg">
+<meta property="og:url" content="https://ccc-studios.com/services/">
+<meta property="og:type" content="website">
+<link rel="icon" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<style>
+/* Branche Crème (marketing, documents et pages pour les entreprises clientes), kit de marque v1.4.2.
+   Bronze minuit #180D00 pour les grandes surfaces sombres, Bronze #735827 pour les surtitres et lignes secondaires,
+   Ambre #FFC40C seulement en filet ou en texte sur le foncé (jamais sur blanc ou crème), Crème #F5F2EC pour les panneaux. Aucun gris. */
+:root{
+  --minuit:#180D00; --bronze:#735827; --ambre:#FFC40C; --creme:#F5F2EC; --blanc:#FFFFFF; --noir:#000000;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;color:var(--noir);background:var(--blanc);line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+html[data-lang="fr"] [lang="en"],html[data-lang="fr"] [lang="es"],
+html[data-lang="en"] [lang="fr"],html[data-lang="en"] [lang="es"],
+html[data-lang="es"] [lang="fr"],html[data-lang="es"] [lang="en"]{display:none!important}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:Lora,Georgia,serif;font-weight:500;letter-spacing:-.01em}
+.it{font-style:italic}
+
+/* barre du haut : filet Ambre sous l'en-tête */
+.top{position:sticky;top:0;z-index:10;background:var(--minuit);color:var(--blanc);border-bottom:2px solid var(--ambre)}
+.top .wrap{display:flex;align-items:center;gap:12px;height:60px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:"Tenor Sans",Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase}
+.brand img{width:36px;height:36px;border-radius:50%;background:var(--blanc)}
+.top nav{margin-left:auto;display:flex;align-items:center;gap:18px;font-size:14px}
+.top nav a{text-decoration:none}
+.top nav a[aria-current="page"]{text-decoration:underline;text-decoration-color:var(--ambre);text-underline-offset:6px}
+.navlinks{display:none}
+@media(min-width:760px){.navlinks{display:flex;gap:18px}}
+.langs{display:flex;border:1px solid var(--creme);border-radius:999px;overflow:hidden}
+.langs button{background:none;border:0;color:var(--blanc);font:600 12px Inter,sans-serif;padding:6px 10px;cursor:pointer;letter-spacing:.06em}
+.langs button[aria-pressed="true"]{background:var(--creme);color:var(--minuit)}
+:focus-visible{outline:2px solid var(--bronze);outline-offset:3px}
+.top :focus-visible,.dark :focus-visible{outline-color:var(--ambre)}
+
+/* héros */
+.hero{background:var(--minuit);color:var(--blanc)}
+.hero .wrap{padding-top:56px;padding-bottom:64px;display:grid;gap:24px}
+@media(min-width:900px){.hero .wrap{grid-template-columns:1.2fr .8fr;align-items:end}}
+.kicker{font-size:12.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ambre)}
+.hero h1{font-size:clamp(36px,6vw,60px);line-height:1.05;margin:14px 0 18px;text-wrap:balance}
+.hero h1 .it{color:var(--ambre)}
+.lead{font-size:18px;max-width:34em}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 22px;border-radius:10px;font-weight:600;font-size:15.5px;text-decoration:none;border:1px solid transparent}
+.btn-main{background:var(--ambre);color:var(--noir)}
+.btn-main:hover{background:var(--blanc)}
+.btn-line{border-color:var(--creme);color:var(--blanc)}
+.btn-line:hover{border-color:var(--ambre)}
+.proof{border:1px solid var(--creme);border-radius:16px;padding:20px;display:grid;gap:12px;align-content:start;align-self:end}
+.proof b{font-family:Lora,Georgia,serif;font-weight:500;font-size:20px;display:block}
+.proof ul{padding-left:18px;display:grid;gap:6px;font-size:15px}
+
+section{padding:68px 0}
+h2{font-size:clamp(28px,4vw,40px);line-height:1.12;margin-bottom:10px;color:var(--minuit);text-wrap:balance}
+.dark h2{color:var(--blanc)}
+.sub{max-width:42em;margin-bottom:32px;font-size:16.5px}
+.rule{width:56px;height:3px;background:var(--ambre);margin-bottom:18px;border:0}
+
+/* audit */
+.audit{background:var(--creme)}
+.checks{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));counter-reset:c}
+@media(min-width:960px){.checks{grid-template-columns:repeat(5,1fr)}}
+.check{border-top:2px solid var(--bronze);padding-top:14px}
+.check::before{counter-increment:c;content:counter(c);font-family:Lora,Georgia,serif;font-style:italic;font-size:28px;color:var(--bronze);display:block}
+.check b{display:block;margin:2px 0 4px;color:var(--minuit)}
+.check p{font-size:14.5px}
+
+/* services */
+.svc{display:grid;gap:20px}
+@media(min-width:900px){.svc{grid-template-columns:repeat(3,1fr)}}
+.card{border:1px solid var(--bronze);border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:12px;background:var(--blanc)}
+.card .letter{font-family:"Tenor Sans",Inter,sans-serif;letter-spacing:.14em;font-size:13px;color:var(--bronze)}
+.card h3{font-size:24px;color:var(--minuit);line-height:1.15}
+.card .what{font-size:15px}
+.opt{border-top:1px solid var(--bronze);padding-top:12px;display:grid;gap:4px}
+.opt .name{font-weight:600;color:var(--minuit)}
+.opt .price{font-size:15px}
+.opt .price b{font-size:22px;font-weight:700;color:var(--minuit);letter-spacing:-.01em}
+.opt ul{padding-left:18px;font-size:14px;display:grid;gap:3px;margin-top:4px}
+.card .cond{font-size:13.5px;margin-top:auto;padding-top:6px;color:var(--bronze);font-weight:500}
+.founder{margin-top:26px;background:var(--creme);border-radius:16px;padding:20px 22px;display:grid;gap:6px}
+.founder b{font-family:Lora,Georgia,serif;font-weight:500;font-size:21px;color:var(--minuit)}
+.small{font-size:14px;margin-top:16px;max-width:52em;color:var(--bronze)}
+
+/* comment */
+.how{background:var(--minuit);color:var(--blanc)}
+.steps{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));counter-reset:s}
+.step{border-top:2px solid var(--creme);padding-top:14px}
+.step::before{counter-increment:s;content:counter(s);font-family:Lora,Georgia,serif;font-style:italic;font-size:30px;display:block;color:var(--ambre)}
+.step b{display:block;margin:2px 0 4px}
+.step p{font-size:14.5px}
+.month{margin-top:36px;border:1px solid var(--creme);border-radius:16px;padding:20px 22px}
+.month h3{font-size:21px;margin-bottom:10px}
+.month ol{padding-left:20px;display:grid;gap:6px;font-size:15px}
+
+/* promesses */
+.prom{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.p{border:1px solid var(--bronze);border-radius:14px;padding:18px}
+.p b{display:block;margin-bottom:4px;color:var(--minuit)}
+.p p{font-size:14.5px}
+
+/* faq */
+.faq{background:var(--creme)}
+details{border-bottom:1px solid var(--bronze);padding:16px 0}
+summary{cursor:pointer;font-weight:600;font-size:16.5px;list-style:none;color:var(--minuit)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";float:right;color:var(--bronze);font-weight:700}
+details[open] summary::after{content:"–"}
+details p{margin-top:10px;max-width:46em}
+
+/* contact */
+.contact{background:var(--minuit);color:var(--blanc);text-align:center}
+.contact h2{margin:0 auto 12px;max-width:18em}
+.contact .ctas{justify-content:center}
+footer{background:var(--noir);color:var(--blanc);font-size:13.5px;padding:30px 0}
+footer .wrap{display:grid;gap:8px}
+footer a{color:var(--blanc)}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/logo-ccc.png" alt="">CCC STUDIOS</a>
+    <nav>
+      <div class="navlinks">
+        <a href="/services/" aria-current="page">Services</a>
+        <a href="/jennshems/">Jennifer</a>
+        <a href="/jennshems/charte/"><span lang="fr">Charte</span><span lang="en">Charter</span><span lang="es">Carta</span></a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="langs" role="group" aria-label="Langue / Language / Idioma">
+        <button type="button" data-set="fr" aria-pressed="true">FR</button>
+        <button type="button" data-set="en" aria-pressed="false">EN</button>
+        <button type="button" data-set="es" aria-pressed="false">ES</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero dark" style="padding:0">
+  <div class="wrap">
+    <div>
+      <div class="kicker"><span lang="fr">Visibilité locale · entreprises de services du Québec</span><span lang="en">Local visibility · Quebec service businesses</span><span lang="es">Visibilidad local · empresas de servicios en Quebec</span></div>
+      <h1><span lang="fr">Qu'on vous trouve. <span class="it">Qu'on vous appelle.</span></span><span lang="en">Get found. <span class="it">Get the call.</span></span><span lang="es">Que lo encuentren. <span class="it">Que lo llamen.</span></span></h1>
+      <p class="lead"><span lang="fr">Votre fiche Google, vos réseaux sociaux, votre site et vos vidéos : on les remet en état, puis on les entretient chaque mois. En français d'abord, en anglais, et en espagnol sur demande.</span><span lang="en">Your Google profile, your social media, your website and your videos: we fix them, then keep them up every month. French first, English too, and Spanish on request.</span><span lang="es">Su perfil de Google, sus redes sociales, su sitio web y sus videos: los ponemos en orden y luego los mantenemos cada mes. Primero en francés, también en inglés, y en español si lo pide.</span></p>
+      <div class="ctas">
+        <a class="btn btn-main js-mail" href="mailto:bonjour@ccc-studios.com"><span lang="fr">Demander un audit express gratuit</span><span lang="en">Ask for a free express audit</span><span lang="es">Pedir una auditoría exprés gratuita</span></a>
+        <a class="btn btn-line" href="#services"><span lang="fr">Voir les services</span><span lang="en">See the services</span><span lang="es">Ver los servicios</span></a>
+      </div>
+    </div>
+    <aside class="proof">
+      <b><span lang="fr">L'audit express, c'est quoi?</span><span lang="en">What's the express audit?</span><span lang="es">¿Qué es la auditoría exprés?</span></b>
+      <p lang="fr">Une page, envoyée sous 2 jours ouvrables, qui montre ce qu'un client voit quand il vous cherche, et les 3 corrections les plus rentables. Sans engagement.</p>
+      <p lang="en">One page, sent within 2 business days, showing what a customer sees when they look you up, and the 3 fixes worth the most. No commitment.</p>
+      <p lang="es">Una página, enviada en 2 días hábiles, que muestra lo que ve un cliente cuando lo busca, y las 3 correcciones que más valen la pena. Sin compromiso.</p>
+    </aside>
+  </div>
+</section>
+
+<section class="audit" id="audit">
+  <div class="wrap">
+    <hr class="rule">
+    <h2><span lang="fr">Ce qu'on regarde en premier</span><span lang="en">What we check first</span><span lang="es">Lo primero que revisamos</span></h2>
+    <p class="sub"><span lang="fr">Souvent, une entreprise a déjà de bons avis et du bon travail à montrer. Le problème, c'est qu'on ne la trouve pas, ou qu'on la trouve mal.</span><span lang="en">Often a business already has good reviews and good work to show. The problem is that people can't find it, or find the wrong details.</span><span lang="es">Muchas veces una empresa ya tiene buenas reseñas y buen trabajo que mostrar. El problema es que no la encuentran, o encuentran datos equivocados.</span></p>
+    <div class="checks">
+      <div class="check"><b lang="fr">La catégorie Google</b><b lang="en">The Google category</b><b lang="es">La categoría en Google</b><p lang="fr">La mauvaise catégorie, et vous n'apparaissez pas quand on cherche votre métier.</p><p lang="en">The wrong category, and you don't show up when people search for your trade.</p><p lang="es">Con la categoría equivocada, no aparece cuando buscan su oficio.</p></div>
+      <div class="check"><b lang="fr">Vos coordonnées partout</b><b lang="en">Your details everywhere</b><b lang="es">Sus datos en todas partes</b><p lang="fr">Le même téléphone, le même courriel et la même adresse sur Google, le site et les réseaux.</p><p lang="en">The same phone, email and address on Google, your site and your social accounts.</p><p lang="es">El mismo teléfono, correo y dirección en Google, el sitio y las redes.</p></div>
+      <div class="check"><b lang="fr">Vos avis</b><b lang="en">Your reviews</b><b lang="es">Sus reseñas</b><p lang="fr">De bons avis qui dorment sur Google peuvent travailler sur votre site et vos réseaux.</p><p lang="en">Good reviews sitting on Google can work for you on your site and social media.</p><p lang="es">Las buenas reseñas que duermen en Google pueden trabajar en su sitio y sus redes.</p></div>
+      <div class="check"><b lang="fr">Vos réseaux</b><b lang="en">Your social media</b><b lang="es">Sus redes</b><p lang="fr">Une image uniforme, des publications à jour, et rien qui détonne pour vos clients d'ici.</p><p lang="en">A consistent look, up-to-date posts, and nothing that feels off to local customers.</p><p lang="es">Una imagen uniforme, publicaciones al día y nada que desentone para los clientes de aquí.</p></div>
+      <div class="check"><b lang="fr">Votre site</b><b lang="en">Your website</b><b lang="es">Su sitio web</b><p lang="fr">Lisible sur un cellulaire, rapide, en français et en anglais, et trouvable sur votre propre nom.</p><p lang="en">Readable on a phone, fast, in French and English, and findable by your own name.</p><p lang="es">Fácil de leer en el celular, rápido, en francés e inglés, y que aparezca al buscar su propio nombre.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <hr class="rule">
+    <h2><span lang="fr">Trois services, une fois ou chaque mois</span><span lang="en">Three services, once or every month</span><span lang="es">Tres servicios, una vez o cada mes</span></h2>
+    <p class="sub"><span lang="fr">Prenez ce dont vous avez besoin. Prix de départ en dollars canadiens, avant taxes; la soumission donne le prix exact selon votre situation.</span><span lang="en">Take what you need. Starting prices in Canadian dollars, before tax; your quote gives the exact price for your situation.</span><span lang="es">Elija lo que necesita. Precios de base en dólares canadienses, antes de impuestos; la cotización da el precio exacto según su caso.</span></p>
+    <div class="svc">
+      <article class="card">
+        <span class="letter">A</span>
+        <h3><span lang="fr">Vidéos avec Jennifer</span><span lang="en">Videos with Jennifer</span><span lang="es">Videos con Jennifer</span></h3>
+        <p class="what"><span lang="fr">Une vidéo explicative de 30 à 40 secondes, en français et en anglais, présentée par Jennifer, notre actrice IA toujours déclarée comme IA.</span><span lang="en">A 30 to 40-second explainer video in French and English, presented by Jennifer, our AI actress, always declared as AI.</span><span lang="es">Un video explicativo de 30 a 40 segundos, en francés e inglés, presentado por Jennifer, nuestra actriz IA, siempre declarada como IA.</span></p>
+        <div class="opt">
+          <span class="name"><span lang="fr">Une fois</span><span lang="en">Once</span><span lang="es">Una vez</span></span>
+          <span class="price"><span lang="fr">à partir de <b>499 $</b></span><span lang="en">from <b>$499</b></span><span lang="es">desde <b>$499</b></span></span>
+        </div>
+        <div class="opt">
+          <span class="name"><span lang="fr">Chaque mois</span><span lang="en">Every month</span><span lang="es">Cada mes</span></span>
+          <span class="price"><span lang="fr">à partir de <b>399 $</b> / mois</span><span lang="en">from <b>$399</b> / month</span><span lang="es">desde <b>$399</b> / mes</span></span>
+          <ul lang="fr"><li>Licence de 12 mois pour vos comptes et vos pubs</li><li>Une ronde de modifications par vidéo</li><li>Version espagnole en option</li></ul>
+          <ul lang="en"><li>12-month licence for your accounts and ads</li><li>One round of revisions per video</li><li>Spanish version as an option</li></ul>
+          <ul lang="es"><li>Licencia de 12 meses para sus cuentas y anuncios</li><li>Una ronda de cambios por video</li><li>Versión en español como opción</li></ul>
+        </div>
+        <p class="cond"><span lang="fr">Avec le service B : on remet vos réseaux en état avant d'y publier une vidéo. Pour une pub de 15 secondes, voyez <a href="/jennshems/#offres">les offres de Jennifer</a>.</span><span lang="en">Comes with service B: your social accounts get fixed before a video goes on them. For a 15-second ad, see <a href="/jennshems/?lang=en#offres">Jennifer's offers</a>.</span><span lang="es">Va con el servicio B: arreglamos sus redes antes de publicar un video en ellas. Para un anuncio de 15 segundos, vea <a href="/jennshems/#offres">las ofertas de Jennifer</a>.</span></p>
+      </article>
+
+      <article class="card">
+        <span class="letter">B</span>
+        <h3><span lang="fr">Réseaux sociaux</span><span lang="en">Social media</span><span lang="es">Redes sociales</span></h3>
+        <p class="what"><span lang="fr">Facebook, Instagram et une chaîne YouTube pour vos vidéos : une image claire et uniforme, puis des publications régulières.</span><span lang="en">Facebook, Instagram and a YouTube channel for your videos: a clear, consistent look, then regular posts.</span><span lang="es">Facebook, Instagram y un canal de YouTube para sus videos: una imagen clara y uniforme, y luego publicaciones regulares.</span></p>
+        <div class="opt">
+          <span class="name"><span lang="fr">Remise à neuf</span><span lang="en">Refresh</span><span lang="es">Puesta a punto</span></span>
+          <span class="price"><span lang="fr">à partir de <b>599 $</b></span><span lang="en">from <b>$599</b></span><span lang="es">desde <b>$599</b></span></span>
+          <ul lang="fr"><li>Bio, photo de profil et bannière</li><li>Logo en haute qualité</li><li>Liste de contrôle numérotée, montrée avant la mise en ligne</li></ul>
+          <ul lang="en"><li>Bio, profile photo and banner</li><li>High-quality logo</li><li>Numbered checklist, shown before anything goes live</li></ul>
+          <ul lang="es"><li>Biografía, foto de perfil y portada</li><li>Logo en alta calidad</li><li>Lista de control numerada, mostrada antes de publicar</li></ul>
+        </div>
+        <div class="opt">
+          <span class="name"><span lang="fr">Gestion chaque mois</span><span lang="en">Monthly management</span><span lang="es">Gestión mensual</span></span>
+          <span class="price"><span lang="fr">à partir de <b>750 $</b> / mois</span><span lang="en">from <b>$750</b> / month</span><span lang="es">desde <b>$750</b> / mes</span></span>
+          <ul lang="fr"><li>Publications en français, puis en anglais</li><li>Calendrier du mois approuvé par vous, par écrit</li><li>Rapport mensuel</li></ul>
+          <ul lang="en"><li>Posts in French, then English</li><li>Each month's calendar approved by you, in writing</li><li>Monthly report</li></ul>
+          <ul lang="es"><li>Publicaciones en francés y luego en inglés</li><li>Calendario del mes aprobado por usted, por escrito</li><li>Informe mensual</li></ul>
+        </div>
+        <p class="cond"><span lang="fr">Frais d'ouverture la première fois; la remise à neuf est comprise.</span><span lang="en">One-time setup fee; the refresh is included.</span><span lang="es">Cargo de apertura la primera vez; incluye la puesta a punto.</span></p>
+      </article>
+
+      <article class="card">
+        <span class="letter">C</span>
+        <h3><span lang="fr">Site web et fiche Google</span><span lang="en">Website and Google profile</span><span lang="es">Sitio web y perfil de Google</span></h3>
+        <p class="what"><span lang="fr">Ce qu'un client voit quand il vous cherche : la bonne catégorie, les bons services, les bonnes coordonnées, et un site qui le mène à l'appel.</span><span lang="en">What customers see when they search for you: the right category, the right services, the right contact details, and a site that leads them to call.</span><span lang="es">Lo que ve un cliente al buscarlo: la categoría correcta, los servicios correctos, los datos de contacto correctos y un sitio que lo lleva a llamar.</span></p>
+        <div class="opt">
+          <span class="name"><span lang="fr">Remise à neuf</span><span lang="en">Refresh</span><span lang="es">Puesta a punto</span></span>
+          <span class="price"><span lang="fr">à partir de <b>1 200 $</b></span><span lang="en">from <b>$1,200</b></span><span lang="es">desde <b>$1,200</b></span></span>
+          <ul lang="fr"><li>Fiche Google complète : catégorie, services, photos</li><li>Coordonnées corrigées partout</li><li>Textes du site en français et en anglais, référencement de base</li></ul>
+          <ul lang="en"><li>Complete Google profile: category, services, photos</li><li>Contact details fixed everywhere</li><li>Website copy in French and English, basic SEO</li></ul>
+          <ul lang="es"><li>Perfil de Google completo: categoría, servicios, fotos</li><li>Datos de contacto corregidos en todas partes</li><li>Textos del sitio en francés e inglés, SEO básico</li></ul>
+        </div>
+        <div class="opt">
+          <span class="name"><span lang="fr">Référencement et entretien chaque mois</span><span lang="en">Monthly SEO and upkeep</span><span lang="es">SEO y mantenimiento mensual</span></span>
+          <span class="price"><span lang="fr">à partir de <b>750 $</b> / mois</span><span lang="en">from <b>$750</b> / month</span><span lang="es">desde <b>$750</b> / mes</span></span>
+          <ul lang="fr"><li>Publications sur votre fiche Google</li><li>Mises à jour du site</li><li>Rapport mensuel comparé au point de départ</li></ul>
+          <ul lang="en"><li>Posts on your Google profile</li><li>Website updates</li><li>Monthly report against the starting point</li></ul>
+          <ul lang="es"><li>Publicaciones en su perfil de Google</li><li>Actualizaciones del sitio</li><li>Informe mensual comparado con el punto de partida</li></ul>
+        </div>
+        <p class="cond"><span lang="fr">Pour un site modifiable (WordPress, Wix, Squarespace); sinon, soumission à part. Frais d'ouverture pour l'entretien mensuel; la remise à neuf est comprise.</span><span lang="en">For an editable site (WordPress, Wix, Squarespace); otherwise, a separate quote. One-time setup fee for monthly upkeep; the refresh is included.</span><span lang="es">Para un sitio editable (WordPress, Wix, Squarespace); si no, cotización aparte. Cargo de apertura para el mantenimiento mensual; incluye la puesta a punto.</span></p>
+      </article>
+    </div>
+
+    <div class="founder">
+      <b><span lang="fr">Prix fondateur pour nos premiers clients</span><span lang="en">Founding price for our first clients</span><span lang="es">Precio fundador para nuestros primeros clientes</span></b>
+      <p lang="fr">Un nombre limité d'entreprises paient le prix fondateur, plus bas, sur chaque service, en échange de deux choses : la permission de montrer le travail et ses résultats, et un témoignage honnête après un mois.</p>
+      <p lang="en">A limited number of businesses pay the lower founding price on every service, in exchange for two things: permission to show the work and its results, and an honest testimonial after a month.</p>
+      <p lang="es">Un número limitado de empresas paga el precio fundador, más bajo, en cada servicio, a cambio de dos cosas: permiso para mostrar el trabajo y sus resultados, y un testimonio honesto después de un mes.</p>
+    </div>
+    <p class="small"><span lang="fr">La publicité payante (budget, campagnes, gestion) ne fait partie d'aucun service et se soumissionne à part. Le budget publicitaire est toujours payé par vous, directement à la plateforme.</span><span lang="en">Paid advertising (budget, campaigns, management) isn't part of any service and is quoted separately. Ad budget is always paid by you, directly to the platform.</span><span lang="es">La publicidad pagada (presupuesto, campañas, gestión) no forma parte de ningún servicio y se cotiza aparte. El presupuesto publicitario siempre lo paga usted, directamente a la plataforma.</span></p>
+  </div>
+</section>
+
+<section class="how dark" id="comment">
+  <div class="wrap">
+    <hr class="rule">
+    <h2><span lang="fr">Comment ça se passe</span><span lang="en">How it works</span><span lang="es">Cómo funciona</span></h2>
+    <p class="sub"><span lang="fr">Vous parlez à une vraie personne du début à la fin. Rien n'est mis en ligne sans votre accord écrit.</span><span lang="en">You deal with a real person from start to finish. Nothing goes live without your written OK.</span><span lang="es">Usted trata con una persona real de principio a fin. Nada se publica sin su aprobación por escrito.</span></p>
+    <div class="steps">
+      <div class="step"><b lang="fr">L'audit express</b><b lang="en">The express audit</b><b lang="es">La auditoría exprés</b><p lang="fr">Une page sur ce qu'un client voit de vous, et les 3 corrections qui valent le plus.</p><p lang="en">One page on what a customer sees of you, and the 3 fixes worth the most.</p><p lang="es">Una página sobre lo que un cliente ve de usted, y las 3 correcciones que más valen.</p></div>
+      <div class="step"><b lang="fr">Un appel, une soumission</b><b lang="en">A call, a quote</b><b lang="es">Una llamada, una cotización</b><p lang="fr">On choisit ensemble les services. La soumission est claire, ligne par ligne.</p><p lang="en">We pick the services together. The quote is clear, line by line.</p><p lang="es">Elegimos juntos los servicios. La cotización es clara, línea por línea.</p></div>
+      <div class="step"><b lang="fr">Le point de départ</b><b lang="en">The starting point</b><b lang="es">El punto de partida</b><p lang="fr">On note vos chiffres avant de commencer, pour comparer honnêtement chaque mois.</p><p lang="en">We record your numbers before we start, so each month compares honestly.</p><p lang="es">Anotamos sus cifras antes de empezar, para comparar con honestidad cada mes.</p></div>
+      <div class="step"><b lang="fr">La remise à neuf</b><b lang="en">The refresh</b><b lang="es">La puesta a punto</b><p lang="fr">Préparée en brouillon, montrée avec sa liste de contrôle, puis mise en ligne.</p><p lang="en">Prepared as a draft, shown with its checklist, then put live.</p><p lang="es">Se prepara en borrador, se muestra con su lista de control y luego se publica.</p></div>
+    </div>
+    <div class="month">
+      <h3><span lang="fr">Chaque mois, ensuite</span><span lang="en">Then, every month</span><span lang="es">Después, cada mes</span></h3>
+      <ol lang="fr"><li>Le rapport du mois et ce qu'on change.</li><li>Vous déposez vos photos et vidéos dans un dossier partagé.</li><li>On prépare le calendrier : chaque publication, chaque texte, et un aperçu de votre profil.</li><li>Vous approuvez par écrit, puis on publie aux jours prévus.</li></ol>
+      <ol lang="en"><li>The month's report and what we change.</li><li>You drop your photos and videos into a shared folder.</li><li>We prepare the calendar: every post, every caption, and a preview of your profile.</li><li>You approve in writing, then we post on the planned days.</li></ol>
+      <ol lang="es"><li>El informe del mes y lo que cambiamos.</li><li>Usted deja sus fotos y videos en una carpeta compartida.</li><li>Preparamos el calendario: cada publicación, cada texto y una vista previa de su perfil.</li><li>Usted aprueba por escrito y publicamos en los días previstos.</li></ol>
+    </div>
+  </div>
+</section>
+
+<section id="promesses">
+  <div class="wrap">
+    <hr class="rule">
+    <h2><span lang="fr">Ce qu'on promet, et ce qu'on ne promet pas</span><span lang="en">What we promise, and what we don't</span><span lang="es">Lo que prometemos, y lo que no</span></h2>
+    <div class="prom">
+      <div class="p"><b lang="fr">Pas de résultats garantis</b><b lang="en">No guaranteed results</b><b lang="es">Sin resultados garantizados</b><p lang="fr">Personne ne peut garantir des ventes. On mesure, on compare au point de départ, et on vous montre les vrais chiffres.</p><p lang="en">No one can guarantee sales. We measure, compare against the starting point, and show you the real numbers.</p><p lang="es">Nadie puede garantizar ventas. Medimos, comparamos con el punto de partida y le mostramos las cifras reales.</p></div>
+      <div class="p"><b lang="fr">Vous gardez vos comptes</b><b lang="en">You keep your accounts</b><b lang="es">Usted conserva sus cuentas</b><p lang="fr">Vos comptes restent à votre nom. Vous nous donnez un accès, et vous le retirez quand vous voulez.</p><p lang="en">Your accounts stay in your name. You give us access, and you can remove it any time.</p><p lang="es">Sus cuentas siguen a su nombre. Usted nos da acceso y puede quitarlo cuando quiera.</p></div>
+      <div class="p"><b lang="fr">L'IA est déclarée</b><b lang="en">AI is declared</b><b lang="es">La IA se declara</b><p lang="fr">Jennifer porte toujours la mention IA, et une image créée par IA est indiquée comme telle. Vos vrais travaux se montrent avec vos vraies photos.</p><p lang="en">Jennifer always carries the AI label, and an AI-made image is marked as such. Your real work is shown with your real photos.</p><p lang="es">Jennifer siempre lleva la mención IA, y una imagen creada con IA se indica como tal. Sus trabajos reales se muestran con sus fotos reales.</p></div>
+      <div class="p"><b lang="fr">Le français d'abord</b><b lang="en">French first</b><b lang="es">Primero el francés</b><p lang="fr">Chaque publication commerciale a sa version française, comme le veut la loi au Québec. L'anglais suit, l'espagnol sur demande.</p><p lang="en">Every commercial post has its French version, as Quebec law requires. English follows; Spanish on request.</p><p lang="es">Cada publicación comercial tiene su versión en francés, como lo exige la ley en Quebec. Sigue el inglés; el español, si lo pide.</p></div>
+      <div class="p"><b lang="fr">Un engagement simple</b><b lang="en">A simple commitment</b><b lang="es">Un compromiso simple</b><p lang="fr">Les services mensuels durent 3 mois au minimum, puis se renouvellent de mois en mois, avec 30 jours d'avis pour arrêter.</p><p lang="en">Monthly services run 3 months minimum, then renew month to month, with 30 days' notice to stop.</p><p lang="es">Los servicios mensuales duran 3 meses como mínimo y luego se renuevan mes a mes, con 30 días de aviso para terminar.</p></div>
+      <div class="p"><b lang="fr">Vos affirmations, approuvées</b><b lang="en">Your claims, approved</b><b lang="es">Sus afirmaciones, aprobadas</b><p lang="fr">On ne publie rien sur vos services, vos prix ou vos années d'expérience que vous n'avez pas confirmé par écrit.</p><p lang="en">We publish nothing about your services, prices or years in business that you haven't confirmed in writing.</p><p lang="es">No publicamos nada sobre sus servicios, precios o años de experiencia que usted no haya confirmado por escrito.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="wrap">
+    <h2><span lang="fr">Questions</span><span lang="en">Questions</span><span lang="es">Preguntas</span></h2>
+    <details><summary><span lang="fr">Pourquoi commencer par la fiche Google?</span><span lang="en">Why start with the Google profile?</span><span lang="es">¿Por qué empezar por el perfil de Google?</span></summary><p lang="fr">Parce que c'est souvent là que le client vous trouve en premier, avant votre site ou vos réseaux. Une catégorie ou des coordonnées fausses peuvent faire perdre des appels sans qu'on le sache.</p><p lang="en">Because that's often where customers find you first, before your site or social media. A wrong category or wrong contact details can cost calls without anyone noticing.</p><p lang="es">Porque muchas veces es ahí donde el cliente lo encuentra primero, antes que su sitio o sus redes. Una categoría o datos equivocados pueden hacerle perder llamadas sin que nadie lo note.</p></details>
+    <details><summary><span lang="fr">Est-ce que je dois prendre les trois services?</span><span lang="en">Do I have to take all three services?</span><span lang="es">¿Tengo que tomar los tres servicios?</span></summary><p lang="fr">Non. Chaque service se prend seul, une fois ou chaque mois. La seule règle : une vidéo va avec le service B, pour que vos réseaux soient prêts à la recevoir.</p><p lang="en">No. Each service stands alone, once or monthly. The one rule: a video comes with service B, so your social accounts are ready for it.</p><p lang="es">No. Cada servicio se toma solo, una vez o cada mes. La única regla: un video va con el servicio B, para que sus redes estén listas para recibirlo.</p></details>
+    <details><summary><span lang="fr">Comment se fait le paiement?</span><span lang="en">How does payment work?</span><span lang="es">¿Cómo se paga?</span></summary><p lang="fr">Pour un service fait une fois : la moitié au départ, la moitié à l'acceptation. Pour un service mensuel : payé d'avance le 1er de chaque mois. Par virement Interac.</p><p lang="en">For a one-time service: half to start, half on acceptance. For a monthly service: paid in advance on the 1st of each month. By Interac e-Transfer.</p><p lang="es">Para un servicio de una vez: la mitad al inicio y la mitad al aceptar. Para un servicio mensual: se paga por adelantado el día 1 de cada mes. Por transferencia Interac.</p></details>
+    <details><summary><span lang="fr">Vous parlez espagnol?</span><span lang="en">Do you speak Spanish?</span><span lang="es">¿Hablan español?</span></summary><p lang="fr">Oui. Dan fait les appels et les rencontres en français, en anglais ou en espagnol, et vos publications peuvent avoir une version espagnole.</p><p lang="en">Yes. Dan handles calls and meetings in French, English or Spanish, and your posts can have a Spanish version.</p><p lang="es">Sí. Dan hace las llamadas y reuniones en francés, inglés o español, y sus publicaciones pueden tener una versión en español.</p></details>
+    <details><summary><span lang="fr">Et la publicité payante?</span><span lang="en">What about paid ads?</span><span lang="es">¿Y la publicidad pagada?</span></summary><p lang="fr">Elle se soumissionne à part, une fois vos comptes en ordre. Le budget va directement de vous à la plateforme; il ne passe jamais par nous.</p><p lang="en">It's quoted separately, once your accounts are in order. The budget goes straight from you to the platform; it never passes through us.</p><p lang="es">Se cotiza aparte, una vez que sus cuentas estén en orden. El presupuesto va directo de usted a la plataforma; nunca pasa por nosotros.</p></details>
+  </div>
+</section>
+
+<section class="contact dark" id="contact">
+  <div class="wrap">
+    <h2><span lang="fr">Voyons d'abord ce qu'on voit de vous</span><span lang="en">First, let's see what people see of you</span><span lang="es">Primero, veamos lo que la gente ve de usted</span></h2>
+    <p><span lang="fr">Écrivez-nous le nom de votre entreprise; Dan vous envoie votre audit express.</span><span lang="en">Send us your business name; Dan sends you your express audit.</span><span lang="es">Escríbanos el nombre de su empresa; Dan le envía su auditoría exprés.</span></p>
+    <div class="ctas">
+      <a class="btn btn-main js-mail" href="mailto:bonjour@ccc-studios.com"><span lang="fr">Demander mon audit express</span><span lang="en">Ask for my express audit</span><span lang="es">Pedir mi auditoría exprés</span></a>
+    </div>
+    <p style="margin-top:16px;font-size:14px">bonjour@ccc-studios.com</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>CCC Studios · <span lang="fr">Studio de création · IA déclarée</span><span lang="en">Creative studio · AI-declared</span><span lang="es">Estudio creativo · IA declarada</span></p>
+    <p>bonjour@ccc-studios.com · <a href="/jennshems/charte/"><span lang="fr">Charte</span><span lang="en">Charter</span><span lang="es">Carta</span></a> · <a href="/confidentialite/"><span lang="fr">Confidentialité</span><span lang="en">Privacy</span><span lang="es">Privacidad</span></a></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  var mail={
+    fr:{s:"Audit express · [votre entreprise]",b:"Bonjour Dan,\n\nEntreprise :\nSite web :\nVille ou secteur :\nTéléphone :\n\nMerci!"},
+    en:{s:"Express audit · [your business]",b:"Hi Dan,\n\nBusiness:\nWebsite:\nCity or service area:\nPhone:\n\nThanks!"},
+    es:{s:"Auditoría exprés · [su empresa]",b:"Hola Dan:\n\nEmpresa:\nSitio web:\nCiudad o zona:\nTeléfono:\n\n¡Gracias!"}
+  };
+  var titles={fr:"Visibilité locale · Services aux entreprises · CCC Studios",en:"Local visibility · Business services · CCC Studios",es:"Visibilidad local · Servicios para empresas · CCC Studios"};
+  function setLang(l){
+    root.setAttribute("data-lang",l); root.lang=l;
+    document.querySelectorAll(".langs button").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.set===l?"true":"false");});
+    var m=mail[l], href="mailto:bonjour@ccc-studios.com?subject="+encodeURIComponent(m.s)+"&body="+encodeURIComponent(m.b);
+    document.querySelectorAll(".js-mail").forEach(function(a){a.href=href;});
+    document.title=titles[l];
+    try{localStorage.setItem("lang",l);}catch(e){}
+  }
+  var ok={fr:1,en:1,es:1}, start="fr", q=new URLSearchParams(location.search).get("lang");
+  if(ok[q]){start=q;} else {try{var s=localStorage.getItem("lang"); if(ok[s])start=s;}catch(e){}}
+  document.querySelectorAll(".langs button").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.set);});});
+  setLang(start);
+})();
+</script>
+</body>
+</html>
