@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Authentifier Jennifer · CCC Studios</title>
+<meta name="description" content="Jennifer Shems-Mylie est une actrice IA créée par CCC Studios. Vérifiez en 10 secondes si une vidéo de Jennifer est authentique.">
+<meta property="og:title" content="Authentifier Jennifer">
+<meta property="og:description" content="Vérifiez si une vidéo de Jennifer Shems-Mylie, actrice IA, est authentique.">
+<!-- Polices hébergées sur le site (Inter et Lora) : la page ne fait aucun appel à un service extérieur (27 oct.). -->
+<link rel="stylesheet" href="/fonts/fonts.css">
+<!--
+  Page publique « Authentifier Jennifer » · ccc-studios.com/jennshems/authentifier/
+  Elle lit le dossier registre/ (même dossier), fait par Overstim (machine/licence.py → mettre_a_jour_public) à chaque
+  rendu, marquage et livraison : un fichier par identifiant, nommé PBKDF2-SHA256(identifiant, sel public, 150 000 tours).
+  La page refait ce calcul pour l'identifiant tapé et charge ce seul fichier : aucune liste complète n'est publiée.
+  Même vérification que la page privée « Registre des licences » (normaliser, recherche), sans aucune donnée privée.
+-->
+<style>
+:root {
+  /* Kit CCC v1.4.2, branche Crème (Jennifer). Clair = mode m (Crème + Noir) ; sombre = mode m-nuit (Bronze minuit + Blanc).
+     Aucun gris : les traits et textes secondaires sont du bronze ou de la crème en transparence.
+     Les couleurs de verdict (vert, ambre, rouge) sont fonctionnelles : elles disent le résultat. */
+  --fond: #F5F2EC; --surface: #FFFFFF; --encre: #000000; --doux: #735827; --trait: rgba(115, 88, 39, 0.28);
+  --accent: #735827; --accent-pale: rgba(255, 196, 12, 0.35); --filet: #FFC40C;
+  --ok: #1F6B3F; --ok-fond: #E2F2E8;
+  --alerte: #7A4F00; --alerte-fond: rgba(255, 196, 12, 0.28);
+  --info: #735827; --info-fond: rgba(255, 196, 12, 0.22);
+  --danger: #A3271B; --danger-fond: #FBE1DC;
+  --cadre: #180D00; --cadre-code: #FFC40C;
+  --police-ui: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --police-nom: "Lora", Georgia, "Times New Roman", serif;
+  --police-affichage: "Tenor Sans", "Inter", "Helvetica Neue", Arial, sans-serif;
+  --police-code: ui-monospace, "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --fond: #180D00; --surface: #000000; --encre: #FFFFFF; --doux: rgba(245, 242, 236, 0.78); --trait: rgba(245, 242, 236, 0.2);
+    --accent: #FFC40C; --accent-pale: rgba(255, 196, 12, 0.3); --filet: #FFC40C;
+    --ok: #7FD3A0; --ok-fond: #12301F; --alerte: #FFC40C; --alerte-fond: rgba(255, 196, 12, 0.16);
+    --info: #F5F2EC; --info-fond: rgba(245, 242, 236, 0.12); --danger: #F29B8F; --danger-fond: #3D1410;
+    --cadre: #000000; --cadre-code: #FFC40C; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --fond: #180D00; --surface: #000000; --encre: #FFFFFF; --doux: rgba(245, 242, 236, 0.78); --trait: rgba(245, 242, 236, 0.2);
+  --accent: #FFC40C; --accent-pale: rgba(255, 196, 12, 0.3); --filet: #FFC40C;
+  --ok: #7FD3A0; --ok-fond: #12301F; --alerte: #FFC40C; --alerte-fond: rgba(255, 196, 12, 0.16);
+  --info: #F5F2EC; --info-fond: rgba(245, 242, 236, 0.12); --danger: #F29B8F; --danger-fond: #3D1410;
+  --cadre: #000000; --cadre-code: #FFC40C; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--fond); color: var(--encre); font-family: var(--police-ui); font-size: 16px; line-height: 1.55;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 28px 56px;
+}
+a { color: var(--accent); text-underline-offset: 3px; }
+.page { max-width: 760px; margin: 0 auto; display: grid; gap: 36px; }
+.marque { font-family: var(--police-affichage); font-size: 13px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--doux); font-weight: 400; margin: 0 0 14px; }
+header::before { content: ""; display: block; width: 56px; height: 3px; background: var(--filet); margin-bottom: 18px; }
+h1 { font-family: var(--police-nom); font-style: italic; font-weight: 500; font-size: 40px; line-height: 1.08; margin: 0; text-wrap: balance; }
+.chapeau { font-size: 19px; margin: 12px 0 0; max-width: 34ch; text-wrap: pretty; }
+h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--doux); font-weight: 600; margin: 0 0 12px; }
+.code { font-family: var(--police-code); letter-spacing: 0.04em; }
+
+/* Vérifier */
+.verif { background: var(--surface); border: 1px solid var(--trait); border-radius: 16px; padding: 22px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px; }
+.verif label { display: block; font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--doux); font-weight: 600; }
+.champ { display: flex; gap: 10px; margin-top: 8px; flex-wrap: wrap; }
+#recherche { flex: 1 1 220px; min-width: 0; font: 600 24px/1.2 var(--police-code); letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 12px 14px; border: 1.5px solid var(--trait); border-radius: 10px; background: var(--fond); color: var(--encre); }
+#recherche:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-pale); }
+button, .bouton { font: 600 15px var(--police-ui); border-radius: 10px; padding: 12px 18px; cursor: pointer; border: 1px solid var(--encre);
+  background: var(--encre); color: var(--fond); text-decoration: none; display: inline-flex; align-items: center; justify-content: center; }
+.bouton.second { background: transparent; color: var(--encre); border-color: var(--trait); }
+button:focus-visible, .bouton:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.aide { font-size: 14px; color: var(--doux); margin: 10px 0 0; max-width: 58ch; }
+.ecran { width: 96px; aspect-ratio: 9 / 16; border-radius: 10px; background: var(--cadre); position: relative; overflow: hidden; }
+.ecran::before { content: ""; position: absolute; left: 16%; right: 16%; top: 36%; height: 6%; border-radius: 3px; background: rgba(255,255,255,0.7); }
+.ecran::after { content: ""; position: absolute; left: 24%; right: 24%; top: 60%; height: 5%; border-radius: 2px; background: repeating-linear-gradient(to bottom, rgba(255,255,255,0.4) 0 2px, transparent 2px 4px); }
+.ecran span { position: absolute; left: 0; right: 0; top: 67.5%; text-align: center; font: 600 6px var(--police-code); color: var(--cadre-code); letter-spacing: 0.06em; }
+.ecran-legende { font-size: 11px; color: var(--doux); text-align: center; margin-top: 6px; max-width: 96px; }
+
+.fiche { margin-top: 18px; border: 1px solid var(--trait); border-radius: 12px; padding: 18px; display: grid; gap: 10px; background: var(--fond); }
+.fiche-tete { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.fiche-tete .code { font-size: 20px; font-weight: 600; }
+.pastille { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; padding: 4px 11px; border-radius: 999px; }
+.pastille::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.t-ok { color: var(--ok); background: var(--ok-fond); }
+.t-info { color: var(--info); background: var(--info-fond); }
+.t-alerte { color: var(--alerte); background: var(--alerte-fond); }
+.t-danger { color: var(--danger); background: var(--danger-fond); }
+.verdict { font-size: 18px; font-weight: 600; margin: 0; }
+.detail { margin: 0; color: var(--encre); }
+.detail.doux { color: var(--doux); font-size: 14px; }
+
+/* Comptes */
+.comptes { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; }
+.comptes a { display: grid; gap: 2px; padding: 14px 16px; border: 1px solid var(--trait); border-radius: 12px; background: var(--surface); text-decoration: none; color: var(--encre); }
+.comptes a:hover { border-color: var(--accent); }
+.comptes .ou { font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--doux); font-weight: 600; }
+.comptes .qui { font-weight: 600; overflow-wrap: normal; word-break: keep-all; }
+.faux { margin: 12px 0 0; font-weight: 600; }
+
+/* Signaler */
+.signaler { display: grid; gap: 10px; }
+.signaler input { font: 16px var(--police-ui); color: var(--encre); background: var(--surface); border: 1px solid var(--trait); border-radius: 10px; padding: 11px 12px; min-width: 0; flex: 1 1 240px; }
+
+/* Règles */
+.regles { margin: 0; padding: 0; list-style: none; counter-reset: r; display: grid; gap: 12px; }
+.regles li { counter-increment: r; display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 12px; align-items: baseline; }
+.regles li::before { content: counter(r); font-family: var(--police-nom); font-style: italic; font-size: 26px; line-height: 1; color: var(--accent); }
+.personnage { font-family: var(--police-nom); font-style: italic; font-size: 18px; line-height: 1.5; margin: 18px 0 8px; padding-left: 16px; border-left: 3px solid var(--accent); }
+
+.en { border-top: 1px solid var(--trait); padding-top: 24px; color: var(--doux); font-size: 15px; }
+.en p { margin: 0 0 8px; }
+footer { font-size: 13px; color: var(--doux); }
+
+@media (max-width: 560px) {
+  .verif { grid-template-columns: 1fr; padding: 18px; }
+  .ecran-bloc { display: none; }
+  h1 { font-size: 32px; }
+  .chapeau { font-size: 17px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .fiche { animation: arrive 160ms ease-out; }
+  @keyframes arrive { from { opacity: 0.4; transform: translateY(3px); } to { opacity: 1; transform: none; } }
+}
+</style>
+</head>
+<body>
+<main class="page">
+  <header>
+    <p class="marque">CCC Studios · Authentifier Jennifer</p>
+    <h1>Cette vidéo de Jennifer est-elle authentique?</h1>
+    <p class="chapeau">Jennifer Shems-Mylie est une actrice IA créée par CCC Studios.</p>
+  </header>
+
+  <section aria-labelledby="titre-verif">
+    <h2 id="titre-verif">Vérifier une vidéo</h2>
+    <div class="verif">
+      <div style="min-width:0">
+        <form id="form-verif" autocomplete="off">
+          <label for="recherche">Identifiant (CCC-XXXXXX)</label>
+          <div class="champ">
+            <input id="recherche" name="id" spellcheck="false" inputmode="text" placeholder="CCC-XXXXXX" aria-describedby="aide-id">
+            <button type="submit">Vérifier</button>
+          </div>
+        </form>
+        <p class="aide" id="aide-id">L'identifiant figure sur le certificat de licence du client et dans la vidéo (sceau invisible). Sur les pubs, les démos et les échantillons, il est aussi écrit en petit à la fin de la vidéo, sous « Dirigé par CCC Studios ». Majuscules, minuscules, avec ou sans tiret : tout fonctionne.</p>
+        <div id="resultat" aria-live="polite"></div>
+      </div>
+      <div class="ecran-bloc" aria-hidden="true">
+        <div class="ecran"><span>CCC-XXXXXX</span></div>
+        <div class="ecran-legende">Fin de la vidéo : l'identifiant sous la signature</div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="titre-sceau" class="signaler">
+    <h2 id="titre-sceau">Pas d'identifiant visible?</h2>
+    <p class="detail" style="margin:0">Une vidéo recadrée, repartagée ou filmée à l'écran peut avoir perdu sa fin. Chaque vidéo de CCC Studios porte aussi un sceau invisible, caché dans l'image elle-même et conçu pour résister à la compression des réseaux sociaux et aux enregistrements d'écran. Les photos de Jennifer portent aussi une marque invisible. Envoyez-nous le lien ou le fichier : nous la lisons et vous disons de quel contenu il s'agit.</p>
+    <div class="champ" style="margin-top:0">
+      <input id="sceau-quoi" placeholder="Lien de la vidéo" aria-label="Lien de la vidéo à vérifier">
+      <a class="bouton second" id="sceau-lien" href="mailto:bonjour@ccc-studios.com">Demander une vérification</a>
+    </div>
+    <p class="detail doux" style="margin:0">Le courriel s'ouvre avec « VÉRIFICATION JENN » au début de l'objet. Joignez le fichier si vous l'avez. Réponse en 2 jours ouvrables, par une personne.</p>
+  </section>
+
+  <section aria-labelledby="titre-comptes">
+    <h2 id="titre-comptes">Comptes officiels</h2>
+    <ul class="comptes">
+      <li><a href="https://www.instagram.com/jennshems" rel="me noopener"><span class="ou">Instagram</span><span class="qui">@jennshems</span></a></li>
+      <li><a href="https://www.tiktok.com/@jennshems" rel="me noopener"><span class="ou">TikTok</span><span class="qui">@jennshems</span></a></li>
+      <li><a href="https://www.youtube.com/@jennshems" rel="me noopener"><span class="ou">YouTube</span><span class="qui">@jennshems</span></a></li>
+      <li><a href="https://ccc-studios.com/jennshems"><span class="ou">Site</span><span class="qui">ccc-studios.com/<wbr>jennshems</span></a></li>
+    </ul>
+    <p class="faux">Tout autre compte est faux.</p>
+  </section>
+
+  <section aria-labelledby="titre-signaler" class="signaler">
+    <h2 id="titre-signaler">Signaler</h2>
+    <p class="detail" style="margin:0">Un faux compte, une copie, un échantillon publié ou un contenu contraire à la Charte? Écrivez-nous : une personne vous répond, pas Jennifer.</p>
+    <div class="champ" style="margin-top:0">
+      <input id="signal-quoi" placeholder="Identifiant ou lien de la vidéo" aria-label="Identifiant ou lien de la vidéo">
+      <a class="bouton" id="signal-lien" href="mailto:bonjour@ccc-studios.com">Signaler par courriel</a>
+    </div>
+    <p class="detail doux" style="margin:0">Le courriel s'ouvre avec « SIGNALEMENT JENN » au début de l'objet. Joignez le lien ou une capture d'écran du contenu. Réponse en 2 jours ouvrables, par une personne. Adresse : <a href="mailto:bonjour@ccc-studios.com">bonjour@ccc-studios.com</a></p>
+  </section>
+
+  <section aria-labelledby="titre-regles">
+    <h2 id="titre-regles">Les 3 règles qui ne changent jamais</h2>
+    <!-- Texte exact de la Charte Jenn du 23 oct. 2026, section 8. Garder mot pour mot identique à la Charte en vigueur. -->
+    <ol class="regles">
+      <li><span>La mention IA reste visible.</span></li>
+      <li><span>Le visage et la voix de Jennifer ne se modifient pas.</span></li>
+      <li><span>Personne n'entraîne une IA sur elle.</span></li>
+    </ol>
+    <p class="personnage">Jennifer est un personnage original. Aucune photo, vidéo ou donnée d'une personne réelle, vivante ou décédée, ni d'aucun autre personnage ou persona IA, n'a servi à créer son visage ou à la guider. Son visage vient de descriptions écrites seulement, et sa voix est une voix de synthèse sous licence. Toute ressemblance avec une personne réelle, présente ou future, est une coïncidence.</p>
+    <p class="detail"><a id="lien-charte" href="https://ccc-studios.com/jennshems/charte">Lire la Charte Jenn complète</a></p>
+  </section>
+
+  <section class="en" lang="en" aria-labelledby="titre-en">
+    <h2 id="titre-en">In English</h2>
+    <p>Jennifer Shems-Mylie is an AI actress created by CCC Studios. To check a video, type its ID (CCC-XXXXXX) above. You'll find it on the client's licence certificate, hidden in the video itself, and, on ads, demos and samples, in small print at the end of the video, under "Directed by CCC Studios".</p>
+    <p>The page tells you whether the ID belongs to a licensed client ad (with its licence dates), a demo for a fictional business, Jennifer's own content, or an unlicensed sample that must not be published. An ID that isn't in our registry means the content may not be authentic (the registry is updated with every delivery).</p>
+    <p>No visible ID? Every CCC Studios video also carries an invisible seal hidden in the picture itself, designed to survive social-media compression and screen recordings. Jennifer's photos carry an invisible mark too. Send us the link or the file with "VÉRIFICATION JENN" at the start of the subject, and we'll tell you what it is.</p>
+    <p>Her only official accounts are @jennshems on Instagram, TikTok and YouTube, and ccc-studios.com/jennshems. Any other account is fake. To report a fake account, a copy or a misuse, write to <a href="mailto:bonjour@ccc-studios.com">bonjour@ccc-studios.com</a> with "SIGNALEMENT JENN" at the start of the subject, plus the link or a screenshot. A person replies within 2 business days.</p>
+    <p>Three rules never change: the AI label stays visible, Jennifer's face and voice are never altered, and no one trains an AI on her. She is an original character: no photo, video or data of a real person, living or dead, and no other AI character or persona, was used to create her face or guide her. Her face comes from written descriptions only, and her voice is a licensed synthetic voice.</p>
+  </section>
+
+  <section class="en" lang="es" aria-labelledby="titre-es">
+    <h2 id="titre-es">En español</h2>
+    <p>Jennifer Shems-Mylie es una actriz IA creada por CCC Studios. Para verificar un video, escriba su identificador (CCC-XXXXXX) arriba. Está en el certificado de licencia del cliente, oculto en el propio video y, en los anuncios, demos y muestras, en letra pequeña al final del video, bajo « Dirigé par CCC Studios ».</p>
+    <p>La página indica si el identificador corresponde a un anuncio de cliente con licencia (con sus fechas), a una demo de una empresa ficticia, a contenido de la propia Jennifer o a una muestra sin licencia que no debe publicarse. Un identificador que no está en nuestro registro significa que el contenido puede no ser auténtico (el registro se actualiza con cada entrega).</p>
+    <p>¿No hay identificador visible? Cada video de CCC Studios lleva también un sello invisible oculto en la imagen, diseñado para resistir la compresión de las redes sociales y las grabaciones de pantalla. Las fotos de Jennifer llevan también una marca invisible. Envíenos el enlace o el archivo con « VÉRIFICATION JENN » al inicio del asunto y le diremos qué es.</p>
+    <p>Sus únicas cuentas oficiales son @jennshems en Instagram, TikTok y YouTube, y ccc-studios.com/jennshems. Cualquier otra cuenta es falsa. Para reportar una cuenta falsa, una copia o un mal uso, escriba a bonjour@ccc-studios.com con « SIGNALEMENT JENN » al inicio del asunto, más el enlace o una captura de pantalla. Una persona responde en 2 días hábiles.</p>
+  </section>
+
+  <footer>CCC Studios · <a href="mailto:bonjour@ccc-studios.com">bonjour@ccc-studios.com</a> · <a href="/services/">Services</a> · <a href="/jennshems/charte/">Charte</a> · <a href="/confidentialite">Confidentialité</a> · <span id="maj"></span></footer>
+</main>
+
+<script>
+(function () {
+  "use strict";
+  const COURRIEL = "bonjour@ccc-studios.com";
+  const PREFIXE = "CCC";
+  // Même calcul que machine/licence.py → nom_public (ne change jamais l'un sans l'autre).
+  const SEL = "ccc-studios/jennshems/registre/v1", TOURS = 150000;
+  async function nomFichier(id) {
+    const enc = new TextEncoder();
+    const cle = await crypto.subtle.importKey("raw", enc.encode(id), "PBKDF2", false, ["deriveBits"]);
+    const bits = await crypto.subtle.deriveBits({ name: "PBKDF2", hash: "SHA-256", salt: enc.encode(SEL), iterations: TOURS }, cle, 128);
+    return Array.from(new Uint8Array(bits), (b) => b.toString(16).padStart(2, "0")).join("");
+  }
+  // La ligne du registre pour cet identifiant, ou null s'il n'y est pas. Lance une erreur si le site ne répond pas.
+  async function chercher(id) {
+    const nom = await nomFichier(id);
+    if (window.REGISTRE_INTEGRE) return window.REGISTRE_INTEGRE.fichiers[nom] || null;  // aperçu
+    const r = await fetch(BASE + nom + ".json", { cache: "no-store" });
+    if (r.status === 404) return null;
+    if (!r.ok) throw new Error(r.status);
+    const x = await r.json();
+    return normaliser(x.id) === id ? x : null;
+  }
+  // Le dossier registre/ à côté de la page, que l'adresse finisse par « / », « /index.html » ou rien.
+  const BASE = location.pathname.replace(/\/index\.html$/, "/").replace(/([^/])$/, "$1/") + "registre/";
+  let demande = 0;               // seule la dernière recherche s'affiche
+
+  // Même règle que la page « Registre des licences » : majuscules, sans espaces ni tiret obligatoire ;
+  // O → 0, I et L → 1, U → V (l'alphabet des identifiants n'a ni O, ni I, ni L, ni U). Six caractères seuls : préfixe CCC.
+  function normaliser(t) {
+    t = (t || "").trim().toUpperCase().replace(/[\s_.‐-―]+/g, "");
+    let m = t.match(/^([A-Z]{2,6})-?([0-9A-Z]{6})$/);
+    if (!m && /^[0-9A-Z]{6}$/.test(t)) m = [t, PREFIXE, t];
+    if (!m) return null;
+    const code = m[2].replace(/O/g, "0").replace(/[IL]/g, "1").replace(/U/g, "V");
+    return m[1] + "-" + code;
+  }
+
+  function dateLongue(iso) {
+    if (!iso) return "";
+    const d = new Date(iso + "T12:00:00");
+    if (isNaN(d)) return iso;
+    const t = d.toLocaleDateString("fr-CA", { year: "numeric", month: "long", day: "numeric" });
+    return d.getDate() === 1 ? t.replace(/^1 /, "1er ") : t;   // le 1er janvier
+  }
+  function aujourdhui() {
+    const d = new Date();
+    return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
+  }
+  function el(tag, cls, txt) {
+    const e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (txt != null) e.textContent = txt;
+    return e;
+  }
+  function mailto(quoi) {
+    const sujet = "SIGNALEMENT JENN · " + (quoi || "[identifiant ou lien]");
+    const corps = "Lien de la vidéo ou du compte :\n" + (quoi && /^https?:/i.test(quoi) ? quoi : "") +
+      "\n\nIdentifiant (s'il y en a un) :\n" + (quoi && !/^https?:/i.test(quoi) ? quoi : "") +
+      "\n\nCe que j'ai vu (joignez une capture d'écran si vous pouvez) :\n";
+    return "mailto:" + COURRIEL + "?subject=" + encodeURIComponent(sujet) + "&body=" + encodeURIComponent(corps);
+  }
+  function boutonSignaler(quoi) {
+    const a = el("a", "bouton", "Signaler ce contenu");
+    a.href = mailto(quoi);
+    return a;
+  }
+
+  // Le verdict pour une ligne du registre public (ou null : inconnu).
+  function verdict(id, x) {
+    if (!x) return { cls: "t-danger", etiquette: "Inconnu", titre: "Cet identifiant n'est pas dans notre registre.",
+      lignes: ["Ce contenu n'est peut-être pas authentique."], petit: "Le registre est mis à jour à chaque livraison.", signaler: true };
+    if (x.type === "demo") return { cls: "t-ok", etiquette: "Authentique", titre: "Authentique · Démo, entreprise fictive.",
+      lignes: ["Une démo de CCC Studios : l'entreprise montrée n'existe pas."] };
+    if (x.type === "jenn") return { cls: "t-ok", etiquette: "Authentique", titre: "Authentique · Contenu de Jennifer (ses comptes).", lignes: [] };
+    if (x.type === "prive") return { cls: "t-alerte", etiquette: "Non publié", titre: "Ce contenu n'a jamais été publié par CCC Studios.",
+      lignes: ["S'il circule, signalez-le."], signaler: true };
+    if (x.type === "echantillon") return { cls: "t-alerte", etiquette: "Échantillon non licencié", titre: "Échantillon non licencié.",
+      lignes: ["Cet échantillon ne doit pas être publié. Si vous le voyez en ligne, signalez-le."], signaler: true };
+    // pub client
+    const client = x.nom_public ? "Client : " + x.nom_public : "Client confidentiel";
+    if (!x.fin_licence) return { cls: "t-alerte", etiquette: "Authentique · pas encore licenciée", titre: "Authentique · Pub client, pas encore licenciée.",
+      lignes: ["Cette vidéo ne doit pas encore être publiée. Si vous la voyez en ligne, signalez-la.", client], signaler: true };
+    if (x.fin_licence >= aujourdhui()) return { cls: "t-ok", etiquette: "Authentique", titre: "Authentique · Pub client.",
+      lignes: ["Licence active jusqu'au " + dateLongue(x.fin_licence) + ".", client] };
+    return { cls: "t-info", etiquette: "Authentique · licence expirée", titre: "Authentique · Pub client.",
+      lignes: ["Licence expirée le " + dateLongue(x.fin_licence) + ".", client] };
+  }
+
+  async function afficher(saisie) {
+    const zone = document.getElementById("resultat");
+    zone.replaceChildren();
+    if (!saisie.trim()) return;
+    const id = normaliser(saisie);
+    const f = el("div", "fiche");
+    if (!id) {
+      f.append(el("p", "verdict", "Ce n'est pas un identifiant."),
+        el("p", "detail doux", "Un identifiant ressemble à CCC-7K4Q2X : trois lettres, un tiret, six caractères."));
+      zone.append(f);
+      return;
+    }
+    const n = ++demande;
+    f.append(el("p", "detail doux", "Vérification…"));
+    zone.append(f);
+    let x;
+    try {
+      x = await chercher(id);
+    } catch (e) {
+      if (n !== demande) return;
+      f.replaceChildren(el("p", "verdict", "Le registre ne répond pas pour l'instant."),
+        el("p", "detail doux", "Réessayez dans un moment, ou écrivez-nous à " + COURRIEL + "."));
+      return;
+    }
+    if (n !== demande) return;
+    f.replaceChildren();
+    const v = verdict(id, x);
+    const tete = el("div", "fiche-tete");
+    tete.append(el("span", "code", id), el("span", "pastille " + v.cls, v.etiquette));
+    f.append(tete, el("p", "verdict", v.titre));
+    v.lignes.forEach((t) => f.append(el("p", "detail", t)));
+    if (v.petit) f.append(el("p", "detail doux", v.petit));
+    if (v.signaler) {
+      const b = el("div", "champ");
+      b.append(boutonSignaler(id));
+      f.append(b);
+    }
+    try { history.replaceState(null, "", "?id=" + encodeURIComponent(id)); } catch (e) { /* aperçu */ }
+  }
+
+  // Date de mise à jour du registre (pied de page).
+  (window.REGISTRE_INTEGRE ? Promise.resolve(window.REGISTRE_INTEGRE.maj)
+    : fetch(BASE + "maj.json", { cache: "no-store" }).then((r) => r.ok ? r.json() : {}))
+    .then((d) => { if (d && d.mis_a_jour) document.getElementById("maj").textContent = "Registre mis à jour le " + dateLongue(d.mis_a_jour); })
+    .catch(() => {});
+
+  const champ = document.getElementById("recherche");
+  document.getElementById("form-verif").addEventListener("submit", (e) => { e.preventDefault(); afficher(champ.value); });
+
+  const sq = document.getElementById("sceau-quoi");
+  const sl = document.getElementById("sceau-lien");
+  const majSceau = () => {
+    const v = sq.value.trim();
+    sl.href = "mailto:" + COURRIEL + "?subject=" + encodeURIComponent("VÉRIFICATION JENN · " + (v || "[lien]")) +
+      "&body=" + encodeURIComponent("Lien de la vidéo :\n" + v + "\n\nOù l'avez-vous vue (compte, plateforme) :\n\n(Joignez le fichier si vous l'avez.)\n");
+  };
+  sq.addEventListener("input", majSceau);
+  majSceau();
+  const quoi = document.getElementById("signal-quoi");
+  const lien = document.getElementById("signal-lien");
+  const majLien = () => { lien.href = mailto(quoi.value.trim()); };
+  quoi.addEventListener("input", majLien);
+  majLien();
+
+  // Lien direct : …/authentifier/?id=CCC-7K4Q2X
+  const p = new URLSearchParams(location.search).get("id");
+  if (p) { champ.value = p; afficher(p); }
+})();
+</script>
+</body>
+</html>
