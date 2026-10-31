@@ -23,16 +23,17 @@ html{scroll-behavior:smooth}
 body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.55;-webkit-font-smoothing:antialiased}
 img,video{display:block;max-width:100%;height:auto}
 a{color:inherit}
-html[data-lang="fr"] [lang="en"]{display:none!important}
-html[data-lang="en"] [lang="fr"]{display:none!important}
+html[data-lang="fr"] [lang="en"],html[data-lang="fr"] [lang="es"],html[data-lang="en"] [lang="fr"],html[data-lang="en"] [lang="es"],html[data-lang="es"] [lang="fr"],html[data-lang="es"] [lang="en"]{display:none!important}
 .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
 .serif{font-family:Lora,Georgia,serif;font-style:italic;font-weight:500}
 
 /* top bar */
 .top{position:sticky;top:0;z-index:10;background:rgba(26,27,32,.94);backdrop-filter:blur(8px);color:#fff}
 .top .wrap{display:flex;align-items:center;gap:12px;height:60px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:600;letter-spacing:.02em}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:"Tenor Sans",Inter,sans-serif;font-weight:400;letter-spacing:.14em;text-transform:uppercase}
 .brand img{width:36px;height:36px;border-radius:50%}
+.brand{white-space:nowrap}
+@media(max-width:420px){.brand{font-size:13px;letter-spacing:.1em}.brand img{width:30px;height:30px}.top nav{gap:10px}}
 .top nav{margin-left:auto;display:flex;align-items:center;gap:18px;font-size:14px}
 .top nav a{text-decoration:none;opacity:.85}
 .top nav a:hover{opacity:1}
@@ -136,18 +137,20 @@ footer .wrap{display:grid;gap:12px}
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="/"><img src="/logo-ccc.png" alt="">CCC Studios</a>
+    <a class="brand" href="/"><img src="/logo-ccc.png" alt="">CCC STUDIOS</a>
     <nav>
       <div class="navlinks">
-        <a href="#demos"><span lang="fr">Démos</span><span lang="en">Demos</span></a>
-        <a href="#offres"><span lang="fr">Offres</span><span lang="en">Offers</span></a>
-        <a href="#engagements"><span lang="fr">Engagements</span><span lang="en">Commitments</span></a>
+        <a href="/services/">Services</a>
+        <a href="#demos"><span lang="fr">Démos</span><span lang="en">Demos</span><span lang="es">Demos</span></a>
+        <a href="#offres"><span lang="fr">Offres</span><span lang="en">Offers</span><span lang="es">Ofertas</span></a>
+        <a href="#engagements"><span lang="fr">Engagements</span><span lang="en">Commitments</span><span lang="es">Compromisos</span></a>
         <a href="#contact">Contact</a>
       </div>
-      <a class="charte-lien" href="/jennshems/charte/"><span lang="fr">Charte</span><span lang="en">Charter</span></a>
-      <div class="langs" role="group" aria-label="Langue / Language">
+      <a class="charte-lien" href="/jennshems/charte/"><span lang="fr">Charte</span><span lang="en">Charter</span><span lang="es">Carta</span></a>
+      <div class="langs" role="group" aria-label="Langue / Language / Idioma">
         <button type="button" data-set="fr" aria-pressed="true">FR</button>
         <button type="button" data-set="en" aria-pressed="false">EN</button>
+        <button type="button" data-set="es" aria-pressed="false">ES</button>
       </div>
     </nav>
   </div>
@@ -157,128 +160,128 @@ footer .wrap{display:grid;gap:12px}
 <section class="hero" style="padding:0">
   <div class="wrap">
     <div>
-      <div class="kicker"><span lang="fr">Actrice IA · créée au Québec</span><span lang="en">AI actress · made in Quebec</span></div>
-      <h1><span lang="fr">Votre pub en français et en anglais, sans tournage.</span><span lang="en">Your ad in French and English, no shoot.</span></h1>
-      <p class="lead"><span lang="fr">Jennifer est une actrice IA, toujours déclarée comme IA. Elle présente votre entreprise dans une pub de 15 secondes, prête en 5 jours ouvrables. Un personnage fictif, pas une remplaçante.</span><span lang="en">Jennifer is an AI actress, always declared as AI. She presents your business in a 15-second ad, ready in 5 business days. A fictional character, not a replacement.</span></p>
+      <div class="kicker"><span lang="fr">Actrice IA · créée au Québec</span><span lang="en">AI actress · made in Quebec</span><span lang="es">Actriz IA · creada en Quebec</span></div>
+      <h1><span lang="fr">Votre pub en français et en anglais, sans tournage.</span><span lang="en">Your ad in French and English, no shoot.</span><span lang="es">Su anuncio en francés e inglés, sin rodaje.</span></h1>
+      <p class="lead"><span lang="fr">Jennifer est une actrice IA, toujours déclarée comme IA. Elle présente votre entreprise dans une pub de 15 secondes, prête en 5 jours ouvrables. Un personnage fictif, pas une remplaçante.</span><span lang="en">Jennifer is an AI actress, always declared as AI. She presents your business in a 15-second ad, ready in 5 business days. A fictional character, not a replacement.</span><span lang="es">Jennifer es una actriz IA, siempre declarada como IA. Presenta su empresa en un anuncio de 15 segundos, listo en 5 días hábiles. Un personaje ficticio, no un reemplazo.</span></p>
       <div class="ctas">
-        <a class="btn btn-main js-mail" href="mailto:bonjour@ccc-studios.com"><span lang="fr">Réserver un appel de 10 minutes</span><span lang="en">Book a 10-minute call</span></a>
-        <a class="btn btn-ghost" href="#demos"><span lang="fr">Voir les démos</span><span lang="en">See the demos</span></a>
+        <a class="btn btn-main js-mail" href="mailto:bonjour@ccc-studios.com"><span lang="fr">Réserver un appel de 10 minutes</span><span lang="en">Book a 10-minute call</span><span lang="es">Reservar una llamada de 10 minutos</span></a>
+        <a class="btn btn-ghost" href="#demos"><span lang="fr">Voir les démos</span><span lang="en">See the demos</span><span lang="es">Ver los demos</span></a>
       </div>
-      <p class="launch"><span lang="fr"><b>Forfait Lancement :</b> 250 $ au lieu de 399 $ pour les 3 premières entreprises.</span><span lang="en"><b>Launch package:</b> $250 instead of $399 for the first 3 businesses.</span></p>
-      <p class="sign serif"><span lang="fr">« Moi, je suis virtuelle. Vos clients, eux, sont ben réels. »</span><span lang="en">"I'm virtual. Your customers are the real deal."</span></p>
+      <p class="launch"><span lang="fr"><b>Forfait Lancement :</b> 250 $ au lieu de 399 $ pour les 3 premières entreprises.</span><span lang="en"><b>Launch package:</b> $250 instead of $399 for the first 3 businesses.</span><span lang="es"><b>Paquete de lanzamiento:</b> $250 en lugar de $399 para las 3 primeras empresas.</span></p>
+      <p class="sign serif"><span lang="fr">« Moi, je suis virtuelle. Vos clients, eux, sont ben réels. »</span><span lang="en">"I'm virtual. Your customers are the real deal."</span><span lang="es">« Yo soy virtual. Sus clientes sí son bien reales. »</span></p>
     </div>
     <figure class="portrait">
       <img src="media/jennifer-hero.jpg" width="720" height="1280" alt="Jennifer Shems-Mylie, actrice IA, dans une rue de Montréal en automne">
-      <span class="pill"><span lang="fr">Jennifer est une actrice IA</span><span lang="en">Jennifer is an AI actress</span></span>
+      <span class="pill"><span lang="fr">Jennifer est une actrice IA</span><span lang="en">Jennifer is an AI actress</span><span lang="es">Jennifer es una actriz IA</span></span>
     </figure>
   </div>
 </section>
 
 <section id="demos">
   <div class="wrap">
-    <h2><span lang="fr">Des démos, en vrai format</span><span lang="en">Demos, in the real format</span></h2>
-    <p class="sub"><span lang="fr">Trois pubs de 15 secondes pour des entreprises fictives. La vôtre aurait votre nom, votre offre, vos coordonnées et votre logo. Le son est inclus.</span><span lang="en">Three 15-second ads for fictional businesses. Yours would carry your name, your offer, your contact details and your logo. Sound on.</span></p>
+    <h2><span lang="fr">Des démos, en vrai format</span><span lang="en">Demos, in the real format</span><span lang="es">Demos, en el formato real</span></h2>
+    <p class="sub"><span lang="fr">Trois pubs de 15 secondes pour des entreprises fictives. La vôtre aurait votre nom, votre offre, vos coordonnées et votre logo. Le son est inclus.</span><span lang="en">Three 15-second ads for fictional businesses. Yours would carry your name, your offer, your contact details and your logo. Sound on.</span><span lang="es">Tres anuncios de 15 segundos para empresas ficticias. El suyo llevaría su nombre, su oferta, sus datos de contacto y su logo. Con sonido.</span></p>
     <div class="demos">
       <article class="demo">
         <video controls playsinline preload="none" data-base="media/demo-cafe" poster="media/demo-cafe-fr.jpg"><source src="media/demo-cafe-fr.mp4" type="video/mp4"></video>
-        <div class="meta"><b>Café Annie</b><span lang="fr">Café · démo, entreprise fictive</span><span lang="en">Café · demo, fictional business</span></div>
+        <div class="meta"><b>Café Annie</b><span lang="fr">Café · démo, entreprise fictive</span><span lang="en">Café · demo, fictional business</span><span lang="es">Café · demo, empresa ficticia</span></div>
       </article>
       <article class="demo">
         <video controls playsinline preload="none" data-base="media/demo-reno" poster="media/demo-reno-fr.jpg"><source src="media/demo-reno-fr.mp4" type="video/mp4"></video>
-        <div class="meta"><b>Rénovations Pignon</b><span lang="fr">Rénovation · démo, entreprise fictive</span><span lang="en">Renovation · demo, fictional business</span></div>
+        <div class="meta"><b>Rénovations Pignon</b><span lang="fr">Rénovation · démo, entreprise fictive</span><span lang="en">Renovation · demo, fictional business</span><span lang="es">Renovación · demo, empresa ficticia</span></div>
       </article>
       <article class="demo">
         <video controls playsinline preload="none" data-base="media/demo-location" poster="media/demo-location-fr.jpg"><source src="media/demo-location-fr.mp4" type="video/mp4"></video>
-        <div class="meta"><b>Appartements Bérénice</b><span lang="fr">Location meublée · démo, entreprise fictive</span><span lang="en">Furnished rental · demo, fictional business</span></div>
+        <div class="meta"><b>Appartements Bérénice</b><span lang="fr">Location meublée · démo, entreprise fictive</span><span lang="en">Furnished rental · demo, fictional business</span><span lang="es">Alquiler amueblado · demo, empresa ficticia</span></div>
       </article>
       <article class="demo">
         <video controls playsinline preload="none" poster="media/jennifer-15s-fr.jpg"><source src="media/jennifer-15s-fr.mp4" type="video/mp4"></video>
-        <div class="meta"><b>Jennifer</b><span lang="fr">Qui elle est, en 15 secondes</span><span lang="en">Who she is, in 15 seconds (French)</span></div>
+        <div class="meta"><b>Jennifer</b><span lang="fr">Qui elle est, en 15 secondes</span><span lang="en">Who she is, in 15 seconds (French)</span><span lang="es">Quién es, en 15 segundos (en francés)</span></div>
       </article>
     </div>
-    <p class="note"><span lang="fr">Changez la langue en haut de la page pour voir les versions anglaises.</span><span lang="en">The demos above now play in English; switch to FR at the top for the French versions.</span></p>
+    <p class="note"><span lang="fr">Changez la langue en haut de la page pour voir les versions anglaises.</span><span lang="en">The demos above now play in English; switch to FR at the top for the French versions.</span><span lang="es">Los demos están en francés y en inglés: cambie a FR o EN arriba para verlos en cada idioma.</span></p>
   </div>
 </section>
 
 <section class="offers" id="offres">
   <div class="wrap">
-    <h2><span lang="fr">Les offres</span><span lang="en">Offers</span></h2>
-    <p class="sub"><span lang="fr">Prix fixes, en dollars canadiens. Chaque pub inclut une licence de 12 mois pour vos comptes et vos publicités payantes.</span><span lang="en">Fixed prices, in Canadian dollars. Every ad includes a 12-month licence for your accounts and your paid ads.</span></p>
+    <h2><span lang="fr">Les offres</span><span lang="en">Offers</span><span lang="es">Ofertas</span></h2>
+    <p class="sub"><span lang="fr">Prix fixes, en dollars canadiens. Chaque pub inclut une licence de 12 mois pour vos comptes et vos publicités payantes.</span><span lang="en">Fixed prices, in Canadian dollars. Every ad includes a 12-month licence for your accounts and your paid ads.</span><span lang="es">Precios fijos, en dólares canadienses. Cada anuncio incluye una licencia de 12 meses para sus cuentas y sus anuncios pagados.</span></p>
     <div class="cards">
       <div class="card star">
-        <span class="tag"><span lang="fr">3 places</span><span lang="en">3 spots</span></span>
-        <h3><span lang="fr">Forfait Lancement</span><span lang="en">Launch package</span></h3>
+        <span class="tag"><span lang="fr">3 places</span><span lang="en">3 spots</span><span lang="es">3 lugares</span></span>
+        <h3><span lang="fr">Forfait Lancement</span><span lang="en">Launch package</span><span lang="es">Paquete de lanzamiento</span></h3>
         <div class="price">250 $<s>399 $</s></div>
-        <div class="per"><span lang="fr">pour les 3 premières entreprises</span><span lang="en">for the first 3 businesses</span></div>
+        <div class="per"><span lang="fr">pour les 3 premières entreprises</span><span lang="en">for the first 3 businesses</span><span lang="es">para las 3 primeras empresas</span></div>
         <ul lang="fr"><li>Pub de 15 à 20 secondes</li><li>Français et anglais</li><li>Deux accroches, donc 4 fichiers</li><li>Une ronde de modifications</li><li>En échange, la permission de montrer le travail et vos commentaires honnêtes</li></ul>
-        <ul lang="en"><li>15 to 20-second ad</li><li>French and English</li><li>Two openings, so 4 files</li><li>One round of revisions</li><li>In return, permission to show the work and your honest feedback</li></ul>
+        <ul lang="en"><li>15 to 20-second ad</li><li>French and English</li><li>Two openings, so 4 files</li><li>One round of revisions</li><li>In return, permission to show the work and your honest feedback</li></ul><ul lang="es"><li>Anuncio de 15 a 20 segundos</li><li>Francés e inglés</li><li>Dos aperturas, o sea 4 archivos</li><li>Una ronda de cambios</li><li>A cambio, permiso para mostrar el trabajo y su opinión honesta</li></ul>
       </div>
       <div class="card">
-        <span class="tag"><span lang="fr">Simple</span><span lang="en">Simple</span></span>
-        <h3><span lang="fr">Pub express</span><span lang="en">Express ad</span></h3>
+        <span class="tag"><span lang="fr">Simple</span><span lang="en">Simple</span><span lang="es">Simple</span></span>
+        <h3><span lang="fr">Pub express</span><span lang="en">Express ad</span><span lang="es">Anuncio exprés</span></h3>
         <div class="price">179 $</div>
-        <div class="per"><span lang="fr">une pub, une langue</span><span lang="en">one ad, one language</span></div>
+        <div class="per"><span lang="fr">une pub, une langue</span><span lang="en">one ad, one language</span><span lang="es">un anuncio, un idioma</span></div>
         <ul lang="fr"><li>10 à 15 secondes</li><li>Une révision</li><li>Deuxième langue : 100 $ de plus</li></ul>
-        <ul lang="en"><li>10 to 15 seconds</li><li>One revision</li><li>Second language: $100 more</li></ul>
+        <ul lang="en"><li>10 to 15 seconds</li><li>One revision</li><li>Second language: $100 more</li></ul><ul lang="es"><li>10 a 15 segundos</li><li>Una revisión</li><li>Segundo idioma: $100 más</li></ul>
       </div>
       <div class="card">
-        <span class="tag"><span lang="fr">Saisons</span><span lang="en">Seasons</span></span>
-        <h3><span lang="fr">Pub du mois</span><span lang="en">Ad of the month</span></h3>
+        <span class="tag"><span lang="fr">Saisons</span><span lang="en">Seasons</span><span lang="es">Temporadas</span></span>
+        <h3><span lang="fr">Pub du mois</span><span lang="en">Ad of the month</span><span lang="es">Anuncio del mes</span></h3>
         <div class="price">349 $</div>
-        <div class="per"><span lang="fr">par mois, minimum 3 mois</span><span lang="en">per month, 3-month minimum</span></div>
-        <ul lang="fr"><li>Une nouvelle pub chaque mois choisi</li><li>Vous choisissez les mois</li><li>Moitié à la signature, le reste à l'acceptation de la première pub</li></ul>
-        <ul lang="en"><li>A new ad for each month you pick</li><li>You choose the months</li><li>Half at signing, the rest when the first ad is accepted</li></ul>
+        <div class="per"><span lang="fr">par mois, minimum 3 mois</span><span lang="en">per month, 3-month minimum</span><span lang="es">por mes, mínimo 3 meses</span></div>
+        <ul lang="fr"><li>Une nouvelle pub chaque mois choisi</li><li>Vous choisissez les mois</li><li>Premier mois payé à la signature, chaque mois suivant d'avance le 1<sup>er</sup></li><li>Après le minimum, 30 jours d'avis pour arrêter</li></ul>
+        <ul lang="en"><li>A new ad for each month you pick</li><li>You choose the months</li><li>First month paid at signing, each next month in advance on the 1st</li><li>After the minimum, 30 days' notice to stop</li></ul><ul lang="es"><li>Un anuncio nuevo para cada mes que elija</li><li>Usted elige los meses</li><li>Primer mes pagado al firmar, cada mes siguiente por adelantado el día 1</li><li>Después del mínimo, 30 días de aviso para terminar</li></ul>
       </div>
       <div class="card">
-        <span class="tag"><span lang="fr">Chaque vendredi</span><span lang="en">Every Friday</span></span>
+        <span class="tag"><span lang="fr">Chaque vendredi</span><span lang="en">Every Friday</span><span lang="es">Cada viernes</span></span>
         <h3>Vendredi pub</h3>
         <div class="price">99 $</div>
-        <div class="per"><span lang="fr">votre entreprise sur les comptes de Jennifer</span><span lang="en">your business on Jennifer's accounts</span></div>
+        <div class="per"><span lang="fr">votre entreprise sur les comptes de Jennifer</span><span lang="en">your business on Jennifer's accounts</span><span lang="es">su empresa en las cuentas de Jennifer</span></div>
         <ul lang="fr"><li>Une pub publiée sur ses comptes Instagram et TikTok</li><li>80 $ de plus pour l'utiliser dans vos propres pubs</li></ul>
-        <ul lang="en"><li>One ad posted on her Instagram and TikTok</li><li>$80 more to use it in your own ads</li></ul>
+        <ul lang="en"><li>One ad posted on her Instagram and TikTok</li><li>$80 more to use it in your own ads</li></ul><ul lang="es"><li>Un anuncio publicado en su Instagram y su TikTok</li><li>$80 más para usarlo en sus propios anuncios</li></ul>
       </div>
     </div>
     <div class="fine">
       <p lang="fr"><b>Livraison :</b> 5 jours ouvrables après l'approbation du script. Plus vite : 72 h +15 %, 48 h +30 %, 24 h +100 %.</p>
-      <p lang="en"><b>Delivery:</b> 5 business days after the script is approved. Faster: 72 h +15%, 48 h +30%, 24 h +100%.</p>
-      <p lang="fr"><b>Paiement :</b> la moitié pour réserver, la moitié pour approuver. Les fichiers finaux partent au paiement du solde. Moins de 200 $ : payé d'avance.</p>
-      <p lang="en"><b>Payment:</b> half to book, half to approve. Final files go out when the balance is paid. Under $200: paid upfront.</p>
+      <p lang="en"><b>Delivery:</b> 5 business days after the script is approved. Faster: 72 h +15%, 48 h +30%, 24 h +100%.</p><p lang="es"><b>Entrega:</b> 5 días hábiles después de aprobar el guion. Más rápido: 72 h +15 %, 48 h +30 %, 24 h +100 %.</p>
+      <p lang="fr"><b>Paiement :</b> la moitié pour réserver, la moitié pour approuver. Les fichiers finaux partent au paiement du solde. Moins de 200 $ : payé d'avance. Pub du mois : chaque mois payé d'avance.</p>
+      <p lang="en"><b>Payment:</b> half to book, half to approve. Final files go out when the balance is paid. Under $200: paid upfront. Ad of the month: each month paid in advance.</p><p lang="es"><b>Pago:</b> la mitad para reservar, la mitad para aprobar. Los archivos finales se envían al pagar el saldo. Menos de $200: pago por adelantado. Anuncio del mes: cada mes se paga por adelantado.</p>
     </div>
   </div>
 </section>
 
 <section id="comment">
   <div class="wrap">
-    <h2><span lang="fr">Comment ça marche</span><span lang="en">How it works</span></h2>
-    <p class="sub"><span lang="fr">Pas de tournage, pas d'équipe chez vous. Vous parlez à une vraie personne du début à la fin.</span><span lang="en">No shoot, no crew at your place. You deal with a real person from start to finish.</span></p>
+    <h2><span lang="fr">Comment ça marche</span><span lang="en">How it works</span><span lang="es">Cómo funciona</span></h2>
+    <p class="sub"><span lang="fr">Pas de tournage, pas d'équipe chez vous. Vous parlez à une vraie personne du début à la fin.</span><span lang="en">No shoot, no crew at your place. You deal with a real person from start to finish.</span><span lang="es">Sin rodaje, sin equipo en su local. Trata con una persona real de principio a fin.</span></p>
     <div class="steps">
-      <div class="step"><b lang="fr">Un appel de 10 minutes</b><b lang="en">A 10-minute call</b><p lang="fr">Votre offre, votre public, où la pub va jouer.</p><p lang="en">Your offer, your audience, where the ad will run.</p></div>
-      <div class="step"><b lang="fr">Soumission et dépôt</b><b lang="en">Quote and deposit</b><p lang="fr">Une soumission claire; la moitié réserve votre place.</p><p lang="en">A clear quote; half books your spot.</p></div>
-      <div class="step"><b lang="fr">Le script</b><b lang="en">The script</b><p lang="fr">Envoyé en un jour ouvrable. Vous l'approuvez avant la production.</p><p lang="en">Sent within one business day. You approve it before production.</p></div>
-      <div class="step"><b lang="fr">L'aperçu</b><b lang="en">The preview</b><p lang="fr">En 5 jours ouvrables, avec filigrane. Une ronde de modifications.</p><p lang="en">In 5 business days, watermarked. One round of revisions.</p></div>
-      <div class="step"><b lang="fr">Vos fichiers</b><b lang="en">Your files</b><p lang="fr">Au paiement du solde : les fichiers finaux et la licence.</p><p lang="en">When the balance is paid: the final files and the licence.</p></div>
+      <div class="step"><b lang="fr">Un appel de 10 minutes</b><b lang="en">A 10-minute call</b><b lang="es">Una llamada de 10 minutos</b><p lang="fr">Votre offre, votre public, où la pub va jouer.</p><p lang="en">Your offer, your audience, where the ad will run.</p><p lang="es">Su oferta, su público, dónde se verá el anuncio.</p></div>
+      <div class="step"><b lang="fr">Soumission et dépôt</b><b lang="en">Quote and deposit</b><b lang="es">Cotización y depósito</b><p lang="fr">Une soumission claire; la moitié réserve votre place.</p><p lang="en">A clear quote; half books your spot.</p><p lang="es">Una cotización clara; la mitad reserva su lugar.</p></div>
+      <div class="step"><b lang="fr">Le script</b><b lang="en">The script</b><b lang="es">El guion</b><p lang="fr">Envoyé en un jour ouvrable. Vous l'approuvez avant la production.</p><p lang="en">Sent within one business day. You approve it before production.</p><p lang="es">Enviado en un día hábil. Usted lo aprueba antes de la producción.</p></div>
+      <div class="step"><b lang="fr">L'aperçu</b><b lang="en">The preview</b><b lang="es">La vista previa</b><p lang="fr">En 5 jours ouvrables, avec filigrane. Une ronde de modifications.</p><p lang="en">In 5 business days, watermarked. One round of revisions.</p><p lang="es">En 5 días hábiles, con marca de agua. Una ronda de cambios.</p></div>
+      <div class="step"><b lang="fr">Vos fichiers</b><b lang="en">Your files</b><b lang="es">Sus archivos</b><p lang="fr">Au paiement du solde : les fichiers finaux et la licence.</p><p lang="en">When the balance is paid: the final files and the licence.</p><p lang="es">Al pagar el saldo: los archivos finales y la licencia.</p></div>
     </div>
   </div>
 </section>
 
 <section class="commit" id="engagements">
   <div class="wrap">
-    <h2><span lang="fr">Nos engagements</span><span lang="en">Our commitments</span></h2>
-    <p class="sub"><span lang="fr">Jennifer suit une charte publique. Les grandes lignes :</span><span lang="en">Jennifer follows a public charter. The main points:</span></p>
+    <h2><span lang="fr">Nos engagements</span><span lang="en">Our commitments</span><span lang="es">Nuestros compromisos</span></h2>
+    <p class="sub"><span lang="fr">Jennifer suit une charte publique. Les grandes lignes :</span><span lang="en">Jennifer follows a public charter. The main points:</span><span lang="es">Jennifer sigue una carta pública. Los puntos principales:</span></p>
     <div class="rules">
-      <div class="rule"><b lang="fr">Toujours déclarée comme IA</b><b lang="en">Always declared as AI</b><p lang="fr">L'étiquette reste à l'écran du début à la fin de chaque pub, et ses comptes portent la mention IA.</p><p lang="en">The label stays on screen from start to finish of every ad, and her accounts carry the AI label.</p></div>
-      <div class="rule"><b lang="fr">Conçue pour ne ressembler à personne</b><b lang="en">Designed to look like no one</b><p lang="fr">Aucun visage, aucune voix ni aucun nom d'une vraie personne.</p><p lang="en">No real person's face, voice or name.</p></div>
-      <div class="rule"><b lang="fr">Elle ne remplace personne</b><b lang="en">She replaces no one</b><p lang="fr">Seulement des pubs IA pour les PME sans budget pour des comédiens, et des productions entièrement IA. Jamais un rôle offert à un humain.</p><p lang="en">Only AI ads for small businesses without a budget for actors, and fully AI productions. Never a role offered to a human.</p></div>
-      <div class="rule"><b lang="fr">Pas de faux témoignage</b><b lang="en">No fake testimonials</b><p lang="fr">Elle ne dit jamais avoir essayé un produit ni ce qu'elle ressent. Elle présente, elle ne témoigne pas.</p><p lang="en">She never claims to have tried a product or how it feels. She presents; she doesn't testify.</p></div>
-      <div class="rule"><b lang="fr">Les règles d'ici</b><b lang="en">Local rules</b><p lang="fr">Une version française de chaque pub, et le numéro RBQ ou CITQ quand la loi l'exige.</p><p lang="en">A French version of every ad, and the RBQ or CITQ number where the law requires it.</p></div>
+      <div class="rule"><b lang="fr">Toujours déclarée comme IA</b><b lang="en">Always declared as AI</b><b lang="es">Siempre declarada como IA</b><p lang="fr">L'étiquette IA reste à l'écran jusqu'à la carte de fin, qui la présente comme « Actrice IA », et ses comptes portent la mention IA.</p><p lang="en">The AI label stays on screen until the end card, which presents her as "AI Actress", and her accounts carry the AI label.</p><p lang="es">La mención IA queda en pantalla hasta la tarjeta final, que la presenta como « Actriz IA », y sus cuentas llevan la mención IA.</p></div>
+      <div class="rule"><b lang="fr">Conçue pour ne ressembler à personne</b><b lang="en">Designed to look like no one</b><b lang="es">Diseñada para no parecerse a nadie</b><p lang="fr">Aucun visage, aucune voix ni aucun nom d'une vraie personne.</p><p lang="en">No real person's face, voice or name.</p><p lang="es">Ningún rostro, voz ni nombre de una persona real.</p></div>
+      <div class="rule"><b lang="fr">Elle ne remplace personne</b><b lang="en">She replaces no one</b><b lang="es">No reemplaza a nadie</b><p lang="fr">Seulement des pubs IA pour les PME sans budget pour des comédiens, et des productions entièrement IA. Jamais un rôle offert à un humain.</p><p lang="en">Only AI ads for small businesses without a budget for actors, and fully AI productions. Never a role offered to a human.</p><p lang="es">Solo anuncios IA para pymes sin presupuesto para actores, y producciones hechas por completo con IA. Nunca un papel ofrecido a una persona.</p></div>
+      <div class="rule"><b lang="fr">Pas de faux témoignage</b><b lang="en">No fake testimonials</b><b lang="es">Sin testimonios falsos</b><p lang="fr">Elle ne dit jamais avoir essayé un produit ni ce qu'elle ressent. Elle présente, elle ne témoigne pas.</p><p lang="en">She never claims to have tried a product or how it feels. She presents; she doesn't testify.</p><p lang="es">Nunca dice haber probado un producto ni lo que siente. Presenta; no da testimonio.</p></div>
+      <div class="rule"><b lang="fr">Les règles d'ici</b><b lang="en">Local rules</b><b lang="es">Las reglas de aquí</b><p lang="fr">Une version française de chaque pub, et le numéro RBQ ou CITQ quand la loi l'exige.</p><p lang="en">A French version of every ad, and the RBQ or CITQ number where the law requires it.</p><p lang="es">Una versión en francés de cada anuncio, y el número RBQ o CITQ cuando la ley lo exige.</p></div>
     </div>
-    <p class="sub" style="margin-top:18px"><a href="/jennshems/charte/"><span lang="fr">Lire la charte complète →</span><span lang="en">Read the full charter (in French) →</span></a></p>
+    <p class="sub" style="margin-top:18px"><a href="/jennshems/charte/"><span lang="fr">Lire la charte complète →</span><span lang="en">Read the full charter (in French) →</span><span lang="es">Leer la carta completa (en francés) →</span></a></p>
     <div class="about">
       <img src="media/jennifer-studio.jpg" width="720" height="1280" loading="lazy" alt="Jennifer Shems-Mylie, actrice IA, assise près d'une fenêtre">
       <div>
         <p class="serif" style="font-size:26px;color:#fff;margin-bottom:10px">Jennifer Shems-Mylie</p>
         <p lang="fr">21 ans, du West Island, étudiante en théâtre à Montréal. Un personnage fictif créé par CCC Studios, bilingue, qui parle aux Québécois de ce qu'ils vivent. Zéro expérience personnelle, beaucoup de potentiel publicitaire.</p>
-        <p lang="en">21, from the West Island, drama student in Montreal. A fictional character created by CCC Studios, bilingual, talking to Quebecers about what they're living through. Zero personal experience, plenty of ad potential.</p>
+        <p lang="en">21, from the West Island, drama student in Montreal. A fictional character created by CCC Studios, bilingual, talking to Quebecers about what they're living through. Zero personal experience, plenty of ad potential.</p><p lang="es">21 años, del West Island, estudiante de teatro en Montreal. Un personaje ficticio creado por CCC Studios, bilingüe, que les habla a los quebequenses de lo que están viviendo. Cero experiencia personal, mucho potencial publicitario.</p>
       </div>
     </div>
   </div>
@@ -286,21 +289,21 @@ footer .wrap{display:grid;gap:12px}
 
 <section id="faq">
   <div class="wrap">
-    <h2><span lang="fr">Questions</span><span lang="en">Questions</span></h2>
-    <details><summary><span lang="fr">Mes clients vont-ils savoir que c'est de l'IA?</span><span lang="en">Will my customers know it's AI?</span></summary><p lang="fr">Oui, et c'est voulu. Jennifer le dit elle-même, souvent dès la première phrase, et l'étiquette reste à l'écran. L'IA, c'est elle; votre entreprise, votre offre et vos coordonnées sont réelles.</p><p lang="en">Yes, on purpose. Jennifer says it herself, often in the first line, and the label stays on screen. She's the AI; your business, your offer and your contact details are real.</p></details>
-    <details><summary><span lang="fr">Pourquoi en français et en anglais?</span><span lang="en">Why French and English?</span></summary><p lang="fr">Au Québec, une publication commerciale en anglais doit avoir une version française accessible dans des conditions au moins équivalentes. On livre les deux.</p><p lang="en">In Quebec, an English commercial post needs a French version that's at least as accessible. We deliver both.</p></details>
-    <details><summary><span lang="fr">Qu'est-ce que je dois fournir?</span><span lang="en">What do I need to provide?</span></summary><p lang="fr">Votre offre, votre adresse ou votre secteur, votre logo et, si vous en avez, des photos de vos produits ou de vos lieux. Le reste, on s'en occupe.</p><p lang="en">Your offer, your address or service area, your logo and, if you have them, photos of your products or place. We handle the rest.</p></details>
-    <details><summary><span lang="fr">Où puis-je utiliser la pub?</span><span lang="en">Where can I use the ad?</span></summary><p lang="fr">Sur vos comptes et dans vos publicités payantes en ligne, pendant 12 mois. Pour la télé ou l'affichage, on en parle à l'appel.</p><p lang="en">On your accounts and in your paid online ads, for 12 months. For TV or signage, let's talk on the call.</p></details>
-    <details><summary><span lang="fr">Et si je ne suis pas satisfait de l'aperçu?</span><span lang="en">What if I don't like the preview?</span></summary><p lang="fr">Vous avez une ronde de modifications, à demander dans les 14 jours suivant l'aperçu. On ajuste le texte, les images ou le rythme.</p><p lang="en">You get one round of revisions, requested within 14 days of the preview. We adjust the wording, images or pacing.</p></details>
+    <h2><span lang="fr">Questions</span><span lang="en">Questions</span><span lang="es">Preguntas</span></h2>
+    <details><summary><span lang="fr">Mes clients vont-ils savoir que c'est de l'IA?</span><span lang="en">Will my customers know it's AI?</span><span lang="es">¿Mis clientes sabrán que es IA?</span></summary><p lang="fr">Oui, et c'est voulu. Jennifer le dit elle-même, souvent dès la première phrase, et l'étiquette reste à l'écran. L'IA, c'est elle; votre entreprise, votre offre et vos coordonnées sont réelles.</p><p lang="en">Yes, on purpose. Jennifer says it herself, often in the first line, and the label stays on screen. She's the AI; your business, your offer and your contact details are real.</p><p lang="es">Sí, a propósito. Jennifer lo dice ella misma, a menudo desde la primera frase, y la mención queda en pantalla. La IA es ella; su empresa, su oferta y sus datos de contacto son reales.</p></details>
+    <details><summary><span lang="fr">Pourquoi en français et en anglais?</span><span lang="en">Why French and English?</span><span lang="es">¿Por qué en francés y en inglés?</span></summary><p lang="fr">Au Québec, une publication commerciale en anglais doit avoir une version française accessible dans des conditions au moins équivalentes. On livre les deux.</p><p lang="en">In Quebec, an English commercial post needs a French version that's at least as accessible. We deliver both.</p><p lang="es">En Quebec, una publicación comercial en inglés necesita una versión en francés al menos igual de accesible. Entregamos las dos.</p></details>
+    <details><summary><span lang="fr">Qu'est-ce que je dois fournir?</span><span lang="en">What do I need to provide?</span><span lang="es">¿Qué tengo que proporcionar?</span></summary><p lang="fr">Votre offre, votre adresse ou votre secteur, votre logo et, si vous en avez, des photos de vos produits ou de vos lieux. Le reste, on s'en occupe.</p><p lang="en">Your offer, your address or service area, your logo and, if you have them, photos of your products or place. We handle the rest.</p><p lang="es">Su oferta, su dirección o zona de servicio, su logo y, si las tiene, fotos de sus productos o de su local. Nosotros nos encargamos del resto.</p></details>
+    <details><summary><span lang="fr">Où puis-je utiliser la pub?</span><span lang="en">Where can I use the ad?</span><span lang="es">¿Dónde puedo usar el anuncio?</span></summary><p lang="fr">Sur vos comptes et dans vos publicités payantes en ligne, pendant 12 mois. Pour la télé ou l'affichage, on en parle à l'appel.</p><p lang="en">On your accounts and in your paid online ads, for 12 months. For TV or signage, let's talk on the call.</p><p lang="es">En sus cuentas y en sus anuncios pagados en línea, durante 12 meses. Para televisión o carteles, lo hablamos en la llamada.</p></details>
+    <details><summary><span lang="fr">Et si je ne suis pas satisfait de l'aperçu?</span><span lang="en">What if I don't like the preview?</span><span lang="es">¿Y si no me gusta la vista previa?</span></summary><p lang="fr">Vous avez une ronde de modifications, à demander dans les 14 jours suivant l'aperçu. On ajuste le texte, les images ou le rythme.</p><p lang="en">You get one round of revisions, requested within 14 days of the preview. We adjust the wording, images or pacing.</p><p lang="es">Tiene una ronda de cambios, que se pide dentro de los 14 días siguientes a la vista previa. Ajustamos el texto, las imágenes o el ritmo.</p></details>
   </div>
 </section>
 
 <section class="contact" id="contact">
   <div class="wrap">
-    <h2><span lang="fr">Dix minutes pour voir si c'est pour vous</span><span lang="en">Ten minutes to see if it fits</span></h2>
-    <p><span lang="fr">Écrivez-nous; Dan vous répond et fixe l'appel.</span><span lang="en">Write to us; Dan replies and sets up the call.</span></p>
+    <h2><span lang="fr">Dix minutes pour voir si c'est pour vous</span><span lang="en">Ten minutes to see if it fits</span><span lang="es">Diez minutos para ver si le conviene</span></h2>
+    <p><span lang="fr">Écrivez-nous; Dan vous répond et fixe l'appel.</span><span lang="en">Write to us; Dan replies and sets up the call.</span><span lang="es">Escríbanos; Dan le responde y fija la llamada.</span></p>
     <div class="ctas">
-      <a class="btn btn-main js-mail" href="mailto:bonjour@ccc-studios.com"><span lang="fr">Réserver un appel de 10 minutes</span><span lang="en">Book a 10-minute call</span></a>
+      <a class="btn btn-main js-mail" href="mailto:bonjour@ccc-studios.com"><span lang="fr">Réserver un appel de 10 minutes</span><span lang="en">Book a 10-minute call</span><span lang="es">Reservar una llamada de 10 minutos</span></a>
     </div>
     <p style="margin-top:16px;font-size:14px">bonjour@ccc-studios.com</p>
   </div>
@@ -310,9 +313,9 @@ footer .wrap{display:grid;gap:12px}
 <footer>
   <div class="wrap">
     <div>
-      <p>CCC Studios · bonjour@ccc-studios.com · <a href="/jennshems/charte/">Charte</a> · <a href="/confidentialite/">Confidentialité / Privacy</a></p>
+      <p>CCC Studios · bonjour@ccc-studios.com · <a href="/services/">Services</a> · <a href="/jennshems/charte/">Charte</a> · <a href="/jennshems/authentifier/">Authentifier</a> · <a href="/confidentialite/">Confidentialité / Privacy / Privacidad</a></p>
       <p lang="fr">Jennifer est un personnage virtuel créé par IA. Démos : entreprises fictives.</p>
-      <p lang="en">Jennifer is a virtual character created with AI. Demos: fictional businesses.</p>
+      <p lang="en">Jennifer is a virtual character created with AI. Demos: fictional businesses.</p><p lang="es">Jennifer es un personaje virtual creado con IA. Demos: empresas ficticias.</p>
     </div>
     <div class="social">
       <a href="https://www.instagram.com/jennshems/" rel="noopener">Instagram</a>
@@ -327,22 +330,23 @@ footer .wrap{display:grid;gap:12px}
   var root=document.documentElement;
   var mail={
     fr:{s:"Appel de 10 minutes · [votre entreprise]",b:"Bonjour Dan,\n\nEntreprise :\nCe que je veux annoncer :\nMeilleur moment pour un appel :\nTéléphone :\n\nMerci!"},
-    en:{s:"10-minute call · [your business]",b:"Hi Dan,\n\nBusiness:\nWhat I want to advertise:\nBest time for a call:\nPhone:\n\nThanks!"}
+    en:{s:"10-minute call · [your business]",b:"Hi Dan,\n\nBusiness:\nWhat I want to advertise:\nBest time for a call:\nPhone:\n\nThanks!"},
+    es:{s:"Llamada de 10 minutos · [su empresa]",b:"Hola Dan:\n\nEmpresa:\nLo que quiero anunciar:\nMejor momento para llamar:\nTeléfono:\n\n¡Gracias!"}
   };
   function setLang(l){
     root.setAttribute("data-lang",l); root.lang=l;
     document.querySelectorAll(".langs button").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.set===l?"true":"false");});
     document.querySelectorAll("video[data-base]").forEach(function(v){
-      var base=v.dataset.base, src=base+"-"+l+".mp4";
-      if(v.querySelector("source").getAttribute("src")!==src){v.pause();v.querySelector("source").setAttribute("src",src);v.setAttribute("poster",base+"-"+l+".jpg");v.load();}
+      var vl=(l==="es"?"fr":l), base=v.dataset.base, src=base+"-"+vl+".mp4";
+      if(v.querySelector("source").getAttribute("src")!==src){v.pause();v.querySelector("source").setAttribute("src",src);v.setAttribute("poster",base+"-"+vl+".jpg");v.load();}
     });
     var m=mail[l], href="mailto:bonjour@ccc-studios.com?subject="+encodeURIComponent(m.s)+"&body="+encodeURIComponent(m.b);
     document.querySelectorAll(".js-mail").forEach(function(a){a.href=href;});
-    document.title=l==="fr"?"Jennifer Shems-Mylie · Actrice IA · CCC Studios":"Jennifer Shems-Mylie · AI actress · CCC Studios";
+    document.title={fr:"Jennifer Shems-Mylie · Actrice IA · CCC Studios",en:"Jennifer Shems-Mylie · AI actress · CCC Studios",es:"Jennifer Shems-Mylie · Actriz IA · CCC Studios"}[l];
     try{localStorage.setItem("lang",l);}catch(e){}
   }
   var start="fr", q=new URLSearchParams(location.search).get("lang");
-  if(q==="en"||q==="fr"){start=q;} else {try{var s=localStorage.getItem("lang"); if(s==="en"||s==="fr")start=s;}catch(e){}}
+  var ok={fr:1,en:1,es:1}; if(ok[q]){start=q;} else {try{var s=localStorage.getItem("lang"); if(ok[s])start=s;}catch(e){}}
   document.querySelectorAll(".langs button").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.set);});});
   setLang(start);
 })();
