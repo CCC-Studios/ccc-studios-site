@@ -1,46 +1,57 @@
 <!doctype html>
-<html lang="fr">
+<html lang="fr" data-lang="fr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Politique de confidentialité · CCC Studios</title>
 <meta name="description" content="Comment CCC Studios protège vos renseignements personnels. Ce site n'utilise aucun témoin de suivi.">
-<link rel="icon" href="/favicon.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.png" sizes="192x192">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="/fonts/fonts.css">
 <style>
+/* Branche Indigo (entreprise), kit de marque v1.4.2 : Indigo minuit + blanc, encre pour les encadrés. Aucun gris. */
+:root{--minuit:#04001B;--encre:#221B55;--royal:#2B0071;--lavande:#F9F7FF;--blanc:#FFFFFF}
 *{box-sizing:border-box;margin:0}
-body{font-family:Inter,system-ui,sans-serif;background:#000;color:#e9e5e0;line-height:1.65;padding:0 0 64px}
-.top{position:sticky;top:0;z-index:10;background:rgba(26,27,32,.94);backdrop-filter:blur(8px);color:#fff}
+body{font-family:Inter,system-ui,sans-serif;background:var(--minuit);color:var(--blanc);line-height:1.65;padding:0 0 64px}
+.top{position:sticky;top:0;z-index:10;background:var(--minuit);color:var(--blanc);border-bottom:1px solid var(--encre)}
 .top .wrap{max-width:1080px;margin:0 auto;padding:0 20px;display:flex;align-items:center;gap:12px;height:60px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:"Tenor Sans",Inter,sans-serif;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:#fff}
-.brand img{width:36px;height:36px;border-radius:50%}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:"Tenor Sans",Inter,sans-serif;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:var(--blanc);white-space:nowrap}
+.brand img{width:36px;height:36px;border-radius:50%;background:var(--blanc)}
 .top nav{margin-left:auto;display:flex;gap:18px;font-size:14px}
-.top nav a{text-decoration:none;opacity:.85;color:#fff}
-.top nav a:hover{opacity:1}
+.top nav a{text-decoration:none;color:var(--blanc)}
+.top nav a:hover{text-decoration:underline;text-underline-offset:5px}
 main{max-width:720px;margin:0 auto;padding:28px 16px 0}
-a{color:#f2eee9}
-.retour{font-size:14px;color:#b9b4ae}
-h1{font-family:Lora,Georgia,serif;font-style:italic;font-weight:500;font-size:clamp(30px,6vw,40px);line-height:1.15;margin:0 0 6px}
-.maj{color:#8f8b86;font-size:14px}
-.encadre{border:1px solid #3a3a40;background:#121317;border-radius:14px;padding:16px 18px;margin:26px 0 8px}
+a{color:var(--blanc);text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--lavande);outline-offset:2px}
+h1{font-family:Lora,Georgia,serif;font-weight:500;font-size:clamp(30px,6vw,40px);line-height:1.15;margin:0 0 6px}
+.maj{color:var(--lavande);font-size:14px}
+.encadre{background:var(--encre);border-radius:14px;padding:16px 18px;margin:26px 0 8px}
 .encadre strong{display:block;font-size:17px;margin-bottom:4px}
-h2{font-size:15px;text-transform:uppercase;letter-spacing:.08em;color:#b9b4ae;margin:34px 0 10px}
-p,li{color:#d9d5d0}
+h2{font-size:14px;text-transform:uppercase;letter-spacing:.12em;font-weight:600;color:var(--lavande);margin:34px 0 10px}
+p,li{color:var(--blanc)}
 p+p{margin-top:10px}
 ul{padding-left:20px;display:grid;gap:6px;margin-top:8px}
-.en{border-top:1px solid #2a2a30;margin-top:44px;padding-top:24px}
-footer{margin-top:44px;font-size:13.5px;color:#8f8b86}
+.en{border-top:1px solid var(--encre);margin-top:44px;padding-top:24px}
+footer{margin-top:44px;font-size:13.5px;color:var(--blanc)}
+html[data-lang="fr"] [lang="en"],html[data-lang="fr"] [lang="es"],html[data-lang="en"] [lang="fr"],html[data-lang="en"] [lang="es"],html[data-lang="es"] [lang="fr"],html[data-lang="es"] [lang="en"]{display:none!important}
+.top nav{align-items:center}
+.langs{display:flex;border:1px solid var(--lavande);border-radius:999px;overflow:hidden}
+.langs button{background:none;border:0;color:var(--blanc);font:600 12px Inter,sans-serif;padding:6px 10px;cursor:pointer;letter-spacing:.06em}
+.langs button[aria-pressed="true"]{background:var(--lavande);color:var(--minuit)}
+.langs button:focus-visible{outline:2px solid var(--lavande);outline-offset:2px}
+@media(max-width:480px){.top nav .lien{display:none}.brand{font-size:13px;letter-spacing:.1em}}
 </style>
 </head>
 <body>
 <header class="top">
   <div class="wrap">
     <a class="brand" href="/"><img src="/logo-ccc.png" alt="">CCC STUDIOS</a>
-    <nav><a href="/services/">Services</a><a href="/jennshems/">Jennifer</a></nav>
+    <nav><a class="lien" href="/services/">Services</a><a class="lien" href="/jennshems/">Jennifer</a><div class="langs" role="group" aria-label="Langue / Language / Idioma"><button type="button" data-set="fr" aria-pressed="true">FR</button><button type="button" data-set="en" aria-pressed="false">EN</button><button type="button" data-set="es" aria-pressed="false">ES</button></div></nav>
   </div>
 </header>
 <main>
+  <div lang="fr">
   <h1>Politique de confidentialité</h1>
   <p class="maj">En vigueur le 31 octobre 2026</p>
 
@@ -60,7 +71,7 @@ footer{margin-top:44px;font-size:13.5px;color:#8f8b86}
   <ul>
     <li>Aucun témoin, aucun outil d'analyse, aucun pixel publicitaire. Nos polices de caractères sont hébergées sur ce site, sans appel à un service externe.</li>
     <li>Le site est publié par Netlify (États-Unis), à partir d'un dépôt GitHub privé. Comme tout hébergeur, Netlify peut enregistrer l'adresse IP des visiteurs pour la sécurité de son service, selon sa propre politique de confidentialité.</li>
-    <li>Les liens vers Instagram, TikTok et YouTube mènent à ces plateformes; leurs propres politiques s'appliquent dès que vous les ouvrez.</li>
+    <li>Les liens vers Instagram, TikTok, YouTube, Wattpad et le wiki de notre univers (Fandom) mènent à ces plateformes; leurs propres politiques s'appliquent dès que vous les ouvrez.</li>
     <li>La page « Authentifier Jennifer » transforme l'identifiant tapé en empreinte chiffrée dans votre navigateur, puis demande au site seulement le fichier qui porte cette empreinte. L'identifiant lui-même ne nous est pas envoyé, et nous n'enregistrons pas ces recherches; l'hébergeur peut journaliser la demande comme pour toute page.</li>
     <li>Si vous nous envoyez une vidéo ou un lien à vérifier (« VÉRIFICATION JENN ») ou un signalement (« SIGNALEMENT JENN »), nous utilisons votre courriel et le contenu reçu seulement pour vérifier, vous répondre et faire retirer un faux; le fichier est supprimé une fois le dossier fermé.</li>
   </ul>
@@ -94,18 +105,84 @@ footer{margin-top:44px;font-size:13.5px;color:#8f8b86}
 
   <h2>Changements</h2>
   <p>Si nous ajoutons un jour un outil de mesure ou un pixel publicitaire, il sera désactivé par défaut, vous pourrez choisir de l'activer, et cette politique sera mise à jour avant.</p>
+  </div>
 
-  <section class="en" lang="en">
-    <h2>In English</h2>
-    <p>This site uses no tracking cookies, no analytics and no advertising pixels, and has no forms. We only collect what you send us by email, the contact details businesses publish themselves, and what clients need to give us for quotes, production and invoicing. Files clients provide may be processed by AI tools hosted outside Quebec (Higgsfield, Anthropic's Claude); clients can ask that no photos be uploaded. We never sell personal information. Accounting records are kept 6 years. You can ask to see, copy or correct your information, or withdraw consent, by writing to our privacy officer, Daniel Ortega, at <a href="mailto:bonjour@ccc-studios.com">bonjour@ccc-studios.com</a>. We reply within 30 days. You may also complain to Quebec's Commission d'accès à l'information. When a client gives us access to their Google profile, social media or website, we use it only for the job; the accounts stay in the client's name and we leave at the end of the job.</p>
-  </section>
+  <div lang="en">
+  <h1>Privacy policy</h1>
+  <p class="maj">In effect October 31, 2026 · The French version is the official one.</p>
 
-  <section class="en" lang="es">
-    <h2>En español</h2>
+  <div class="encadre">
+    <strong>This site uses no tracking cookies, no analytics and no advertising pixels.</strong>
+    It has no forms. We don't know who visits it.
+  </div>
+
+  <h2>Who we are</h2>
+  <p>CCC Studios (Compagnie Canadienne Créative) makes video ads with Jennifer Shems-Mylie, a declared AI actress, and helps local businesses get found online: Google profile, social media and website. This policy explains what personal information we collect, why, and what your rights are, under Quebec's Act respecting the protection of personal information in the private sector.</p>
+
+  <h2>Person in charge of personal information</h2>
+  <p>Daniel Ortega, founder<br>
+  <a href="mailto:bonjour@ccc-studios.com?subject=Personal%20information">bonjour@ccc-studios.com</a> · 438 404-3409</p>
+
+  <h2>This site</h2>
+  <ul>
+    <li>No cookies, no analytics, no advertising pixels. Our fonts are hosted on this site, with no call to an outside service.</li>
+    <li>The site is published by Netlify (United States), from a private GitHub repository. Like any host, Netlify may log visitors' IP addresses for the security of its service, under its own privacy policy.</li>
+    <li>Links to Instagram, TikTok, YouTube, Wattpad and our universe's wiki (Fandom) lead to those platforms; their own policies apply as soon as you open them.</li>
+    <li>The "Authentifier Jennifer" page turns the ID you type into an encrypted fingerprint in your browser, then asks the site only for the file named after that fingerprint. The ID itself is not sent to us, and we don't log these lookups; the host may log the request, as for any page.</li>
+    <li>If you send us a video or a link to check ("VÉRIFICATION JENN") or a report ("SIGNALEMENT JENN"), we use your email and what you sent only to check it, reply and have a fake taken down; the file is deleted once the case is closed.</li>
+  </ul>
+
+  <h2>What we collect, and why</h2>
+  <ul>
+    <li><b>When you write to us:</b> your name, email address and message, to reply (including checks and reports).</li>
+    <li><b>Businesses we contact:</b> the contact details the business publishes itself (name, email, phone). A "no" is respected the same day: we keep only the business name and a note not to write again, so we honour that refusal.</li>
+    <li><b>Clients:</b> the contact person's name and details, the business's information, the files provided (logo, photos, text) and the payment history, to prepare the quote, produce the ad, invoice and meet our legal obligations. Payments are made by Interac e-Transfer: we never receive a card or bank account number.</li>
+    <li><b>Access to clients' accounts:</b> when a client gives us access to their Google profile, social media or website, we use it only for the job. The accounts stay in the client's name, the client can remove our access at any time, and we leave at the end of the job.</li>
+    <li><b>People who lend their voice, image or name:</b> only with written consent, which they can withdraw.</li>
+  </ul>
+  <p>We never sell or rent personal information.</p>
+
+  <h2>Tools used outside Quebec</h2>
+  <p>To produce the ads, we use AI tools hosted outside Quebec (Higgsfield, and Anthropic's Claude), as well as an email service. Files a client gives us may be uploaded to them; the client can ask that no photos be uploaded. Before entrusting personal information to a provider outside Quebec, we assess whether it will be adequately protected, as the law requires.</p>
+
+  <h2>Retention</h2>
+  <p>We keep information as long as needed for the purposes above. Accounting records (quotes, invoices, payments) are kept 6 years, as tax laws require. After that, they are destroyed or anonymized.</p>
+
+  <h2>Your rights</h2>
+  <ul>
+    <li>Know what information we hold about you and get a copy, including in a structured, commonly used technological format.</li>
+    <li>Have it corrected if it's inaccurate or incomplete.</li>
+    <li>Withdraw your consent, or ask not to be contacted again.</li>
+  </ul>
+  <p>Write to the person in charge above. We reply within 30 days. If you're not satisfied, you can file a complaint with Quebec's Commission d'accès à l'information.</p>
+
+  <h2>Confidentiality incidents</h2>
+  <p>If an incident presents a risk of serious injury, we notify the Commission d'accès à l'information and the people concerned, and take steps to reduce the consequences.</p>
+
+  <h2>Changes</h2>
+  <p>If we ever add a measurement tool or an advertising pixel, it will be off by default, you'll be able to choose to turn it on, and this policy will be updated first.</p>
+  </div>
+
+    <div lang="es">
+    <h1>Política de privacidad</h1>
+    <p class="maj">Vigente desde el 31 de octubre de 2026 · resumen; la versión oficial es la francesa</p>
     <p>Este sitio no usa cookies de seguimiento, ni herramientas de análisis, ni píxeles publicitarios, y no tiene formularios. Solo recopilamos lo que usted nos envía por correo, los datos de contacto que las empresas publican ellas mismas, y lo que los clientes nos dan para cotizaciones, producción y facturación. Los archivos de los clientes pueden procesarse con herramientas de IA alojadas fuera de Quebec (Higgsfield, Claude de Anthropic); el cliente puede pedir que no se suba ninguna foto. Cuando un cliente nos da acceso a su perfil de Google, sus redes o su sitio, lo usamos solo para el mandato; las cuentas siguen a su nombre y salimos al terminar. Nunca vendemos información personal. Los documentos contables se guardan 6 años. Puede pedir ver, copiar o corregir su información, o retirar su consentimiento, escribiendo a nuestro responsable de privacidad, Daniel Ortega, a <a href="mailto:bonjour@ccc-studios.com">bonjour@ccc-studios.com</a>. Respondemos en 30 días. También puede presentar una queja ante la Commission d'accès à l'information del Québec. La versión oficial es la francesa.</p>
-  </section>
+  </div>
 
-  <footer>CCC Studios · <a href="mailto:bonjour@ccc-studios.com">bonjour@ccc-studios.com</a> · <a href="/services/">Services</a> · <a href="/jennshems/">Jennifer</a> · <a href="/jennshems/charte/">Charte</a></footer>
+  <footer>CCC Studios · <a href="mailto:bonjour@ccc-studios.com">bonjour@ccc-studios.com</a> · <a href="/services/">Services</a> · <a href="/jennshems/">Jennifer</a> · <a href="/jennshems/charte/"><span lang="fr">Charte</span><span lang="en">Charter</span><span lang="es">Carta</span></a></footer>
 </main>
+<script>
+(function(){
+  var root=document.documentElement, ok={fr:1,en:1,es:1};
+  var titles={fr:"Politique de confidentialité · CCC Studios",en:"Privacy policy · CCC Studios",es:"Política de privacidad · CCC Studios"};
+  function setLang(l){root.setAttribute("data-lang",l);root.lang=l;document.title=titles[l];
+    document.querySelectorAll(".langs button").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.set===l?"true":"false")});
+    try{localStorage.setItem("lang",l)}catch(e){}}
+  var start="fr",q=new URLSearchParams(location.search).get("lang");
+  if(ok[q])start=q;else{try{var x=localStorage.getItem("lang");if(ok[x])start=x}catch(e){}}
+  document.querySelectorAll(".langs button").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.set)})});
+  setLang(start);
+})();
+</script>
 </body>
 </html>

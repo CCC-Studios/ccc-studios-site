@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+
+<title>CCC Studios Créatif</title>
+<meta name="description" content="CCC Studios, branche créative : explorateurs du contenu généré par IA. Univers fantastique écrit à 100 % par des humains.">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+/* Mise en page : une nuit cramoisie ; titres en Lora à gauche, marque en Tenor Sans, chaque œuvre porte sa provenance (humain ou IA).
+   Kit CCC v1.4.2, branche Cramoisi (créative) : super-foncée, foncée, principale (discrète), claire, + blanc et noir. Aucun gris. */
+:root {
+  --nuit: #1E0007;          /* Cramoisi minuit : fond */
+  --bordeaux: #590016;      /* foncée : surfaces, traits */
+  --cramoisi: #C30001;      /* principale : filets et repères seulement */
+  --rose: #FEDADA;          /* claire : texte secondaire, étiquettes */
+  --blanc: #FFFFFF;
+  --noir: #000000;
+  --trait: rgba(254, 218, 218, 0.16);
+  --police-marque: "Tenor Sans", "Inter", "Helvetica Neue", Arial, sans-serif;
+  --police-titre: "Lora", Georgia, "Times New Roman", serif;
+  --police-texte: "Inter", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0; background: var(--nuit); color: var(--blanc);
+  font: 400 17px/1.6 var(--police-texte);
+}
+:root:not([data-l="en"]) [data-en], :root:not([data-l="es"]) [data-es], :root[data-l="en"] [data-fr], :root[data-l="es"] [data-fr] { display: none; }
+:root[data-l="en"] [data-en], :root[data-l="es"] [data-es] { display: revert; }
+a { color: var(--rose); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:hover { color: var(--blanc); }
+:focus-visible { outline: 2px solid var(--rose); outline-offset: 3px; border-radius: 4px; }
+
+.bande { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.cadre { max-width: 1120px; margin: 0 auto; }
+
+/* En-tête */
+.tete { padding-block: 22px; border-bottom: 1px solid var(--trait); }
+.tete .cadre { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.logo { display: flex; align-items: center; gap: 14px; min-width: 0; }
+.logo img { height: 22px; width: auto; display: block; }
+.logo span { font: 400 11px/1 var(--police-marque); letter-spacing: 0.22em; text-transform: uppercase; color: var(--rose); padding-left: 14px; border-left: 1px solid var(--trait); }
+.langue { display: flex; border: 1px solid var(--trait); border-radius: 999px; overflow: hidden; }
+.langue button { font: 500 12px var(--police-texte); letter-spacing: 0.08em; background: transparent; color: var(--rose); border: 0; padding: 7px 13px; cursor: pointer; }
+.langue button[aria-pressed="true"] { background: var(--rose); color: var(--nuit); }
+
+.surtitre { font: 400 12px/1.4 var(--police-marque); letter-spacing: 0.24em; text-transform: uppercase; color: var(--rose); margin: 0; display: flex; align-items: center; gap: 12px; }
+.surtitre::before { content: ""; width: 28px; height: 2px; background: var(--cramoisi); flex: none; }
+h1, h2 { font-family: var(--police-titre); font-weight: 500; text-wrap: balance; margin: 0; }
+h1, h2.grand { font-size: clamp(42px, 7.2vw, 88px); line-height: 1.02; letter-spacing: -0.015em; }
+
+/* Écran vidéo plein cadre (comme gouttieres4ever.ca : vidéo en fond, voile, un seul titre) */
+.ecran-video { position: relative; height: 100svh; min-height: 520px; overflow: hidden; background: var(--noir); display: grid; place-items: center; isolation: isolate; }
+@supports not (height: 100svh) { .ecran-video { height: 100vh; } }
+.ecran-fond { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+.ecran-voile { position: absolute; inset: 0; z-index: -1;
+  background: radial-gradient(ellipse at 50% 50%, rgba(30, 0, 7, 0.15) 0%, rgba(30, 0, 7, 0.55) 70%, rgba(30, 0, 7, 0.8) 100%),
+              linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 30%, rgba(30, 0, 7, 0.0) 70%, var(--nuit) 100%); }
+.ecran-texte { text-align: center; display: grid; gap: clamp(10px, 1.6vw, 18px); padding-inline: max(16px, env(safe-area-inset-left, 0px)) max(16px, env(safe-area-inset-right, 0px)); }
+.video-titre { font: 400 clamp(40px, 8.4vw, 124px)/0.98 var(--police-marque); text-transform: uppercase; letter-spacing: 0.04em; text-shadow: 0 2px 30px rgba(0,0,0,0.55); }
+.video-titre em { font: italic 500 1.02em/1 var(--police-titre); text-transform: none; letter-spacing: -0.01em; color: var(--blanc); display: block; }
+.video-sous { font: italic 500 clamp(18px, 2.2vw, 26px)/1.4 var(--police-titre); color: var(--rose); text-shadow: 0 1px 16px rgba(0,0,0,0.7); }
+.ecran-ia { position: absolute; left: max(16px, env(safe-area-inset-left, 0px)); bottom: calc(18px + env(safe-area-inset-bottom, 0px)); font: 500 11px/1.3 var(--police-texte); letter-spacing: 0.06em; color: rgba(255,255,255,0.78); }
+.ecran-suite { position: absolute; left: 50%; bottom: calc(22px + env(safe-area-inset-bottom, 0px)); width: 22px; height: 36px; margin-left: -11px; border: 1.5px solid rgba(255,255,255,0.7); border-radius: 12px; }
+.ecran-suite::after { content: ""; position: absolute; left: 50%; top: 7px; width: 3px; height: 7px; margin-left: -1.5px; border-radius: 2px; background: var(--blanc); }
+@media (prefers-reduced-motion: no-preference) { .ecran-suite::after { animation: glisse 1.8s ease-in-out infinite; } @keyframes glisse { 0%,100% { transform: translateY(0); opacity: 1; } 60% { transform: translateY(10px); opacity: 0.2; } } }
+@media (max-width: 560px) { .ecran-ia { right: max(16px, env(safe-area-inset-right, 0px)); text-align: center; } .ecran-suite { display: none; } }
+h1 em, h2 em { font-style: italic; color: var(--rose); }
+h2 { font-size: clamp(32px, 4.6vw, 54px); line-height: 1.08; letter-spacing: -0.01em; }
+.chapeau { font-size: clamp(18px, 2vw, 21px); line-height: 1.55; color: var(--rose); max-width: 38ch; margin: 0; text-wrap: pretty; }
+p { margin: 0; }
+.texte { max-width: 62ch; display: grid; gap: 14px; }
+
+/* Héros */
+.heros { padding-block: clamp(40px, 7vw, 88px) clamp(40px, 6vw, 72px); }
+.heros .cadre { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 64px); align-items: center; }
+.heros-texte { display: grid; gap: 26px; min-width: 0; }
+.appels { display: flex; flex-wrap: wrap; gap: 12px; }
+.bouton { font: 500 15px var(--police-texte); text-decoration: none; padding: 13px 20px; border-radius: 999px; border: 1px solid var(--rose); color: var(--nuit); background: var(--rose); }
+.bouton:hover { background: var(--blanc); border-color: var(--blanc); color: var(--nuit); }
+.bouton.vide { background: transparent; color: var(--rose); border-color: var(--trait); }
+.bouton.vide:hover { color: var(--blanc); border-color: var(--rose); background: transparent; }
+
+/* Œuvre (vidéo ou image) avec sa provenance */
+.oeuvre { margin: 0; display: grid; gap: 10px; min-width: 0; }
+.media { position: relative; border-radius: 6px; overflow: hidden; background: var(--noir); border: 1px solid var(--trait); }
+.media video, .media img { display: block; width: 100%; height: 100%; object-fit: cover; max-width: 100%; }
+.media.pixel img { image-rendering: pixelated; }
+.provenance { position: absolute; left: 10px; top: 10px; font: 600 11px/1 var(--police-texte); letter-spacing: 0.06em; padding: 6px 9px; border-radius: 999px; background: rgba(0, 0, 0, 0.62); color: var(--blanc); backdrop-filter: blur(4px); }
+.son { position: absolute; right: 10px; bottom: 10px; font: 600 12px var(--police-texte); padding: 7px 11px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.5); background: rgba(0, 0, 0, 0.55); color: var(--blanc); cursor: pointer; }
+figcaption { font-size: 14px; line-height: 1.45; color: var(--rose); display: flex; justify-content: space-between; gap: 12px; }
+figcaption b { font: 400 12px/1.5 var(--police-marque); letter-spacing: 0.16em; text-transform: uppercase; color: var(--blanc); }
+.heros .media { aspect-ratio: 1376 / 928; }
+
+/* Formats */
+.formats { padding-block: clamp(36px, 5vw, 56px); border-block: 1px solid var(--trait); background: linear-gradient(180deg, rgba(89, 0, 22, 0.35), rgba(89, 0, 22, 0)); }
+.formats .cadre { display: grid; gap: 22px; }
+.liste-formats { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 0; font: 400 clamp(24px, 3.6vw, 44px)/1.2 var(--police-marque); text-transform: uppercase; letter-spacing: 0.04em; }
+.liste-formats li { display: inline-flex; align-items: center; }
+.liste-formats li + li::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--cramoisi); margin: 0 clamp(12px, 1.8vw, 22px); box-shadow: inset -3px 0 0 var(--nuit); }
+.liste-formats .plus { font-family: var(--police-titre); font-style: italic; text-transform: none; letter-spacing: 0; color: var(--rose); }
+
+/* Galerie */
+.section { padding-block: clamp(56px, 8vw, 104px); }
+.section .cadre { display: grid; gap: clamp(28px, 4vw, 44px); }
+.entete-section { display: grid; gap: 18px; }
+.galerie { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 18px; }
+.g-duo { grid-column: span 7; } .g-duo .media { aspect-ratio: 1376 / 928; }
+.g-guerriere { grid-column: span 5; } .g-guerriere .media { aspect-ratio: 1 / 1; }
+.g-mages { grid-column: span 4; } .g-mages .media { aspect-ratio: 1080 / 1600; }
+.g-firbolg { grid-column: span 4; } .g-firbolg .media { aspect-ratio: 1080 / 1600; background: radial-gradient(circle at 50% 40%, var(--bordeaux), var(--nuit) 70%); }
+.g-firbolg .media img, .g-chauve .media img { object-fit: contain; }
+.g-foret { grid-column: span 4; } .g-foret .media { aspect-ratio: 1080 / 1600; }
+.g-donjon { grid-column: span 6; } .g-donjon .media { aspect-ratio: 784 / 625; }
+.g-chauve { grid-column: span 6; } .g-chauve .media { aspect-ratio: 784 / 625; background: radial-gradient(circle at 50% 45%, var(--bordeaux), var(--nuit) 72%); }
+
+/* Univers humain */
+.univers { background: var(--bordeaux); }
+.univers .cadre { grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr); align-items: center; }
+.registre { list-style: none; margin: 0; padding: 0; display: grid; border-top: 1px solid var(--trait); }
+.registre li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; padding: 13px 0; border-bottom: 1px solid var(--trait); align-items: baseline; }
+.registre .qui { font: 500 12px/1.3 var(--police-texte); letter-spacing: 0.08em; text-transform: uppercase; color: var(--rose); white-space: nowrap; }
+.registre .qui.ia { color: var(--blanc); }
+.dames { justify-self: center; width: min(100%, 420px); aspect-ratio: 1; }
+.dames img { width: 100%; height: auto; display: block; }
+
+/* Livres */
+.livres { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0 32px; }
+.livres li { display: grid; gap: 6px; padding: 20px 0; border-top: 1px solid var(--trait); }
+.livres .titre-livre { font: italic 500 22px/1.25 var(--police-titre); color: var(--blanc); }
+.livres p { font-size: 15px; color: var(--rose); }
+
+/* Contact */
+.contact { background: var(--bordeaux); }
+.contact .cadre { grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); align-items: end; }
+.carte-contact { display: grid; gap: 14px; padding: 26px; border: 1px solid var(--trait); border-radius: 6px; background: var(--nuit); min-width: 0; }
+.adresse { font: 500 clamp(20px, 2.4vw, 26px)/1.3 var(--police-texte); color: var(--blanc); user-select: all; overflow-wrap: anywhere; }
+.carte-contact .appels { align-items: center; }
+.copie-ok { font-size: 14px; color: var(--rose); min-height: 1.4em; }
+.idees { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.idees li { font-size: 14px; padding: 6px 12px; border: 1px solid var(--trait); border-radius: 999px; color: var(--rose); }
+@media (max-width: 860px) { .contact .cadre { grid-template-columns: 1fr; } }
+
+/* IA déclarée + suivre */
+.declaree { border-top: 1px solid var(--trait); }
+.liens { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+.liens a { display: grid; gap: 4px; padding: 18px 20px; border: 1px solid var(--trait); border-radius: 6px; text-decoration: none; color: var(--blanc); }
+.liens a:hover { border-color: var(--rose); }
+.liens .ou { font: 400 11px/1.4 var(--police-marque); letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose); }
+.liens .qui { font: 500 18px var(--police-texte); overflow-wrap: anywhere; }
+
+footer { padding-block: 32px 48px; border-top: 1px solid var(--trait); font-size: 13px; color: var(--rose); }
+footer .cadre { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 24px; }
+footer .signature { font: 400 12px var(--police-marque); letter-spacing: 0.2em; text-transform: uppercase; }
+
+@media (max-width: 860px) {
+  .heros .cadre, .univers .cadre { grid-template-columns: 1fr; }
+  .galerie { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .galerie > * { grid-column: span 2; }
+  .g-mages, .g-firbolg, .g-foret { grid-column: span 1; }
+  .g-foret { grid-column: span 2; } .g-foret .media { aspect-ratio: 4 / 5; }
+  .dames { width: min(70%, 300px); }
+}
+@media (max-width: 480px) {
+  .logo span { display: none; }
+  figcaption { flex-direction: column; gap: 2px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .heros-texte > * { animation: monte 700ms cubic-bezier(.2,.7,.2,1) both; }
+  .heros-texte > *:nth-child(2) { animation-delay: 80ms; } .heros-texte > *:nth-child(3) { animation-delay: 160ms; } .heros-texte > *:nth-child(4) { animation-delay: 240ms; }
+  @keyframes monte { from { transform: translateY(10px); opacity: 0.35; } to { transform: none; opacity: 1; } }
+}
+</style>
+</head>
+<body>
+
+<section class="ecran-video" aria-labelledby="titre-video">
+  <video id="v-ecran" class="ecran-fond" muted loop playsinline autoplay preload="auto" poster="m/heros-bureau.jpg" aria-hidden="true"></video>
+  <div class="ecran-voile" aria-hidden="true"></div>
+  <div class="ecran-texte">
+    <h1 id="titre-video" class="video-titre"><span data-fr>La créativité <em>libérée</em></span><span data-en>Creativity <em>unleashed</em></span><span data-es>La creatividad <em>liberada</em></span></h1>
+    <p class="video-sous"><span data-fr>Là où toutes les idées prennent vie.</span><span data-en>Where every idea comes to life.</span><span data-es>Donde todas las ideas cobran vida.</span></p>
+  </div>
+  <span class="ecran-ia"><span data-fr>Vidéos générées par IA · univers écrit par des humains</span><span data-en>AI-generated videos · human-written universe</span><span data-es>Videos generados por IA · universo escrito por personas</span></span>
+  <a class="ecran-suite" href="#haut" aria-label="Défiler / Scroll"></a>
+</section>
+
+<header class="bande tete">
+  <div class="cadre">
+    <a class="logo" href="/" id="haut" aria-label="CCC Studios, accueil">
+      <img src="m/logo.svg" alt="CCC Studios" width="155" height="22">
+      <span><span data-fr>Branche créative</span><span data-en>Creative branch</span><span data-es>Rama creativa</span></span>
+    </a>
+    <div class="langue" role="group" aria-label="Langue / Language / Idioma">
+      <button type="button" id="btn-fr" aria-pressed="true">FR</button>
+      <button type="button" id="btn-en" aria-pressed="false">EN</button>
+      <button type="button" id="btn-es" aria-pressed="false">ES</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="bande heros" aria-labelledby="titre">
+    <div class="cadre">
+      <div class="heros-texte">
+        <p class="surtitre"><span data-fr>CCC Studios · Studio québécois</span><span data-en>CCC Studios · Canadian studio</span><span data-es>CCC Studios · Estudio de Quebec</span></p>
+        <h2 id="titre" class="grand"><span data-fr>Explorateurs du contenu <em>généré par IA</em>.</span><span data-en>Explorers of <em>AI-generated</em> content.</span><span data-es>Exploradores del contenido <em>generado por IA</em>.</span></h2>
+        <p class="chapeau"><span data-fr>Images, vidéos, séries, reels, musique, jeux et récits. Nos mondes, eux, sont écrits à la main : l'IA les met en images, des humains les imaginent.</span><span data-en>Images, videos, series, reels, music, games and stories. Our worlds are written by hand: AI brings them to the screen, people imagine them.</span><span data-es>Imágenes, videos, series, reels, música, juegos y relatos. Nuestros mundos se escriben a mano: la IA los lleva a la pantalla, las personas los imaginan.</span></p>
+        <div class="appels">
+          <a class="bouton" href="https://www.tiktok.com/@cccstudiosinc" rel="noopener"><span data-fr>Voir sur TikTok</span><span data-en>Watch on TikTok</span><span data-es>Ver en TikTok</span></a>
+          <a class="bouton vide" href="#univers"><span data-fr>Notre univers</span><span data-en>Our universe</span><span data-es>Nuestro universo</span></a>
+          <a class="bouton vide" href="#contact"><span data-fr>Créer avec nous</span><span data-en>Create with us</span><span data-es>Crear con nosotros</span></a>
+        </div>
+      </div>
+      <figure class="oeuvre">
+        <div class="media">
+          <video id="v-heros" src="m/dungeon-dweller.mp4" poster="m/dungeon-dweller.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Dungeon Dweller"></video>
+          <span class="provenance"><span data-fr>Vidéo générée par IA</span><span data-en>AI-generated video</span><span data-es>Video generado por IA</span></span>
+          <button class="son" type="button" data-video="v-heros" aria-pressed="false"><span data-fr>Son</span><span data-en>Sound</span><span data-es>Sonido</span></button>
+        </div>
+        <figcaption><b>Dungeon Dweller</b><span><span data-fr>Créature · Crab's Collar Continent</span><span data-en>Creature · Crab's Collar Continent</span><span data-es>Criatura · Crab's Collar Continent</span></span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="bande formats" aria-labelledby="titre-formats">
+    <div class="cadre">
+      <p class="surtitre" id="titre-formats"><span data-fr>Ce qu'on crée</span><span data-en>What we make</span><span data-es>Lo que creamos</span></p>
+      <ul class="liste-formats">
+        <li><span data-fr>Images</span><span data-en>Images</span><span data-es>Imágenes</span></li>
+        <li><span data-fr>Vidéos</span><span data-en>Videos</span><span data-es>Videos</span></li>
+        <li><span data-fr>Séries</span><span data-en>Series</span><span data-es>Series</span></li>
+        <li>Reels</li>
+        <li><span data-fr>Musique</span><span data-en>Music</span><span data-es>Música</span></li>
+        <li><span data-fr>Jeux</span><span data-en>Games</span><span data-es>Juegos</span></li>
+        <li><span data-fr>Récits</span><span data-en>Storytelling</span><span data-es>Relatos</span></li>
+        <li><span data-fr>Nouvelles</span><span data-en>Short stories</span><span data-es>Cuentos</span></li>
+        <li class="plus"><span data-fr>et plus encore</span><span data-en>and more</span><span data-es>y mucho más</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="bande section" aria-labelledby="titre-galerie">
+    <div class="cadre">
+      <div class="entete-section">
+        <p class="surtitre"><span data-fr>Galerie</span><span data-en>Gallery</span><span data-es>Galería</span></p>
+        <h2 id="titre-galerie"><span data-fr>Créatures, héros <em>et donjons</em></span><span data-en>Creatures, heroes <em>and dungeons</em></span><span data-es>Criaturas, héroes <em>y mazmorras</em></span></h2>
+        <p class="chapeau"><span data-fr>Des pièces publiées sur nos réseaux. Chacune dit comment elle a été faite.</span><span data-en>Pieces from our channels. Each one says how it was made.</span><span data-es>Piezas de nuestras redes. Cada una dice cómo se hizo.</span></p>
+      </div>
+      <div class="galerie">
+        <figure class="oeuvre g-duo">
+          <div class="media">
+            <video id="v-duo" src="m/darkness-duo.mp4" poster="m/darkness-duo.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Darkness Duo"></video>
+            <span class="provenance"><span data-fr>Vidéo générée par IA</span><span data-en>AI-generated video</span><span data-es>Video generado por IA</span></span>
+            <button class="son" type="button" data-video="v-duo" aria-pressed="false"><span data-fr>Son</span><span data-en>Sound</span><span data-es>Sonido</span></button>
+          </div>
+          <figcaption><b>Darkness Duo</b><span><span data-fr>Présentation de créatures</span><span data-en>Creature intro</span><span data-es>Presentación de criaturas</span></span></figcaption>
+        </figure>
+        <figure class="oeuvre g-guerriere">
+          <div class="media">
+            <video id="v-guerriere" src="m/guerriere.mp4" poster="m/guerriere.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Guerrière en armure noire"></video>
+            <span class="provenance"><span data-fr>Vidéo générée par IA</span><span data-en>AI-generated video</span><span data-es>Video generado por IA</span></span>
+            <button class="son" type="button" data-video="v-guerriere" aria-pressed="false"><span data-fr>Son</span><span data-en>Sound</span><span data-es>Sonido</span></button>
+          </div>
+          <figcaption><b><span data-fr>Séries</span><span data-en>Series</span><span data-es>Series</span></b><span><span data-fr>Une guerrière de l'univers</span><span data-en>A warrior of the universe</span><span data-es>Una guerrera del universo</span></span></figcaption>
+        </figure>
+        <figure class="oeuvre g-mages">
+          <div class="media">
+            <video id="v-mages" src="m/mages.mp4" poster="m/mages.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Deux mages"></video>
+            <span class="provenance"><span data-fr>Vidéo générée par IA</span><span data-en>AI-generated video</span><span data-es>Video generado por IA</span></span>
+            <button class="son" type="button" data-video="v-mages" aria-pressed="false"><span data-fr>Son</span><span data-en>Sound</span><span data-es>Sonido</span></button>
+          </div>
+          <figcaption><b><span data-fr>Magie</span><span data-en>Magic</span><span data-es>Magia</span></b><span>Reel</span></figcaption>
+        </figure>
+        <figure class="oeuvre g-firbolg">
+          <div class="media"><img src="m/firbolg.webp" alt="Un firbolg à la barbe rousse, couvert de mousse et de feuilles" loading="lazy"><span class="provenance"><span data-fr>Image générée par IA</span><span data-en>AI-generated image</span><span data-es>Imagen generada por IA</span></span></div>
+          <figcaption><b><span data-fr>Personnages</span><span data-en>Characters</span><span data-es>Personajes</span></b><span>Firbolg</span></figcaption>
+        </figure>
+        <figure class="oeuvre g-foret">
+          <div class="media"><img src="m/foret.webp" alt="Forêt enchantée en pixel art, champignons lumineux" loading="lazy"><span class="provenance"><span data-fr>Image générée par IA</span><span data-en>AI-generated image</span><span data-es>Imagen generada por IA</span></span></div>
+          <figcaption><b><span data-fr>Jeux</span><span data-en>Games</span><span data-es>Juegos</span></b><span><span data-fr>Forêt enchantée, pixel art</span><span data-en>Enchanted forest, pixel art</span><span data-es>Bosque encantado, pixel art</span></span></figcaption>
+        </figure>
+        <figure class="oeuvre g-donjon">
+          <div class="media pixel"><img src="m/donjon.webp" alt="Couloir de donjon en pixel art, torches et pierres moussues" loading="lazy"><span class="provenance"><span data-fr>Image générée par IA</span><span data-en>AI-generated image</span><span data-es>Imagen generada por IA</span></span></div>
+          <figcaption><b><span data-fr>Jeux</span><span data-en>Games</span><span data-es>Juegos</span></b><span><span data-fr>Donjon, pixel art</span><span data-en>Dungeon, pixel art</span><span data-es>Mazmorra, pixel art</span></span></figcaption>
+        </figure>
+        <figure class="oeuvre g-chauve">
+          <div class="media"><img src="m/chauve-souris.webp" alt="Chauve-souris géante aux yeux rouges" loading="lazy"><span class="provenance"><span data-fr>Image générée par IA</span><span data-en>AI-generated image</span><span data-es>Imagen generada por IA</span></span></div>
+          <figcaption><b><span data-fr>Créatures</span><span data-en>Creatures</span><span data-es>Criaturas</span></b><span><span data-fr>Chauve-souris géante</span><span data-en>Giant bat</span><span data-es>Murciélago gigante</span></span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="bande section univers" id="univers" aria-labelledby="titre-univers">
+    <div class="cadre">
+      <div class="entete-section">
+        <p class="surtitre"><span data-fr>Notre univers</span><span data-en>Our universe</span><span data-es>Nuestro universo</span></p>
+        <h2 id="titre-univers"><span data-fr>Un monde <em>100 % humain</em></span><span data-en>A <em>100% human</em> world</span><span data-es>Un mundo <em>100 % humano</em></span></h2>
+        <div class="texte">
+          <p><span data-fr>Le monde de Croussus et son Crab's Collar Continent sont imaginés et écrits par des humains : leurs peuples, leurs créatures, leurs guerres, dont la Guerre des Corbeaux. L'IA arrive après, pour les mettre en images et en mouvement. Et on le dit toujours.</span><span data-en>The World of Croussus and its Crab's Collar Continent are imagined and written by people: their peoples, their creatures, their wars, including the Raven War. AI comes after, to bring them to images and motion. And we always say so.</span><span data-es>El mundo de Croussus y su Crab's Collar Continent los imaginan y escriben personas: sus pueblos, sus criaturas, sus guerras, entre ellas la Guerra de los Cuervos. La IA llega después, para llevarlos a imágenes y movimiento. Y siempre lo decimos.</span></p>
+        </div>
+        <ul class="registre" aria-label="Qui fait quoi / Who makes what">
+          <li><span data-fr>Le monde, son histoire, ses peuples</span><span data-en>The world, its history, its peoples</span><span data-es>El mundo, su historia, sus pueblos</span><span class="qui"><span data-fr>Humain</span><span data-en>Human</span><span data-es>Humano</span></span></li>
+          <li><span data-fr>Les récits, les livres, les nouvelles</span><span data-en>The stories, books and short stories</span><span data-es>Los relatos, los libros y los cuentos</span><span class="qui"><span data-fr>Humain</span><span data-en>Human</span><span data-es>Humano</span></span></li>
+          <li><span data-fr>Les images, les vidéos, les reels</span><span data-en>Images, videos, reels</span><span data-es>Imágenes, videos, reels</span><span class="qui ia"><span data-fr>IA, déclarée</span><span data-en>AI, declared</span><span data-es>IA, declarada</span></span></li>
+        </ul>
+        <div class="appels">
+          <a class="bouton" href="https://worldofcroussus.fandom.com/" rel="noopener"><span data-fr>Explorer le wiki</span><span data-en>Explore the wiki</span><span data-es>Explorar la wiki</span></a>
+        </div>
+      </div>
+      <div class="dames" aria-hidden="true"><img src="m/trois-femmes.webp" alt="" width="640" height="640"></div>
+    </div>
+  </section>
+
+  <section class="bande section" aria-labelledby="titre-livres">
+    <div class="cadre">
+      <div class="entete-section">
+        <p class="surtitre"><span data-fr>Les livres</span><span data-en>The books</span><span data-es>Los libros</span></p>
+        <h2 id="titre-livres"><span data-fr>Écrits <em>à la main</em></span><span data-en>Written <em>by hand</em></span><span data-es>Escritos <em>a mano</em></span></h2>
+        <p class="chapeau"><span data-fr>Les livres de notre fondateur, publiés sur Wattpad sous le nom de TheNewWorldProphet : des prophéties, des voyageurs, des tempêtes.</span><span data-en>Books by our founder, published on Wattpad as TheNewWorldProphet: prophecies, travellers, storms.</span><span data-es>Libros de nuestro fundador, publicados en Wattpad como TheNewWorldProphet: profecías, viajeros, tormentas.</span></p>
+      </div>
+      <ul class="livres">
+        <li><span class="titre-livre">The Traveller &amp; the Gambler</span><p><span data-fr>Les Jeux de Viktorrious, dans la cité de Pyr.</span><span data-en>The Viktorrious Games, in the city of Pyr.</span><span data-es>Los Juegos de Viktorrious, en la ciudad de Pyr.</span></p></li>
+        <li><span class="titre-livre">Smoke on the Water</span><p><span data-fr>Fantasy initiatique sur une île interdite.</span><span data-en>A coming-of-age fantasy on a forbidden island.</span><span data-es>Una fantasía de iniciación en una isla prohibida.</span></p></li>
+        <li><span class="titre-livre">The Prophecy of the Elohim</span><p><span data-fr>En anglais, en français et en espagnol.</span><span data-en>In English, French and Spanish.</span><span data-es>En inglés, francés y español.</span></p></li>
+        <li><span class="titre-livre">Aditya and the Storm</span><p><span data-fr>Un récit de tempête et de choix.</span><span data-en>A tale of storm and choice.</span><span data-es>Un relato de tormenta y de decisiones.</span></p></li>
+      </ul>
+      <div class="appels">
+        <a class="bouton" href="https://www.wattpad.com/user/TheNewWorldProphet" rel="noopener"><span data-fr>Lire sur Wattpad</span><span data-en>Read on Wattpad</span><span data-es>Leer en Wattpad</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bande section contact" id="contact" aria-labelledby="titre-contact">
+    <div class="cadre">
+      <div class="entete-section">
+        <p class="surtitre"><span data-fr>Nous joindre</span><span data-en>Contact us</span><span data-es>Contáctenos</span></p>
+        <h2 id="titre-contact"><span data-fr>Votre monde, <em>à l'écran</em></span><span data-en>Your world, <em>on screen</em></span><span data-es>Su mundo, <em>en pantalla</em></span></h2>
+        <p class="chapeau"><span data-fr>Vous avez un univers, une histoire, un personnage ou une idée qui attend d'exister? On le met en images, en vidéo, en série, en musique ou en jeu, avec vous. Écrivez-nous.</span><span data-en>Have a world, a story, a character or an idea waiting to exist? We bring it to life in images, video, series, music or games, together with you. Write to us.</span><span data-es>¿Tiene un universo, una historia, un personaje o una idea que espera existir? Lo llevamos a imágenes, video, series, música o juegos, con usted. Escríbanos.</span></p>
+        <ul class="idees">
+          <li><span data-fr>Univers et lore</span><span data-en>Worlds and lore</span><span data-es>Universos y lore</span></li>
+          <li><span data-fr>Personnages</span><span data-en>Characters</span><span data-es>Personajes</span></li>
+          <li><span data-fr>Bandes-annonces de livres</span><span data-en>Book trailers</span><span data-es>Tráileres de libros</span></li>
+          <li><span data-fr>Séries et reels</span><span data-en>Series and reels</span><span data-es>Series y reels</span></li>
+          <li><span data-fr>Jeux</span><span data-en>Games</span><span data-es>Juegos</span></li>
+          <li><span data-fr>Musique</span><span data-en>Music</span><span data-es>Música</span></li>
+        </ul>
+      </div>
+      <div class="carte-contact">
+        <p class="surtitre"><span data-fr>Courriel</span><span data-en>Email</span><span data-es>Correo</span></p>
+        <p class="adresse" id="courriel">bonjour@ccc-studios.com</p>
+        <div class="appels">
+          <button class="bouton" type="button" id="copier"><span data-fr>Copier l'adresse</span><span data-en>Copy address</span><span data-es>Copiar la dirección</span></button>
+          <a class="bouton vide" href="mailto:bonjour@ccc-studios.com?subject=Projet%20cr%C3%A9atif"><span data-fr>Écrire</span><span data-en>Write</span><span data-es>Escribir</span></a>
+        </div>
+        <p class="copie-ok" id="copie-ok" aria-live="polite"></p>
+        <p style="font-size:14px;color:var(--rose)"><span data-fr>Dites-nous ce que vous voulez créer. Une personne vous répond, en français, en anglais ou en espagnol.</span><span data-en>Tell us what you want to create. A person replies, in English, French or Spanish.</span><span data-es>Díganos qué quiere crear. Una persona le responde, en francés, inglés o español.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bande section declaree" aria-labelledby="titre-suivre">
+    <div class="cadre">
+      <div class="entete-section">
+        <p class="surtitre"><span data-fr>IA déclarée</span><span data-en>AI, declared</span><span data-es>IA, declarada</span></p>
+        <h2 id="titre-suivre"><span data-fr>Ce que l'IA fait, <em>on l'écrit</em></span><span data-en>What AI makes, <em>we label</em></span><span data-es>Lo que hace la IA, <em>lo decimos</em></span></h2>
+        <p class="chapeau"><span data-fr>Chaque image et chaque vidéo générée par IA est identifiée comme telle, ici et sur nos réseaux.</span><span data-en>Every AI-generated image and video is labelled as such, here and on our channels.</span><span data-es>Cada imagen y cada video generados por IA se identifican como tales, aquí y en nuestras redes.</span></p>
+      </div>
+      <div class="liens">
+        <a href="https://www.tiktok.com/@cccstudiosinc" rel="noopener"><span class="ou">TikTok</span><span class="qui">@cccstudiosinc</span></a>
+        <a href="https://worldofcroussus.fandom.com/" rel="noopener"><span class="ou"><span data-fr>Wiki de l'univers</span><span data-en>Universe wiki</span><span data-es>Wiki del universo</span></span><span class="qui">World of Croussus</span></a>
+        <a href="https://www.wattpad.com/user/TheNewWorldProphet" rel="noopener"><span class="ou">Wattpad</span><span class="qui">TheNewWorldProphet</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="bande">
+  <div class="cadre">
+    <span class="signature"><span data-fr>CCC Studios · Studio de création québécois · IA déclarée</span><span data-en>CCC Studios · Canadian creative studio · AI-declared</span><span data-es>CCC Studios · Estudio creativo de Quebec · IA declarada</span></span>
+    <span><span data-fr>Univers et livres écrits par des humains. Images et vidéos générées par IA.</span><span data-en>Universe and books written by people. Images and videos generated by AI.</span><span data-es>Universo y libros escritos por personas. Imágenes y videos generados por IA.</span></span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+  var racine = document.documentElement;
+  racine.classList.add("fr-en");
+  function langue(l) {
+    racine.setAttribute("data-l", l);
+    racine.setAttribute("lang", l);
+    document.getElementById("btn-fr").setAttribute("aria-pressed", String(l === "fr"));
+    document.getElementById("btn-en").setAttribute("aria-pressed", String(l === "en"));
+    document.getElementById("btn-es").setAttribute("aria-pressed", String(l === "es"));
+    try { localStorage.setItem("ccc-langue", l); localStorage.setItem("lang", l); } catch (e) {}
+  }
+  var choisie = "fr";
+  try { var q = new URLSearchParams(location.search).get("lang"); choisie = q || localStorage.getItem("lang") || localStorage.getItem("ccc-langue") || "fr"; } catch (e) {}
+  langue(choisie === "en" || choisie === "es" ? choisie : "fr");
+  document.getElementById("btn-fr").addEventListener("click", function () { langue("fr"); });
+  document.getElementById("btn-en").addEventListener("click", function () { langue("en"); });
+  document.getElementById("btn-es").addEventListener("click", function () { langue("es"); });
+
+  // Son : un seul à la fois ; les vidéos restent muettes au chargement.
+  var boutons = Array.prototype.slice.call(document.querySelectorAll(".son"));
+  boutons.forEach(function (b) {
+    b.addEventListener("click", function () {
+      var v = document.getElementById(b.getAttribute("data-video"));
+      var allumer = v.muted;
+      boutons.forEach(function (x) {
+        var vx = document.getElementById(x.getAttribute("data-video"));
+        vx.muted = true; x.setAttribute("aria-pressed", "false");
+      });
+      if (allumer) { v.muted = false; v.play().catch(function () {}); b.setAttribute("aria-pressed", "true"); }
+    });
+  });
+  // Copier l'adresse (le lien mailto ne marche pas pour tout le monde).
+  var ok = document.getElementById("copie-ok");
+  document.getElementById("copier").addEventListener("click", function () {
+    var adr = document.getElementById("courriel").textContent.trim();
+    var en = racine.getAttribute("data-l") === "en", es = racine.getAttribute("data-l") === "es";
+    function choisir() { var r = document.createRange(); r.selectNodeContents(document.getElementById("courriel")); var s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+    try {
+      navigator.clipboard.writeText(adr).then(function () { ok.textContent = es ? "Dirección copiada." : (en ? "Address copied." : "Adresse copiée."); },
+        function () { choisir(); ok.textContent = es ? "Seleccionada: cópiela con Ctrl+C." : (en ? "Selected: copy it with Ctrl+C." : "Sélectionnée : copiez-la avec Ctrl+C."); });
+    } catch (e) { choisir(); ok.textContent = es ? "Seleccionada: cópiela con Ctrl+C." : (en ? "Selected: copy it with Ctrl+C." : "Sélectionnée : copiez-la avec Ctrl+C."); }
+  });
+  // Vidéo de l'écran d'accueil : 9:16 en portrait (téléphone), 16:9 en paysage (ordinateur).
+  var ecran = document.getElementById("v-ecran");
+  var portrait = window.matchMedia("(max-aspect-ratio: 4/5)");
+  function choisirVideo() {
+    var nom = portrait.matches ? "tel" : "bureau";
+    if (ecran.dataset.format === nom) return;
+    ecran.dataset.format = nom;
+    ecran.poster = "m/heros-" + nom + ".jpg";
+    ecran.src = "m/heros-" + nom + ".mp4";
+    if (!reduit) ecran.play().catch(function () {});
+  }
+  var reduit = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduit) ecran.removeAttribute("autoplay");
+  choisirVideo();
+  if (portrait.addEventListener) portrait.addEventListener("change", choisirVideo);
+  // Mouvement réduit : pas de lecture automatique.
+  if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    document.querySelectorAll("video").forEach(function (v) { v.removeAttribute("autoplay"); v.pause(); });
+  }
+})();
+</script>
+
+</body></html>
