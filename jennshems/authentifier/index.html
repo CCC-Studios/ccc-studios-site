@@ -37,22 +37,7 @@
   --police-code: ui-monospace, "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
   color-scheme: light;
 }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --fond: #180D00; --surface: #000000; --encre: #FFFFFF; --doux: rgba(245, 242, 236, 0.78); --trait: rgba(245, 242, 236, 0.2);
-    --accent: #FFC40C; --accent-pale: rgba(255, 196, 12, 0.3); --filet: #FFC40C;
-    --ok: #7FD3A0; --ok-fond: #12301F; --alerte: #FFC40C; --alerte-fond: rgba(255, 196, 12, 0.16);
-    --info: #F5F2EC; --info-fond: rgba(245, 242, 236, 0.12); --danger: #F29B8F; --danger-fond: #3D1410;
-    --cadre: #000000; --cadre-code: #FFC40C; color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --fond: #180D00; --surface: #000000; --encre: #FFFFFF; --doux: rgba(245, 242, 236, 0.78); --trait: rgba(245, 242, 236, 0.2);
-  --accent: #FFC40C; --accent-pale: rgba(255, 196, 12, 0.3); --filet: #FFC40C;
-  --ok: #7FD3A0; --ok-fond: #12301F; --alerte: #FFC40C; --alerte-fond: rgba(255, 196, 12, 0.16);
-  --info: #F5F2EC; --info-fond: rgba(245, 242, 236, 0.12); --danger: #F29B8F; --danger-fond: #3D1410;
-  --cadre: #000000; --cadre-code: #FFC40C; color-scheme: dark;
-}
+/* Toujours en Crème, comme les autres pages d'affaires (31 oct.) : plus de bascule en mode sombre. */
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
 body {
@@ -85,7 +70,7 @@ button:focus-visible, .bouton:focus-visible, input:focus-visible { outline: 2px 
 .ecran::before { content: ""; position: absolute; left: 16%; right: 16%; top: 36%; height: 6%; border-radius: 3px; background: rgba(255,255,255,0.7); }
 .ecran::after { content: ""; position: absolute; left: 24%; right: 24%; top: 60%; height: 5%; border-radius: 2px; background: repeating-linear-gradient(to bottom, rgba(255,255,255,0.4) 0 2px, transparent 2px 4px); }
 .ecran span { position: absolute; left: 0; right: 0; top: 67.5%; text-align: center; font: 600 6px var(--police-code); color: var(--cadre-code); letter-spacing: 0.06em; }
-.ecran-legende { font-size: 11px; color: var(--doux); text-align: center; margin-top: 6px; max-width: 96px; }
+.ecran-legende { font-size: 12px; color: var(--doux); text-align: center; margin-top: 6px; max-width: 96px; }
 
 .fiche { margin-top: 18px; border: 1px solid var(--trait); border-radius: 12px; padding: 18px; display: grid; gap: 10px; background: var(--fond); }
 .fiche-tete { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
@@ -132,9 +117,19 @@ footer { font-size: 13px; color: var(--doux); }
   .fiche { animation: arrive 160ms ease-out; }
   @keyframes arrive { from { opacity: 0.4; transform: translateY(3px); } to { opacity: 1; transform: none; } }
 }
+
+/* Barre du haut CCC (Crème), comme les autres pages d'affaires */
+.top-ccc{background:#180D00;border-bottom:2px solid #FFC40C;margin:-28px calc(-1 * max(16px, env(safe-area-inset-left, 0px))) 36px;padding:0 max(16px, env(safe-area-inset-left, 0px))}
+.top-ccc .dedans{max-width:1080px;margin:0 auto;padding:0 4px;height:60px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.top-ccc nav{display:flex;gap:18px}.top-ccc .lien{font:400 14px Inter,sans-serif;color:#F5F2EC;text-decoration:none;white-space:nowrap}.top-ccc .lien:hover{color:#FFC40C}
+.top-ccc a{display:flex;align-items:center;gap:14px;text-decoration:none}
+.top-ccc img{width:155px;height:22px;display:block}
+.top-ccc .branche{font:400 12px/1 "Tenor Sans",Inter,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#F5F2EC;padding-left:14px;border-left:1px solid rgba(245,242,236,.25);white-space:nowrap}
+@media(max-width:760px){.top-ccc .branche{display:none}}@media(max-width:420px){.top-ccc img{width:124px;height:18px}}
 </style>
 </head>
 <body>
+<div class="top-ccc"><div class="dedans"><a href="/" aria-label="CCC Studios, accueil"><img src="/logo-ccc.svg" alt="CCC Studios" width="155" height="22"><span class="branche">Branche d'affaires</span></a><nav><a class="lien" href="/services/">Services</a><a class="lien" href="/jennshems/">Jennifer</a></nav></div></div>
 <main class="page">
   <header>
     <p class="marque">CCC Studios · Authentifier Jennifer</p>
@@ -382,6 +377,24 @@ footer { font-size: 13px; color: var(--doux); }
   // Lien direct : …/authentifier/?id=CCC-7K4Q2X
   const p = new URLSearchParams(location.search).get("id");
   if (p) { champ.value = p; afficher(p); }
+})();
+</script>
+<script>
+/* « Branche d'affaires » : visible seulement s'il reste au moins 24 px avant le menu (police, zoom, langue). */
+(function () {
+  var lab = document.querySelector(".branche"); if (!lab) return;
+  var barre = lab.closest(".top, .top-ccc");
+  function ajuste() {
+    lab.style.display = "";
+    if (getComputedStyle(lab).display === "none") return;
+    var menu = barre.querySelector("nav"); if (!menu) return;
+    var fin = lab.getBoundingClientRect().right, debut = menu.getBoundingClientRect().left;
+    var premier = menu.firstElementChild; if (premier) debut = Math.min(debut, premier.getBoundingClientRect().left);
+    if (fin + 24 > debut || lab.getBoundingClientRect().height > 18) lab.style.display = "none";
+  }
+  ajuste(); addEventListener("resize", ajuste); addEventListener("load", ajuste);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(ajuste);
+  new MutationObserver(ajuste).observe(document.documentElement, { attributes: true, attributeFilter: ["data-lang", "lang"] });
 })();
 </script>
 </body>

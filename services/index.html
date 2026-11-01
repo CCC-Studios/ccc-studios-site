@@ -131,13 +131,21 @@ details p{margin-top:10px;max-width:46em}
 footer{background:var(--noir);color:var(--blanc);font-size:13.5px;padding:30px 0}
 footer .wrap{display:grid;gap:8px}
 footer a{color:var(--blanc)}
+
+/* Logo : éclipse triple lune + CCC STUDIOS, comme la page créative */
+.brand img{width:155px;height:22px;border-radius:0;background:none;display:block}
+@media(max-width:420px){.brand img{width:124px;height:18px}}
+
+/* Étiquette de branche, comme « Branche créative » */
+.brand{gap:14px}.brand .branche{font:400 12px/1 "Tenor Sans",Inter,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#F5F2EC;padding-left:14px;border-left:1px solid rgba(245,242,236,.25);white-space:nowrap}
+@media(max-width:1024px){.brand .branche{display:none}}
 </style>
 </head>
 <body>
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="/"><img src="/logo-ccc.png" alt="">CCC STUDIOS</a>
+    <a class="brand" href="/" aria-label="CCC Studios, accueil"><img src="/logo-ccc.svg" alt="CCC Studios" width="155" height="22"><span class="branche"><span lang="fr">Branche d'affaires</span><span lang="en">Business branch</span><span lang="es">Rama de negocios</span></span></a>
     <nav>
       <div class="navlinks">
         <a href="/services/" aria-current="page">Services</a>
@@ -353,6 +361,24 @@ footer a{color:var(--blanc)}
   if(ok[q]){start=q;} else {try{var s=localStorage.getItem("lang"); if(ok[s])start=s;}catch(e){}}
   document.querySelectorAll(".langs button").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.set);});});
   setLang(start);
+})();
+</script>
+<script>
+/* « Branche d'affaires » : visible seulement s'il reste au moins 24 px avant le menu (police, zoom, langue). */
+(function () {
+  var lab = document.querySelector(".branche"); if (!lab) return;
+  var barre = lab.closest(".top, .top-ccc");
+  function ajuste() {
+    lab.style.display = "";
+    if (getComputedStyle(lab).display === "none") return;
+    var menu = barre.querySelector("nav"); if (!menu) return;
+    var fin = lab.getBoundingClientRect().right, debut = menu.getBoundingClientRect().left;
+    var premier = menu.firstElementChild; if (premier) debut = Math.min(debut, premier.getBoundingClientRect().left);
+    if (fin + 24 > debut || lab.getBoundingClientRect().height > 18) lab.style.display = "none";
+  }
+  ajuste(); addEventListener("resize", ajuste); addEventListener("load", ajuste);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(ajuste);
+  new MutationObserver(ajuste).observe(document.documentElement, { attributes: true, attributeFilter: ["data-lang", "lang"] });
 })();
 </script>
 </body>

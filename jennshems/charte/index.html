@@ -57,7 +57,7 @@ a{color:var(--cognac);text-underline-offset:3px}
 @media(min-width:960px){.layout{grid-template-columns:230px minmax(0,1fr);gap:64px}}
 .toc{font-size:14px}
 @media(min-width:960px){.toc{position:sticky;top:84px;align-self:start}}
-.toc b{display:block;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--soft);margin-bottom:10px}
+.toc b{display:block;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--soft);margin-bottom:10px}
 .toc ol{list-style:none;padding:0;display:grid;gap:6px}
 .toc a{color:var(--ink);text-decoration:none;opacity:.8}
 .toc a:hover{opacity:1;color:var(--cognac)}
@@ -66,7 +66,7 @@ a{color:var(--cognac);text-underline-offset:3px}
 
 article{max-width:44em}
 .mot{border-left:2px solid var(--cognac);padding:4px 0 4px 26px;margin-bottom:56px}
-.mot .label{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--soft);font-weight:600}
+.mot .label{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--soft);font-weight:600}
 .mot p{font-family:Lora,Georgia,serif;font-size:20px;line-height:1.55;margin-top:12px}
 .mot .qui{font-family:Inter,system-ui,sans-serif;font-size:14px;color:var(--muted);margin-top:16px}
 
@@ -96,13 +96,13 @@ section.art:first-of-type{border-top:0;padding-top:0}
 .signature .titre{font-size:14px;color:var(--muted)}
 
 .sources{margin-top:56px;font-size:14px;color:var(--muted)}
-.sources h2{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:10px}
+.sources h2{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:10px}
 .sources ul{padding-left:18px;display:grid;gap:6px}
 .avis{margin-top:22px;font-size:13px;color:var(--soft)}
 
 .en{background:var(--sheet);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:48px}
 .en .wrap{padding-top:40px;padding-bottom:40px;max-width:820px}
-.en h2{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:12px}
+.en h2{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:12px}
 .en p{color:var(--muted)}
 .en p+p{margin-top:10px}
 
@@ -130,13 +130,22 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 18px}
 .hero .meta{color:#F5F2EC}
 footer{background:#000;color:#fff}
 footer a{color:#fff}
+
+/* Logo : éclipse triple lune + CCC STUDIOS, comme la page créative */
+.brand img{width:155px;height:22px;border-radius:0;background:none;display:block}
+@media(max-width:420px){.brand img{width:124px;height:18px}}
+
+/* Étiquette de branche, comme « Branche créative » */
+.brand{gap:14px}.brand .branche{font:400 12px/1 "Tenor Sans",Inter,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#F5F2EC;padding-left:14px;border-left:1px solid rgba(245,242,236,.25);white-space:nowrap}
+@media(max-width:1024px){.brand .branche{display:none}}
+@media(max-width:420px){.top nav{gap:12px;font-size:13px}}
 </style>
 </head>
 <body>
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="/"><img src="/logo-ccc.png" alt="">CCC STUDIOS</a>
+    <a class="brand" href="/" aria-label="CCC Studios, accueil"><img src="/logo-ccc.svg" alt="CCC Studios" width="155" height="22"><span class="branche">Branche d'affaires</span></a>
     <nav><a href="/services/">Services</a><a href="/jennshems/">Jennifer</a><a href="/jennshems/authentifier/">Authentifier</a></nav>
   </div>
 </header>
@@ -405,5 +414,23 @@ footer a{color:#fff}
     <a href="/confidentialite/">Confidentialité</a>
   </div>
 </footer>
+<script>
+/* « Branche d'affaires » : visible seulement s'il reste au moins 24 px avant le menu (police, zoom, langue). */
+(function () {
+  var lab = document.querySelector(".branche"); if (!lab) return;
+  var barre = lab.closest(".top, .top-ccc");
+  function ajuste() {
+    lab.style.display = "";
+    if (getComputedStyle(lab).display === "none") return;
+    var menu = barre.querySelector("nav"); if (!menu) return;
+    var fin = lab.getBoundingClientRect().right, debut = menu.getBoundingClientRect().left;
+    var premier = menu.firstElementChild; if (premier) debut = Math.min(debut, premier.getBoundingClientRect().left);
+    if (fin + 24 > debut || lab.getBoundingClientRect().height > 18) lab.style.display = "none";
+  }
+  ajuste(); addEventListener("resize", ajuste); addEventListener("load", ajuste);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(ajuste);
+  new MutationObserver(ajuste).observe(document.documentElement, { attributes: true, attributeFilter: ["data-lang", "lang"] });
+})();
+</script>
 </body>
 </html>

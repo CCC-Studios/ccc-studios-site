@@ -41,12 +41,16 @@ html[data-lang="fr"] [lang="en"],html[data-lang="fr"] [lang="es"],html[data-lang
 .langs button[aria-pressed="true"]{background:var(--lavande);color:var(--minuit)}
 .langs button:focus-visible{outline:2px solid var(--lavande);outline-offset:2px}
 @media(max-width:480px){.top nav .lien{display:none}.brand{font-size:13px;letter-spacing:.1em}}
+
+/* Logo : éclipse triple lune + CCC STUDIOS, comme la page créative */
+.brand img{width:155px;height:22px;border-radius:0;background:none;display:block}
+@media(max-width:420px){.brand img{width:124px;height:18px}}
 </style>
 </head>
 <body>
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="/"><img src="/logo-ccc.png" alt="">CCC STUDIOS</a>
+    <a class="brand" href="/" aria-label="CCC Studios, accueil"><img src="/logo-ccc.svg" alt="CCC Studios" width="155" height="22"></a>
     <nav><a class="lien" href="/services/">Services</a><a class="lien" href="/jennshems/">Jennifer</a><div class="langs" role="group" aria-label="Langue / Language / Idioma"><button type="button" data-set="fr" aria-pressed="true">FR</button><button type="button" data-set="en" aria-pressed="false">EN</button><button type="button" data-set="es" aria-pressed="false">ES</button></div></nav>
   </div>
 </header>

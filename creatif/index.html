@@ -28,6 +28,11 @@
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
+/* Surfaces du navigateur aux couleurs de la marque (sélection, curseur de saisie, barre de défilement) */
+::selection { background: var(--cramoisi); color: var(--blanc); }
+html { caret-color: var(--rose); scrollbar-color: var(--bordeaux) var(--nuit); }
+::-webkit-scrollbar { width: 10px; } ::-webkit-scrollbar-track { background: var(--nuit); }
+::-webkit-scrollbar-thumb { background: var(--bordeaux); border-radius: 10px; border: 2px solid var(--nuit); }
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 body {
@@ -44,11 +49,13 @@ a:hover { color: var(--blanc); }
 .cadre { max-width: 1120px; margin: 0 auto; }
 
 /* En-tête */
-.tete { padding-block: 22px; border-bottom: 1px solid var(--trait); }
+.tete { padding-block: 22px; border-bottom: 1px solid var(--trait); position: sticky; top: 0; z-index: 50; background: var(--nuit); transition: padding-block 200ms ease, box-shadow 200ms ease; }
+.tete.collee { padding-block: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.45); }
+html { scroll-padding-top: 76px; }
 .tete .cadre { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
-.logo { display: flex; align-items: center; gap: 14px; min-width: 0; }
+.logo { display: flex; align-items: center; gap: 14px; min-width: 0; text-decoration: none; }
 .logo img { height: 22px; width: auto; display: block; }
-.logo span { font: 400 11px/1 var(--police-marque); letter-spacing: 0.22em; text-transform: uppercase; color: var(--rose); padding-left: 14px; border-left: 1px solid var(--trait); }
+.logo span { font: 400 12px/1 var(--police-marque); letter-spacing: 0.22em; text-transform: uppercase; color: var(--rose); padding-left: 14px; border-left: 1px solid var(--trait); }
 .langue { display: flex; border: 1px solid var(--trait); border-radius: 999px; overflow: hidden; }
 .langue button { font: 500 12px var(--police-texte); letter-spacing: 0.08em; background: transparent; color: var(--rose); border: 0; padding: 7px 13px; cursor: pointer; }
 .langue button[aria-pressed="true"] { background: var(--rose); color: var(--nuit); }
@@ -69,7 +76,7 @@ h1, h2.grand { font-size: clamp(42px, 7.2vw, 88px); line-height: 1.02; letter-sp
 .video-titre { font: 400 clamp(40px, 8.4vw, 124px)/0.98 var(--police-marque); text-transform: uppercase; letter-spacing: 0.04em; text-shadow: 0 2px 30px rgba(0,0,0,0.55); }
 .video-titre em { font: italic 500 1.02em/1 var(--police-titre); text-transform: none; letter-spacing: -0.01em; color: var(--blanc); display: block; }
 .video-sous { font: italic 500 clamp(18px, 2.2vw, 26px)/1.4 var(--police-titre); color: var(--rose); text-shadow: 0 1px 16px rgba(0,0,0,0.7); }
-.ecran-ia { position: absolute; left: max(16px, env(safe-area-inset-left, 0px)); bottom: calc(18px + env(safe-area-inset-bottom, 0px)); font: 500 11px/1.3 var(--police-texte); letter-spacing: 0.06em; color: rgba(255,255,255,0.78); }
+.ecran-ia { position: absolute; left: max(16px, env(safe-area-inset-left, 0px)); bottom: calc(18px + env(safe-area-inset-bottom, 0px)); font: 500 12px/1.3 var(--police-texte); letter-spacing: 0.06em; color: rgba(255,255,255,0.78); }
 .ecran-suite { position: absolute; left: 50%; bottom: calc(22px + env(safe-area-inset-bottom, 0px)); width: 22px; height: 36px; margin-left: -11px; border: 1.5px solid rgba(255,255,255,0.7); border-radius: 12px; }
 .ecran-suite::after { content: ""; position: absolute; left: 50%; top: 7px; width: 3px; height: 7px; margin-left: -1.5px; border-radius: 2px; background: var(--blanc); }
 @media (prefers-reduced-motion: no-preference) { .ecran-suite::after { animation: glisse 1.8s ease-in-out infinite; } @keyframes glisse { 0%,100% { transform: translateY(0); opacity: 1; } 60% { transform: translateY(10px); opacity: 0.2; } } }
@@ -95,7 +102,7 @@ p { margin: 0; }
 .media { position: relative; border-radius: 6px; overflow: hidden; background: var(--noir); border: 1px solid var(--trait); }
 .media video, .media img { display: block; width: 100%; height: 100%; object-fit: cover; max-width: 100%; }
 .media.pixel img { image-rendering: pixelated; }
-.provenance { position: absolute; left: 10px; top: 10px; font: 600 11px/1 var(--police-texte); letter-spacing: 0.06em; padding: 6px 9px; border-radius: 999px; background: rgba(0, 0, 0, 0.62); color: var(--blanc); backdrop-filter: blur(4px); }
+.provenance { position: absolute; left: 10px; top: 10px; font: 600 12px/1 var(--police-texte); letter-spacing: 0.06em; padding: 6px 9px; border-radius: 999px; background: rgba(0, 0, 0, 0.62); color: var(--blanc); backdrop-filter: blur(4px); }
 .son { position: absolute; right: 10px; bottom: 10px; font: 600 12px var(--police-texte); padding: 7px 11px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.5); background: rgba(0, 0, 0, 0.55); color: var(--blanc); cursor: pointer; }
 figcaption { font-size: 14px; line-height: 1.45; color: var(--rose); display: flex; justify-content: space-between; gap: 12px; }
 figcaption b { font: 400 12px/1.5 var(--police-marque); letter-spacing: 0.16em; text-transform: uppercase; color: var(--blanc); }
@@ -104,9 +111,9 @@ figcaption b { font: 400 12px/1.5 var(--police-marque); letter-spacing: 0.16em; 
 /* Formats */
 .formats { padding-block: clamp(36px, 5vw, 56px); border-block: 1px solid var(--trait); background: linear-gradient(180deg, rgba(89, 0, 22, 0.35), rgba(89, 0, 22, 0)); }
 .formats .cadre { display: grid; gap: 22px; }
-.liste-formats { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 0; font: 400 clamp(24px, 3.6vw, 44px)/1.2 var(--police-marque); text-transform: uppercase; letter-spacing: 0.04em; }
+.liste-formats { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 0; font: 400 clamp(24px, 3.6vw, 44px)/1.2 var(--police-marque); text-transform: uppercase; letter-spacing: 0.04em; }
 .liste-formats li { display: inline-flex; align-items: center; }
-.liste-formats li + li::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--cramoisi); margin: 0 clamp(12px, 1.8vw, 22px); box-shadow: inset -3px 0 0 var(--nuit); }
+.liste-formats li:not(:last-child)::after { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--cramoisi); margin: 0 clamp(12px, 1.8vw, 22px); box-shadow: inset -3px 0 0 var(--nuit); }
 .liste-formats .plus { font-family: var(--police-titre); font-style: italic; text-transform: none; letter-spacing: 0; color: var(--rose); }
 
 /* Galerie */
@@ -155,7 +162,7 @@ figcaption b { font: 400 12px/1.5 var(--police-marque); letter-spacing: 0.16em; 
 .liens { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
 .liens a { display: grid; gap: 4px; padding: 18px 20px; border: 1px solid var(--trait); border-radius: 6px; text-decoration: none; color: var(--blanc); }
 .liens a:hover { border-color: var(--rose); }
-.liens .ou { font: 400 11px/1.4 var(--police-marque); letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose); }
+.liens .ou { font: 400 12px/1.4 var(--police-marque); letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose); }
 .liens .qui { font: 500 18px var(--police-texte); overflow-wrap: anywhere; }
 
 footer { padding-block: 32px 48px; border-top: 1px solid var(--trait); font-size: 13px; color: var(--rose); }
@@ -455,7 +462,21 @@ footer .signature { font: 400 12px var(--police-marque); letter-spacing: 0.2em; 
   if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) {
     document.querySelectorAll("video").forEach(function (v) { v.removeAttribute("autoplay"); v.pause(); });
   }
+  // Les vidéos hors de l'écran se mettent en pause (batterie, données) et reprennent quand on y revient.
+  if ("IntersectionObserver" in window && !reduit) {
+    var vu = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { var v = e.target; if (e.isIntersecting) v.play().catch(function () {}); else v.pause(); });
+    }, { threshold: 0.15 });
+    document.querySelectorAll("video").forEach(function (v) { vu.observe(v); });
+  }
 })();
 </script>
 
+<script>
+(function () {
+  var tete = document.querySelector(".tete"), ecran = document.querySelector(".ecran-video");
+  if (!tete || !ecran || !("IntersectionObserver" in window)) return;
+  new IntersectionObserver(function (e) { tete.classList.toggle("collee", !e[0].isIntersecting); }).observe(ecran);
+})();
+</script>
 </body></html>
