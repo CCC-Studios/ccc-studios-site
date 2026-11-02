@@ -1,44 +1,309 @@
 <!doctype html>
-<html lang="fr">
+<html lang="fr" data-lang="fr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CCC Studios · Compagnie Canadienne Créative</title>
-<meta name="description" content="CCC Studios crée des personnages par IA au Québec, toujours déclarés comme IA. Rencontrez Jennifer, notre actrice IA pour les pubs des PME.">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="icon" href="/favicon.png" sizes="192x192">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="stylesheet" href="/fonts/fonts.css">
+<meta name="description" content="Studio québécois. Une branche d'affaires pour être vu, être choisi et mieux opérer; une branche créative pour les univers, les séries et les jeux. L'IA y est toujours déclarée.">
+<meta property="og:title" content="CCC Studios · Compagnie Canadienne Créative">
+<meta property="og:description" content="Studio québécois. Une branche d'affaires pour être vu, être choisi et mieux opérer; une branche créative pour les univers, les séries et les jeux. L'IA y est toujours déclarée.">
+<meta property="og:url" content="https://ccc-studios.com/">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.png" sizes="192x192">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="fonts/fonts.css">
 <style>
+/* CCC Studios · branche Indigo (page principale et pages d'entreprise), kit de marque v1.4.2.
+   Indigo minuit #04001B (fond), Encre #221B55 (panneaux, filets), Royal #2B0071 (aplats seulement, jamais en filet sur le minuit),
+   Lavande #F9F7FF (texte secondaire, accents), blanc. Aucun gris, aucun dégradé.
+   Les portes vers les branches portent les couleurs de leur branche : Crème, Cramoisi, Bronze. */
+:root{
+  --minuit:#04001B; --encre:#221B55; --royal:#2B0071; --lavande:#F9F7FF; --blanc:#FFFFFF; --noir:#000000;
+  --creme:#F5F2EC; --bronze:#735827; --bronze-minuit:#180D00; --ambre:#FFC40C;
+  --cr-nuit:#1E0007; --cr-bordeaux:#590016; --cr:#C30001; --cr-rose:#FEDADA;
+}
 *{box-sizing:border-box;margin:0}
-body{font-family:Inter,system-ui,sans-serif;background:#000;color:#f2eee9;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px;text-align:center;line-height:1.55}
-img.logo{width:min(320px,70vw);height:auto}
-h1{font-size:clamp(28px,5vw,40px);letter-spacing:.02em;margin-top:10px}
-.tag{color:#b9b4ae;letter-spacing:.18em;text-transform:uppercase;font-size:13px;margin-top:6px}
-p.lead{max-width:34em;margin:22px auto 0;color:#d9d5d0}
-a.card{display:flex;align-items:center;gap:16px;margin:34px auto 0;max-width:440px;text-align:left;text-decoration:none;color:inherit;border:1px solid #3a3a40;border-radius:16px;padding:14px 18px 14px 14px;background:#121317}
-a.card:hover{border-color:#E2DAD3}
-a.card img{width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:top}
-a.card b{font-family:Lora,Georgia,serif;font-style:italic;font-weight:500;font-size:21px;display:block}
-a.card span{font-size:14px;color:#b9b4ae}
-a.card+a.card{margin-top:14px}
-footer{margin-top:40px;font-size:13.5px;color:#8f8b86}
-footer a{color:#d9d5d0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scrollbar-color:var(--encre) var(--minuit)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+::selection{background:var(--royal);color:var(--blanc)}
+body{font-family:Inter,system-ui,sans-serif;background:var(--minuit);color:var(--blanc);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--lavande);outline-offset:3px}
+html[data-lang="fr"] [lang="en"],html[data-lang="fr"] [lang="es"],
+html[data-lang="en"] [lang="fr"],html[data-lang="en"] [lang="es"],
+html[data-lang="es"] [lang="fr"],html[data-lang="es"] [lang="en"]{display:none!important}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+h1,h2,h3,.title{font-family:Lora,Georgia,serif;font-weight:500;letter-spacing:-.01em;text-wrap:balance}
+em{font-style:italic}
+.logotype{font-family:"Tenor Sans",Inter,sans-serif;font-weight:400;letter-spacing:.14em;text-transform:uppercase}
+
+/* barre du haut */
+.top{position:sticky;top:0;z-index:20;background:var(--minuit);border-bottom:1px solid var(--encre)}
+.top .wrap{display:flex;align-items:center;gap:12px;height:60px}
+.brand{display:flex;align-items:center;text-decoration:none}
+.brand img{width:155px;height:22px;display:block}
+@media(max-width:420px){.brand img{width:124px;height:18px}}
+.top nav{margin-left:auto;display:flex;align-items:center;gap:18px;font-size:14px}
+.navlinks{display:none;gap:18px}
+@media(min-width:820px){.navlinks{display:flex}}
+.navlinks a{text-decoration:none;color:var(--lavande)}
+.navlinks a:hover,.navlinks a[aria-current="page"]{color:var(--blanc);text-decoration:underline;text-decoration-color:var(--lavande);text-underline-offset:6px}
+.langs{display:flex;border:1px solid var(--lavande);border-radius:999px;overflow:hidden}
+.langs button{background:none;border:0;color:var(--blanc);font:600 12px Inter,sans-serif;padding:6px 10px;cursor:pointer;letter-spacing:.06em}
+.langs button[aria-pressed="true"]{background:var(--lavande);color:var(--minuit)}
+
+/* commun */
+section{padding:72px 0}
+h2{font-size:clamp(28px,4vw,40px);line-height:1.12;margin-bottom:14px}
+.kicker{font-size:12.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--lavande)}
+.lead{font-size:18px;max-width:36em;color:var(--lavande)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 20px;border-radius:10px;font-weight:600;font-size:15px;text-decoration:none;border:1px solid var(--lavande);color:var(--blanc);transition:background-color .2s ease,color .2s ease}
+.btn:hover{background:var(--lavande);color:var(--minuit)}
+.btn-main{background:var(--lavande);color:var(--minuit)}
+.btn-main:hover{background:var(--blanc)}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:22px}
+
+/* héros */
+.hero{padding:64px 0 56px;border-bottom:1px solid var(--encre)}
+.hero-grid{display:grid;gap:28px;align-items:center}
+@media(min-width:860px){.hero-grid{grid-template-columns:1.25fr .75fr}}
+.big{font-size:clamp(40px,8vw,84px);line-height:1;margin:14px 0 10px;letter-spacing:.1em}
+.ccc{font-family:"Tenor Sans",Inter,sans-serif;letter-spacing:.22em;text-transform:uppercase;font-size:13px;color:var(--lavande)}
+.motto{font-family:Lora,Georgia,serif;font-size:clamp(24px,3.4vw,34px);margin:26px 0 14px;line-height:1.2}
+.motto em{color:var(--lavande)}
+.hero-art{width:min(360px,70vw);height:auto;justify-self:center;opacity:.95}
+@media(max-width:859px){.hero-art{order:-1;width:min(220px,56vw)}}
+.hero-small{padding:56px 0 48px}
+.title{font-size:clamp(34px,6vw,58px);line-height:1.08;margin:14px 0 18px}
+.title em{color:var(--lavande)}
+
+/* portes vers les branches */
+.door-grid{display:grid;gap:18px;margin-top:10px}
+@media(min-width:900px){.door-grid{grid-template-columns:repeat(3,1fr)}}
+.door{display:flex;flex-direction:column;border-radius:18px;overflow:hidden;text-decoration:none;border:1px solid transparent;transition:transform .25s cubic-bezier(.2,.7,.2,1),border-color .25s ease}
+.door:hover{transform:translateY(-3px)}
+@media(prefers-reduced-motion:reduce){.door,.door:hover{transform:none;transition:none}}
+.door-vis{position:relative;aspect-ratio:16/10;overflow:hidden}
+.door-vis img{width:100%;height:100%;object-fit:cover;display:block}
+.door-bronze .door-vis img{object-position:50% 18%}
+.door-vis .ia{position:absolute;left:10px;top:10px;font:600 12px/1 Inter,sans-serif;letter-spacing:.06em;padding:6px 9px;border-radius:999px;background:rgba(0,0,0,.62);color:var(--blanc)}
+.vis-fam{display:grid;align-content:center;gap:4px;padding:22px 24px;font-family:Lora,Georgia,serif;font-size:clamp(22px,2.4vw,28px);line-height:1.15}
+.door-body{display:flex;flex-direction:column;gap:8px;padding:20px 22px 22px;flex:1}
+.door-k{font-family:"Tenor Sans",Inter,sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase}
+.door-t{font-family:Lora,Georgia,serif;font-weight:500;font-size:24px;line-height:1.15}
+.door-body p{font-size:15px}
+.door-go{margin-top:auto;padding-top:8px;font-weight:600;font-size:15px}
+.door-creme{background:var(--blanc);color:var(--noir)}
+.door-creme .vis-fam{background:var(--bronze-minuit);color:var(--blanc);border-bottom:2px solid var(--ambre)}
+.door-creme .vis-fam em{color:var(--ambre)}
+.door-creme .door-k,.door-creme .door-go{color:var(--bronze)}
+.door-creme .door-t{color:var(--bronze-minuit)}
+.door-creme:hover{border-color:var(--ambre)}
+.door-cramoisi{background:var(--cr-nuit);color:var(--blanc)}
+.door-cramoisi .door-vis{border-bottom:2px solid var(--cr)}
+.door-cramoisi .door-k,.door-cramoisi .door-go{color:var(--cr-rose)}
+.door-cramoisi:hover{border-color:var(--cr)}
+.door-bronze{background:var(--bronze-minuit);color:var(--blanc)}
+.door-bronze .door-vis{border-bottom:2px solid var(--ambre)}
+.door-bronze .door-k,.door-bronze .door-go{color:var(--ambre)}
+.door-bronze:hover{border-color:var(--ambre)}
+
+/* fondateur (accueil) */
+.founder{background:var(--encre)}
+.founder-grid{display:grid;gap:32px;align-items:center}
+@media(min-width:900px){.founder-grid{grid-template-columns:1.1fr .9fr}}
+.founder p{margin:12px 0 22px;max-width:36em}
+.founder h2{margin-top:10px}
+.stats{list-style:none;padding:0;display:grid;gap:14px}
+.stats li{background:var(--minuit);border-radius:14px;padding:16px 18px;display:grid;gap:4px}
+.stats b{font-family:Lora,Georgia,serif;font-weight:500;font-size:34px;line-height:1}
+.stats span{font-size:14.5px;color:var(--lavande)}
+
+/* engagements */
+.val-grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));margin-top:8px}
+.val{border-top:2px solid var(--encre);padding-top:14px}
+.val b{display:block;font-size:16.5px;margin-bottom:6px}
+.val p{font-size:14.5px;color:var(--lavande)}
+.val a{color:var(--blanc)}
+
+/* contact */
+.reach{text-align:center;background:var(--royal)}
+.reach p{color:var(--lavande);margin-bottom:6px}
+.reach .wrap > .btn-main{margin-top:16px}
+
+/* à propos */
+.block{border-bottom:1px solid var(--encre)}
+.block-encre{background:var(--encre);border-bottom:0}
+.two{display:grid;gap:32px}
+@media(min-width:900px){.two{grid-template-columns:.9fr 1.1fr}}
+.block p+p{margin-top:12px}
+.block p{max-width:38em}
+.who{font-size:20px;font-family:Lora,Georgia,serif;margin-bottom:6px}
+
+.cards2{display:grid;gap:14px}
+.mini{display:grid;gap:6px;border-radius:14px;padding:18px 20px;text-decoration:none}
+.mini b{font-family:"Tenor Sans",Inter,sans-serif;font-weight:400;font-size:12.5px;letter-spacing:.22em;text-transform:uppercase}
+.mini span{font-size:15px}
+.mini-creme{background:var(--creme);color:var(--noir);border-left:4px solid var(--ambre)}
+.mini-creme b{color:var(--bronze)}
+.mini-cramoisi{background:var(--cr-nuit);color:var(--blanc);border-left:4px solid var(--cr)}
+.mini-cramoisi b{color:var(--cr-rose)}
+h3{font-size:22px;margin-bottom:14px}
+.tl{list-style:none;padding:0;display:grid;gap:0}
+.tl li{display:grid;grid-template-columns:96px 1fr;gap:14px;padding:14px 0;border-top:1px solid rgba(249,247,255,.25)}
+.tl-y{font-size:13px;font-weight:600;color:var(--lavande);padding-top:2px}
+.tl b{display:block;font-size:16px}
+.tl-r{display:block;font-size:14px;color:var(--lavande);margin:2px 0 4px}
+.tl p{font-size:14.5px}
+@media(max-width:480px){.tl li{grid-template-columns:1fr;gap:4px}}
+.steps4{list-style:none;padding:0;display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));counter-reset:k;margin-top:10px}
+.steps4 li{border-top:2px solid var(--lavande);padding-top:12px;display:grid;gap:4px;align-content:start}
+.steps4 li::before{counter-increment:k;content:counter(k);font-family:Lora,Georgia,serif;font-style:italic;font-size:28px;line-height:1;color:var(--lavande)}
+.steps4 b{font-size:16.5px}
+.steps4 span{font-size:14.5px;color:var(--lavande)}
+
+footer{background:var(--noir);font-size:13.5px;padding:30px 0}
+footer .wrap{display:grid;gap:8px}
+footer a{color:var(--blanc)}
+
+/* portraits */
+.face{border-radius:50%;object-fit:cover;display:block;border:2px solid var(--lavande)}
+.who-row{display:flex;align-items:center;gap:16px;margin:4px 0 14px}
+.who-row .face{width:88px;height:88px}
+.who-row .who{margin:0}
+.who2{margin-top:30px;padding-top:24px;border-top:1px solid rgba(249,247,255,.25)}
+.duo{display:flex;gap:18px;margin:14px 0 4px}
+.duo figure{margin:0;display:grid;justify-items:center;gap:6px;font-size:13px;color:var(--lavande)}
+.duo .face{width:76px;height:76px}
+
+
+.reach-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.door-free{font-weight:600}
 </style>
 </head>
 <body>
-  <img class="logo" src="/logo-ccc.png" width="512" height="512" alt="CCC Studios">
-  <h1>CCC Studios</h1>
-  <div class="tag">Compagnie Canadienne Créative</div>
-  <p class="lead">Des personnages créés par IA au Québec, toujours déclarés comme IA.<br><span style="color:#a7a29c">AI-made characters from Quebec, always declared as AI.</span></p>
-  <a class="card" href="/jennshems/">
-    <img src="/jennshems/media/jennifer-studio.jpg" alt="">
-    <div><b>Jennifer Shems-Mylie</b><span>Actrice IA · pubs FR + EN pour les PME<br>AI actress · FR + EN ads for small businesses</span></div>
-  </a>
-  <a class="card" href="/creatif/">
-    <img src="/creatif/m/trois-femmes.webp" alt="">
-    <div><b>CCC Studios Créatif</b><span>Univers, séries, jeux et récits · IA déclarée<br>Worlds, series, games and stories · AI-declared</span></div>
-  </a>
-  <footer>CCC Studios · <a href="mailto:bonjour@ccc-studios.com">bonjour@ccc-studios.com</a> · <a href="/confidentialite/">Confidentialité</a></footer>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="CCC Studios, accueil"><img src="logo-ccc.svg" alt="CCC Studios" width="155" height="22"></a>
+    <nav>
+      <div class="navlinks"><a href="/services/"><span lang="fr">Services</span><span lang="en">Services</span><span lang="es">Servicios</span></a><a href="/creatif/"><span lang="fr">Créatif</span><span lang="en">Creative</span><span lang="es">Creativo</span></a><a href="/jennshems/">Jennifer</a><a href="/a-propos/"><span lang="fr">À propos</span><span lang="en">About</span><span lang="es">Nosotros</span></a></div>
+      <div class="langs" role="group" aria-label="Langue / Language / Idioma">
+        <button type="button" data-set="fr" aria-pressed="true">FR</button>
+        <button type="button" data-set="en" aria-pressed="false">EN</button>
+        <button type="button" data-set="es" aria-pressed="false">ES</button>
+      </div>
+    </nav>
+  </div>
+</header>
+<main>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-txt">
+      <p class="kicker"><span lang="fr">Studio québécois · depuis 2022</span><span lang="en">Quebec studio · since 2022</span><span lang="es">Estudio de Quebec · desde 2022</span></p>
+      <h1 class="logotype big">CCC Studios</h1>
+      <p class="ccc"><span lang="fr">Compagnie Canadienne Créative</span><span lang="en">Canadian Creative Company</span><span lang="es">Compañía Creativa Canadiense</span></p>
+      <p class="motto"><span lang="fr">Créer. Faire voir. <em>Améliorer.</em></span><span lang="en">Create. Get seen. <em>Improve.</em></span><span lang="es">Crear. Hacer ver. <em>Mejorar.</em></span></p>
+      <p class="lead"><span lang="fr">Deux branches, une même exigence. L'une aide les entreprises d'ici à être vues, choisies et mieux organisées. L'autre crée des univers, des séries et des jeux. L'IA y est toujours déclarée.</span><span lang="en">Two branches, one standard. One helps local businesses get seen, get chosen and run better. The other creates worlds, series and games. AI is always declared.</span><span lang="es">Dos ramas, una misma exigencia. Una ayuda a las empresas locales a que las vean, las elijan y funcionen mejor. La otra crea universos, series y juegos. La IA siempre se declara.</span></p>
+    </div>
+    <img class="hero-art" src="logo-ccc-blanc.png" width="400" height="400" alt="">
+  </div>
+</section>
+
+<section class="doors" aria-labelledby="t-branches">
+  <div class="wrap">
+    <h2 id="t-branches"><span lang="fr">Par où commencer?</span><span lang="en">Where to start?</span><span lang="es">¿Por dónde empezar?</span></h2>
+    <div class="door-grid">
+      <a class="door door-creme" href="/services/">
+        <div class="door-vis vis-fam"><span><span lang="fr">Être vu</span><span lang="en">Be seen</span><span lang="es">Que lo vean</span></span><span><span lang="fr">Être choisi</span><span lang="en">Be chosen</span><span lang="es">Que lo elijan</span></span><span><em><span lang="fr">Mieux opérer</span><span lang="en">Run better</span><span lang="es">Operar mejor</span></em></span></div>
+        <div class="door-body">
+          <span class="door-k"><span lang="fr">Branche d'affaires</span><span lang="en">Business branch</span><span lang="es">Rama de negocios</span></span>
+          <b class="door-t"><span lang="fr">Services aux entreprises</span><span lang="en">Business services</span><span lang="es">Servicios para empresas</span></b>
+          <p><span lang="fr">Vidéos, réseaux, publicité, site, image de marque et optimisation des opérations par l'IA, pour les entreprises de services du Québec.</span><span lang="en">Videos, social media, ads, website, visual identity and AI-driven operations optimization, for Quebec service businesses.</span><span lang="es">Videos, redes, publicidad, sitio web, imagen de marca y optimización de operaciones con IA, para empresas de servicios de Quebec.</span></p>
+          <p class="door-free"><span lang="fr">Commencez par un audit express gratuit.</span><span lang="en">Start with a free express audit.</span><span lang="es">Empiece con una auditoría exprés gratuita.</span></p>
+          <span class="door-go"><span lang="fr">Voir les services</span><span lang="en">See the services</span><span lang="es">Ver los servicios</span> →</span>
+        </div>
+      </a>
+      <a class="door door-cramoisi" href="/creatif/">
+        <div class="door-vis"><img src="creatif/m/donjon.webp" width="784" height="625" alt="Donjon généré par IA" loading="lazy"><span class="ia"><span lang="fr">Image générée par IA</span><span lang="en">AI-generated image</span><span lang="es">Imagen generada por IA</span></span></div>
+        <div class="door-body">
+          <span class="door-k"><span lang="fr">Branche créative</span><span lang="en">Creative branch</span><span lang="es">Rama creativa</span></span>
+          <b class="door-t"><span lang="fr">Univers, séries et jeux</span><span lang="en">Worlds, series and games</span><span lang="es">Universos, series y juegos</span></b>
+          <p><span lang="fr">Le monde de Croussus et ses récits, écrits par des humains, puis mis en images et en mouvement par l'IA.</span><span lang="en">The World of Croussus and its stories, written by people, then brought to images and motion by AI.</span><span lang="es">El mundo de Croussus y sus relatos, escritos por personas y luego llevados a imágenes y movimiento por la IA.</span></p>
+          <span class="door-go"><span lang="fr">Entrer dans l'univers</span><span lang="en">Enter the universe</span><span lang="es">Entrar al universo</span> →</span>
+        </div>
+      </a>
+      <a class="door door-bronze" href="/jennshems/">
+        <div class="door-vis"><img src="jennshems/media/jennifer-studio.jpg" width="720" height="1280" alt="Jennifer Shems-Mylie" loading="lazy"><span class="ia"><span lang="fr">Actrice IA</span><span lang="en">AI actress</span><span lang="es">Actriz IA</span></span></div>
+        <div class="door-body">
+          <span class="door-k"><span lang="fr">Notre actrice IA</span><span lang="en">Our AI actress</span><span lang="es">Nuestra actriz IA</span></span>
+          <b class="door-t">Jennifer Shems-Mylie</b>
+          <p><span lang="fr">Des pubs en français et en anglais pour les PME, présentées par une actrice IA toujours déclarée comme telle.</span><span lang="en">French and English ads for small businesses, presented by an AI actress who is always declared as AI.</span><span lang="es">Anuncios en francés e inglés para pymes, presentados por una actriz IA siempre declarada como tal.</span></p>
+          <span class="door-go"><span lang="fr">Rencontrer Jennifer</span><span lang="en">Meet Jennifer</span><span lang="es">Conocer a Jennifer</span> →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="founder" aria-labelledby="t-fondateur">
+  <div class="wrap founder-grid">
+    <div>
+      <p class="kicker"><span lang="fr">Qui est derrière</span><span lang="en">Who's behind it</span><span lang="es">Quién está detrás</span></p>
+      <div class="duo"><figure><img class="face" src="a-propos/dan.webp" width="480" height="480" alt="Dan Ortega" loading="lazy"><figcaption>Dan Ortega</figcaption></figure></div>
+      <h2 id="t-fondateur"><span lang="fr">Celui qui vous répond, c'est Dan</span><span lang="en">The person who answers you is Dan</span><span lang="es">Quien le responde es Dan</span></h2>
+      <p><span lang="fr">CCC Studios est mené par <b>Dan Ortega</b>, diplômé du baccalauréat en génie industriel (BEng), Université Concordia, École de génie et d'informatique Gina Cody, 2021, et ancien gestionnaire de projets d'industrialisation chez Airbus. Sa conviction : tout peut s'améliorer.</span><span lang="en">CCC Studios is led by <b>Dan Ortega</b>, Industrial Engineering BEng graduate, Concordia University, Gina Cody School of Engineering and Computer Science, 2021, and former industrialisation project manager at Airbus. His belief: everything can be improved.</span><span lang="es">CCC Studios lo dirige <b>Dan Ortega</b>, graduado del bachillerato en ingeniería industrial (BEng), Universidad Concordia, Escuela de Ingeniería e Informática Gina Cody, 2021, y ex gerente de proyectos de industrialización en Airbus. Su convicción: todo se puede mejorar.</span></p>
+      <a class="btn" href="/a-propos/"><span lang="fr">Lire notre histoire</span><span lang="en">Read our story</span><span lang="es">Leer nuestra historia</span> →</a>
+    </div>
+    <ul class="stats">
+      <li><b>A220</b><span><span lang="fr">Projets d'amélioration de la chaîne d'assemblage final · Airbus, Mirabel, 2021–2024</span><span lang="en">Final assembly line improvement projects · Airbus, Mirabel, 2021–2024</span><span lang="es">Proyectos de mejora de la línea de ensamblaje final · Airbus, Mirabel, 2021–2024</span></span></li>
+      <li><b>75 %</b><span><span lang="fr">des tâches d'un poste éliminées en supprimant les étapes redondantes · Airbus, 2019</span><span lang="en">of a position's tasks eliminated by removing redundant steps · Airbus, 2019</span><span lang="es">de las tareas de un puesto eliminadas al quitar pasos redundantes · Airbus, 2019</span></span></li>
+      <li><b>50 %</b><span><span lang="fr">de temps en moins sur des tâches répétitives, grâce à l'automatisation · Revenu Québec, 2016–2018</span><span lang="en">less time on repetitive tasks, through automation · Revenu Québec, 2016–2018</span><span lang="es">menos tiempo en tareas repetitivas, gracias a la automatización · Revenu Québec, 2016–2018</span></span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="values" aria-labelledby="t-engagements">
+  <div class="wrap">
+    <h2 id="t-engagements"><span lang="fr">Nos engagements</span><span lang="en">Our commitments</span><span lang="es">Nuestros compromisos</span></h2>
+    <div class="val-grid">
+      <div class="val"><b><span lang="fr">L'IA, toujours déclarée</span><span lang="en">AI, always declared</span><span lang="es">La IA, siempre declarada</span></b><p><span lang="fr">Chaque image, vidéo ou voix créée par IA est indiquée comme telle. Nos règles sont publiques dans la <a href="/jennshems/charte/">Charte</a>.</span><span lang="en">Every AI-made image, video or voice is marked as such. Our rules are public in the <a href="/jennshems/charte/">Charter</a>.</span><span lang="es">Cada imagen, video o voz creada con IA se indica como tal. Nuestras reglas son públicas en la <a href="/jennshems/charte/">Carta</a>.</span></p></div>
+      <div class="val"><b><span lang="fr">Le français d'abord</span><span lang="en">French first</span><span lang="es">Primero el francés</span></b><p><span lang="fr">Tout est fait en français d'abord, puis en anglais, et en espagnol sur demande.</span><span lang="en">Everything is done in French first, then English, and Spanish on request.</span><span lang="es">Todo se hace primero en francés, luego en inglés, y en español si lo pide.</span></p></div>
+      <div class="val"><b><span lang="fr">Mesurer avant de promettre</span><span lang="en">Measure before promising</span><span lang="es">Medir antes de prometer</span></b><p><span lang="fr">On note le point de départ, puis on montre les vrais chiffres. Pas de résultats garantis.</span><span lang="en">We record the starting point, then show the real numbers. No guaranteed results.</span><span lang="es">Anotamos el punto de partida y luego mostramos las cifras reales. Sin resultados garantizados.</span></p></div>
+      <div class="val"><b><span lang="fr">Vos données restent à vous</span><span lang="en">Your data stays yours</span><span lang="es">Sus datos siguen siendo suyos</span></b><p><span lang="fr">Vos comptes et vos outils restent à votre nom. Ce site n'utilise aucun témoin de suivi.</span><span lang="en">Your accounts and tools stay in your name. This site uses no tracking cookies.</span><span lang="es">Sus cuentas y herramientas quedan a su nombre. Este sitio no usa cookies de seguimiento.</span></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="reach">
+  <div class="wrap">
+    <h2><span lang="fr">Parlons de votre projet</span><span lang="en">Let's talk about your project</span><span lang="es">Hablemos de su proyecto</span></h2>
+    <p><span lang="fr">Écrivez-nous en français, en anglais ou en espagnol.</span><span lang="en">Write to us in French, English or Spanish.</span><span lang="es">Escríbanos en francés, inglés o español.</span></p>
+    <div class="reach-btns"><a class="btn btn-main" href="services/#contact"><span lang="fr">Demander un audit express gratuit</span><span lang="en">Ask for a free express audit</span><span lang="es">Pedir una auditoría exprés gratuita</span></a><a class="btn" href="mailto:bonjour@ccc-studios.com">bonjour@ccc-studios.com</a></div>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <p><span class="logotype">CCC Studios</span> · <span lang="fr">Compagnie Canadienne Créative</span><span lang="en">Canadian Creative Company</span><span lang="es">Compañía Creativa Canadiense</span> · <span lang="fr">IA toujours déclarée</span><span lang="en">AI always declared</span><span lang="es">IA siempre declarada</span></p>
+    <p><a href="mailto:bonjour@ccc-studios.com">bonjour@ccc-studios.com</a> · <a href="/a-propos/"><span lang="fr">À propos</span><span lang="en">About</span><span lang="es">Nosotros</span></a> · <a href="/jennshems/charte/"><span lang="fr">Charte</span><span lang="en">Charter</span><span lang="es">Carta</span></a> · <a href="/confidentialite/"><span lang="fr">Confidentialité</span><span lang="en">Privacy</span><span lang="es">Privacidad</span></a></p>
+  </div>
+</footer>
+<script>
+(function(){
+  var root=document.documentElement, titles={fr:"CCC Studios · Compagnie Canadienne Créative",en:"CCC Studios · Canadian Creative Company",es:"CCC Studios · Compañía Creativa Canadiense"};
+  function setLang(l){
+    root.setAttribute("data-lang",l); root.lang=l;
+    document.querySelectorAll(".langs button").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.set===l?"true":"false");});
+    document.title=titles[l];
+    try{localStorage.setItem("lang",l);}catch(e){}
+  }
+  var ok={fr:1,en:1,es:1}, start="fr", q=null;
+  try{q=new URLSearchParams(location.search).get("lang");}catch(e){}
+  if(ok[q]){start=q;} else {try{var s=localStorage.getItem("lang"); if(ok[s])start=s;}catch(e){}}
+  document.querySelectorAll(".langs button").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.set);});});
+  setLang(start);
+})();
+</script>
 </body>
 </html>

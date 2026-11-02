@@ -1,0 +1,162 @@
+/* CCC Studios · branche Indigo (page principale et pages d'entreprise), kit de marque v1.4.2.
+   Indigo minuit #04001B (fond), Encre #221B55 (panneaux, filets), Royal #2B0071 (aplats seulement, jamais en filet sur le minuit),
+   Lavande #F9F7FF (texte secondaire, accents), blanc. Aucun gris, aucun dégradé.
+   Les portes vers les branches portent les couleurs de leur branche : Crème, Cramoisi, Bronze. */
+:root{
+  --minuit:#04001B; --encre:#221B55; --royal:#2B0071; --lavande:#F9F7FF; --blanc:#FFFFFF; --noir:#000000;
+  --creme:#F5F2EC; --bronze:#735827; --bronze-minuit:#180D00; --ambre:#FFC40C;
+  --cr-nuit:#1E0007; --cr-bordeaux:#590016; --cr:#C30001; --cr-rose:#FEDADA;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scrollbar-color:var(--encre) var(--minuit)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+::selection{background:var(--royal);color:var(--blanc)}
+body{font-family:Inter,system-ui,sans-serif;background:var(--minuit);color:var(--blanc);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--lavande);outline-offset:3px}
+html[data-lang="fr"] [lang="en"],html[data-lang="fr"] [lang="es"],
+html[data-lang="en"] [lang="fr"],html[data-lang="en"] [lang="es"],
+html[data-lang="es"] [lang="fr"],html[data-lang="es"] [lang="en"]{display:none!important}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+h1,h2,h3,.title{font-family:Lora,Georgia,serif;font-weight:500;letter-spacing:-.01em;text-wrap:balance}
+em{font-style:italic}
+.logotype{font-family:"Tenor Sans",Inter,sans-serif;font-weight:400;letter-spacing:.14em;text-transform:uppercase}
+
+/* barre du haut */
+.top{position:sticky;top:0;z-index:20;background:var(--minuit);border-bottom:1px solid var(--encre)}
+.top .wrap{display:flex;align-items:center;gap:12px;height:60px}
+.brand{display:flex;align-items:center;text-decoration:none}
+.brand img{width:155px;height:22px;display:block}
+@media(max-width:420px){.brand img{width:124px;height:18px}}
+.top nav{margin-left:auto;display:flex;align-items:center;gap:18px;font-size:14px}
+.navlinks{display:none;gap:18px}
+@media(min-width:820px){.navlinks{display:flex}}
+.navlinks a{text-decoration:none;color:var(--lavande)}
+.navlinks a:hover,.navlinks a[aria-current="page"]{color:var(--blanc);text-decoration:underline;text-decoration-color:var(--lavande);text-underline-offset:6px}
+.langs{display:flex;border:1px solid var(--lavande);border-radius:999px;overflow:hidden}
+.langs button{background:none;border:0;color:var(--blanc);font:600 12px Inter,sans-serif;padding:6px 10px;cursor:pointer;letter-spacing:.06em}
+.langs button[aria-pressed="true"]{background:var(--lavande);color:var(--minuit)}
+
+/* commun */
+section{padding:72px 0}
+h2{font-size:clamp(28px,4vw,40px);line-height:1.12;margin-bottom:14px}
+.kicker{font-size:12.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--lavande)}
+.lead{font-size:18px;max-width:36em;color:var(--lavande)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 20px;border-radius:10px;font-weight:600;font-size:15px;text-decoration:none;border:1px solid var(--lavande);color:var(--blanc);transition:background-color .2s ease,color .2s ease}
+.btn:hover{background:var(--lavande);color:var(--minuit)}
+.btn-main{background:var(--lavande);color:var(--minuit)}
+.btn-main:hover{background:var(--blanc)}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:22px}
+
+/* héros */
+.hero{padding:64px 0 56px;border-bottom:1px solid var(--encre)}
+.hero-grid{display:grid;gap:28px;align-items:center}
+@media(min-width:860px){.hero-grid{grid-template-columns:1.25fr .75fr}}
+.big{font-size:clamp(40px,8vw,84px);line-height:1;margin:14px 0 10px;letter-spacing:.1em}
+.ccc{font-family:"Tenor Sans",Inter,sans-serif;letter-spacing:.22em;text-transform:uppercase;font-size:13px;color:var(--lavande)}
+.motto{font-family:Lora,Georgia,serif;font-size:clamp(24px,3.4vw,34px);margin:26px 0 14px;line-height:1.2}
+.motto em{color:var(--lavande)}
+.hero-art{width:min(360px,70vw);height:auto;justify-self:center;opacity:.95}
+@media(max-width:859px){.hero-art{order:-1;width:min(220px,56vw)}}
+.hero-small{padding:56px 0 48px}
+.title{font-size:clamp(34px,6vw,58px);line-height:1.08;margin:14px 0 18px}
+.title em{color:var(--lavande)}
+
+/* portes vers les branches */
+.door-grid{display:grid;gap:18px;margin-top:10px}
+@media(min-width:900px){.door-grid{grid-template-columns:repeat(3,1fr)}}
+.door{display:flex;flex-direction:column;border-radius:18px;overflow:hidden;text-decoration:none;border:1px solid transparent;transition:transform .25s cubic-bezier(.2,.7,.2,1),border-color .25s ease}
+.door:hover{transform:translateY(-3px)}
+@media(prefers-reduced-motion:reduce){.door,.door:hover{transform:none;transition:none}}
+.door-vis{position:relative;aspect-ratio:16/10;overflow:hidden}
+.door-vis img{width:100%;height:100%;object-fit:cover;display:block}
+.door-bronze .door-vis img{object-position:50% 18%}
+.door-vis .ia{position:absolute;left:10px;top:10px;font:600 12px/1 Inter,sans-serif;letter-spacing:.06em;padding:6px 9px;border-radius:999px;background:rgba(0,0,0,.62);color:var(--blanc)}
+.vis-fam{display:grid;align-content:center;gap:4px;padding:22px 24px;font-family:Lora,Georgia,serif;font-size:clamp(22px,2.4vw,28px);line-height:1.15}
+.door-body{display:flex;flex-direction:column;gap:8px;padding:20px 22px 22px;flex:1}
+.door-k{font-family:"Tenor Sans",Inter,sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase}
+.door-t{font-family:Lora,Georgia,serif;font-weight:500;font-size:24px;line-height:1.15}
+.door-body p{font-size:15px}
+.door-go{margin-top:auto;padding-top:8px;font-weight:600;font-size:15px}
+.door-creme{background:var(--blanc);color:var(--noir)}
+.door-creme .vis-fam{background:var(--bronze-minuit);color:var(--blanc);border-bottom:2px solid var(--ambre)}
+.door-creme .vis-fam em{color:var(--ambre)}
+.door-creme .door-k,.door-creme .door-go{color:var(--bronze)}
+.door-creme .door-t{color:var(--bronze-minuit)}
+.door-creme:hover{border-color:var(--ambre)}
+.door-cramoisi{background:var(--cr-nuit);color:var(--blanc)}
+.door-cramoisi .door-vis{border-bottom:2px solid var(--cr)}
+.door-cramoisi .door-k,.door-cramoisi .door-go{color:var(--cr-rose)}
+.door-cramoisi:hover{border-color:var(--cr)}
+.door-bronze{background:var(--bronze-minuit);color:var(--blanc)}
+.door-bronze .door-vis{border-bottom:2px solid var(--ambre)}
+.door-bronze .door-k,.door-bronze .door-go{color:var(--ambre)}
+.door-bronze:hover{border-color:var(--ambre)}
+
+/* fondateur (accueil) */
+.founder{background:var(--encre)}
+.founder-grid{display:grid;gap:32px;align-items:center}
+@media(min-width:900px){.founder-grid{grid-template-columns:1.1fr .9fr}}
+.founder p{margin:12px 0 22px;max-width:36em}
+.founder h2{margin-top:10px}
+.stats{list-style:none;padding:0;display:grid;gap:14px}
+.stats li{background:var(--minuit);border-radius:14px;padding:16px 18px;display:grid;gap:4px}
+.stats b{font-family:Lora,Georgia,serif;font-weight:500;font-size:34px;line-height:1}
+.stats span{font-size:14.5px;color:var(--lavande)}
+
+/* engagements */
+.val-grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));margin-top:8px}
+.val{border-top:2px solid var(--encre);padding-top:14px}
+.val b{display:block;font-size:16.5px;margin-bottom:6px}
+.val p{font-size:14.5px;color:var(--lavande)}
+.val a{color:var(--blanc)}
+
+/* contact */
+.reach{text-align:center;background:var(--royal)}
+.reach p{color:var(--lavande);margin-bottom:6px}
+.reach .wrap > .btn-main{margin-top:16px}
+
+/* à propos */
+.block{border-bottom:1px solid var(--encre)}
+.block-encre{background:var(--encre);border-bottom:0}
+.two{display:grid;gap:32px}
+@media(min-width:900px){.two{grid-template-columns:.9fr 1.1fr}}
+.block p+p{margin-top:12px}
+.block p{max-width:38em}
+.who{font-size:20px;font-family:Lora,Georgia,serif;margin-bottom:6px}
+
+.cards2{display:grid;gap:14px}
+.mini{display:grid;gap:6px;border-radius:14px;padding:18px 20px;text-decoration:none}
+.mini b{font-family:"Tenor Sans",Inter,sans-serif;font-weight:400;font-size:12.5px;letter-spacing:.22em;text-transform:uppercase}
+.mini span{font-size:15px}
+.mini-creme{background:var(--creme);color:var(--noir);border-left:4px solid var(--ambre)}
+.mini-creme b{color:var(--bronze)}
+.mini-cramoisi{background:var(--cr-nuit);color:var(--blanc);border-left:4px solid var(--cr)}
+.mini-cramoisi b{color:var(--cr-rose)}
+h3{font-size:22px;margin-bottom:14px}
+.tl{list-style:none;padding:0;display:grid;gap:0}
+.tl li{display:grid;grid-template-columns:96px 1fr;gap:14px;padding:14px 0;border-top:1px solid rgba(249,247,255,.25)}
+.tl-y{font-size:13px;font-weight:600;color:var(--lavande);padding-top:2px}
+.tl b{display:block;font-size:16px}
+.tl-r{display:block;font-size:14px;color:var(--lavande);margin:2px 0 4px}
+.tl p{font-size:14.5px}
+@media(max-width:480px){.tl li{grid-template-columns:1fr;gap:4px}}
+.steps4{list-style:none;padding:0;display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));counter-reset:k;margin-top:10px}
+.steps4 li{border-top:2px solid var(--lavande);padding-top:12px;display:grid;gap:4px;align-content:start}
+.steps4 li::before{counter-increment:k;content:counter(k);font-family:Lora,Georgia,serif;font-style:italic;font-size:28px;line-height:1;color:var(--lavande)}
+.steps4 b{font-size:16.5px}
+.steps4 span{font-size:14.5px;color:var(--lavande)}
+
+footer{background:var(--noir);font-size:13.5px;padding:30px 0}
+footer .wrap{display:grid;gap:8px}
+footer a{color:var(--blanc)}
+
+/* portraits */
+.face{border-radius:50%;object-fit:cover;display:block;border:2px solid var(--lavande)}
+.who-row{display:flex;align-items:center;gap:16px;margin:4px 0 14px}
+.who-row .face{width:88px;height:88px}
+.who-row .who{margin:0}
+.who2{margin-top:30px;padding-top:24px;border-top:1px solid rgba(249,247,255,.25)}
+.duo{display:flex;gap:18px;margin:14px 0 4px}
+.duo figure{margin:0;display:grid;justify-items:center;gap:6px;font-size:13px;color:var(--lavande)}
+.duo .face{width:76px;height:76px}

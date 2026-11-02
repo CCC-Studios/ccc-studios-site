@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="fr" data-l="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ateliers créatifs et IA pour les jeunes · CCC Studios</title>
+<meta name="description" content="Ateliers de deux heures où les jeunes inventent des personnages, des univers et des mini-films, avec l'intelligence artificielle comme outil. Pour les écoles, les bibliothèques, les municipalités et les organismes jeunesse du Québec.">
+<meta property="og:title" content="Ateliers créatifs et IA pour les jeunes · CCC Studios">
+<meta property="og:description" content="L'imagination est humaine. L'IA est un outil pour lui donner vie. Ateliers de deux heures pour les écoles, les bibliothèques et les organismes jeunesse.">
+<meta property="og:url" content="https://ccc-studios.com/creatif/ateliers/">
+<meta property="og:type" content="website">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../favicon.png" sizes="192x192">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<link rel="stylesheet" href="../../fonts/fonts.css">
+<style>
+/* CCC Studios Éducation · branche créative, palette Cramoisi (kit v1.4.2). Aucun gris.
+   Les sections claires utilisent le rose Cramoisi (#FEDADA) avec du texte minuit, pour la lecture longue des enseignants. */
+:root {
+  --nuit:#1E0007; --bordeaux:#590016; --cramoisi:#C30001; --rose:#FEDADA; --blanc:#FFFFFF; --noir:#000000;
+  --trait:rgba(254,218,218,.16); --trait-clair:rgba(30,0,7,.16);
+  --marque:"Tenor Sans",Inter,Arial,sans-serif; --titre:Lora,Georgia,serif; --texte:Inter,Arial,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+::selection{background:var(--cramoisi);color:var(--blanc)}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:76px;scrollbar-color:var(--bordeaux) var(--nuit)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--nuit);color:var(--blanc);font:400 17px/1.6 var(--texte)}
+:root:not([data-l="en"]) [data-en],:root:not([data-l="es"]) [data-es],:root[data-l="en"] [data-fr],:root[data-l="es"] [data-fr]{display:none}
+:root[data-l="en"] [data-en],:root[data-l="es"] [data-es]{display:revert}
+a{color:var(--rose);text-underline-offset:3px} a:hover{color:var(--blanc)}
+:focus-visible{outline:2px solid var(--rose);outline-offset:3px;border-radius:4px}
+p{margin:0} h1,h2,h3{font-family:var(--titre);font-weight:500;margin:0;text-wrap:balance}
+h1 em,h2 em{font-style:italic;color:var(--rose)}
+.bande{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.cadre{max-width:1120px;margin:0 auto}
+
+/* en-tête (identique à la page créative) */
+.tete{padding-block:14px;border-bottom:1px solid var(--trait);position:sticky;top:0;z-index:50;background:var(--nuit)}
+.tete .cadre{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{display:flex;align-items:center;gap:14px;min-width:0;text-decoration:none}
+.logo img{height:22px;width:auto;display:block}
+.logo .branche{font:400 12px/1 var(--marque);letter-spacing:.22em;text-transform:uppercase;color:var(--rose);padding-left:14px;border-left:1px solid var(--trait);white-space:nowrap}
+.droite{display:flex;align-items:center;gap:18px}
+.retour{font-size:14px;text-decoration:none;white-space:nowrap}
+.langue{display:flex;border:1px solid var(--trait);border-radius:999px;overflow:hidden}
+.langue button{font:500 12px var(--texte);letter-spacing:.08em;background:transparent;color:var(--rose);border:0;padding:7px 12px;cursor:pointer}
+.langue button[aria-pressed="true"]{background:var(--rose);color:var(--nuit)}
+@media(max-width:760px){.logo .branche{display:none}}
+@media(max-width:480px){.retour{display:none}.logo img{height:18px}}
+
+.surtitre{font:400 12px/1.4 var(--marque);letter-spacing:.24em;text-transform:uppercase;color:var(--rose);display:flex;align-items:center;gap:12px}
+.surtitre::before{content:"";width:28px;height:2px;background:var(--cramoisi);flex:none}
+.section{padding-block:clamp(56px,8vw,100px)}
+.entete{display:grid;gap:16px;max-width:760px;margin-bottom:clamp(28px,4vw,44px)}
+h2{font-size:clamp(30px,4.4vw,50px);line-height:1.08}
+.chapeau{font-size:clamp(17px,1.9vw,20px);line-height:1.55;color:var(--rose);max-width:44ch}
+.bouton{display:inline-flex;align-items:center;font:500 15px var(--texte);text-decoration:none;padding:13px 20px;border-radius:999px;border:1px solid var(--rose);color:var(--nuit);background:var(--rose)}
+.bouton:hover{background:var(--blanc);border-color:var(--blanc);color:var(--nuit)}
+.bouton.vide{background:transparent;color:var(--rose);border-color:var(--trait)}
+.bouton.vide:hover{color:var(--blanc);border-color:var(--rose)}
+.appels{display:flex;flex-wrap:wrap;gap:12px}
+.media{position:relative;overflow:hidden;background:var(--noir)}
+.media img{display:block;width:100%;height:100%;object-fit:cover}
+.provenance{position:absolute;left:10px;top:10px;font:600 12px/1 var(--texte);letter-spacing:.06em;padding:6px 9px;border-radius:999px;background:rgba(0,0,0,.62);color:var(--blanc)}
+
+/* héros */
+.heros{padding-block:clamp(44px,7vw,92px) clamp(44px,6vw,80px);border-bottom:1px solid var(--trait)}
+.heros .cadre{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(28px,5vw,64px);align-items:center}
+.heros-texte{display:grid;gap:24px;min-width:0}
+h1{font-size:clamp(38px,6.2vw,76px);line-height:1.04;letter-spacing:-.015em}
+.pour{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
+.pour li{font-size:14px;padding:6px 12px;border:1px solid var(--trait);border-radius:999px;color:var(--rose)}
+.mosaique{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:12px}
+.mosaique .media{border-radius:6px;border:1px solid var(--trait)}
+.mosaique .m1{grid-row:span 2;aspect-ratio:600/900}
+.mosaique .m2,.mosaique .m3{aspect-ratio:1}
+.mosaique .m3 img{object-fit:contain;background:radial-gradient(circle at 50% 40%,var(--bordeaux),var(--nuit) 70%)}
+.chiffres{display:flex;flex-wrap:wrap;gap:22px 34px;padding-top:6px}
+.chiffres div{display:grid}
+.chiffres b{font:500 30px/1 var(--titre)}
+.chiffres span{font-size:14px;color:var(--rose)}
+@media(max-width:900px){.heros .cadre{grid-template-columns:1fr}.mosaique{max-width:520px}}
+
+/* manifeste */
+.manifeste{background:var(--bordeaux)}
+.manifeste .cadre{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:start}
+.citation{font:italic 500 clamp(26px,3.4vw,40px)/1.2 var(--titre)}
+.citation em{color:var(--rose)}
+.manifeste .texte{display:grid;gap:14px;color:var(--rose)}
+.manifeste .texte strong{color:var(--blanc);font-weight:600}
+@media(max-width:860px){.manifeste .cadre{grid-template-columns:1fr}}
+
+/* méthode */
+.piliers{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.piliers li{border-top:2px solid var(--cramoisi);padding-top:14px;display:grid;gap:6px;align-content:start}
+.piliers .num{font:italic 500 28px/1 var(--titre);color:var(--rose)}
+.piliers b{font:400 15px/1.3 var(--marque);letter-spacing:.16em;text-transform:uppercase}
+.piliers p{font-size:15px;color:var(--rose)}
+@media(max-width:960px){.piliers{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:480px){.piliers{grid-template-columns:1fr}}
+
+/* ateliers */
+.grille-ateliers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.atelier{display:flex;flex-direction:column;border:1px solid var(--trait);border-radius:8px;overflow:hidden;background:var(--nuit)}
+.atelier.vedette{border-color:var(--cramoisi)}
+.atelier .media{aspect-ratio:4/3}
+.atelier .media img{position:absolute;inset:0}
+.badge{position:absolute;right:10px;top:10px;font:600 12px/1 var(--texte);padding:6px 10px;border-radius:999px;background:var(--cramoisi);color:var(--blanc)}
+.atelier-corps{display:grid;gap:10px;padding:20px 20px 22px;align-content:start}
+.age{font:400 12px/1.4 var(--marque);letter-spacing:.18em;text-transform:uppercase;color:var(--rose)}
+.atelier h3{font-size:26px;line-height:1.12}
+.sous{font-size:15.5px}
+.livre{font-size:13.5px;font-weight:600;color:var(--rose);padding-top:6px;border-top:1px solid var(--trait)}
+.atelier ul{margin:0;padding-left:18px;display:grid;gap:4px;font-size:14.5px;color:var(--rose)}
+.format{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px 28px;padding:16px 20px;border:1px solid var(--trait);border-radius:8px;font-size:15px}
+.format b{color:var(--rose);font-weight:600;margin-right:6px}
+@media(max-width:960px){.grille-ateliers{grid-template-columns:1fr;max-width:620px}.atelier{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}.atelier .media{aspect-ratio:auto;min-height:240px}}
+@media(max-width:560px){.atelier{display:flex}.atelier .media{aspect-ratio:16/10}}
+
+/* section claire */
+.clair{background:var(--rose);color:var(--nuit)}
+.clair .surtitre{color:var(--bordeaux)}
+.clair h2 em{color:var(--cramoisi)}
+.clair .chapeau{color:var(--bordeaux)}
+.clair a{color:var(--bordeaux)}
+.clair :focus-visible{outline-color:var(--bordeaux)}
+
+/* déroulement */
+.deroule{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 18px}
+.deroule li{display:grid;gap:8px;padding:16px 0;border-top:2px solid var(--bordeaux);align-content:start}
+.temps{font:500 13px var(--texte);letter-spacing:.06em;color:var(--cramoisi)}
+.deroule b{font:500 20px/1.2 var(--titre)}
+.deroule p{font-size:15px}
+.note{margin-top:20px;font-size:15px;max-width:70ch}
+@media(max-width:900px){.deroule{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:480px){.deroule{grid-template-columns:1fr}}
+
+/* compétence numérique */
+.cadre-num{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,5vw,56px);align-items:start}
+.dims{width:100%;border-collapse:collapse;font-size:15px}
+.dims th,.dims td{text-align:left;vertical-align:top;padding:13px 0;border-bottom:1px solid var(--trait-clair)}
+.dims th{font-weight:600;padding-right:18px;width:42%}
+.code{display:inline-block;min-width:38px;font:600 12px var(--texte);letter-spacing:.06em;color:var(--cramoisi)}
+.source{font-size:14px;margin-top:14px}
+@media(max-width:860px){.cadre-num{grid-template-columns:1fr}.dims th{width:auto}}
+@media(max-width:480px){.dims tr{display:grid}.dims th{border-bottom:0;padding-bottom:2px}.dims td{padding-top:0}}
+
+/* IA responsable */
+.promesses{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.promesses li{border:1px solid var(--trait);border-radius:8px;padding:18px;display:grid;gap:6px;align-content:start;background:rgba(89,0,22,.35)}
+.promesses b{font-size:16.5px}
+.promesses p{font-size:15px;color:var(--rose)}
+@media(max-width:900px){.promesses{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.promesses{grid-template-columns:1fr}}
+
+/* animateurs + logistique */
+.equipe{background:var(--bordeaux)}
+.equipe .cadre{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,56px)}
+.personne{display:grid;grid-template-columns:76px 1fr;gap:16px;align-items:start;padding:18px 0;border-top:1px solid var(--trait)}
+.personne img{width:76px;height:76px;border-radius:50%;object-fit:cover;border:2px solid var(--rose)}
+.personne b{font:500 20px var(--titre);display:block}
+.personne p{font-size:15px;color:var(--rose);margin-top:4px}
+.liste{margin:0;padding-left:18px;display:grid;gap:6px;font-size:15px;color:var(--rose)}
+.bloc{display:grid;gap:12px;padding:20px;border:1px solid var(--trait);border-radius:8px;background:var(--nuit)}
+.bloc h3{font-size:20px}
+.blocs{display:grid;gap:14px}
+@media(max-width:860px){.equipe .cadre{grid-template-columns:1fr}}
+
+/* FAQ */
+details{border-bottom:1px solid var(--trait-clair);padding:16px 0}
+summary{cursor:pointer;font-weight:600;font-size:16.5px;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";float:right;color:var(--cramoisi);font-weight:700}
+details[open] summary::after{content:"–"}
+details p{margin-top:10px;max-width:70ch}
+
+/* contact */
+.contact{text-align:center}
+.contact .cadre{display:grid;gap:18px;justify-items:center}
+.contact h2{max-width:18em}
+.contact .chapeau{margin:0 auto}
+.adresse{font:500 clamp(20px,2.4vw,26px)/1.3 var(--texte);overflow-wrap:anywhere}
+
+footer{border-top:1px solid var(--trait);padding-block:28px;font-size:13.5px;color:var(--rose)}
+footer .cadre{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+</style>
+</head>
+<body>
+
+<header class="bande tete">
+  <div class="cadre">
+    <a class="logo" href="/" aria-label="CCC Studios, accueil"><img src="../../logo-ccc.svg" alt="CCC Studios" width="155" height="22"><span class="branche"><span data-fr>Branche créative</span><span data-en>Creative branch</span><span data-es>Rama creativa</span></span></a>
+    <div class="droite">
+      <a class="retour" href="../"><span data-fr>← Créations</span><span data-en>← Creations</span><span data-es>← Creaciones</span></a>
+      <div class="langue" role="group" aria-label="Langue / Language / Idioma">
+        <button type="button" id="btn-fr" aria-pressed="true">FR</button>
+        <button type="button" id="btn-en" aria-pressed="false">EN</button>
+        <button type="button" id="btn-es" aria-pressed="false">ES</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="bande heros" aria-labelledby="titre">
+  <div class="cadre">
+    <div class="heros-texte">
+      <p class="surtitre"><span data-fr>CCC Studios Éducation · ateliers créatifs et IA</span><span data-en>CCC Studios Education · creative AI workshops</span><span data-es>CCC Studios Educación · talleres creativos e IA</span></p>
+      <h1 id="titre"><span data-fr>L'imagination est humaine. <em>L'IA aide à lui donner vie.</em></span><span data-en>Imagination is human. <em>AI helps bring it to life.</em></span><span data-es>La imaginación es humana. <em>La IA ayuda a darle vida.</em></span></h1>
+      <p class="chapeau"><span data-fr>En deux heures, les jeunes inventent un personnage, un univers ou un mini-film. L'IA devient un outil d'exploration; les idées, les choix et la direction artistique restent les leurs.</span><span data-en>In two hours, young people invent a character, a world or a mini-film. AI becomes a tool for exploring; the ideas, the choices and the creative direction stay theirs.</span><span data-es>En dos horas, los jóvenes inventan un personaje, un universo o un minifilme. La IA se vuelve una herramienta para explorar; las ideas, las decisiones y la dirección artística siguen siendo suyas.</span></p>
+      <ul class="pour">
+        <li><span data-fr>Écoles et centres de services scolaires</span><span data-en>Schools and school service centres</span><span data-es>Escuelas y centros de servicios escolares</span></li>
+        <li><span data-fr>Bibliothèques</span><span data-en>Libraries</span><span data-es>Bibliotecas</span></li>
+        <li><span data-fr>Municipalités</span><span data-en>Municipalities</span><span data-es>Municipios</span></li>
+        <li><span data-fr>Organismes jeunesse</span><span data-en>Youth organizations</span><span data-es>Organizaciones juveniles</span></li>
+      </ul>
+      <div class="appels">
+        <a class="bouton" href="mailto:bonjour@ccc-studios.com?subject=Atelier%20cr%C3%A9atif%20%E2%80%94%20%5Bnom%20de%20l%27organisation%5D"><span data-fr>Organiser un atelier</span><span data-en>Book a workshop</span><span data-es>Organizar un taller</span></a>
+        <a class="bouton vide" href="#ateliers"><span data-fr>Voir les ateliers</span><span data-en>See the workshops</span><span data-es>Ver los talleres</span></a>
+      </div>
+      <div class="chiffres">
+        <div><b>2 h</b><span><span data-fr>par atelier</span><span data-en>per workshop</span><span data-es>por taller</span></span></div>
+        <div><b>24</b><span><span data-fr>participants au plus</span><span data-en>participants at most</span><span data-es>participantes como máximo</span></span></div>
+        <div><b>6</b><span><span data-fr>équipes de quatre</span><span data-en>teams of four</span><span data-es>equipos de cuatro</span></span></div>
+        <div><b>FR · EN · ES</b><span><span data-fr>langues d'animation</span><span data-en>workshop languages</span><span data-es>idiomas del taller</span></span></div>
+      </div>
+    </div>
+    <div class="mosaique" aria-label="Exemples de créations générées par IA">
+      <div class="media m1"><img src="../m/foret.webp" alt="Forêt fantastique" width="600" height="900"><span class="provenance"><span data-fr>Image IA</span><span data-en>AI image</span><span data-es>Imagen IA</span></span></div>
+      <div class="media m2"><img src="../m/donjon.webp" alt="Donjon" loading="lazy"><span class="provenance"><span data-fr>Image IA</span><span data-en>AI image</span><span data-es>Imagen IA</span></span></div>
+      <div class="media m3"><img src="../m/firbolg.webp" alt="Personnage firbolg" loading="lazy"><span class="provenance"><span data-fr>Image IA</span><span data-en>AI image</span><span data-es>Imagen IA</span></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="bande section manifeste" aria-labelledby="titre-pourquoi">
+  <div class="cadre">
+    <div class="entete" style="margin:0">
+      <p class="surtitre"><span data-fr>Pourquoi créer avec l'IA?</span><span data-en>Why create with AI?</span><span data-es>¿Por qué crear con IA?</span></p>
+      <h2 id="titre-pourquoi" class="citation"><span data-fr>L'IA peut générer mille images. <em>Elle ne sait pas laquelle vaut la peine d'exister.</em></span><span data-en>AI can generate a thousand images. <em>It doesn't know which one deserves to exist.</em></span><span data-es>La IA puede generar mil imágenes. <em>No sabe cuál merece existir.</em></span></h2>
+    </div>
+    <div class="texte">
+      <p><span data-fr>Qu'est-ce qui vaut la peine d'être imaginé? Quelle histoire mérite d'être racontée? Pourquoi ce choix plutôt qu'un autre? Ce sont ces questions que nos ateliers apprennent à poser.</span><span data-en>What is worth imagining? Which story deserves to be told? Why this choice rather than another? Those are the questions our workshops teach young people to ask.</span><span data-es>¿Qué vale la pena imaginar? ¿Qué historia merece contarse? ¿Por qué esta decisión y no otra? Esas son las preguntas que nuestros talleres enseñan a hacer.</span></p>
+      <p><span data-fr>Un jeune qui rejette cinq images parce qu'aucune ne correspond à son idée fait preuve de créativité, de jugement et d'esprit critique. <strong>L'apprentissage se passe dans les décisions, pas dans l'image générée.</strong></span><span data-en>A young person who rejects five images because none matches their idea is showing creativity, judgment and critical thinking. <strong>The learning happens in the decisions, not in the generated image.</strong></span><span data-es>Un joven que rechaza cinco imágenes porque ninguna corresponde a su idea demuestra creatividad, criterio y pensamiento crítico. <strong>El aprendizaje ocurre en las decisiones, no en la imagen generada.</strong></span></p>
+      <p><span data-fr>À la fin, on veut qu'il se dise : « J'ai eu une idée. Je l'ai explorée. J'ai fait des choix. J'ai créé quelque chose qui n'existait pas. »</span><span data-en>At the end, we want them to think: “I had an idea. I explored it. I made choices. I created something that didn't exist.”</span><span data-es>Al final, queremos que piense: «Tuve una idea. La exploré. Tomé decisiones. Creé algo que no existía».</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="bande section" aria-labelledby="titre-methode">
+  <div class="cadre">
+    <div class="entete">
+      <p class="surtitre"><span data-fr>La méthode CCC</span><span data-en>The CCC method</span><span data-es>El método CCC</span></p>
+      <h2 id="titre-methode"><span data-fr>Cinq étapes, <em>du rêve à la création</em></span><span data-en>Five steps, <em>from dream to creation</em></span><span data-es>Cinco pasos, <em>del sueño a la creación</em></span></h2>
+    </div>
+    <ol class="piliers">
+      <li><span class="num">01</span><b><span data-fr>Imaginer</span><span data-en>Imagine</span><span data-es>Imaginar</span></b><p><span data-fr>Trouver une idée originale, poser des questions, explorer des possibilités.</span><span data-en>Find an original idea, ask questions, explore possibilities.</span><span data-es>Encontrar una idea original, hacer preguntas, explorar posibilidades.</span></p></li>
+      <li><span class="num">02</span><b><span data-fr>Explorer</span><span data-en>Explore</span><span data-es>Explorar</span></b><p><span data-fr>Découvrir ce que l'IA peut faire, comment lui parler, et où s'arrêtent ses capacités.</span><span data-en>Discover what AI can do, how to talk to it, and where its limits begin.</span><span data-es>Descubrir qué puede hacer la IA, cómo hablarle y dónde están sus límites.</span></p></li>
+      <li><span class="num">03</span><b><span data-fr>Créer</span><span data-en>Create</span><span data-es>Crear</span></b><p><span data-fr>Transformer le concept en personnage, en image, en scène ou en film.</span><span data-en>Turn the concept into a character, an image, a scene or a film.</span><span data-es>Convertir el concepto en personaje, imagen, escena o película.</span></p></li>
+      <li><span class="num">04</span><b><span data-fr>Questionner</span><span data-en>Question</span><span data-es>Cuestionar</span></b><p><span data-fr>Repérer les erreurs, les biais et les clichés, puis décider soi-même.</span><span data-en>Spot the errors, biases and clichés, then decide for yourself.</span><span data-es>Detectar errores, sesgos y clichés, y luego decidir por uno mismo.</span></p></li>
+      <li><span class="num">05</span><b><span data-fr>Partager</span><span data-en>Share</span><span data-es>Compartir</span></b><p><span data-fr>Présenter sa création et expliquer ses choix aux autres.</span><span data-en>Present the creation and explain one's choices to others.</span><span data-es>Presentar la creación y explicar sus decisiones a los demás.</span></p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="bande section" id="ateliers" aria-labelledby="titre-ateliers" style="padding-top:0">
+  <div class="cadre">
+    <div class="entete">
+      <p class="surtitre"><span data-fr>Les ateliers</span><span data-en>The workshops</span><span data-es>Los talleres</span></p>
+      <h2 id="titre-ateliers"><span data-fr>Trois expériences, <em>un vrai résultat</em></span><span data-en>Three experiences, <em>a real result</em></span><span data-es>Tres experiencias, <em>un resultado real</em></span></h2>
+      <p class="chapeau"><span data-fr>Chaque atelier finit par une création concrète, présentée devant le groupe.</span><span data-en>Every workshop ends with a concrete creation, presented to the group.</span><span data-es>Cada taller termina con una creación concreta, presentada al grupo.</span></p>
+    </div>
+    <div class="grille-ateliers">
+      
+      <article class="atelier vedette">
+        <div class="media"><img src="../m/mages.jpg" alt="Deux mages" loading="lazy"><span class="provenance"><span data-fr>Image IA</span><span data-en>AI image</span><span data-es>Imagen IA</span></span><span class="badge"><span data-fr>Atelier phare</span><span data-en>Flagship workshop</span><span data-es>Taller principal</span></span></div>
+        <div class="atelier-corps">
+          <p class="age"><span data-fr>10 à 14 ans</span><span data-en>Ages 10 to 14</span><span data-es>De 10 a 14 años</span></p>
+          <h3><span data-fr>Donne vie à ton personnage</span><span data-en>Bring your character to life</span><span data-es>Dale vida a tu personaje</span></h3>
+          <p class="sous"><span data-fr>Chaque équipe invente un personnage original, lui donne une personnalité et une identité visuelle, puis le met en scène.</span><span data-en>Each team invents an original character, gives it a personality and a visual identity, then puts it in a scene.</span><span data-es>Cada equipo inventa un personaje original, le da una personalidad y una identidad visual, y luego lo pone en escena.</span></p>
+          <p class="livre"><span data-fr>Ce que le groupe crée</span><span data-en>What the group makes</span><span data-es>Lo que crea el grupo</span></p>
+          <ul><li><span data-fr>Une fiche d'identité du personnage</span><span data-en>A character identity sheet</span><span data-es>Una ficha de identidad del personaje</span></li><li><span data-fr>Son portrait visuel, dirigé par l'équipe</span><span data-en>Its visual portrait, directed by the team</span><span data-es>Su retrato visual, dirigido por el equipo</span></li><li><span data-fr>Une scène en storyboard</span><span data-en>A storyboarded scene</span><span data-es>Una escena en storyboard</span></li><li><span data-fr>Une galerie de classe et une bande-annonce commune</span><span data-en>A class gallery and a shared trailer</span><span data-es>Una galería de la clase y un tráiler común</span></li></ul>
+        </div>
+      </article>
+      
+      <article class="atelier">
+        <div class="media"><img src="../m/donjon.webp" alt="Donjon" loading="lazy"><span class="provenance"><span data-fr>Image IA</span><span data-en>AI image</span><span data-es>Imagen IA</span></span></div>
+        <div class="atelier-corps">
+          <p class="age"><span data-fr>11 à 15 ans</span><span data-en>Ages 11 to 15</span><span data-es>De 11 a 15 años</span></p>
+          <h3><span data-fr>Crée ton propre univers</span><span data-en>Create your own world</span><span data-es>Crea tu propio universo</span></h3>
+          <p class="sous"><span data-fr>Les équipes inventent un monde : sa géographie, ses habitants, ses règles et son style visuel.</span><span data-en>Teams invent a world: its geography, inhabitants, rules and visual style.</span><span data-es>Los equipos inventan un mundo: su geografía, sus habitantes, sus reglas y su estilo visual.</span></p>
+          <p class="livre"><span data-fr>Ce que le groupe crée</span><span data-en>What the group makes</span><span data-es>Lo que crea el grupo</span></p>
+          <ul><li><span data-fr>Une carte du monde</span><span data-en>A world map</span><span data-es>Un mapa del mundo</span></li><li><span data-fr>Des visuels de ses lieux</span><span data-en>Visuals of its places</span><span data-es>Imágenes de sus lugares</span></li><li><span data-fr>Une présentation de l'univers</span><span data-en>A presentation of the world</span><span data-es>Una presentación del universo</span></li></ul>
+        </div>
+      </article>
+      
+      <article class="atelier">
+        <div class="media"><img src="../m/heros-bureau.jpg" alt="Scène de film fantastique" loading="lazy"><span class="provenance"><span data-fr>Image IA</span><span data-en>AI image</span><span data-es>Imagen IA</span></span></div>
+        <div class="atelier-corps">
+          <p class="age"><span data-fr>12 à 17 ans</span><span data-en>Ages 12 to 17</span><span data-es>De 12 a 17 años</span></p>
+          <h3><span data-fr>Réalise ton premier mini-film</span><span data-en>Make your first mini-film</span><span data-es>Realiza tu primer minifilme</span></h3>
+          <p class="sous"><span data-fr>Une histoire simple, un storyboard, des plans visuels, puis un court film assemblé en groupe.</span><span data-en>A simple story, a storyboard, visual shots, then a short film assembled as a group.</span><span data-es>Una historia sencilla, un storyboard, planos visuales y luego un cortometraje montado en grupo.</span></p>
+          <p class="livre"><span data-fr>Ce que le groupe crée</span><span data-en>What the group makes</span><span data-es>Lo que crea el grupo</span></p>
+          <ul><li><span data-fr>Un scénario d'une page</span><span data-en>A one-page script</span><span data-es>Un guion de una página</span></li><li><span data-fr>Un storyboard de 4 à 6 plans</span><span data-en>A 4- to 6-shot storyboard</span><span data-es>Un storyboard de 4 a 6 planos</span></li><li><span data-fr>Un court film de la classe</span><span data-en>A short class film</span><span data-es>Un cortometraje de la clase</span></li></ul>
+        </div>
+      </article>
+    </div>
+    <div class="format">
+      <span><b><span data-fr>Durée</span><span data-en>Length</span><span data-es>Duración</span></b><span data-fr>2 heures</span><span data-en>2 hours</span><span data-es>2 horas</span></span>
+      <span><b><span data-fr>Groupe</span><span data-en>Group</span><span data-es>Grupo</span></b><span data-fr>jusqu'à 24 jeunes, en équipes</span><span data-en>up to 24 young people, in teams</span><span data-es>hasta 24 jóvenes, en equipos</span></span>
+      <span><b><span data-fr>Lieu</span><span data-en>Place</span><span data-es>Lugar</span></b><span data-fr>chez vous</span><span data-en>at your location</span><span data-es>en sus instalaciones</span></span>
+      <span><b><span data-fr>Programmes</span><span data-en>Programs</span><span data-es>Programas</span></b><span data-fr>séances multiples et thèmes sur mesure possibles</span><span data-en>multi-session and custom themes available</span><span data-es>sesiones múltiples y temas a medida posibles</span></span>
+    </div>
+  </div>
+</section>
+
+<section class="bande section clair" aria-labelledby="titre-deroule">
+  <div class="cadre">
+    <div class="entete">
+      <p class="surtitre"><span data-fr>Une séance de deux heures</span><span data-en>A two-hour session</span><span data-es>Una sesión de dos horas</span></p>
+      <h2 id="titre-deroule"><span data-fr>Un studio de création, <em>pas un cours d'informatique</em></span><span data-en>A creative studio, <em>not a computer class</em></span><span data-es>Un estudio de creación, <em>no una clase de informática</em></span></h2>
+      <p class="chapeau"><span data-fr>Des cycles courts de 10 à 20 minutes : on discute, on dessine, on écrit, on produit, on présente. Personne ne regarde un écran pendant 35 minutes.</span><span data-en>Short 10- to 20-minute cycles: talk, draw, write, produce, present. Nobody stares at a screen for 35 minutes.</span><span data-es>Ciclos cortos de 10 a 20 minutos: conversar, dibujar, escribir, producir, presentar. Nadie mira una pantalla durante 35 minutos.</span></p>
+    </div>
+    <ol class="deroule">
+      <li><span class="temps">0 – 10 min</span><div><b><span data-fr>La révélation</span><span data-en>The reveal</span><span data-es>La revelación</span></b><p><span data-fr>Un personnage passe d'une idée à une image finie, devant le groupe.</span><span data-en>A character goes from an idea to a finished image, in front of the group.</span><span data-es>Un personaje pasa de una idea a una imagen terminada, frente al grupo.</span></p></div></li>
+      <li><span class="temps">10 – 40 min</span><div><b><span data-fr>Inventer et concevoir</span><span data-en>Invent and design</span><span data-es>Inventar y diseñar</span></b><p><span data-fr>Personnalité, histoire, apparence : sur papier d'abord, en équipe.</span><span data-en>Personality, story, look: on paper first, in teams.</span><span data-es>Personalidad, historia, apariencia: primero en papel, en equipo.</span></p></div></li>
+      <li><span class="temps">40 – 55 min</span><div><b><span data-fr>Explorer l'IA</span><span data-en>Explore AI</span><span data-es>Explorar la IA</span></b><p><span data-fr>Décrire son idée, comparer les résultats, critiquer, corriger.</span><span data-en>Describe the idea, compare results, critique, correct.</span><span data-es>Describir la idea, comparar resultados, criticar, corregir.</span></p></div></li>
+      <li><span class="temps">55 – 65 min</span><div><b><span data-fr>Pause active</span><span data-en>Active break</span><span data-es>Pausa activa</span></b><p><span data-fr>On bouge, on se regroupe.</span><span data-en>Move around, regroup.</span><span data-es>Moverse y reagruparse.</span></p></div></li>
+      <li><span class="temps">65 – 85 min</span><div><b><span data-fr>Raconter</span><span data-en>Tell a story</span><span data-es>Contar</span></b><p><span data-fr>Une scène, un storyboard, un moment fort pour le personnage.</span><span data-en>A scene, a storyboard, a key moment for the character.</span><span data-es>Una escena, un storyboard, un momento clave para el personaje.</span></p></div></li>
+      <li><span class="temps">85 – 105 min</span><div><b><span data-fr>Produire</span><span data-en>Produce</span><span data-es>Producir</span></b><p><span data-fr>Les visuels finaux et la séquence de groupe.</span><span data-en>The final visuals and the group sequence.</span><span data-es>Las imágenes finales y la secuencia del grupo.</span></p></div></li>
+      <li><span class="temps">105 – 115 min</span><div><b><span data-fr>La première</span><span data-en>The premiere</span><span data-es>El estreno</span></b><p><span data-fr>Chaque équipe présente sa création.</span><span data-en>Each team presents its creation.</span><span data-es>Cada equipo presenta su creación.</span></p></div></li>
+      <li><span class="temps">115 – 120 min</span><div><b><span data-fr>Réfléchir</span><span data-en>Reflect</span><span data-es>Reflexionar</span></b><p><span data-fr>Qu'est-ce que les humains ont décidé? Qu'est-ce que l'IA a fait?</span><span data-en>What did the humans decide? What did the AI do?</span><span data-es>¿Qué decidieron las personas? ¿Qué hizo la IA?</span></p></div></li>
+    </ol>
+    <p class="note"><span data-fr>Les jeunes créent le personnage et son identité visuelle pendant l'atelier. L'animateur s'occupe de la production technique et du montage final de la bande-annonce, remise après la séance.</span><span data-en>Young people create the character and its visual identity during the workshop. The facilitator handles technical production and the final trailer edit, delivered after the session.</span><span data-es>Los jóvenes crean el personaje y su identidad visual durante el taller. El facilitador se encarga de la producción técnica y del montaje final del tráiler, entregado después de la sesión.</span></p>
+  </div>
+</section>
+
+<section class="bande section clair" aria-labelledby="titre-num" style="padding-top:0">
+  <div class="cadre cadre-num">
+    <div class="entete" style="margin:0">
+      <p class="surtitre"><span data-fr>Compétence numérique</span><span data-en>Digital competency</span><span data-es>Competencia digital</span></p>
+      <h2 id="titre-num"><span data-fr>Pensés pour le <em>Cadre de référence</em> du Québec</span><span data-en>Designed around Quebec's <em>Digital Competency Framework</em></span><span data-es>Pensados para el <em>Marco de referencia</em> de Quebec</span></h2>
+      <p class="chapeau"><span data-fr>Nos ateliers s'appuient sur plusieurs des 12 dimensions du Cadre de référence de la compétence numérique, et sur le guide du ministère sur l'usage pédagogique, éthique et légal de l'IA générative.</span><span data-en>Our workshops draw on several of the 12 dimensions of Quebec's Digital Competency Framework, and on the ministry's guide to the pedagogical, ethical and legal use of generative AI.</span><span data-es>Nuestros talleres se apoyan en varias de las 12 dimensiones del Marco de referencia de la competencia digital de Quebec y en la guía del ministerio sobre el uso pedagógico, ético y legal de la IA generativa.</span></p>
+      <p class="source"><a href="https://www.quebec.ca/education/numerique/cadre-reference-competence-numerique" rel="noopener"><span data-fr>Voir le Cadre sur Québec.ca</span><span data-en>See the Framework on Québec.ca</span><span data-es>Ver el Marco en Québec.ca</span> ↗</a></p>
+    </div>
+    <table class="dims">
+      <tbody>
+        <tr><th scope="row"><span class="code">D12</span><span data-fr>Approche créative et innovante</span><span data-en>Creative and innovative approach</span><span data-es>Enfoque creativo e innovador</span></th><td><span data-fr>Inventer un personnage, un monde, une histoire.</span><span data-en>Inventing a character, a world, a story.</span><span data-es>Inventar un personaje, un mundo, una historia.</span></td></tr>
+        <tr><th scope="row"><span class="code">D7</span><span data-fr>Produire du contenu</span><span data-en>Producing content</span><span data-es>Producir contenido</span></th><td><span data-fr>Transformer l'idée en visuels, en storyboard, en film.</span><span data-en>Turning the idea into visuals, a storyboard, a film.</span><span data-es>Convertir la idea en imágenes, storyboard, película.</span></td></tr>
+        <tr><th scope="row"><span class="code">D11</span><span data-fr>Pensée critique</span><span data-en>Critical thinking</span><span data-es>Pensamiento crítico</span></th><td><span data-fr>Comparer les résultats, repérer les erreurs et les biais.</span><span data-en>Comparing results, spotting errors and biases.</span><span data-es>Comparar resultados, detectar errores y sesgos.</span></td></tr>
+        <tr><th scope="row"><span class="code">D5</span><span data-fr>Collaborer</span><span data-en>Collaborating</span><span data-es>Colaborar</span></th><td><span data-fr>Créer en équipe de quatre et décider ensemble.</span><span data-en>Creating in teams of four and deciding together.</span><span data-es>Crear en equipos de cuatro y decidir juntos.</span></td></tr>
+        <tr><th scope="row"><span class="code">D6</span><span data-fr>Communiquer</span><span data-en>Communicating</span><span data-es>Comunicar</span></th><td><span data-fr>Décrire son idée à l'IA, puis la présenter au groupe.</span><span data-en>Describing the idea to the AI, then presenting it to the group.</span><span data-es>Describir la idea a la IA y luego presentarla al grupo.</span></td></tr>
+        <tr><th scope="row"><span class="code">D1</span><span data-fr>Citoyenneté éthique</span><span data-en>Ethical citizenship</span><span data-es>Ciudadanía ética</span></th><td><span data-fr>Comprendre la transparence, le droit d'auteur et l'IA déclarée.</span><span data-en>Understanding transparency, copyright and declared AI.</span><span data-es>Entender la transparencia, los derechos de autor y la IA declarada.</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="bande section" aria-labelledby="titre-securite">
+  <div class="cadre">
+    <div class="entete">
+      <p class="surtitre"><span data-fr>IA responsable</span><span data-en>Responsible AI</span><span data-es>IA responsable</span></p>
+      <h2 id="titre-securite"><span data-fr>Nos règles, <em>non négociables</em></span><span data-en>Our rules, <em>non-negotiable</em></span><span data-es>Nuestras reglas, <em>no negociables</em></span></h2>
+      <p class="chapeau"><span data-fr>Vous nous confiez des jeunes. Voici ce qu'on s'engage à respecter, dans chaque atelier.</span><span data-en>You're trusting us with young people. Here's what we commit to, in every workshop.</span><span data-es>Nos confía a jóvenes. Esto es lo que nos comprometemos a respetar en cada taller.</span></p>
+    </div>
+    <ul class="promesses">
+      <li><b><span data-fr>Aucun compte pour les jeunes</span><span data-en>No accounts for students</span><span data-es>Ninguna cuenta para los jóvenes</span></b><p><span data-fr>L'animateur gère les outils d'IA. Les jeunes n'ont aucun compte à créer.</span><span data-en>The facilitator runs the AI tools. Students create no accounts.</span><span data-es>El facilitador maneja las herramientas de IA. Los jóvenes no crean ninguna cuenta.</span></p></li>
+      <li><b><span data-fr>Aucune donnée personnelle</span><span data-en>No personal data</span><span data-es>Ningún dato personal</span></b><p><span data-fr>Ni nom complet, ni adresse, ni renseignement scolaire n'entre dans un outil d'IA.</span><span data-en>No full names, addresses or school records go into an AI tool.</span><span data-es>Ni nombres completos, ni direcciones, ni datos escolares entran en una herramienta de IA.</span></p></li>
+      <li><b><span data-fr>Aucun vrai visage ni voix</span><span data-en>No real faces or voices</span><span data-es>Ningún rostro ni voz real</span></b><p><span data-fr>On crée des personnages fictifs. Aucune photo ni voix d'élève n'est utilisée.</span><span data-en>We create fictional characters. No student photos or voices are used.</span><span data-es>Creamos personajes ficticios. No se usa ninguna foto ni voz de alumnos.</span></p></li>
+      <li><b><span data-fr>L'enseignant reste présent</span><span data-en>The teacher stays present</span><span data-es>El docente sigue presente</span></b><p><span data-fr>Nous animons l'activité; la responsabilité de la classe reste à l'enseignant.</span><span data-en>We run the activity; responsibility for the class stays with the teacher.</span><span data-es>Nosotros animamos la actividad; la responsabilidad de la clase sigue siendo del docente.</span></p></li>
+      <li><b><span data-fr>Contenu adapté à l'âge</span><span data-en>Age-appropriate content</span><span data-es>Contenido adaptado a la edad</span></b><p><span data-fr>Thèmes encadrés, aucun contenu violent, sexualisé ou discriminatoire.</span><span data-en>Guided themes, no violent, sexualized or discriminatory content.</span><span data-es>Temas guiados, ningún contenido violento, sexualizado ni discriminatorio.</span></p></li>
+      <li><b><span data-fr>Un plan B hors ligne</span><span data-en>An offline plan B</span><span data-es>Un plan B sin conexión</span></b><p><span data-fr>Si un outil tombe en panne, l'atelier continue avec du matériel préparé.</span><span data-en>If a tool fails, the workshop continues with prepared materials.</span><span data-es>Si una herramienta falla, el taller continúa con material preparado.</span></p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="bande section equipe" aria-labelledby="titre-equipe">
+  <div class="cadre">
+    <div>
+      <div class="entete" style="margin-bottom:18px">
+        <p class="surtitre"><span data-fr>Qui anime</span><span data-en>Who leads</span><span data-es>Quién anima</span></p>
+        <h2 id="titre-equipe"><span data-fr>Un créateur, <em>pas un vendeur de logiciels</em></span><span data-en>A creator, <em>not a software seller</em></span><span data-es>Un creador, <em>no un vendedor de software</em></span></h2>
+      </div>
+      <div class="personne"><img src="../../a-propos/dan.webp" alt="Dan Ortega" loading="lazy"><div><b>Dan Ortega</b><p><span data-fr>Auteur et créateur du monde de Croussus, diplômé du baccalauréat en génie industriel (BEng), Université Concordia, 2021. Il anime en français, en anglais et en espagnol.</span><span data-en>Author and creator of the World of Croussus, Industrial Engineering BEng graduate, Concordia University, 2021. He leads workshops in French, English and Spanish.</span><span data-es>Autor y creador del mundo de Croussus, graduado del bachillerato en ingeniería industrial (BEng), Universidad Concordia, 2021. Anima en francés, inglés y español.</span></p></div></div>
+      <p style="margin-top:16px;font-size:15px;color:var(--rose)"><a href="/a-propos/"><span data-fr>Notre histoire</span><span data-en>Our story</span><span data-es>Nuestra historia</span> →</a></p>
+    </div>
+    <div class="blocs">
+      <div class="bloc">
+        <h3><span data-fr>Ce que nous apportons</span><span data-en>What we bring</span><span data-es>Lo que traemos</span></h3>
+        <ul class="liste">
+          <li><span data-fr>Le matériel de production et les outils d'IA</span><span data-en>Production equipment and AI tools</span><span data-es>El equipo de producción y las herramientas de IA</span></li>
+          <li><span data-fr>Cahiers, fiches de personnage, storyboards et cartes de défis</span><span data-en>Workbooks, character sheets, storyboards and challenge cards</span><span data-es>Cuadernos, fichas de personaje, storyboards y tarjetas de retos</span></li>
+          <li><span data-fr>Une version hors ligne de l'atelier</span><span data-en>An offline version of the workshop</span><span data-es>Una versión sin conexión del taller</span></li>
+          <li><span data-fr>La bande-annonce finale, remise après la séance</span><span data-en>The final trailer, delivered after the session</span><span data-es>El tráiler final, entregado después de la sesión</span></li>
+        </ul>
+      </div>
+      <div class="bloc">
+        <h3><span data-fr>Ce dont nous avons besoin</span><span data-en>What we need from you</span><span data-es>Lo que necesitamos</span></h3>
+        <ul class="liste">
+          <li><span data-fr>Un projecteur ou un écran</span><span data-en>A projector or screen</span><span data-es>Un proyector o una pantalla</span></li>
+          <li><span data-fr>Un accès Internet</span><span data-en>Internet access</span><span data-es>Acceso a Internet</span></li>
+          <li><span data-fr>Des tables pour six équipes</span><span data-en>Tables for six teams</span><span data-es>Mesas para seis equipos</span></li>
+          <li><span data-fr>Un enseignant ou un intervenant présent</span><span data-en>A teacher or staff member present</span><span data-es>Un docente o responsable presente</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bande section clair" aria-labelledby="titre-faq">
+  <div class="cadre" style="max-width:860px">
+    <div class="entete">
+      <p class="surtitre"><span data-fr>Questions</span><span data-en>Questions</span><span data-es>Preguntas</span></p>
+      <h2 id="titre-faq"><span data-fr>Ce qu'on nous demande</span><span data-en>What people ask us</span><span data-es>Lo que nos preguntan</span></h2>
+    </div>
+    <details><summary><span data-fr>Les jeunes utilisent-ils l'IA eux-mêmes?</span><span data-en>Do students use AI themselves?</span><span data-es>¿Los jóvenes usan la IA ellos mismos?</span></summary><p><span data-fr>Ils écrivent les descriptions, choisissent, critiquent et dirigent les corrections. L'animateur fait les générations à partir de ses comptes : aucun compte d'élève, aucune donnée personnelle.</span><span data-en>They write the descriptions, choose, critique and direct the revisions. The facilitator runs the generations from approved accounts: no student accounts, no personal data.</span><span data-es>Escriben las descripciones, eligen, critican y dirigen las correcciones. El facilitador hace las generaciones desde sus cuentas: ninguna cuenta de alumno, ningún dato personal.</span></p></details>
+    <details><summary><span data-fr>Faut-il des ordinateurs pour chaque élève?</span><span data-en>Does each student need a computer?</span><span data-es>¿Cada alumno necesita una computadora?</span></summary><p><span data-fr>Non. Une grande partie se fait sur papier, en équipe. Nous apportons le matériel de production; un écran partagé suffit.</span><span data-en>No. Much of the work happens on paper, in teams. We bring the production equipment; a shared screen is enough.</span><span data-es>No. Gran parte se hace en papel, en equipo. Traemos el equipo de producción; basta con una pantalla compartida.</span></p></details>
+    <details><summary><span data-fr>À qui appartiennent les créations?</span><span data-en>Who owns the creations?</span><span data-es>¿De quién son las creaciones?</span></summary><p><span data-fr>Les personnages et les histoires sont ceux des jeunes. Le groupe reçoit la galerie et la bande-annonce pour un usage éducatif. Nos cahiers et notre méthode restent à CCC Studios.</span><span data-en>The characters and stories belong to the young people. The group receives the gallery and the trailer for educational use. Our workbooks and method remain CCC Studios'.</span><span data-es>Los personajes y las historias son de los jóvenes. El grupo recibe la galería y el tráiler para uso educativo. Nuestros cuadernos y nuestro método siguen siendo de CCC Studios.</span></p></details>
+    <details><summary><span data-fr>Peut-on adapter un atelier à notre thème?</span><span data-en>Can a workshop be adapted to our theme?</span><span data-es>¿Se puede adaptar un taller a nuestro tema?</span></summary><p><span data-fr>Oui : environnement, histoire du quartier, mascotte d'école, futur de la ville… Les thèmes sur mesure et les programmes de plusieurs séances se préparent sur soumission.</span><span data-en>Yes: environment, local history, a school mascot, the city's future… Custom themes and multi-session programs are prepared on quote.</span><span data-es>Sí: medio ambiente, historia del barrio, mascota escolar, el futuro de la ciudad… Los temas a medida y los programas de varias sesiones se preparan bajo cotización.</span></p></details>
+    <details><summary><span data-fr>Combien ça coûte?</span><span data-en>How much does it cost?</span><span data-es>¿Cuánto cuesta?</span></summary><p><span data-fr>Écrivez-nous avec votre organisation, le nombre de jeunes et la date visée : nous vous envoyons une soumission claire.</span><span data-en>Write to us with your organization, the number of young people and the target date: we'll send you a clear quote.</span><span data-es>Escríbanos con su organización, el número de jóvenes y la fecha deseada: le enviamos una cotización clara.</span></p></details>
+  </div>
+</section>
+
+<section class="bande section contact" id="contact" aria-labelledby="titre-contact">
+  <div class="cadre">
+    <p class="surtitre"><span data-fr>Organiser un atelier</span><span data-en>Book a workshop</span><span data-es>Organizar un taller</span></p>
+    <h2 id="titre-contact"><span data-fr>Donnons vie <em>à leurs idées</em></span><span data-en>Let's bring <em>their ideas</em> to life</span><span data-es>Demos vida <em>a sus ideas</em></span></h2>
+    <p class="chapeau"><span data-fr>Dites-nous qui vous êtes, l'âge des jeunes et la date souhaitée. Une personne vous répond, en français, en anglais ou en espagnol.</span><span data-en>Tell us who you are, the young people's ages and the date you have in mind. A person replies, in French, English or Spanish.</span><span data-es>Díganos quiénes son, la edad de los jóvenes y la fecha deseada. Una persona le responde, en francés, inglés o español.</span></p>
+    <p class="adresse">bonjour@ccc-studios.com</p>
+    <div class="appels" style="justify-content:center">
+      <a class="bouton" href="mailto:bonjour@ccc-studios.com?subject=Atelier%20cr%C3%A9atif%20%E2%80%94%20%5Bnom%20de%20l%27organisation%5D"><span data-fr>Écrire pour un atelier</span><span data-en>Write about a workshop</span><span data-es>Escribir para un taller</span></a>
+      <a class="bouton vide" href="../"><span data-fr>Voir nos créations</span><span data-en>See our creations</span><span data-es>Ver nuestras creaciones</span></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="bande">
+  <div class="cadre">
+    <span>CCC Studios · <span data-fr>Éducation · branche créative · IA déclarée</span><span data-en>Education · creative branch · AI-declared</span><span data-es>Educación · rama creativa · IA declarada</span></span>
+    <span><span data-fr>Images de cette page générées par IA, univers écrits par des humains.</span><span data-en>Images on this page generated by AI, worlds written by people.</span><span data-es>Imágenes de esta página generadas por IA, universos escritos por personas.</span> · <a href="/confidentialite/"><span data-fr>Confidentialité</span><span data-en>Privacy</span><span data-es>Privacidad</span></a></span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var r = document.documentElement, titres = {fr:"Ateliers créatifs et IA pour les jeunes · CCC Studios", en:"Creative AI workshops for young people · CCC Studios", es:"Talleres creativos e IA para jóvenes · CCC Studios"};
+  function langue(l) {
+    r.setAttribute("data-l", l); r.setAttribute("lang", l); document.title = titres[l];
+    ["fr","en","es"].forEach(function (x) { document.getElementById("btn-" + x).setAttribute("aria-pressed", String(l === x)); });
+    try { localStorage.setItem("lang", l); localStorage.setItem("ccc-langue", l); } catch (e) {}
+  }
+  var c = "fr";
+  try { c = new URLSearchParams(location.search).get("lang") || localStorage.getItem("lang") || localStorage.getItem("ccc-langue") || "fr"; } catch (e) {}
+  langue(c === "en" || c === "es" ? c : "fr");
+  ["fr","en","es"].forEach(function (x) { document.getElementById("btn-" + x).addEventListener("click", function () { langue(x); }); });
+})();
+</script>
+</body>
+</html>
