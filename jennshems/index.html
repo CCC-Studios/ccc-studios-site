@@ -172,6 +172,42 @@ footer{background:#000;color:#fff}
 /* Étiquette de branche, comme « Branche créative » */
 .brand{gap:14px}.brand .branche{font:400 12px/1 "Tenor Sans",Inter,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#F5F2EC;padding-left:14px;border-left:1px solid rgba(245,242,236,.25);white-space:nowrap}
 @media(max-width:1240px){.brand .branche{display:none}}
+
+/* Leçons de design (2 nov.) */
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:28px;max-width:540px}
+.stat{border-top:1px solid rgba(245,242,236,.4);padding-top:10px;display:grid;gap:2px}
+.stat b{font-family:Lora,Georgia,serif;font-weight:500;font-size:36px;line-height:1;color:#FFC40C}
+.stat span{font-size:13.5px;line-height:1.35;color:#fff}
+.meta-line{margin-top:16px;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:#F5F2EC}
+.hero-vis{position:relative;justify-self:center;width:100%;max-width:400px}
+.float{position:absolute;background:#fff;color:#180D00;border-radius:14px;padding:10px 14px;box-shadow:0 10px 30px rgba(0,0,0,.35);display:grid;gap:2px;max-width:210px}
+.float b{font-family:Lora,Georgia,serif;font-weight:500;font-size:24px;line-height:1}
+.float span{font-size:12.5px}
+.float .f-v{white-space:nowrap}
+.f-top{top:30%;right:-8px}
+.f-bot{bottom:14%;left:-8px}
+.f-k{font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:12px!important;color:#735827}
+@media(min-width:1100px){.f-top{right:-48px}.f-bot{left:-56px}}
+.strip{background:#FFC40C;color:#000;padding:0}
+.strip .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;padding-top:14px;padding-bottom:14px;font-family:Lora,Georgia,serif;font-size:clamp(18px,2.4vw,24px)}
+.strip .wrap>span::before{content:"✦ ";font-size:.7em;vertical-align:.15em}
+.cons{display:grid;gap:12px}
+.con{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:center;border:1px solid #735827;border-radius:14px;padding:18px 20px}
+.con-b p{font-size:15.5px;color:#180D00}
+.con-a{font-family:Lora,Georgia,serif;font-size:28px;color:#735827}
+.con-f{background:#180D00;color:#fff;border-radius:10px;padding:14px 16px}
+.con-f p{font-size:15px}
+@media(max-width:700px){.con{grid-template-columns:1fr}.con-a{transform:rotate(90deg);justify-self:start}}
+.mbar{display:none}
+@media(max-width:760px){
+  .mbar{display:flex;gap:8px;position:fixed;left:12px;right:12px;bottom:calc(10px + env(safe-area-inset-bottom,0px));z-index:50;background:#180D00;padding:8px;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.35);transition:transform .25s,opacity .25s}
+  .mbar .btn{flex:1;padding:12px 10px}
+  .mbar.off{transform:translateY(130%);opacity:0;pointer-events:none}
+  body{padding-bottom:84px}
+  .stat b{font-size:28px}
+}
+@media(prefers-reduced-motion:reduce){.mbar{transition:none}}
+.bubble{display:inline-block;align-self:start;justify-self:start;width:fit-content;margin-top:6px;background:#F5F2EC;color:#735827;border:1px solid #735827;border-radius:999px;padding:2px 10px;font-size:12px;font-weight:600;white-space:nowrap}
 </style>
 </head>
 <body>
@@ -217,15 +253,27 @@ footer{background:#000;color:#fff}
         <a class="btn btn-main js-mail" href="mailto:bonjour@ccc-studios.com"><span lang="fr">Réserver un appel de 10 minutes</span><span lang="en">Book a 10-minute call</span><span lang="es">Reservar una llamada de 10 minutos</span></a>
         <a class="btn btn-ghost" href="#demos"><span lang="fr">Voir les démos</span><span lang="en">See the demos</span><span lang="es">Ver los demos</span></a>
       </div>
+      <div class="stats">
+        <div class="stat"><b>15 s</b><span lang="fr">format pub, cellulaire</span><span lang="en">ad format, vertical</span><span lang="es">formato anuncio, vertical</span></div>
+        <div class="stat"><b>5</b><span lang="fr">jours ouvrables après le script</span><span lang="en">business days after the script</span><span lang="es">días hábiles tras el guion</span></div>
+        <div class="stat"><b>0</b><span lang="fr">tournage chez vous</span><span lang="en">shoots at your place</span><span lang="es">rodajes en su local</span></div>
+      </div>
+      <p class="meta-line"><span lang="fr">Prix fixes · Licence de 12 mois incluse · IA toujours déclarée</span><span lang="en">Fixed prices · 12-month licence included · AI always declared</span><span lang="es">Precios fijos · Licencia de 12 meses incluida · IA siempre declarada</span></p>
       <p class="launch"><span lang="fr"><b>Forfait Lancement :</b> 250 $ au lieu de 399 $ pour les 3 premières entreprises.</span><span lang="en"><b>Launch package:</b> $250 instead of $399 for the first 3 businesses.</span><span lang="es"><b>Paquete de lanzamiento:</b> $250 en lugar de $399 para las 3 primeras empresas.</span></p>
       <p class="sign serif"><span lang="fr">« Moi, je suis virtuelle. Vos clients, eux, sont ben réels. »</span><span lang="en">"I'm virtual. Your customers are the real deal."</span><span lang="es">« Yo soy virtual. Sus clientes sí son bien reales. »</span></p>
     </div>
+    <div class="hero-vis">
     <figure class="portrait">
       <img src="media/jennifer-hero.jpg" width="720" height="1280" alt="Jennifer Shems-Mylie, actrice IA, dans une rue de Montréal en automne">
       <span class="pill"><span lang="fr">Jennifer est une actrice IA</span><span lang="en">Jennifer is an AI actress</span><span lang="es">Jennifer es una actriz IA</span></span>
     </figure>
+      <div class="float f-top"><b>FR + EN</b><span lang="fr">la même actrice, deux langues</span><span lang="en">same actress, two languages</span><span lang="es">la misma actriz, dos idiomas</span></div>
+      <div class="float f-bot"><span class="f-k" lang="fr">Personnage fictif</span><span class="f-k" lang="en">Fictional character</span><span class="f-k" lang="es">Personaje ficticio</span><span class="f-v" lang="fr">Mention IA sur chaque pub ✓</span><span class="f-v" lang="en">AI label on every ad ✓</span><span class="f-v" lang="es">Mención IA en cada anuncio ✓</span></div>
+    </div>
   </div>
 </section>
+
+<div class="strip" aria-hidden="true"><div class="wrap"><span><span lang="fr">Sans tournage</span><span lang="en">No shoot</span><span lang="es">Sin rodaje</span></span><span><span lang="fr">Français et anglais</span><span lang="en">French and English</span><span lang="es">Francés e inglés</span></span><span><span lang="fr">Prête en 5 jours</span><span lang="en">Ready in 5 days</span><span lang="es">Lista en 5 días</span></span><span><span lang="fr">IA déclarée</span><span lang="en">AI declared</span><span lang="es">IA declarada</span></span></div></div>
 
 <section id="demos">
   <div class="wrap">
@@ -237,7 +285,7 @@ footer{background:#000;color:#fff}
         <div class="meta"><b>Café Annie</b><span lang="fr">Café · démo, entreprise fictive</span><span lang="en">Café · demo, fictional business</span><span lang="es">Café · demo, empresa ficticia</span></div>
       </article>
       <article class="demo">
-        <video controls playsinline preload="none" data-base="media/demo-reno" poster="media/demo-reno-fr.jpg"><source src="media/demo-reno-fr.mp4" type="video/mp4"></video>
+        <video controls playsinline preload="none" data-base="media/demo-reno-v2" poster="media/demo-reno-v2-fr.jpg"><source src="media/demo-reno-v2-fr.mp4" type="video/mp4"></video>
         <div class="meta"><b>Rénovations Pignon</b><span lang="fr">Rénovation · démo, entreprise fictive</span><span lang="en">Renovation · demo, fictional business</span><span lang="es">Renovación · demo, empresa ficticia</span></div>
       </article>
       <article class="demo">
@@ -250,6 +298,18 @@ footer{background:#000;color:#fff}
       </article>
     </div>
     <p class="note"><span lang="fr">Changez la langue en haut de la page pour voir les versions anglaises.</span><span lang="en">The demos above now play in English; switch to FR at the top for the French versions.</span><span lang="es">Los demos están en francés y en inglés: cambie a FR o EN arriba para verlos en cada idioma.</span></p>
+  </div>
+</section>
+
+<section class="why-ai" id="pourquoi">
+  <div class="wrap">
+    <h2><span lang="fr">Pourquoi une actrice IA?</span><span lang="en">Why an AI actress?</span><span lang="es">¿Por qué una actriz IA?</span></h2>
+    <p class="sub"><span lang="fr">Une pub vidéo, sans ce qui la rend difficile pour une petite entreprise.</span><span lang="en">A video ad, without what makes it hard for a small business.</span><span lang="es">Un anuncio en video, sin lo que lo hace difícil para una pequeña empresa.</span></p>
+    <div class="cons">
+      <article class="con"><div class="con-b"><p lang="fr">Tourner une pub : une équipe, une journée, et vous devant la caméra.</p><p lang="en">Shooting an ad: a crew, a day, and you in front of the camera.</p><p lang="es">Rodar un anuncio: un equipo, un día, y usted frente a la cámara.</p></div><span class="con-a" aria-hidden="true">→</span><div class="con-f"><p lang="fr">Jennifer la présente pour vous. Vous approuvez le script, c'est tout.</p><p lang="en">Jennifer presents it for you. You approve the script, that's it.</p><p lang="es">Jennifer lo presenta por usted. Usted aprueba el guion, y listo.</p></div></article>
+      <article class="con"><div class="con-b"><p lang="fr">Une seule version, en français ou en anglais.</p><p lang="en">One version only, in French or in English.</p><p lang="es">Una sola versión, en francés o en inglés.</p></div><span class="con-a" aria-hidden="true">→</span><div class="con-f"><p lang="fr">Les deux langues, avec la même actrice, livrées ensemble.</p><p lang="en">Both languages, with the same actress, delivered together.</p><p lang="es">Los dos idiomas, con la misma actriz, entregados juntos.</p></div></article>
+      <article class="con"><div class="con-b"><p lang="fr">Une photo fixe sur Facebook, qu'on dépasse sans s'arrêter.</p><p lang="en">A still photo on Facebook that people scroll right past.</p><p lang="es">Una foto fija en Facebook que la gente pasa sin detenerse.</p></div><span class="con-a" aria-hidden="true">→</span><div class="con-f"><p lang="fr">15 secondes avec un visage et une voix, au format cellulaire.</p><p lang="en">15 seconds with a face and a voice, in phone format.</p><p lang="es">15 segundos con una cara y una voz, en formato de celular.</p></div></article>
+    </div>
   </div>
 </section>
 
@@ -278,9 +338,10 @@ footer{background:#000;color:#fff}
         <span class="tag"><span lang="fr">Saisons</span><span lang="en">Seasons</span><span lang="es">Temporadas</span></span>
         <h3><span lang="fr">Pub du mois</span><span lang="en">Ad of the month</span><span lang="es">Anuncio del mes</span></h3>
         <div class="price">349 $</div>
-        <div class="per"><span lang="fr">par mois, minimum 3 mois</span><span lang="en">per month, 3-month minimum</span><span lang="es">por mes, mínimo 3 meses</span></div>
-        <ul lang="fr"><li>Une nouvelle pub chaque mois choisi</li><li>Vous choisissez les mois</li><li>Premier mois payé à la signature, chaque mois suivant d'avance le 1<sup>er</sup></li><li>Après le minimum, 30 jours d'avis pour arrêter</li></ul>
-        <ul lang="en"><li>A new ad for each month you pick</li><li>You choose the months</li><li>First month paid at signing, each next month in advance on the 1st</li><li>After the minimum, 30 days' notice to stop</li></ul><ul lang="es"><li>Un anuncio nuevo para cada mes que elija</li><li>Usted elige los meses</li><li>Primer mes pagado al firmar, cada mes siguiente por adelantado el día 1</li><li>Después del mínimo, 30 días de aviso para terminar</li></ul>
+        <div class="per"><span lang="fr">par mois, de mois en mois</span><span lang="en">per month, month to month</span><span lang="es">por mes, mes a mes</span></div>
+        <span class="bubble"><span lang="fr">−10 % · engagement de 3 mois</span><span lang="en">−10% · 3-month commitment</span><span lang="es">−10 % · compromiso de 3 meses</span></span>
+        <ul lang="fr"><li>Une nouvelle pub chaque mois choisi</li><li>Vous choisissez les mois</li><li>Premier mois payé à la signature, chaque mois suivant d'avance le 1<sup>er</sup></li><li>30 jours d'avis pour arrêter</li></ul>
+        <ul lang="en"><li>A new ad for each month you pick</li><li>You choose the months</li><li>First month paid at signing, each next month in advance on the 1st</li><li>30 days' notice to stop</li></ul><ul lang="es"><li>Un anuncio nuevo para cada mes que elija</li><li>Usted elige los meses</li><li>Primer mes pagado al firmar, cada mes siguiente por adelantado el día 1</li><li>30 días de aviso para terminar</li></ul>
       </div>
       <div class="card">
         <span class="tag"><span lang="fr">Chaque vendredi</span><span lang="en">Every Friday</span><span lang="es">Cada viernes</span></span>
@@ -359,6 +420,11 @@ footer{background:#000;color:#fff}
   </div>
 </section>
 </main>
+<nav class="mbar" aria-label="Actions">
+  <a class="btn btn-main js-mail" href="mailto:bonjour@ccc-studios.com"><span lang="fr">Réserver 10 min</span><span lang="en">Book 10 min</span><span lang="es">Reservar 10 min</span></a>
+  <a class="btn btn-ghost" href="#demos"><span lang="fr">Démos</span><span lang="en">Demos</span><span lang="es">Demos</span></a>
+</nav>
+
 
 <footer>
   <div class="wrap">
@@ -417,6 +483,17 @@ footer{background:#000;color:#fff}
   ajuste(); addEventListener("resize", ajuste); addEventListener("load", ajuste);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(ajuste);
   new MutationObserver(ajuste).observe(document.documentElement, { attributes: true, attributeFilter: ["data-lang", "lang"] });
+})();
+</script>
+<script>
+/* Barre d'actions mobile : visible une fois les boutons du haut dépassés, cachée au contact. */
+(function(){
+  var bar=document.querySelector(".mbar"), top=document.querySelector(".hero .ctas"), contact=document.getElementById("contact");
+  if(!bar||!top||!("IntersectionObserver" in window))return;
+  var a=true,b=false; function u(){bar.classList.toggle("off",a||b);}
+  new IntersectionObserver(function(e){a=e[0].isIntersecting;u();}).observe(top);
+  if(contact)new IntersectionObserver(function(e){b=e[0].isIntersecting;u();}).observe(contact);
+  u();
 })();
 </script>
 </body>

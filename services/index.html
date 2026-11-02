@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Visibilité locale · Services aux entreprises · CCC Studios</title>
-<meta name="description" content="Fiche Google, réseaux sociaux, site web et vidéos avec Jennifer, notre actrice IA déclarée. Remis en état, puis entretenus chaque mois, pour les entreprises de services du Québec. En français, en anglais et en espagnol.">
-<meta property="og:title" content="Visibilité locale · CCC Studios">
-<meta property="og:description" content="Qu'on vous trouve sur Google, qu'on vous appelle. Fiche Google, réseaux, site et vidéos pour les entreprises de services du Québec.">
+<title>Services aux entreprises · CCC Studios</title>
+<meta name="description" content="Pubs vidéo de 15 secondes prêtes en 5 jours ouvrables, sans tournage, en français, en anglais et en espagnol, avec Jennifer, actrice IA déclarée. Plus réseaux, site, fiche Google et opérations pour les entreprises de services du Québec.">
+<meta property="og:title" content="Services aux entreprises · CCC Studios">
+<meta property="og:description" content="Être vu, être choisi, mieux opérer : visibilité, image et opérations pour les entreprises de services du Québec.">
 <meta property="og:image" content="https://ccc-studios.com/jennshems/media/og-jennifer.jpg">
 <meta property="og:url" content="https://ccc-studios.com/services/">
 <meta property="og:type" content="website">
@@ -139,6 +139,99 @@ footer a{color:var(--blanc)}
 /* Étiquette de branche, comme « Branche créative » */
 .brand{gap:14px}.brand .branche{font:400 12px/1 "Tenor Sans",Inter,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#F5F2EC;padding-left:14px;border-left:1px solid rgba(245,242,236,.25);white-space:nowrap}
 @media(max-width:1024px){.brand .branche{display:none}}
+
+/* Trois familles (1er nov.) */
+.fam{display:flex;gap:16px;align-items:baseline;margin:44px 0 18px;padding-top:18px;border-top:1px solid var(--bronze)}
+.fam:first-of-type{margin-top:8px}
+.fam-n{font-family:Lora,Georgia,serif;font-style:italic;font-size:34px;line-height:1;color:var(--bronze)}
+.fam-t{font-size:clamp(24px,3vw,30px);color:var(--minuit);line-height:1.1}
+.fam p{font-size:15.5px;margin-top:4px}
+.ops{background:var(--minuit);color:var(--blanc);border-radius:18px;padding:clamp(22px,4vw,40px);display:grid;gap:26px}
+.ops .letter{font-family:"Tenor Sans",Inter,sans-serif;letter-spacing:.14em;font-size:13px;color:var(--ambre)}
+.ops h3{font-size:clamp(24px,3.4vw,34px);line-height:1.12;margin:8px 0 12px;text-wrap:balance}
+.ops h3 .it{color:var(--ambre)}
+.ops-lead{font-size:17px;max-width:40em}
+.method{list-style:none;padding:0;display:grid;gap:14px;grid-template-columns:repeat(2,1fr);counter-reset:m}
+@media(min-width:640px){.method{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:960px){.method{grid-template-columns:repeat(6,1fr)}}
+.method li{border-top:2px solid var(--ambre);padding-top:10px;display:grid;gap:4px;align-content:start;font-size:14px}
+.method li::before{counter-increment:m;content:counter(m);font-family:Lora,Georgia,serif;font-style:italic;font-size:24px;color:var(--ambre);line-height:1}
+.method b{font-size:15.5px}
+.ops-grid{display:grid;gap:16px}
+@media(min-width:860px){.ops-grid{grid-template-columns:1fr 1fr}}
+.ops-box{border:1px solid rgba(245,242,236,.35);border-radius:14px;padding:20px;display:grid;gap:12px;align-content:start}
+.ops-k{font-family:Lora,Georgia,serif;font-weight:500;font-size:20px}
+.ops .opt{border-top:1px solid rgba(245,242,236,.35)}
+.ops .opt .name,.ops .opt .price b{color:var(--blanc)}
+.ops .opt p{font-size:14.5px}
+.ops-next{font-size:14px;color:var(--creme)}
+.ba{font-size:15px;display:grid;gap:2px}
+.ba-k{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ambre)}
+.ops-foot{display:grid;gap:10px;font-size:14.5px;border-top:1px solid rgba(245,242,236,.35);padding-top:18px}
+.ops :focus-visible{outline-color:var(--ambre)}
+
+/* Offre renforcée (2 nov.) */
+.facts{list-style:none;padding:0;margin-top:22px;display:flex;flex-wrap:wrap;gap:8px 20px;font-size:14.5px}
+.facts li{display:flex;gap:8px;align-items:center}
+.facts li::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--ambre);flex:none}
+.pain{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.pain-i{background:var(--minuit);color:var(--blanc);border-radius:14px;padding:20px}
+.pain-i b{display:block;font-family:Lora,Georgia,serif;font-weight:500;font-size:20px;line-height:1.2;margin-bottom:8px;color:var(--ambre)}
+.pain-i p{font-size:15px}
+.live{margin-top:28px;border:1px solid var(--bronze);border-radius:14px;padding:20px;display:grid;gap:12px}
+.live-k{font-family:Lora,Georgia,serif;font-weight:500;font-size:20px;color:var(--minuit)}
+.live-g{display:grid;gap:16px}
+@media(min-width:760px){.live-g{grid-template-columns:1fr 1fr}}
+.live-g b{display:block;margin-bottom:4px;color:var(--minuit)}
+.live-g p{font-size:14.5px}
+.why{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.why-i{border-top:2px solid var(--bronze);padding-top:14px}
+.why-i b{display:block;font-family:Lora,Georgia,serif;font-weight:500;font-size:20px;line-height:1.2;margin-bottom:6px;color:var(--minuit)}
+.why-i p{font-size:15px}
+.when{display:block;font-size:12.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ambre);margin-bottom:2px}
+.measure{margin-top:16px}
+.measure ul{padding-left:20px;display:grid;gap:6px;font-size:15px}
+.measure-note{margin-top:12px;font-size:14px;color:var(--creme)}
+
+/* Vidéo d'abord (2 nov.) */
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:30px;max-width:560px}
+.stat{border-top:1px solid rgba(245,242,236,.4);padding-top:10px;display:grid;gap:2px}
+.stat b{font-family:Lora,Georgia,serif;font-weight:500;font-size:40px;line-height:1;color:var(--ambre)}
+.stat span{font-size:13.5px;line-height:1.35}
+.meta-line{margin-top:18px;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--creme)}
+.hero-vid{position:relative;margin:0;justify-self:center;width:min(300px,100%);align-self:center}
+.phone{border:1px solid rgba(245,242,236,.5);border-radius:30px;padding:8px;background:#000}
+.phone video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:23px;background:#000}
+.float{position:absolute;background:var(--blanc);color:var(--minuit);border-radius:14px;padding:10px 14px;box-shadow:0 10px 30px rgba(0,0,0,.35);display:grid;gap:2px;max-width:200px}
+.float b{font-family:Lora,Georgia,serif;font-weight:500;font-size:26px;line-height:1}
+.float span{font-size:12.5px}
+.float .f-v{white-space:nowrap}
+.f-top{top:34%;right:-8px}
+.f-bot{bottom:24%;left:-8px}
+.f-bot .dot{display:none}
+.f-k{font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:12px!important;color:var(--bronze)}
+@media(min-width:1100px){.f-top{right:-48px}.f-bot{left:-56px}}
+.hero-vid figcaption{margin-top:12px;font-size:13px;color:var(--creme);text-align:center}
+.strip{background:var(--ambre);color:var(--noir)}
+.strip .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;padding-top:14px;padding-bottom:14px;font-family:Lora,Georgia,serif;font-size:clamp(18px,2.4vw,24px)}
+.strip .wrap>span::before{content:"✦ ";font-size:.7em;vertical-align:.15em}
+.eyebrow{font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--bronze);margin-bottom:10px}
+.cons{display:grid;gap:12px}
+.con{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:center;border:1px solid var(--bronze);border-radius:14px;padding:18px 20px}
+.con-b p{font-size:15.5px;color:var(--minuit)}
+.con-a{font-family:Lora,Georgia,serif;font-size:28px;color:var(--bronze)}
+.con-f{background:var(--minuit);color:var(--blanc);border-radius:10px;padding:14px 16px}
+.con-f p{font-size:15px}
+@media(max-width:700px){.con{grid-template-columns:1fr}.con-a{transform:rotate(90deg);justify-self:start}}
+.mbar{display:none}
+@media(max-width:760px){
+  .mbar{display:flex;gap:8px;position:fixed;left:12px;right:12px;bottom:calc(10px + env(safe-area-inset-bottom,0px));z-index:50;background:var(--minuit);padding:8px;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.35);transition:transform .25s,opacity .25s}
+  .mbar .btn{flex:1;justify-content:center;padding:12px 10px}
+  .mbar.off{transform:translateY(130%);opacity:0;pointer-events:none}
+  body{padding-bottom:84px}
+  .stat b{font-size:32px}
+}
+@media(prefers-reduced-motion:reduce){.mbar{transition:none}}
 </style>
 </head>
 <body>
@@ -166,26 +259,50 @@ footer a{color:var(--blanc)}
 <section class="hero dark" style="padding:0">
   <div class="wrap">
     <div>
-      <div class="kicker"><span lang="fr">Visibilité locale · entreprises de services du Québec</span><span lang="en">Local visibility · Quebec service businesses</span><span lang="es">Visibilidad local · empresas de servicios en Quebec</span></div>
-      <h1><span lang="fr">Qu'on vous trouve. <span class="it">Qu'on vous appelle.</span></span><span lang="en">Get found. <span class="it">Get the call.</span></span><span lang="es">Que lo encuentren. <span class="it">Que lo llamen.</span></span></h1>
-      <p class="lead"><span lang="fr">Votre fiche Google, vos réseaux sociaux, votre site et vos vidéos : on les remet en état, puis on les entretient chaque mois. En français d'abord, en anglais, et en espagnol sur demande.</span><span lang="en">Your Google profile, your social media, your website and your videos: we fix them, then keep them up every month. French first, English too, and Spanish on request.</span><span lang="es">Su perfil de Google, sus redes sociales, su sitio web y sus videos: los ponemos en orden y luego los mantenemos cada mes. Primero en francés, también en inglés, y en español si lo pide.</span></p>
+      <div class="kicker"><span lang="fr">Branche d'affaires · entreprises de services du Québec</span><span lang="en">Business branch · Quebec service businesses</span><span lang="es">Rama de negocios · empresas de servicios en Quebec</span></div>
+      <h1><span lang="fr">Vos pubs vidéo, prêtes en 5 jours. <span class='it'>Sans tournage.</span></span><span lang="en">Your video ads, ready in 5 days. <span class='it'>No shoot.</span></span><span lang="es">Sus anuncios en video, listos en 5 días. <span class='it'>Sin rodaje.</span></span></h1>
+      <p class="lead"><span lang="fr">Des vidéos de 15 secondes pour vos réseaux et vos publicités, en français, en anglais et en espagnol, présentées par Jennifer, notre actrice IA toujours déclarée. Et si votre site ou votre fiche Google vous font perdre des appels, on s'en occupe aussi.</span><span lang="en">15-second videos for your social media and your ads, in French, English and Spanish, presented by Jennifer, our always-declared AI actress. And if your website or Google profile is costing you calls, we take care of that too.</span><span lang="es">Videos de 15 segundos para sus redes y sus anuncios, en francés, inglés y español, presentados por Jennifer, nuestra actriz IA siempre declarada. Y si su sitio o su perfil de Google le hacen perder llamadas, también nos ocupamos.</span></p>
       <div class="ctas">
         <a class="btn btn-main js-mail" href="mailto:bonjour@ccc-studios.com"><span lang="fr">Demander un audit express gratuit</span><span lang="en">Ask for a free express audit</span><span lang="es">Pedir una auditoría exprés gratuita</span></a>
-        <a class="btn btn-line" href="#services"><span lang="fr">Voir les services</span><span lang="en">See the services</span><span lang="es">Ver los servicios</span></a>
+        <a class="btn btn-line" href="#demo"><span lang="fr">Voir la démo</span><span lang="en">Watch the demo</span><span lang="es">Ver la demo</span></a>
       </div>
+      <div class="stats">
+        <div class="stat"><b>5</b><span lang="fr">jours ouvrables pour votre vidéo</span><span lang="en">business days for your video</span><span lang="es">días hábiles para su video</span></div>
+        <div class="stat"><b>3</b><span lang="fr">langues : français, anglais, espagnol</span><span lang="en">languages: French, English, Spanish</span><span lang="es">idiomas: francés, inglés, español</span></div>
+        <div class="stat"><b>0</b><span lang="fr">tournage : rien à filmer, rien à monter</span><span lang="en">shoots: nothing to film or edit</span><span lang="es">rodajes: nada que filmar ni editar</span></div>
+      </div>
+      <p class="meta-line"><span lang="fr">Sans contrat · Une vraie personne au téléphone · IA toujours déclarée</span><span lang="en">No contract · A real person on the phone · AI always declared</span><span lang="es">Sin contrato · Una persona real al teléfono · IA siempre declarada</span></p>
     </div>
-    <aside class="proof">
-      <b><span lang="fr">L'audit express, c'est quoi?</span><span lang="en">What's the express audit?</span><span lang="es">¿Qué es la auditoría exprés?</span></b>
-      <p lang="fr">Une page, envoyée sous 2 jours ouvrables, qui montre ce qu'un client voit quand il vous cherche, et les 3 corrections les plus rentables. Sans engagement.</p>
-      <p lang="en">One page, sent within 2 business days, showing what a customer sees when they look you up, and the 3 fixes worth the most. No commitment.</p>
-      <p lang="es">Una página, enviada en 2 días hábiles, que muestra lo que ve un cliente cuando lo busca, y las 3 correcciones que más valen la pena. Sin compromiso.</p>
-    </aside>
+    <figure class="hero-vid" id="demo">
+      <div class="phone">
+        <video controls playsinline preload="none" data-base="../jennshems/media/demo-reno-v2" poster="../jennshems/media/demo-reno-v2-fr.jpg"><source src="../jennshems/media/demo-reno-v2-fr.mp4" type="video/mp4"></video>
+      </div>
+      <div class="float f-top"><b>15 s</b><span lang="fr">format pub, cellulaire</span><span lang="en">ad format, vertical</span><span lang="es">formato anuncio, vertical</span></div>
+      <div class="float f-bot"><span class="dot"></span><span class="f-k" lang="fr">Démo · rénovation</span><span class="f-k" lang="en">Demo · renovation</span><span class="f-k" lang="es">Demo · renovación</span><span class="f-v" lang="fr">Mention IA à l'écran ✓</span><span class="f-v" lang="en">AI label on screen ✓</span><span class="f-v" lang="es">Mención IA en pantalla ✓</span></div>
+      <figcaption><span lang="fr">Démo : une pub de rénovation pour une entreprise fictive, avec Jennifer, actrice IA.</span><span lang="en">Demo: a renovation ad for a fictional company, with Jennifer, AI actress.</span><span lang="es">Demo: un anuncio de renovación para una empresa ficticia, con Jennifer, actriz IA.</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<div class="strip" aria-hidden="true"><div class="wrap"><span><span lang="fr">Être vu</span><span lang="en">Be seen</span><span lang="es">Que lo vean</span></span><span><span lang="fr">Être choisi</span><span lang="en">Be chosen</span><span lang="es">Que lo elijan</span></span><span><span lang="fr">Être appelé</span><span lang="en">Get the call</span><span lang="es">Que lo llamen</span></span><span><span lang="fr">Mieux opérer</span><span lang="en">Run better</span><span lang="es">Operar mejor</span></span></div></div>
+
+<section class="probleme" id="probleme">
+  <div class="wrap">
+    <hr class="rule">
+    <h2><span lang="fr">Le problème, c'est rarement votre travail</span><span lang="en">The problem is rarely your work</span><span lang="es">El problema casi nunca es su trabajo</span></h2>
+    <p class="sub"><span lang="fr">C'est tout ce qui se passe avant l'appel. Trois fuites, et ce qu'on y fait :</span><span lang="en">It's everything that happens before the call. Three leaks, and what we do about them:</span><span lang="es">Es todo lo que pasa antes de la llamada. Tres fugas, y lo que hacemos:</span></p>
+    <div class="cons">
+      <article class="con"><div class="con-b"><p lang="fr">Il défile sur Facebook et Instagram. Une photo fixe ne l'arrête pas.</p><p lang="en">They scroll Facebook and Instagram. A still photo doesn't stop them.</p><p lang="es">Pasa por Facebook e Instagram. Una foto fija no lo detiene.</p></div><span class="con-a" aria-hidden="true">→</span><div class="con-f"><p lang="fr">Une vidéo de 15 secondes, avec un visage et une voix, qui l'arrête et lui dit quoi faire.</p><p lang="en">A 15-second video, with a face and a voice, that stops them and tells them what to do.</p><p lang="es">Un video de 15 segundos, con una cara y una voz, que lo detiene y le dice qué hacer.</p></div></article>
+      <article class="con"><div class="con-b"><p lang="fr">Il cherche votre métier et sa ville. Un vieux site ou un mauvais numéro le fait douter.</p><p lang="en">They search your trade and their town. An old site or a wrong number makes them hesitate.</p><p lang="es">Busca su oficio y su ciudad. Un sitio viejo o un número equivocado lo hace dudar.</p></div><span class="con-a" aria-hidden="true">→</span><div class="con-f"><p lang="fr">Un site clair, une fiche Google exacte et un bouton d'appel qui compose le bon numéro.</p><p lang="en">A clear site, an accurate Google profile and a call button that dials the right number.</p><p lang="es">Un sitio claro, un perfil de Google exacto y un botón de llamada que marca el número correcto.</p></div></article>
+      <article class="con"><div class="con-b"><p lang="fr">Il appelle le premier qui répond. Un appel manqué, et il est chez le suivant.</p><p lang="en">They call whoever answers first. One missed call, and they're calling the next one.</p><p lang="es">Llama al primero que contesta. Una llamada perdida, y ya está con el siguiente.</p></div><span class="con-a" aria-hidden="true">→</span><div class="con-f"><p lang="fr">On chronomètre votre temps de réponse, puis on met en place ce qui vous aide à répondre plus vite.</p><p lang="en">We time your response, then set up what helps you answer faster.</p><p lang="es">Medimos su tiempo de respuesta y luego ponemos en marcha lo que le ayuda a responder más rápido.</p></div></article>
+    </div>
   </div>
 </section>
 
 <section class="audit" id="audit">
   <div class="wrap">
     <hr class="rule">
+    <p class="eyebrow"><span lang="fr">Audit express gratuit · 2 jours ouvrables · sans engagement</span><span lang="en">Free express audit · 2 business days · no commitment</span><span lang="es">Auditoría exprés gratuita · 2 días hábiles · sin compromiso</span></p>
     <h2><span lang="fr">Ce qu'on regarde en premier</span><span lang="en">What we check first</span><span lang="es">Lo primero que revisamos</span></h2>
     <p class="sub"><span lang="fr">Souvent, une entreprise a déjà de bons avis et du bon travail à montrer. Le problème, c'est qu'on ne la trouve pas, ou qu'on la trouve mal.</span><span lang="en">Often a business already has good reviews and good work to show. The problem is that people can't find it, or find the wrong details.</span><span lang="es">Muchas veces una empresa ya tiene buenas reseñas y buen trabajo que mostrar. El problema es que no la encuentran, o encuentran datos equivocados.</span></p>
     <div class="checks">
@@ -195,14 +312,26 @@ footer a{color:var(--blanc)}
       <div class="check"><b lang="fr">Vos réseaux</b><b lang="en">Your social media</b><b lang="es">Sus redes</b><p lang="fr">Une image uniforme, des publications à jour, et rien qui détonne pour vos clients d'ici.</p><p lang="en">A consistent look, up-to-date posts, and nothing that feels off to local customers.</p><p lang="es">Una imagen uniforme, publicaciones al día y nada que desentone para los clientes de aquí.</p></div>
       <div class="check"><b lang="fr">Votre site</b><b lang="en">Your website</b><b lang="es">Su sitio web</b><p lang="fr">Lisible sur un cellulaire, rapide, en français et en anglais, et trouvable sur votre propre nom.</p><p lang="en">Readable on a phone, fast, in French and English, and findable by your own name.</p><p lang="es">Fácil de leer en el celular, rápido, en francés e inglés, y que aparezca al buscar su propio nombre.</p></div>
     </div>
+    <div class="live">
+      <b class="live-k"><span lang="fr">Et 2 tests faits en direct</span><span lang="en">Plus 2 live tests</span><span lang="es">Y 2 pruebas en vivo</span></b>
+      <div class="live-g">
+        <div><b lang="fr">Le test du bouton d'appel</b><b lang="en">The call-button test</b><b lang="es">La prueba del botón de llamada</b><p lang="fr">On ouvre votre site sur un cellulaire et on touche votre numéro. On a déjà vu un site composer le mauvais numéro.</p><p lang="en">We open your site on a phone and tap your number. We've already seen a site dial the wrong number.</p><p lang="es">Abrimos su sitio en un celular y tocamos su número. Ya vimos un sitio que marcaba el número equivocado.</p></div>
+        <div><b lang="fr">Le test du client</b><b lang="en">The customer test</b><b lang="es">La prueba del cliente</b><p lang="fr">Avec votre accord, on vous envoie une demande test, par votre formulaire ou par message, et on chronomètre la réponse. Vous recevez le temps exact.</p><p lang="en">With your OK, we send you a test request, through your form or by message, and time the reply. You get the exact time.</p><p lang="es">Con su permiso, le enviamos una solicitud de prueba, por su formulario o por mensaje, y medimos el tiempo de respuesta. Usted recibe el tiempo exacto.</p></div>
+      </div>
+    </div>
   </div>
 </section>
 
 <section id="services">
   <div class="wrap">
     <hr class="rule">
-    <h2><span lang="fr">Trois services, une fois ou chaque mois</span><span lang="en">Three services, once or every month</span><span lang="es">Tres servicios, una vez o cada mes</span></h2>
-    <p class="sub"><span lang="fr">Prenez ce dont vous avez besoin. Prix de départ en dollars canadiens, avant taxes; la soumission donne le prix exact selon votre situation.</span><span lang="en">Take what you need. Starting prices in Canadian dollars, before tax; your quote gives the exact price for your situation.</span><span lang="es">Elija lo que necesita. Precios de base en dólares canadienses, antes de impuestos; la cotización da el precio exacto según su caso.</span></p>
+    <h2><span lang="fr">Trois familles de services</span><span lang="en">Three families of services</span><span lang="es">Tres familias de servicios</span></h2>
+    <p class="sub"><span lang="fr">Être vu, être choisi, mieux opérer. Prenez ce dont vous avez besoin, une fois ou chaque mois. Prix de départ en dollars canadiens, avant taxes; la soumission donne le prix exact selon votre situation.</span><span lang="en">Be seen, be chosen, run better. Take what you need, once or every month. Starting prices in Canadian dollars, before tax; your quote gives the exact price for your situation.</span><span lang="es">Que lo vean, que lo elijan, operar mejor. Elija lo que necesita, una vez o cada mes. Precios de base en dólares canadienses, antes de impuestos; la cotización da el precio exacto según su caso.</span></p>
+
+    <div class="fam">
+      <span class="fam-n">1</span>
+      <div><h3 class="fam-t"><span lang="fr">Être vu</span><span lang="en">Be seen</span><span lang="es">Que lo vean</span></h3><p><span lang="fr">Qu'on vous trouve, sur les réseaux comme dans les publicités.</span><span lang="en">Get found, on social media and in ads.</span><span lang="es">Que lo encuentren, en las redes y en los anuncios.</span></p></div>
+    </div>
     <div class="svc">
       <article class="card">
         <span class="letter">A</span>
@@ -221,7 +350,6 @@ footer a{color:var(--blanc)}
         </div>
         <p class="cond"><span lang="fr">Avec le service B : on remet vos réseaux en état avant d'y publier une vidéo. Pour une pub de 15 secondes, voyez <a href="/jennshems/#offres">les offres de Jennifer</a>.</span><span lang="en">Comes with service B: your social accounts get fixed before a video goes on them. For a 15-second ad, see <a href="/jennshems/?lang=en#offres">Jennifer's offers</a>.</span><span lang="es">Va con el servicio B: arreglamos sus redes antes de publicar un video en ellas. Para un anuncio de 15 segundos, vea <a href="/jennshems/#offres">las ofertas de Jennifer</a>.</span></p>
       </article>
-
       <article class="card">
         <span class="letter">B</span>
         <h3><span lang="fr">Réseaux sociaux</span><span lang="en">Social media</span><span lang="es">Redes sociales</span></h3>
@@ -242,10 +370,49 @@ footer a{color:var(--blanc)}
         </div>
         <p class="cond"><span lang="fr">Frais d'ouverture la première fois; la remise à neuf est comprise.</span><span lang="en">One-time setup fee; the refresh is included.</span><span lang="es">Cargo de apertura la primera vez; incluye la puesta a punto.</span></p>
       </article>
-
       <article class="card">
         <span class="letter">C</span>
-        <h3><span lang="fr">Site web et fiche Google</span><span lang="en">Website and Google profile</span><span lang="es">Sitio web y perfil de Google</span></h3>
+        <h3><span lang="fr">Stratégie publicitaire</span><span lang="en">Advertising strategy</span><span lang="es">Estrategia publicitaria</span></h3>
+        <p class="what"><span lang="fr">Où annoncer, à qui, avec quel budget et à quelle fréquence : Facebook, Instagram, Google et YouTube. Puis on suit les chiffres chaque mois.</span><span lang="en">Where to advertise, to whom, with what budget and how often: Facebook, Instagram, Google and YouTube. Then we track the numbers every month.</span><span lang="es">Dónde anunciarse, a quién, con qué presupuesto y con qué frecuencia: Facebook, Instagram, Google y YouTube. Luego seguimos las cifras cada mes.</span></p>
+        <div class="opt">
+          <span class="name"><span lang="fr">Plan publicitaire</span><span lang="en">Advertising plan</span><span lang="es">Plan publicitario</span></span>
+          <span class="price"><span lang="fr"><b>Sur devis</b></span><span lang="en"><b>Custom quote</b></span><span lang="es"><b>Bajo cotización</b></span></span>
+          <ul lang="fr"><li>Canaux et publics visés</li><li>Budget et fréquence par canal</li><li>Campagnes créées dans vos propres comptes</li></ul>
+          <ul lang="en"><li>Channels and target audiences</li><li>Budget and frequency per channel</li><li>Campaigns set up in your own accounts</li></ul>
+          <ul lang="es"><li>Canales y públicos objetivo</li><li>Presupuesto y frecuencia por canal</li><li>Campañas creadas en sus propias cuentas</li></ul>
+        </div>
+        <div class="opt">
+          <span class="name"><span lang="fr">Gestion et suivi chaque mois</span><span lang="en">Monthly management and tracking</span><span lang="es">Gestión y seguimiento mensual</span></span>
+          <span class="price"><span lang="fr"><b>Sur devis</b></span><span lang="en"><b>Custom quote</b></span><span lang="es"><b>Bajo cotización</b></span></span>
+          <ul lang="fr"><li>Ajustements selon les résultats</li><li>Coût par clic, par appel et par demande</li><li>Rapport mensuel comparé au point de départ</li></ul>
+          <ul lang="en"><li>Adjustments based on results</li><li>Cost per click, per call and per lead</li><li>Monthly report against the starting point</li></ul>
+          <ul lang="es"><li>Ajustes según los resultados</li><li>Costo por clic, por llamada y por solicitud</li><li>Informe mensual comparado con el punto de partida</li></ul>
+        </div>
+        <p class="cond"><span lang="fr">Le budget publicitaire est payé par vous, directement à la plateforme; il ne passe jamais par nous. Nos frais sont à part.</span><span lang="en">Your ad budget is paid by you, directly to the platform; it never passes through us. Our fees are separate.</span><span lang="es">El presupuesto publicitario lo paga usted, directamente a la plataforma; nunca pasa por nosotros. Nuestros honorarios van aparte.</span></p>
+      </article>
+    </div>
+
+    <div class="fam">
+      <span class="fam-n">2</span>
+      <div><h3 class="fam-t"><span lang="fr">Être choisi</span><span lang="en">Be chosen</span><span lang="es">Que lo elijan</span></h3><p><span lang="fr">Une fois trouvé, qu'on vous choisisse : un site, une fiche et une image qui inspirent confiance.</span><span lang="en">Once they find you, they pick you: a site, a profile and a look people trust.</span><span lang="es">Una vez que lo encuentran, que lo elijan: un sitio, un perfil y una imagen que inspiran confianza.</span></p></div>
+    </div>
+    <div class="svc">
+      <article class="card">
+        <span class="letter">D</span>
+        <h3><span lang="fr">Conception de site web</span><span lang="en">Website design</span><span lang="es">Diseño de sitio web</span></h3>
+        <p class="what"><span lang="fr">Un nouveau site, ou la refonte du vôtre : clair sur cellulaire, rapide, en français et en anglais, et pensé pour mener à l'appel.</span><span lang="en">A new site, or a redesign of yours: clear on a phone, fast, in French and English, and built to lead to the call.</span><span lang="es">Un sitio nuevo, o el rediseño del suyo: claro en el celular, rápido, en francés e inglés, y pensado para llevar a la llamada.</span></p>
+        <div class="opt">
+          <span class="name"><span lang="fr">Nouveau site ou refonte</span><span lang="en">New site or redesign</span><span lang="es">Sitio nuevo o rediseño</span></span>
+          <span class="price"><span lang="fr"><b>Sur devis</b></span><span lang="en"><b>Custom quote</b></span><span lang="es"><b>Bajo cotización</b></span></span>
+          <ul lang="fr"><li>Structure et design sur mesure, à vos couleurs</li><li>Textes en français et en anglais, espagnol en option</li><li>Testé sur ordinateur et cellulaire avant la mise en ligne</li></ul>
+          <ul lang="en"><li>Custom structure and design, in your colours</li><li>Copy in French and English, Spanish as an option</li><li>Tested on desktop and phone before going live</li></ul>
+          <ul lang="es"><li>Estructura y diseño a medida, con sus colores</li><li>Textos en francés e inglés, español como opción</li><li>Probado en computadora y celular antes de publicarlo</li></ul>
+        </div>
+        <p class="cond"><span lang="fr">Le site reste à votre nom. L'entretien mensuel se prend avec le service E.</span><span lang="en">The site stays in your name. Monthly upkeep comes with service E.</span><span lang="es">El sitio queda a su nombre. El mantenimiento mensual va con el servicio E.</span></p>
+      </article>
+      <article class="card">
+        <span class="letter">E</span>
+        <h3><span lang="fr">Fiche Google et référencement</span><span lang="en">Google profile and SEO</span><span lang="es">Perfil de Google y SEO</span></h3>
         <p class="what"><span lang="fr">Ce qu'un client voit quand il vous cherche : la bonne catégorie, les bons services, les bonnes coordonnées, et un site qui le mène à l'appel.</span><span lang="en">What customers see when they search for you: the right category, the right services, the right contact details, and a site that leads them to call.</span><span lang="es">Lo que ve un cliente al buscarlo: la categoría correcta, los servicios correctos, los datos de contacto correctos y un sitio que lo lleva a llamar.</span></p>
         <div class="opt">
           <span class="name"><span lang="fr">Remise à neuf</span><span lang="en">Refresh</span><span lang="es">Puesta a punto</span></span>
@@ -263,6 +430,58 @@ footer a{color:var(--blanc)}
         </div>
         <p class="cond"><span lang="fr">Pour un site modifiable (WordPress, Wix, Squarespace); sinon, soumission à part. Frais d'ouverture pour l'entretien mensuel; la remise à neuf est comprise.</span><span lang="en">For an editable site (WordPress, Wix, Squarespace); otherwise, a separate quote. One-time setup fee for monthly upkeep; the refresh is included.</span><span lang="es">Para un sitio editable (WordPress, Wix, Squarespace); si no, cotización aparte. Cargo de apertura para el mantenimiento mensual; incluye la puesta a punto.</span></p>
       </article>
+      <article class="card">
+        <span class="letter">F</span>
+        <h3><span lang="fr">Image de marque</span><span lang="en">Visual identity</span><span lang="es">Imagen de marca</span></h3>
+        <p class="what"><span lang="fr">Un logo plus net, des couleurs et des polices qui vont ensemble, et des gabarits prêts pour vos réseaux, vos soumissions et vos cartes.</span><span lang="en">A sharper logo, colours and fonts that work together, and templates ready for your social media, quotes and business cards.</span><span lang="es">Un logo más nítido, colores y tipografías que combinan, y plantillas listas para sus redes, cotizaciones y tarjetas.</span></p>
+        <div class="opt">
+          <span class="name"><span lang="fr">Remise à neuf</span><span lang="en">Refresh</span><span lang="es">Puesta a punto</span></span>
+          <span class="price"><span lang="fr"><b>Sur devis</b></span><span lang="en"><b>Custom quote</b></span><span lang="es"><b>Bajo cotización</b></span></span>
+          <ul lang="fr"><li>Logo retravaillé, en haute qualité</li><li>Palette de couleurs et polices</li><li>Gabarits pour vos réseaux et vos documents, avec un petit guide</li></ul>
+          <ul lang="en"><li>Reworked logo, in high quality</li><li>Colour palette and fonts</li><li>Templates for your social media and documents, with a short guide</li></ul>
+          <ul lang="es"><li>Logo renovado, en alta calidad</li><li>Paleta de colores y tipografías</li><li>Plantillas para sus redes y documentos, con una pequeña guía</li></ul>
+        </div>
+        <p class="cond"><span lang="fr">Votre logo reste le vôtre : on le modernise, on ne le remplace pas sans votre accord.</span><span lang="en">Your logo stays yours: we modernize it, and never replace it without your OK.</span><span lang="es">Su logo sigue siendo suyo: lo modernizamos, y no lo reemplazamos sin su aprobación.</span></p>
+      </article>
+    </div>
+
+    <div class="fam">
+      <span class="fam-n">3</span>
+      <div><h3 class="fam-t"><span lang="fr">Mieux opérer</span><span lang="en">Run better</span><span lang="es">Operar mejor</span></h3><p><span lang="fr">Moins de temps perdu, moins de coûts, moins d'erreurs, derrière le comptoir.</span><span lang="en">Less wasted time, lower costs, fewer errors, behind the counter.</span><span lang="es">Menos tiempo perdido, menos costos, menos errores, detrás del mostrador.</span></p></div>
+    </div>
+
+    <div class="ops">
+      <div class="ops-head">
+        <span class="letter">G</span>
+        <h3><span lang="fr">Optimisation des opérations : <span class='it'>IA et automatisation</span></span><span lang="en">Operations optimization: <span class='it'>AI and automation</span></span><span lang="es">Optimización de operaciones: <span class='it'>IA y automatización</span></span></h3>
+        <p class="ops-lead"><span lang="fr">Votre entreprise roule sur un fichier Excel que vous seul comprenez? Des heures partent chaque semaine dans les soumissions, les suivis et les horaires? On organise vos opérations, puis on bâtit les outils autour.</span><span lang="en">Does your business run on an Excel file only you understand? Do hours go every week into quotes, follow-ups and scheduling? We organize your operations, then build the tools around them.</span><span lang="es">¿Su empresa funciona con un archivo de Excel que solo usted entiende? ¿Se van horas cada semana en cotizaciones, seguimientos y horarios? Organizamos sus operaciones y luego construimos las herramientas a su alrededor.</span></p>
+      </div>
+      <ol class="method"><li><b><span lang="fr">Diagnostiquer</span><span lang="en">Diagnose</span><span lang="es">Diagnosticar</span></b><span><span lang="fr">On observe un processus et on mesure le temps qu'il prend.</span><span lang="en">We watch one process and measure the time it takes.</span><span lang="es">Observamos un proceso y medimos el tiempo que toma.</span></span></li><li><b><span lang="fr">Remettre en ordre</span><span lang="en">Clean up</span><span lang="es">Ordenar</span></b><span><span lang="fr">Vos données réunies dans un seul endroit propre et fiable.</span><span lang="en">Your data gathered in one clean, reliable place.</span><span lang="es">Sus datos reunidos en un solo lugar limpio y confiable.</span></span></li><li><b><span lang="fr">Structurer</span><span lang="en">Structure</span><span lang="es">Estructurar</span></b><span><span lang="fr">Des données bien pensées, faciles à trier et à suivre.</span><span lang="en">Well-designed data, easy to sort and follow.</span><span lang="es">Datos bien pensados, fáciles de ordenar y seguir.</span></span></li><li><b><span lang="fr">Connecter</span><span lang="en">Connect</span><span lang="es">Conectar</span></b><span><span lang="fr">Formules, calendrier, courriels et outils d'IA font le travail répétitif.</span><span lang="en">Formulas, calendar, email and AI tools do the repetitive work.</span><span lang="es">Fórmulas, calendario, correos y herramientas de IA hacen el trabajo repetitivo.</span></span></li><li><b><span lang="fr">Déployer</span><span lang="en">Deploy</span><span lang="es">Implementar</span></b><span><span lang="fr">Un tableau de bord pour vous, des outils simples pour votre équipe.</span><span lang="en">A dashboard for you, simple tools for your team.</span><span lang="es">Un panel para usted, herramientas simples para su equipo.</span></span></li><li><b><span lang="fr">Mesurer</span><span lang="en">Measure</span><span lang="es">Medir</span></b><span><span lang="fr">On compare au point de départ : heures, erreurs, délais.</span><span lang="en">We compare against the starting point: hours, errors, delays.</span><span lang="es">Comparamos con el punto de partida: horas, errores, plazos.</span></span></li></ol>
+      <div class="ops-grid">
+        <div class="ops-box">
+          <b class="ops-k"><span lang="fr">Deux façons de commencer</span><span lang="en">Two ways to start</span><span lang="es">Dos formas de empezar</span></b>
+          <div class="opt">
+            <span class="name"><span lang="fr">Diagnostic IA</span><span lang="en">AI diagnostic</span><span lang="es">Diagnóstico de IA</span></span>
+            <span class="price"><span lang="fr"><b>Sur devis</b></span><span lang="en"><b>Custom quote</b></span><span lang="es"><b>Bajo cotización</b></span></span>
+            <p><span lang="fr">Un processus analysé, les pertes de temps chiffrées, et les outils d'IA qui les réduiraient, avec leur coût et le gain estimé.</span><span lang="en">One process analysed, the time lost put into numbers, and the AI tools that would cut it, with their cost and the expected gain.</span><span lang="es">Un proceso analizado, las pérdidas de tiempo cuantificadas y las herramientas de IA que las reducirían, con su costo y la ganancia estimada.</span></p>
+          </div>
+          <div class="opt">
+            <span class="name"><span lang="fr">Sauvetage de tableur</span><span lang="en">Spreadsheet rescue</span><span lang="es">Rescate de hoja de cálculo</span></span>
+            <span class="price"><span lang="fr"><b>Prix fixe</b>, sur devis</span><span lang="en"><b>Fixed price</b>, quoted</span><span lang="es"><b>Precio fijo</b>, bajo cotización</span></span>
+            <p><span lang="fr">Votre fichier Excel devient une feuille Google propre, que toute l'équipe peut utiliser en confiance.</span><span lang="en">Your Excel file becomes a clean Google Sheet the whole team can trust.</span><span lang="es">Su archivo de Excel se convierte en una hoja de Google limpia, que todo el equipo puede usar con confianza.</span></p>
+          </div>
+          <p class="ops-next"><span lang="fr">Ensuite, au besoin : système connecté, applications sur mesure, entretien mensuel.</span><span lang="en">Then, if needed: a connected system, custom apps, monthly care.</span><span lang="es">Después, si hace falta: sistema conectado, aplicaciones a medida, mantenimiento mensual.</span></p>
+        </div>
+        <div class="ops-box ops-case">
+          <b class="ops-k"><span lang="fr">Exemple type : le tableur qui fait rouler l'entreprise</span><span lang="en">Typical example: the spreadsheet that runs the business</span><span lang="es">Ejemplo típico: la hoja de cálculo que mueve la empresa</span></b>
+          <p class="ba"><span class="ba-k"><span lang="fr">Avant</span><span lang="en">Before</span><span lang="es">Antes</span></span><span lang="fr">Un fichier Excel désordonné, que seul le propriétaire comprenait.</span><span lang="en">A messy Excel file only the owner understood.</span><span lang="es">Un archivo de Excel desordenado que solo el dueño entendía.</span></p>
+          <p class="ba"><span class="ba-k"><span lang="fr">Résultat visé</span><span lang="en">Target result</span><span lang="es">Resultado buscado</span></span><span lang="fr">Une base de données propre, un inventaire partagé, les visites inscrites au calendrier automatiquement, un tableau de bord pour la direction et une application pour chaque agent.</span><span lang="en">A clean database, a shared inventory, visits booked into the calendar automatically, a dashboard for management and an app for each agent.</span><span lang="es">Una base de datos limpia, un inventario compartido, las visitas anotadas en el calendario automáticamente, un panel para la dirección y una aplicación para cada agente.</span></p>
+        </div>
+      </div>
+      <div class="ops-foot">
+        <p><a href="/a-propos/"><b>Dan Ortega</b></a> · <span lang="fr">diplômé du baccalauréat en génie industriel (BEng), Université Concordia, École de génie et d'informatique Gina Cody, 2021 · ancien gestionnaire de projet chez Airbus. Il y a appris à optimiser des lignes de production; il applique la même méthode à votre bureau.</span><span lang="en">Industrial Engineering BEng graduate, Concordia University, Gina Cody School of Engineering and Computer Science, 2021 · former project manager at Airbus. He learned to optimize production lines there; he brings the same method to your office.</span><span lang="es">Graduado del bachillerato en ingeniería industrial (BEng), Universidad Concordia, Escuela de Ingeniería e Informática Gina Cody, 2021 · ex gerente de proyectos en Airbus. Allí aprendió a optimizar líneas de producción; aplica el mismo método a su oficina.</span></p>
+        <p><span lang="fr"><b>Vos données d'abord.</b> Avant qu'un outil touche aux renseignements de vos clients, on vérifie avec vous qu'il respecte la Loi 25. Vos outils et vos données restent à votre nom.</span><span lang="en"><b>Your data first.</b> Before any tool touches your customers' personal information, we check with you that it complies with Quebec's Law 25. Your tools and data stay in your name.</span><span lang="es"><b>Primero sus datos.</b> Antes de que una herramienta toque la información de sus clientes, verificamos con usted que cumpla con la Ley 25 de Quebec. Sus herramientas y sus datos quedan a su nombre.</span></p>
+      </div>
     </div>
 
     <div class="founder">
@@ -271,7 +490,19 @@ footer a{color:var(--blanc)}
       <p lang="en">A limited number of businesses pay the lower founding price on every service, in exchange for two things: permission to show the work and its results, and an honest testimonial after a month.</p>
       <p lang="es">Un número limitado de empresas paga el precio fundador, más bajo, en cada servicio, a cambio de dos cosas: permiso para mostrar el trabajo y sus resultados, y un testimonio honesto después de un mes.</p>
     </div>
-    <p class="small"><span lang="fr">La publicité payante (budget, campagnes, gestion) ne fait partie d'aucun service et se soumissionne à part. Le budget publicitaire est toujours payé par vous, directement à la plateforme.</span><span lang="en">Paid advertising (budget, campaigns, management) isn't part of any service and is quoted separately. Ad budget is always paid by you, directly to the platform.</span><span lang="es">La publicidad pagada (presupuesto, campañas, gestión) no forma parte de ningún servicio y se cotiza aparte. El presupuesto publicitario siempre lo paga usted, directamente a la plataforma.</span></p>
+    <p class="small"><span lang="fr">« Sur devis » : le prix est établi après l'audit express ou le diagnostic, selon votre situation. Le budget publicitaire est toujours payé par vous, directement à la plateforme.</span><span lang="en">“Custom quote”: the price is set after the express audit or the diagnostic, for your situation. Ad budget is always paid by you, directly to the platform.</span><span lang="es">«Bajo cotización»: el precio se fija después de la auditoría exprés o del diagnóstico, según su caso. El presupuesto publicitario siempre lo paga usted, directamente a la plataforma.</span></p>
+  </div>
+</section>
+
+<section class="pourquoi" id="pourquoi">
+  <div class="wrap">
+    <hr class="rule">
+    <h2><span lang="fr">Pourquoi CCC Studios</span><span lang="en">Why CCC Studios</span><span lang="es">Por qué CCC Studios</span></h2>
+    <div class="why">
+      <div class="why-i"><b lang="fr">Le contenu, pas seulement le système</b><b lang="en">The content, not just the system</b><b lang="es">El contenido, no solo el sistema</b><p lang="fr">Un site et des publicités ont besoin de quelque chose à montrer. On le crée : des vidéos de 15 secondes avec Jennifer, notre actrice IA déclarée, sans tournage, livrées en 5 jours ouvrables.</p><p lang="en">A site and ads need something to show. We make it: 15-second videos with Jennifer, our declared AI actress, no shoot, delivered in 5 business days.</p><p lang="es">Un sitio y unos anuncios necesitan algo que mostrar. Lo creamos: videos de 15 segundos con Jennifer, nuestra actriz IA declarada, sin rodaje, entregados en 5 días hábiles.</p></div>
+      <div class="why-i"><b lang="fr">Trois langues, une seule personne</b><b lang="en">Three languages, one person</b><b lang="es">Tres idiomas, una sola persona</b><p lang="fr">Dan vous répond lui-même, en français, en anglais ou en espagnol, du premier appel au rapport du mois.</p><p lang="en">Dan answers you himself, in French, English or Spanish, from the first call to the monthly report.</p><p lang="es">Dan le responde personalmente, en francés, inglés o español, desde la primera llamada hasta el informe del mes.</p></div>
+      <div class="why-i"><b lang="fr">Des chiffres, pas des adjectifs</b><b lang="en">Numbers, not adjectives</b><b lang="es">Cifras, no adjetivos</b><p lang="fr">On note votre point de départ, on corrige d'abord ce qui rapporte le plus, et chaque mois on vous montre les vrais chiffres.</p><p lang="en">We record your starting point, fix what pays most first, and show you the real numbers every month.</p><p lang="es">Anotamos su punto de partida, corregimos primero lo que más rinde y cada mes le mostramos las cifras reales.</p></div>
+    </div>
   </div>
 </section>
 
@@ -281,16 +512,23 @@ footer a{color:var(--blanc)}
     <h2><span lang="fr">Comment ça se passe</span><span lang="en">How it works</span><span lang="es">Cómo funciona</span></h2>
     <p class="sub"><span lang="fr">Vous parlez à une vraie personne du début à la fin. Rien n'est mis en ligne sans votre accord écrit.</span><span lang="en">You deal with a real person from start to finish. Nothing goes live without your written OK.</span><span lang="es">Usted trata con una persona real de principio a fin. Nada se publica sin su aprobación por escrito.</span></p>
     <div class="steps">
-      <div class="step"><b lang="fr">L'audit express</b><b lang="en">The express audit</b><b lang="es">La auditoría exprés</b><p lang="fr">Une page sur ce qu'un client voit de vous, et les 3 corrections qui valent le plus.</p><p lang="en">One page on what a customer sees of you, and the 3 fixes worth the most.</p><p lang="es">Una página sobre lo que un cliente ve de usted, y las 3 correcciones que más valen.</p></div>
-      <div class="step"><b lang="fr">Un appel, une soumission</b><b lang="en">A call, a quote</b><b lang="es">Una llamada, una cotización</b><p lang="fr">On choisit ensemble les services. La soumission est claire, ligne par ligne.</p><p lang="en">We pick the services together. The quote is clear, line by line.</p><p lang="es">Elegimos juntos los servicios. La cotización es clara, línea por línea.</p></div>
-      <div class="step"><b lang="fr">Le point de départ</b><b lang="en">The starting point</b><b lang="es">El punto de partida</b><p lang="fr">On note vos chiffres avant de commencer, pour comparer honnêtement chaque mois.</p><p lang="en">We record your numbers before we start, so each month compares honestly.</p><p lang="es">Anotamos sus cifras antes de empezar, para comparar con honestidad cada mes.</p></div>
-      <div class="step"><b lang="fr">La remise à neuf</b><b lang="en">The refresh</b><b lang="es">La puesta a punto</b><p lang="fr">Préparée en brouillon, montrée avec sa liste de contrôle, puis mise en ligne.</p><p lang="en">Prepared as a draft, shown with its checklist, then put live.</p><p lang="es">Se prepara en borrador, se muestra con su lista de control y luego se publica.</p></div>
+      <div class="step"><span class="when"><span lang="fr">2 jours ouvrables</span><span lang="en">2 business days</span><span lang="es">2 días hábiles</span></span><b lang="fr">L'audit express</b><b lang="en">The express audit</b><b lang="es">La auditoría exprés</b><p lang="fr">Une page sur ce qu'un client voit de vous, et les 3 corrections qui valent le plus.</p><p lang="en">One page on what a customer sees of you, and the 3 fixes worth the most.</p><p lang="es">Una página sobre lo que un cliente ve de usted, y las 3 correcciones que más valen.</p></div>
+      <div class="step"><span class="when"><span lang="fr">Soumission en 1 jour ouvrable</span><span lang="en">Quote in 1 business day</span><span lang="es">Cotización en 1 día hábil</span></span><b lang="fr">Un appel, une soumission</b><b lang="en">A call, a quote</b><b lang="es">Una llamada, una cotización</b><p lang="fr">On choisit ensemble les services. La soumission est claire, ligne par ligne.</p><p lang="en">We pick the services together. The quote is clear, line by line.</p><p lang="es">Elegimos juntos los servicios. La cotización es clara, línea por línea.</p></div>
+      <div class="step"><span class="when"><span lang="fr">Avant de commencer</span><span lang="en">Before we start</span><span lang="es">Antes de empezar</span></span><b lang="fr">Le point de départ</b><b lang="en">The starting point</b><b lang="es">El punto de partida</b><p lang="fr">On note vos chiffres avant de commencer, pour comparer honnêtement chaque mois.</p><p lang="en">We record your numbers before we start, so each month compares honestly.</p><p lang="es">Anotamos sus cifras antes de empezar, para comparar con honestidad cada mes.</p></div>
+      <div class="step"><span class="when"><span lang="fr">5 jours ouvrables après le dépôt</span><span lang="en">5 business days after the deposit</span><span lang="es">5 días hábiles después del depósito</span></span><b lang="fr">La remise à neuf</b><b lang="en">The refresh</b><b lang="es">La puesta a punto</b><p lang="fr">Préparée en brouillon, montrée avec sa liste de contrôle, puis mise en ligne.</p><p lang="en">Prepared as a draft, shown with its checklist, then put live.</p><p lang="es">Se prepara en borrador, se muestra con su lista de control y luego se publica.</p></div>
     </div>
     <div class="month">
       <h3><span lang="fr">Chaque mois, ensuite</span><span lang="en">Then, every month</span><span lang="es">Después, cada mes</span></h3>
       <ol lang="fr"><li>Le rapport du mois et ce qu'on change.</li><li>Vous déposez vos photos et vidéos dans un dossier partagé.</li><li>On prépare le calendrier : chaque publication, chaque texte, et un aperçu de votre profil.</li><li>Vous approuvez par écrit, puis on publie aux jours prévus.</li></ol>
       <ol lang="en"><li>The month's report and what we change.</li><li>You drop your photos and videos into a shared folder.</li><li>We prepare the calendar: every post, every caption, and a preview of your profile.</li><li>You approve in writing, then we post on the planned days.</li></ol>
       <ol lang="es"><li>El informe del mes y lo que cambiamos.</li><li>Usted deja sus fotos y videos en una carpeta compartida.</li><li>Preparamos el calendario: cada publicación, cada texto y una vista previa de su perfil.</li><li>Usted aprueba por escrito y publicamos en los días previstos.</li></ol>
+    </div>
+    <div class="month measure">
+      <h3><span lang="fr">Ce qu'on mesure, avant et après</span><span lang="en">What we measure, before and after</span><span lang="es">Lo que medimos, antes y después</span></h3>
+      <ul lang="fr"><li>Appels, itinéraires et clics depuis votre fiche Google</li><li>Visites du site et demandes de soumission</li><li>Temps de réponse à une demande</li><li>Vitesse du site sur cellulaire</li><li>Messages et abonnés sur vos réseaux</li></ul>
+      <ul lang="en"><li>Calls, directions and clicks from your Google profile</li><li>Site visits and quote requests</li><li>Response time to a request</li><li>Site speed on a phone</li><li>Messages and followers on your social media</li></ul>
+      <ul lang="es"><li>Llamadas, rutas y clics desde su perfil de Google</li><li>Visitas al sitio y solicitudes de cotización</li><li>Tiempo de respuesta a una solicitud</li><li>Velocidad del sitio en el celular</li><li>Mensajes y seguidores en sus redes</li></ul>
+      <p class="measure-note" lang="fr">Vos chiffres restent les vôtres : on ne publie jamais le résultat d'un client sans son accord écrit.</p><p class="measure-note" lang="en">Your numbers stay yours: we never publish a client's results without their written OK.</p><p class="measure-note" lang="es">Sus cifras son suyas: nunca publicamos los resultados de un cliente sin su aprobación por escrito.</p>
     </div>
   </div>
 </section>
@@ -304,7 +542,7 @@ footer a{color:var(--blanc)}
       <div class="p"><b lang="fr">Vous gardez vos comptes</b><b lang="en">You keep your accounts</b><b lang="es">Usted conserva sus cuentas</b><p lang="fr">Vos comptes restent à votre nom. Vous nous donnez un accès, et vous le retirez quand vous voulez.</p><p lang="en">Your accounts stay in your name. You give us access, and you can remove it any time.</p><p lang="es">Sus cuentas siguen a su nombre. Usted nos da acceso y puede quitarlo cuando quiera.</p></div>
       <div class="p"><b lang="fr">L'IA est déclarée</b><b lang="en">AI is declared</b><b lang="es">La IA se declara</b><p lang="fr">Jennifer porte toujours la mention IA, et une image créée par IA est indiquée comme telle. Vos vrais travaux se montrent avec vos vraies photos.</p><p lang="en">Jennifer always carries the AI label, and an AI-made image is marked as such. Your real work is shown with your real photos.</p><p lang="es">Jennifer siempre lleva la mención IA, y una imagen creada con IA se indica como tal. Sus trabajos reales se muestran con sus fotos reales.</p></div>
       <div class="p"><b lang="fr">Le français d'abord</b><b lang="en">French first</b><b lang="es">Primero el francés</b><p lang="fr">Chaque publication commerciale a sa version française, comme le veut la loi au Québec. L'anglais suit, l'espagnol sur demande.</p><p lang="en">Every commercial post has its French version, as Quebec law requires. English follows; Spanish on request.</p><p lang="es">Cada publicación comercial tiene su versión en francés, como lo exige la ley en Quebec. Sigue el inglés; el español, si lo pide.</p></div>
-      <div class="p"><b lang="fr">Un engagement simple</b><b lang="en">A simple commitment</b><b lang="es">Un compromiso simple</b><p lang="fr">Les services mensuels durent 3 mois au minimum, puis se renouvellent de mois en mois, avec 30 jours d'avis pour arrêter.</p><p lang="en">Monthly services run 3 months minimum, then renew month to month, with 30 days' notice to stop.</p><p lang="es">Los servicios mensuales duran 3 meses como mínimo y luego se renuevan mes a mes, con 30 días de aviso para terminar.</p></div>
+      <div class="p"><b lang="fr">Un engagement simple</b><b lang="en">A simple commitment</b><b lang="es">Un compromiso simple</b><p lang="fr">Sans contrat : les services mensuels se prennent de mois en mois, avec 30 jours d'avis pour arrêter. La mise en place se paie une seule fois. Engagez-vous 3 mois : −10 % sur le prix mensuel.</p><p lang="en">No contract: monthly services run month to month, with 30 days' notice to stop. Setup is paid once. Commit to 3 months: −10% on the monthly price.</p><p lang="es">Sin contrato: los servicios mensuales se toman mes a mes, con 30 días de aviso para terminar. La puesta en marcha se paga una sola vez. Comprométase 3 meses: −10 % en el precio mensual.</p></div>
       <div class="p"><b lang="fr">Vos affirmations, approuvées</b><b lang="en">Your claims, approved</b><b lang="es">Sus afirmaciones, aprobadas</b><p lang="fr">On ne publie rien sur vos services, vos prix ou vos années d'expérience que vous n'avez pas confirmé par écrit.</p><p lang="en">We publish nothing about your services, prices or years in business that you haven't confirmed in writing.</p><p lang="es">No publicamos nada sobre sus servicios, precios o años de experiencia que usted no haya confirmado por escrito.</p></div>
     </div>
   </div>
@@ -314,10 +552,11 @@ footer a{color:var(--blanc)}
   <div class="wrap">
     <h2><span lang="fr">Questions</span><span lang="en">Questions</span><span lang="es">Preguntas</span></h2>
     <details><summary><span lang="fr">Pourquoi commencer par la fiche Google?</span><span lang="en">Why start with the Google profile?</span><span lang="es">¿Por qué empezar por el perfil de Google?</span></summary><p lang="fr">Parce que c'est souvent là que le client vous trouve en premier, avant votre site ou vos réseaux. Une catégorie ou des coordonnées fausses peuvent faire perdre des appels sans qu'on le sache.</p><p lang="en">Because that's often where customers find you first, before your site or social media. A wrong category or wrong contact details can cost calls without anyone noticing.</p><p lang="es">Porque muchas veces es ahí donde el cliente lo encuentra primero, antes que su sitio o sus redes. Una categoría o datos equivocados pueden hacerle perder llamadas sin que nadie lo note.</p></details>
-    <details><summary><span lang="fr">Est-ce que je dois prendre les trois services?</span><span lang="en">Do I have to take all three services?</span><span lang="es">¿Tengo que tomar los tres servicios?</span></summary><p lang="fr">Non. Chaque service se prend seul, une fois ou chaque mois. La seule règle : une vidéo va avec le service B, pour que vos réseaux soient prêts à la recevoir.</p><p lang="en">No. Each service stands alone, once or monthly. The one rule: a video comes with service B, so your social accounts are ready for it.</p><p lang="es">No. Cada servicio se toma solo, una vez o cada mes. La única regla: un video va con el servicio B, para que sus redes estén listas para recibirlo.</p></details>
+    <details><summary><span lang="fr">Est-ce que je dois prendre plusieurs services?</span><span lang="en">Do I have to take several services?</span><span lang="es">¿Tengo que tomar varios servicios?</span></summary><p lang="fr">Non. Chaque service se prend seul, une fois ou chaque mois. La seule règle : une vidéo va avec le service B, pour que vos réseaux soient prêts à la recevoir.</p><p lang="en">No. Each service stands alone, once or monthly. The one rule: a video comes with service B, so your social accounts are ready for it.</p><p lang="es">No. Cada servicio se toma solo, una vez o cada mes. La única regla: un video va con el servicio B, para que sus redes estén listas para recibirlo.</p></details>
     <details><summary><span lang="fr">Comment se fait le paiement?</span><span lang="en">How does payment work?</span><span lang="es">¿Cómo se paga?</span></summary><p lang="fr">Pour un service fait une fois : la moitié au départ, la moitié à l'acceptation. Pour un service mensuel : payé d'avance le 1er de chaque mois. Par virement Interac.</p><p lang="en">For a one-time service: half to start, half on acceptance. For a monthly service: paid in advance on the 1st of each month. By Interac e-Transfer.</p><p lang="es">Para un servicio de una vez: la mitad al inicio y la mitad al aceptar. Para un servicio mensual: se paga por adelantado el día 1 de cada mes. Por transferencia Interac.</p></details>
     <details><summary><span lang="fr">Vous parlez espagnol?</span><span lang="en">Do you speak Spanish?</span><span lang="es">¿Hablan español?</span></summary><p lang="fr">Oui. Dan fait les appels et les rencontres en français, en anglais ou en espagnol, et vos publications peuvent avoir une version espagnole.</p><p lang="en">Yes. Dan handles calls and meetings in French, English or Spanish, and your posts can have a Spanish version.</p><p lang="es">Sí. Dan hace las llamadas y reuniones en francés, inglés o español, y sus publicaciones pueden tener una versión en español.</p></details>
-    <details><summary><span lang="fr">Et la publicité payante?</span><span lang="en">What about paid ads?</span><span lang="es">¿Y la publicidad pagada?</span></summary><p lang="fr">Elle se soumissionne à part, une fois vos comptes en ordre. Le budget va directement de vous à la plateforme; il ne passe jamais par nous.</p><p lang="en">It's quoted separately, once your accounts are in order. The budget goes straight from you to the platform; it never passes through us.</p><p lang="es">Se cotiza aparte, una vez que sus cuentas estén en orden. El presupuesto va directo de usted a la plataforma; nunca pasa por nosotros.</p></details>
+    <details><summary><span lang="fr">Et la publicité payante?</span><span lang="en">What about paid ads?</span><span lang="es">¿Y la publicidad pagada?</span></summary><p lang="fr">C'est le service C. On fait le plan et le suivi, une fois vos comptes en ordre. Le budget va directement de vous à la plateforme, dans vos propres comptes; il ne passe jamais par nous.</p><p lang="en">That's service C. We do the plan and the tracking, once your accounts are in order. The budget goes straight from you to the platform, in your own accounts; it never passes through us.</p><p lang="es">Es el servicio C. Hacemos el plan y el seguimiento, una vez que sus cuentas estén en orden. El presupuesto va directo de usted a la plataforma, en sus propias cuentas; nunca pasa por nosotros.</p></details>
+    <details><summary><span lang="fr">L'optimisation, c'est seulement de l'IA?</span><span lang="en">Is optimization only about AI?</span><span lang="es">¿La optimización es solo IA?</span></summary><p lang="fr">Non. On commence par l'IA parce que c'est notre spécialité, mais la méthode vient du génie industriel : on améliore le processus d'abord, puis on choisit l'outil. Parfois, une simple formule fait mieux qu'une IA, et on vous le dira.</p><p lang="en">No. We start with AI because it's our specialty, but the method comes from industrial engineering: we improve the process first, then pick the tool. Sometimes a simple formula does better than AI, and we'll tell you so.</p><p lang="es">No. Empezamos por la IA porque es nuestra especialidad, pero el método viene de la ingeniería industrial: primero mejoramos el proceso y luego elegimos la herramienta. A veces una simple fórmula funciona mejor que una IA, y se lo diremos.</p></details>
   </div>
 </section>
 
@@ -332,6 +571,11 @@ footer a{color:var(--blanc)}
   </div>
 </section>
 </main>
+<nav class="mbar" aria-label="Actions">
+  <a class="btn btn-main js-mail" href="mailto:bonjour@ccc-studios.com"><span lang="fr">Audit gratuit</span><span lang="en">Free audit</span><span lang="es">Auditoría gratis</span></a>
+  <a class="btn btn-line" href="#demo"><span lang="fr">Démo</span><span lang="en">Demo</span><span lang="es">Demo</span></a>
+</nav>
+
 
 <footer>
   <div class="wrap">
@@ -348,7 +592,7 @@ footer a{color:var(--blanc)}
     en:{s:"Express audit · [your business]",b:"Hi Dan,\n\nBusiness:\nWebsite:\nCity or service area:\nPhone:\n\nThanks!"},
     es:{s:"Auditoría exprés · [su empresa]",b:"Hola Dan:\n\nEmpresa:\nSitio web:\nCiudad o zona:\nTeléfono:\n\n¡Gracias!"}
   };
-  var titles={fr:"Visibilité locale · Services aux entreprises · CCC Studios",en:"Local visibility · Business services · CCC Studios",es:"Visibilidad local · Servicios para empresas · CCC Studios"};
+  var titles={fr:"Services aux entreprises · CCC Studios",en:"Business services · CCC Studios",es:"Servicios para empresas · CCC Studios"};
   function setLang(l){
     root.setAttribute("data-lang",l); root.lang=l;
     document.querySelectorAll(".langs button").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.set===l?"true":"false");});
@@ -379,6 +623,23 @@ footer a{color:var(--blanc)}
   ajuste(); addEventListener("resize", ajuste); addEventListener("load", ajuste);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(ajuste);
   new MutationObserver(ajuste).observe(document.documentElement, { attributes: true, attributeFilter: ["data-lang", "lang"] });
+})();
+</script>
+<script>
+/* Démo vidéo : FR ou EN selon la langue; barre d'actions mobile après le haut de page. */
+(function(){
+  var root=document.documentElement;
+  function vids(){var l=root.getAttribute("data-lang")==="en"?"en":"fr";
+    document.querySelectorAll("video[data-base]").forEach(function(v){var src=v.dataset.base+"-"+l+".mp4", so=v.querySelector("source");
+      if(so.getAttribute("src")!==src){v.pause();so.setAttribute("src",src);v.setAttribute("poster",v.dataset.base+"-"+l+".jpg");v.load();}});}
+  vids(); new MutationObserver(vids).observe(root,{attributes:true,attributeFilter:["data-lang"]});
+  var bar=document.querySelector(".mbar"), hero=document.querySelector(".hero .ctas"), contact=document.getElementById("contact");
+  if(!bar||!("IntersectionObserver" in window))return;
+  var inHero=true, inContact=false;
+  function upd(){bar.classList.toggle("off",inHero||inContact);}
+  new IntersectionObserver(function(e){inHero=e[0].isIntersecting;upd();}).observe(hero);
+  if(contact)new IntersectionObserver(function(e){inContact=e[0].isIntersecting;upd();}).observe(contact);
+  upd();
 })();
 </script>
 </body>
