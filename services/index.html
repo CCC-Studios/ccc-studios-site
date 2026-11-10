@@ -108,6 +108,8 @@ h2{font-size:clamp(28px,4vw,40px);line-height:1.12;margin-bottom:10px;color:var(
 .month{margin-top:36px;border:1px solid var(--creme);border-radius:16px;padding:20px 22px}
 .month h3{font-size:21px;margin-bottom:10px}
 .month ol{padding-left:20px;display:grid;gap:6px;font-size:15px}
+@media(min-width:900px){.month.first ol{grid-template-columns:1fr 1fr;column-gap:36px}}
+.month.first{border-color:var(--ambre,#FFC40C)}
 
 /* promesses */
 .prom{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
@@ -232,6 +234,8 @@ footer a{color:var(--blanc)}
   .stat b{font-size:32px}
 }
 @media(prefers-reduced-motion:reduce){.mbar{transition:none}}
+.demo-how{margin-top:14px;font-size:14px;color:var(--creme);max-width:36em}
+.demo-how a{color:var(--ambre)}
 </style>
 </head>
 <body>
@@ -256,20 +260,22 @@ footer a{color:var(--blanc)}
 </header>
 
 <main>
+<div class="depth" aria-hidden="true"><div class="dp hide-m" data-sec="2" data-fy="0.42" data-side="left" data-x="-330" data-depth="0.85" style="width:520px;opacity:0.75"><svg viewBox="0 0 400 400" aria-hidden="true"><path d="M30 390A360 360 0 0 1 390 30" fill="none" stroke="#FFC40C" stroke-width="2.5"/><path d="M70 395A325 325 0 0 1 395 70" fill="none" stroke="#735827" stroke-width="22" stroke-dasharray="2.5 11" opacity=".55"/></svg></div><div class="dp hide-m" data-sec="2" data-fy="-0.1" data-side="left" data-x="120" data-depth="0.25" style="width:16px;opacity:0.9"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="#FFC40C"/></svg></div><div class="dp " data-sec="3" data-fy="0.0" data-side="right" data-x="-60" data-depth="0.55" style="width:300px;opacity:0.75"><svg viewBox="0 0 300 110" aria-hidden="true"><circle cx="55" cy="55" r="48" fill="none" stroke="#FFC40C" stroke-width="2.5"/><circle cx="150" cy="55" r="48" fill="none" stroke="#FFC40C" stroke-width="2.5"/><circle cx="245" cy="55" r="48" fill="none" stroke="#FFC40C" stroke-width="2.5"/><circle cx="168" cy="55" r="44" fill="#FFC40C" opacity=".18"/></svg></div><div class="dp hide-m" data-sec="3" data-fy="0.5" data-side="left" data-x="-90" data-depth="0.35" style="width:180px;opacity:0.75"><svg viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="92" fill="none" stroke="#735827" stroke-width="2" stroke-dasharray="1 9" stroke-linecap="round"/></svg></div><div class="dp hide-m" data-sec="4" data-fy="0.0" data-side="right" data-x="70" data-depth="0.4" style="width:110px;opacity:0.9"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="54" fill="none" stroke="#FFC40C" stroke-width="3"/><path d="M40 62l14 14 28-32" fill="none" stroke="#FFC40C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="dp hide-m" data-sec="5" data-fy="0.0" data-side="left" data-x="-120" data-depth="0.7" style="width:620px;opacity:0.75"><svg viewBox="0 0 600 120" aria-hidden="true"><path d="M0 90C120 90 150 20 300 20S480 100 600 60" fill="none" stroke="#FFC40C" stroke-width="2.5"/></svg></div><div class="dp hide-m" data-sec="5" data-fy="0.3" data-side="right" data-x="160" data-depth="0.2" style="width:12px;opacity:0.9"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="#FFC40C"/></svg></div><div class="dp hide-m" data-sec="6" data-fy="0.0" data-side="right" data-x="-200" data-depth="0.8" style="width:460px;opacity:0.75"><svg viewBox="0 0 400 400" aria-hidden="true"><path d="M30 390A360 360 0 0 1 390 30" fill="none" stroke="#FFC40C" stroke-width="2.5"/><path d="M70 395A325 325 0 0 1 395 70" fill="none" stroke="#735827" stroke-width="22" stroke-dasharray="2.5 11" opacity=".55"/></svg></div><div class="dp hide-m" data-sec="7" data-fy="0.0" data-side="left" data-x="-40" data-depth="0.45" style="width:260px;opacity:0.75"><svg viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="92" fill="none" stroke="#735827" stroke-width="2" stroke-dasharray="1 9" stroke-linecap="round"/></svg></div><div class="dp hide-m" data-sec="8" data-fy="0.0" data-side="left" data-x="-90" data-depth="0.5" style="width:240px;opacity:0.75"><svg viewBox="0 0 300 110" aria-hidden="true"><circle cx="55" cy="55" r="48" fill="none" stroke="#FFC40C" stroke-width="2.5"/><circle cx="150" cy="55" r="48" fill="none" stroke="#FFC40C" stroke-width="2.5"/><circle cx="245" cy="55" r="48" fill="none" stroke="#FFC40C" stroke-width="2.5"/><circle cx="168" cy="55" r="44" fill="#FFC40C" opacity=".18"/></svg></div></div>
+
 <section class="hero dark" style="padding:0">
   <div class="wrap">
     <div>
       <div class="kicker"><span lang="fr">Branche d'affaires · entreprises de services du Québec</span><span lang="en">Business branch · Quebec service businesses</span><span lang="es">Rama de negocios · empresas de servicios en Quebec</span></div>
-      <h1><span lang="fr">Vos pubs vidéo, prêtes en 5 jours. <span class='it'>Sans tournage.</span></span><span lang="en">Your video ads, ready in 5 days. <span class='it'>No shoot.</span></span><span lang="es">Sus anuncios en video, listos en 5 días. <span class='it'>Sin rodaje.</span></span></h1>
-      <p class="lead"><span lang="fr">Des vidéos de 15 secondes pour vos réseaux et vos publicités, en français, en anglais et en espagnol, présentées par Jennifer, notre actrice IA toujours déclarée. Et si votre site ou votre fiche Google vous font perdre des appels, on s'en occupe aussi.</span><span lang="en">15-second videos for your social media and your ads, in French, English and Spanish, presented by Jennifer, our always-declared AI actress. And if your website or Google profile is costing you calls, we take care of that too.</span><span lang="es">Videos de 15 segundos para sus redes y sus anuncios, en francés, inglés y español, presentados por Jennifer, nuestra actriz IA siempre declarada. Y si su sitio o su perfil de Google le hacen perder llamadas, también nos ocupamos.</span></p>
+      <h1><span lang="fr">Vos clients vous cherchent sur Google. <span class='it'>Est-ce qu'ils vous trouvent?</span></span><span lang="en">Your customers look for you on Google. <span class='it'>Do they find you?</span></span><span lang="es">Sus clientes lo buscan en Google. <span class='it'>¿Lo encuentran?</span></span></h1>
+      <p class="lead"><span lang="fr">On commence par un audit gratuit de votre fiche Google : trois correctifs que vous pouvez faire vous-même. Ensuite, si vous le voulez, on s'occupe de vos réseaux, de votre site et de courtes pubs vidéo faites avec vos vraies photos. Toute voix ou image créée par IA est toujours déclarée.</span><span lang="en">We start with a free audit of your Google profile: three fixes you can do yourself. After that, if you want, we take care of your social media, your website and short video ads made with your real photos. Any AI-made voice or image is always declared.</span><span lang="es">Empezamos con una auditoría gratuita de su perfil de Google: tres arreglos que usted mismo puede hacer. Después, si quiere, nos ocupamos de sus redes, de su sitio y de anuncios cortos en video hechos con sus fotos reales. Toda voz o imagen creada con IA se declara siempre.</span></p>
       <div class="ctas">
         <a class="btn btn-main js-mail" href="mailto:bonjour@ccc-studios.com"><span lang="fr">Demander un audit express gratuit</span><span lang="en">Ask for a free express audit</span><span lang="es">Pedir una auditoría exprés gratuita</span></a>
         <a class="btn btn-line" href="#demo"><span lang="fr">Voir la démo</span><span lang="en">Watch the demo</span><span lang="es">Ver la demo</span></a>
       </div>
       <div class="stats">
-        <div class="stat"><b>5</b><span lang="fr">jours ouvrables pour votre vidéo</span><span lang="en">business days for your video</span><span lang="es">días hábiles para su video</span></div>
+        <div class="stat"><b>1</b><span lang="fr">jour ouvrable pour votre audit gratuit</span><span lang="en">business day for your free audit</span><span lang="es">día hábil para su auditoría gratuita</span></div>
+        <div class="stat"><b>5</b><span lang="fr">jours ouvrables pour une vidéo</span><span lang="en">business days for a video</span><span lang="es">días hábiles para un video</span></div>
         <div class="stat"><b>3</b><span lang="fr">langues : français, anglais, espagnol</span><span lang="en">languages: French, English, Spanish</span><span lang="es">idiomas: francés, inglés, español</span></div>
-        <div class="stat"><b>0</b><span lang="fr">tournage : rien à filmer, rien à monter</span><span lang="en">shoots: nothing to film or edit</span><span lang="es">rodajes: nada que filmar ni editar</span></div>
       </div>
       <p class="meta-line"><span lang="fr">Sans contrat · Une vraie personne au téléphone · IA toujours déclarée</span><span lang="en">No contract · A real person on the phone · AI always declared</span><span lang="es">Sin contrato · Una persona real al teléfono · IA siempre declarada</span></p>
     </div>
@@ -286,13 +292,16 @@ footer a{color:var(--blanc)}
 
 <div class="strip" aria-hidden="true"><div class="wrap"><span><span lang="fr">Être vu</span><span lang="en">Be seen</span><span lang="es">Que lo vean</span></span><span><span lang="fr">Être choisi</span><span lang="en">Be chosen</span><span lang="es">Que lo elijan</span></span><span><span lang="fr">Être appelé</span><span lang="en">Get the call</span><span lang="es">Que lo llamen</span></span><span><span lang="fr">Mieux opérer</span><span lang="en">Run better</span><span lang="es">Operar mejor</span></span></div></div>
 
+<section class="souffle" style="--souffle-ink:#180D00;--souffle-acc:#735827"><div class="wrap"><p class="big"><span lang="fr">Votre travail est <b>excellent</b>.<br>Il mérite d'être <em>vu</em>.</span><span lang="en">Your work is <b>excellent</b>.<br>It deserves to be <em>seen</em>.</span><span lang="es">Su trabajo es <b>excelente</b>.<br>Merece que lo <em>vean</em>.</span></p></div></section>
+
+
 <section class="probleme" id="probleme">
   <div class="wrap">
     <hr class="rule">
     <h2><span lang="fr">Le problème, c'est rarement votre travail</span><span lang="en">The problem is rarely your work</span><span lang="es">El problema casi nunca es su trabajo</span></h2>
     <p class="sub"><span lang="fr">C'est tout ce qui se passe avant l'appel. Trois fuites, et ce qu'on y fait :</span><span lang="en">It's everything that happens before the call. Three leaks, and what we do about them:</span><span lang="es">Es todo lo que pasa antes de la llamada. Tres fugas, y lo que hacemos:</span></p>
     <div class="cons">
-      <article class="con"><div class="con-b"><p lang="fr">Il défile sur Facebook et Instagram. Une photo fixe ne l'arrête pas.</p><p lang="en">They scroll Facebook and Instagram. A still photo doesn't stop them.</p><p lang="es">Pasa por Facebook e Instagram. Una foto fija no lo detiene.</p></div><span class="con-a" aria-hidden="true">→</span><div class="con-f"><p lang="fr">Une vidéo de 15 secondes, avec un visage et une voix, qui l'arrête et lui dit quoi faire.</p><p lang="en">A 15-second video, with a face and a voice, that stops them and tells them what to do.</p><p lang="es">Un video de 15 segundos, con una cara y una voz, que lo detiene y le dice qué hacer.</p></div></article>
+      <article class="con"><div class="con-b"><p lang="fr">Il défile sur Facebook et Instagram. Une photo fixe ne l'arrête pas.</p><p lang="en">They scroll Facebook and Instagram. A still photo doesn't stop them.</p><p lang="es">Pasa por Facebook e Instagram. Una foto fija no lo detiene.</p></div><span class="con-a" aria-hidden="true">→</span><div class="con-f"><p lang="fr">Une vidéo de 15 secondes, avec vos vraies photos et une voix, qui l'arrête et lui dit quoi faire.</p><p lang="en">A 15-second video, with your real photos and a voice, that stops them and tells them what to do.</p><p lang="es">Un video de 15 segundos, con sus fotos reales y una voz, que lo detiene y le dice qué hacer.</p></div></article>
       <article class="con"><div class="con-b"><p lang="fr">Il cherche votre métier et sa ville. Un vieux site ou un mauvais numéro le fait douter.</p><p lang="en">They search your trade and their town. An old site or a wrong number makes them hesitate.</p><p lang="es">Busca su oficio y su ciudad. Un sitio viejo o un número equivocado lo hace dudar.</p></div><span class="con-a" aria-hidden="true">→</span><div class="con-f"><p lang="fr">Un site clair, une fiche Google exacte et un bouton d'appel qui compose le bon numéro.</p><p lang="en">A clear site, an accurate Google profile and a call button that dials the right number.</p><p lang="es">Un sitio claro, un perfil de Google exacto y un botón de llamada que marca el número correcto.</p></div></article>
       <article class="con"><div class="con-b"><p lang="fr">Il appelle le premier qui répond. Un appel manqué, et il est chez le suivant.</p><p lang="en">They call whoever answers first. One missed call, and they're calling the next one.</p><p lang="es">Llama al primero que contesta. Una llamada perdida, y ya está con el siguiente.</p></div><span class="con-a" aria-hidden="true">→</span><div class="con-f"><p lang="fr">On chronomètre votre temps de réponse, puis on met en place ce qui vous aide à répondre plus vite.</p><p lang="en">We time your response, then set up what helps you answer faster.</p><p lang="es">Medimos su tiempo de respuesta y luego ponemos en marcha lo que le ayuda a responder más rápido.</p></div></article>
     </div>
@@ -302,7 +311,7 @@ footer a{color:var(--blanc)}
 <section class="audit" id="audit">
   <div class="wrap">
     <hr class="rule">
-    <p class="eyebrow"><span lang="fr">Audit express gratuit · 2 jours ouvrables · sans engagement</span><span lang="en">Free express audit · 2 business days · no commitment</span><span lang="es">Auditoría exprés gratuita · 2 días hábiles · sin compromiso</span></p>
+    <p class="eyebrow"><span lang="fr">Audit express gratuit · 1 jour ouvrable · sans engagement</span><span lang="en">Free express audit · 1 business day · no commitment</span><span lang="es">Auditoría exprés gratuita · 1 día hábil · sin compromiso</span></p>
     <h2><span lang="fr">Ce qu'on regarde en premier</span><span lang="en">What we check first</span><span lang="es">Lo primero que revisamos</span></h2>
     <p class="sub"><span lang="fr">Souvent, une entreprise a déjà de bons avis et du bon travail à montrer. Le problème, c'est qu'on ne la trouve pas, ou qu'on la trouve mal.</span><span lang="en">Often a business already has good reviews and good work to show. The problem is that people can't find it, or find the wrong details.</span><span lang="es">Muchas veces una empresa ya tiene buenas reseñas y buen trabajo que mostrar. El problema es que no la encuentran, o encuentran datos equivocados.</span></p>
     <div class="checks">
@@ -335,8 +344,8 @@ footer a{color:var(--blanc)}
     <div class="svc">
       <article class="card">
         <span class="letter">A</span>
-        <h3><span lang="fr">Vidéos avec Jennifer</span><span lang="en">Videos with Jennifer</span><span lang="es">Videos con Jennifer</span></h3>
-        <p class="what"><span lang="fr">Une vidéo explicative de 30 à 40 secondes, en français et en anglais, présentée par Jennifer, notre actrice IA toujours déclarée comme IA.</span><span lang="en">A 30 to 40-second explainer video in French and English, presented by Jennifer, our AI actress, always declared as AI.</span><span lang="es">Un video explicativo de 30 a 40 segundos, en francés e inglés, presentado por Jennifer, nuestra actriz IA, siempre declarada como IA.</span></p>
+        <h3><span lang="fr">Pubs vidéo avec vos photos</span><span lang="en">Video ads with your photos</span><span lang="es">Anuncios en video con sus fotos</span></h3>
+        <p class="what"><span lang="fr">Une vidéo explicative de 30 à 40 secondes, en français et en anglais, faite avec vos vraies photos et une voix hors champ. Si vous le souhaitez, Jennifer, notre actrice IA, la présente à l'écran. Toute voix ou image créée par IA est déclarée dans la vidéo.</span><span lang="en">A 30 to 40-second explainer video in French and English, made with your real photos and a voice-over. If you like, Jennifer, our AI actress, presents it on screen. Any AI-made voice or image is declared in the video.</span><span lang="es">Un video explicativo de 30 a 40 segundos, en francés e inglés, hecho con sus fotos reales y una voz en off. Si lo desea, Jennifer, nuestra actriz IA, lo presenta en pantalla. Toda voz o imagen creada con IA se declara en el video.</span></p>
         <div class="opt">
           <span class="name"><span lang="fr">Une fois</span><span lang="en">Once</span><span lang="es">Una vez</span></span>
           <span class="price"><span lang="fr">à partir de <b>499 $</b></span><span lang="en">from <b>$499</b></span><span lang="es">desde <b>$499</b></span></span>
@@ -473,9 +482,9 @@ footer a{color:var(--blanc)}
           <p class="ops-next"><span lang="fr">Ensuite, au besoin : système connecté, applications sur mesure, entretien mensuel.</span><span lang="en">Then, if needed: a connected system, custom apps, monthly care.</span><span lang="es">Después, si hace falta: sistema conectado, aplicaciones a medida, mantenimiento mensual.</span></p>
         </div>
         <div class="ops-box ops-case">
-          <b class="ops-k"><span lang="fr">Exemple type : le tableur qui fait rouler l'entreprise</span><span lang="en">Typical example: the spreadsheet that runs the business</span><span lang="es">Ejemplo típico: la hoja de cálculo que mueve la empresa</span></b>
+          <b class="ops-k"><span lang="fr">Projet pilote : une agence de location à Montréal</span><span lang="en">Pilot project: a rental agency in Montreal</span><span lang="es">Proyecto piloto: una agencia de alquiler en Montreal</span></b>
           <p class="ba"><span class="ba-k"><span lang="fr">Avant</span><span lang="en">Before</span><span lang="es">Antes</span></span><span lang="fr">Un fichier Excel désordonné, que seul le propriétaire comprenait.</span><span lang="en">A messy Excel file only the owner understood.</span><span lang="es">Un archivo de Excel desordenado que solo el dueño entendía.</span></p>
-          <p class="ba"><span class="ba-k"><span lang="fr">Résultat visé</span><span lang="en">Target result</span><span lang="es">Resultado buscado</span></span><span lang="fr">Une base de données propre, un inventaire partagé, les visites inscrites au calendrier automatiquement, un tableau de bord pour la direction et une application pour chaque agent.</span><span lang="en">A clean database, a shared inventory, visits booked into the calendar automatically, a dashboard for management and an app for each agent.</span><span lang="es">Una base de datos limpia, un inventario compartido, las visitas anotadas en el calendario automáticamente, un panel para la dirección y una aplicación para cada agente.</span></p>
+          <p class="ba"><span class="ba-k"><span lang="fr">Après</span><span lang="en">After</span><span lang="es">Después</span></span><span lang="fr">Une base de données propre, un inventaire partagé, les visites inscrites au calendrier automatiquement, un tableau de bord pour la direction et une application pour chaque agent.</span><span lang="en">A clean database, a shared inventory, visits booked into the calendar automatically, a dashboard for management and an app for each agent.</span><span lang="es">Una base de datos limpia, un inventario compartido, las visitas anotadas en el calendario automáticamente, un panel para la dirección y una aplicación para cada agente.</span></p>
         </div>
       </div>
       <div class="ops-foot">
@@ -499,7 +508,7 @@ footer a{color:var(--blanc)}
     <hr class="rule">
     <h2><span lang="fr">Pourquoi CCC Studios</span><span lang="en">Why CCC Studios</span><span lang="es">Por qué CCC Studios</span></h2>
     <div class="why">
-      <div class="why-i"><b lang="fr">Le contenu, pas seulement le système</b><b lang="en">The content, not just the system</b><b lang="es">El contenido, no solo el sistema</b><p lang="fr">Un site et des publicités ont besoin de quelque chose à montrer. On le crée : des vidéos de 15 secondes avec Jennifer, notre actrice IA déclarée, sans tournage, livrées en 5 jours ouvrables.</p><p lang="en">A site and ads need something to show. We make it: 15-second videos with Jennifer, our declared AI actress, no shoot, delivered in 5 business days.</p><p lang="es">Un sitio y unos anuncios necesitan algo que mostrar. Lo creamos: videos de 15 segundos con Jennifer, nuestra actriz IA declarada, sin rodaje, entregados en 5 días hábiles.</p></div>
+      <div class="why-i"><b lang="fr">Le contenu, pas seulement le système</b><b lang="en">The content, not just the system</b><b lang="es">El contenido, no solo el sistema</b><p lang="fr">Un site et des publicités ont besoin de quelque chose à montrer. On le crée : de courtes vidéos faites avec vos vraies photos, une voix hors champ et, si vous le voulez, Jennifer, notre actrice IA déclarée. Livrées en 5 jours ouvrables.</p><p lang="en">A site and ads need something to show. We make it: short videos made with your real photos, a voice-over and, if you want, Jennifer, our declared AI actress. Delivered in 5 business days.</p><p lang="es">Un sitio y unos anuncios necesitan algo que mostrar. Lo creamos: videos cortos hechos con sus fotos reales, una voz en off y, si quiere, Jennifer, nuestra actriz IA declarada. Entregados en 5 días hábiles.</p></div>
       <div class="why-i"><b lang="fr">Trois langues, une seule personne</b><b lang="en">Three languages, one person</b><b lang="es">Tres idiomas, una sola persona</b><p lang="fr">Dan vous répond lui-même, en français, en anglais ou en espagnol, du premier appel au rapport du mois.</p><p lang="en">Dan answers you himself, in French, English or Spanish, from the first call to the monthly report.</p><p lang="es">Dan le responde personalmente, en francés, inglés o español, desde la primera llamada hasta el informe del mes.</p></div>
       <div class="why-i"><b lang="fr">Des chiffres, pas des adjectifs</b><b lang="en">Numbers, not adjectives</b><b lang="es">Cifras, no adjetivos</b><p lang="fr">On note votre point de départ, on corrige d'abord ce qui rapporte le plus, et chaque mois on vous montre les vrais chiffres.</p><p lang="en">We record your starting point, fix what pays most first, and show you the real numbers every month.</p><p lang="es">Anotamos su punto de partida, corregimos primero lo que más rinde y cada mes le mostramos las cifras reales.</p></div>
     </div>
@@ -512,10 +521,17 @@ footer a{color:var(--blanc)}
     <h2><span lang="fr">Comment ça se passe</span><span lang="en">How it works</span><span lang="es">Cómo funciona</span></h2>
     <p class="sub"><span lang="fr">Vous parlez à une vraie personne du début à la fin. Rien n'est mis en ligne sans votre accord écrit.</span><span lang="en">You deal with a real person from start to finish. Nothing goes live without your written OK.</span><span lang="es">Usted trata con una persona real de principio a fin. Nada se publica sin su aprobación por escrito.</span></p>
     <div class="steps">
-      <div class="step"><span class="when"><span lang="fr">2 jours ouvrables</span><span lang="en">2 business days</span><span lang="es">2 días hábiles</span></span><b lang="fr">L'audit express</b><b lang="en">The express audit</b><b lang="es">La auditoría exprés</b><p lang="fr">Une page sur ce qu'un client voit de vous, et les 3 corrections qui valent le plus.</p><p lang="en">One page on what a customer sees of you, and the 3 fixes worth the most.</p><p lang="es">Una página sobre lo que un cliente ve de usted, y las 3 correcciones que más valen.</p></div>
+      <div class="step"><span class="when"><span lang="fr">1 jour ouvrable</span><span lang="en">1 business day</span><span lang="es">1 día hábil</span></span><b lang="fr">L'audit express</b><b lang="en">The express audit</b><b lang="es">La auditoría exprés</b><p lang="fr">Une page sur ce qu'un client voit de vous, et les 3 corrections qui valent le plus.</p><p lang="en">One page on what a customer sees of you, and the 3 fixes worth the most.</p><p lang="es">Una página sobre lo que un cliente ve de usted, y las 3 correcciones que más valen.</p></div>
       <div class="step"><span class="when"><span lang="fr">Soumission en 1 jour ouvrable</span><span lang="en">Quote in 1 business day</span><span lang="es">Cotización en 1 día hábil</span></span><b lang="fr">Un appel, une soumission</b><b lang="en">A call, a quote</b><b lang="es">Una llamada, una cotización</b><p lang="fr">On choisit ensemble les services. La soumission est claire, ligne par ligne.</p><p lang="en">We pick the services together. The quote is clear, line by line.</p><p lang="es">Elegimos juntos los servicios. La cotización es clara, línea por línea.</p></div>
       <div class="step"><span class="when"><span lang="fr">Avant de commencer</span><span lang="en">Before we start</span><span lang="es">Antes de empezar</span></span><b lang="fr">Le point de départ</b><b lang="en">The starting point</b><b lang="es">El punto de partida</b><p lang="fr">On note vos chiffres avant de commencer, pour comparer honnêtement chaque mois.</p><p lang="en">We record your numbers before we start, so each month compares honestly.</p><p lang="es">Anotamos sus cifras antes de empezar, para comparar con honestidad cada mes.</p></div>
       <div class="step"><span class="when"><span lang="fr">5 jours ouvrables après le dépôt</span><span lang="en">5 business days after the deposit</span><span lang="es">5 días hábiles después del depósito</span></span><b lang="fr">La remise à neuf</b><b lang="en">The refresh</b><b lang="es">La puesta a punto</b><p lang="fr">Préparée en brouillon, montrée avec sa liste de contrôle, puis mise en ligne.</p><p lang="en">Prepared as a draft, shown with its checklist, then put live.</p><p lang="es">Se prepara en borrador, se muestra con su lista de control y luego se publica.</p></div>
+    </div>
+    <div class="month first">
+      <h3><span lang="fr">Le premier mois, en détail</span><span lang="en">The first month, in detail</span><span lang="es">El primer mes, en detalle</span></h3>
+      <ol lang="fr"><li>On apprend votre entreprise&nbsp;: vos services, vos meilleurs clients, ce qui vous distingue.</li><li>On fait le point sur ce qui existe&nbsp;: fiche Google, site, réseaux, messages.</li><li>On fixe la stratégie&nbsp;: 3 ou 4 thèmes de publication et votre message principal.</li><li>On définit votre style&nbsp;: couleurs, polices, images et ton.</li><li>On prépare votre premier calendrier et les premières publications.</li><li>Vous approuvez, on met la routine en place, puis on publie.</li></ol>
+      <ol lang="en"><li>We learn your business: your services, your best customers, what sets you apart.</li><li>We take stock of what exists: Google profile, site, social media, messages.</li><li>We set the strategy: 3 or 4 post themes and your main message.</li><li>We define your style: colours, fonts, images and tone.</li><li>We prepare your first calendar and the first posts.</li><li>You approve, we set up the routine, then we post.</li></ol>
+      <ol lang="es"><li>Conocemos su empresa: sus servicios, sus mejores clientes, lo que lo distingue.</li><li>Revisamos lo que ya existe: perfil de Google, sitio, redes, mensajes.</li><li>Fijamos la estrategia: 3 o 4 temas de publicación y su mensaje principal.</li><li>Definimos su estilo: colores, tipografías, imágenes y tono.</li><li>Preparamos su primer calendario y las primeras publicaciones.</li><li>Usted aprueba, ponemos la rutina en marcha y publicamos.</li></ol>
+      <p class="measure-note" lang="fr">Après 4 semaines&nbsp;: votre stratégie sur une page, votre style défini et vos premières publications approuvées.</p><p class="measure-note" lang="en">After 4 weeks: your strategy on one page, your style defined and your first posts approved.</p><p class="measure-note" lang="es">Después de 4 semanas: su estrategia en una página, su estilo definido y sus primeras publicaciones aprobadas.</p>
     </div>
     <div class="month">
       <h3><span lang="fr">Chaque mois, ensuite</span><span lang="en">Then, every month</span><span lang="es">Después, cada mes</span></h3>
@@ -552,6 +568,7 @@ footer a{color:var(--blanc)}
   <div class="wrap">
     <h2><span lang="fr">Questions</span><span lang="en">Questions</span><span lang="es">Preguntas</span></h2>
     <details><summary><span lang="fr">Pourquoi commencer par la fiche Google?</span><span lang="en">Why start with the Google profile?</span><span lang="es">¿Por qué empezar por el perfil de Google?</span></summary><p lang="fr">Parce que c'est souvent là que le client vous trouve en premier, avant votre site ou vos réseaux. Une catégorie ou des coordonnées fausses peuvent faire perdre des appels sans qu'on le sache.</p><p lang="en">Because that's often where customers find you first, before your site or social media. A wrong category or wrong contact details can cost calls without anyone noticing.</p><p lang="es">Porque muchas veces es ahí donde el cliente lo encuentra primero, antes que su sitio o sus redes. Una categoría o datos equivocados pueden hacerle perder llamadas sin que nadie lo note.</p></details>
+    <details><summary><span lang="fr">Est-ce que ça va avoir l'air fait par une IA?</span><span lang="en">Will it look AI-made?</span><span lang="es">¿Se va a notar que lo hizo una IA?</span></summary><p lang="fr">Ce qu'on montre de votre travail, ce sont vos vraies photos. La voix est une voix de synthèse, et c'est indiqué dans la vidéo. Si vous préférez une présentatrice à l'écran, Jennifer est une option, toujours déclarée comme IA. Une personne écrit chaque script et choisit chaque image.</p><p lang="en">What we show of your work is your real photos. The voice is synthetic, and the video says so. If you prefer a presenter on screen, Jennifer is an option, always declared as AI. A person writes every script and chooses every image.</p><p lang="es">Lo que mostramos de su trabajo son sus fotos reales. La voz es sintética, y el video lo indica. Si prefiere una presentadora en pantalla, Jennifer es una opción, siempre declarada como IA. Una persona escribe cada guion y elige cada imagen.</p></details>
     <details><summary><span lang="fr">Est-ce que je dois prendre plusieurs services?</span><span lang="en">Do I have to take several services?</span><span lang="es">¿Tengo que tomar varios servicios?</span></summary><p lang="fr">Non. Chaque service se prend seul, une fois ou chaque mois. La seule règle : une vidéo va avec le service B, pour que vos réseaux soient prêts à la recevoir.</p><p lang="en">No. Each service stands alone, once or monthly. The one rule: a video comes with service B, so your social accounts are ready for it.</p><p lang="es">No. Cada servicio se toma solo, una vez o cada mes. La única regla: un video va con el servicio B, para que sus redes estén listas para recibirlo.</p></details>
     <details><summary><span lang="fr">Comment se fait le paiement?</span><span lang="en">How does payment work?</span><span lang="es">¿Cómo se paga?</span></summary><p lang="fr">Pour un service fait une fois : la moitié au départ, la moitié à l'acceptation. Pour un service mensuel : payé d'avance le 1er de chaque mois. Par virement Interac.</p><p lang="en">For a one-time service: half to start, half on acceptance. For a monthly service: paid in advance on the 1st of each month. By Interac e-Transfer.</p><p lang="es">Para un servicio de una vez: la mitad al inicio y la mitad al aceptar. Para un servicio mensual: se paga por adelantado el día 1 de cada mes. Por transferencia Interac.</p></details>
     <details><summary><span lang="fr">Vous parlez espagnol?</span><span lang="en">Do you speak Spanish?</span><span lang="es">¿Hablan español?</span></summary><p lang="fr">Oui. Dan fait les appels et les rencontres en français, en anglais ou en espagnol, et vos publications peuvent avoir une version espagnole.</p><p lang="en">Yes. Dan handles calls and meetings in French, English or Spanish, and your posts can have a Spanish version.</p><p lang="es">Sí. Dan hace las llamadas y reuniones en francés, inglés o español, y sus publicaciones pueden tener una versión en español.</p></details>
@@ -592,12 +609,18 @@ footer a{color:var(--blanc)}
     en:{s:"Express audit · [your business]",b:"Hi Dan,\n\nBusiness:\nWebsite:\nCity or service area:\nPhone:\n\nThanks!"},
     es:{s:"Auditoría exprés · [su empresa]",b:"Hola Dan:\n\nEmpresa:\nSitio web:\nCiudad o zona:\nTeléfono:\n\n¡Gracias!"}
   };
+  var demo={
+    fr:{s:"Démo pour mon métier · [votre entreprise]",b:"Bonjour Dan,\n\nEntreprise :\nMétier :\nVille ou secteur :\nCe que je veux annoncer :\n\nMerci!"},
+    en:{s:"Demo for my trade · [your business]",b:"Hi Dan,\n\nBusiness:\nTrade:\nCity or service area:\nWhat I want to advertise:\n\nThanks!"},
+    es:{s:"Demo para mi oficio · [su empresa]",b:"Hola Dan:\n\nEmpresa:\nOficio:\nCiudad o zona:\nLo que quiero anunciar:\n\n¡Gracias!"}
+  };
   var titles={fr:"Services aux entreprises · CCC Studios",en:"Business services · CCC Studios",es:"Servicios para empresas · CCC Studios"};
   function setLang(l){
     root.setAttribute("data-lang",l); root.lang=l;
     document.querySelectorAll(".langs button").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.set===l?"true":"false");});
     var m=mail[l], href="mailto:bonjour@ccc-studios.com?subject="+encodeURIComponent(m.s)+"&body="+encodeURIComponent(m.b);
     document.querySelectorAll(".js-mail").forEach(function(a){a.href=href;});
+    var d=demo[l]; document.querySelectorAll(".js-demo").forEach(function(a){a.href="mailto:bonjour@ccc-studios.com?subject="+encodeURIComponent(d.s)+"&body="+encodeURIComponent(d.b);});
     document.title=titles[l];
     try{localStorage.setItem("lang",l);}catch(e){}
   }
@@ -640,6 +663,169 @@ footer a{color:var(--blanc)}
   new IntersectionObserver(function(e){inHero=e[0].isIntersecting;upd();}).observe(hero);
   if(contact)new IntersectionObserver(function(e){inContact=e[0].isIntersecting;upd();}).observe(contact);
   upd();
+})();
+</script>
+<style id="ccc-motion">
+.mprog{position:fixed;top:0;left:0;right:0;height:3px;transform-origin:0 50%;transform:scaleX(0);background:var(--mprog,#FFC40C);z-index:1000;pointer-events:none}
+.js-motion .rv{opacity:0;transform:translateY(32px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform 1.15s cubic-bezier(.16,1,.3,1);transition-delay:var(--d,0s)}
+.js-motion .rv-h{clip-path:inset(-15% -4% 100% -4%);transform:translateY(.45em);transition:clip-path 1.15s cubic-bezier(.16,1,.3,1),transform 1.15s cubic-bezier(.16,1,.3,1);transition-delay:var(--d,0s)}
+.js-motion .rv.in{opacity:1;transform:none}
+.js-motion .rv-h.in{clip-path:inset(-15% -4% -30% -4%);transform:none}
+@media (prefers-reduced-motion:reduce){.js-motion .rv,.js-motion .rv-h{opacity:1!important;transform:none!important;clip-path:none!important;transition:none!important}}
+</style>
+<script data-color="#FFC40C">
+/* Défilement fluide : barre de progression, titres qui se dévoilent, blocs qui montent en cascade, léger parallaxe du visuel du haut. */
+(function(){
+  var me=document.currentScript, root=document.documentElement;
+  var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var bar=document.createElement("div"); bar.className="mprog"; bar.setAttribute("aria-hidden","true");
+  bar.style.setProperty("--mprog", me.getAttribute("data-color")); document.body.appendChild(bar);
+  var par=[];
+  if(!reduce && "IntersectionObserver" in window){
+    var secs=[].slice.call(document.querySelectorAll("main section")).slice(1), items=[];
+    function grid(el){ if(/^(P|H\d|UL|OL|A|IMG|VIDEO|BUTTON)$/.test(el.tagName)) return false; var d=getComputedStyle(el).display; return (d==="grid"||d==="flex"||d==="inline-grid") && el.children.length>=2; }
+    secs.forEach(function(s){
+      var w=s.querySelector(".wrap,.cadre")||s, n=0;
+      [].forEach.call(w.children,function(c){
+        if(c.offsetParent===null && getComputedStyle(c).position!=="fixed") return;
+        if(/^H[12]$/.test(c.tagName)){ c.classList.add("rv-h"); c.style.setProperty("--d",(Math.min(n,4)*0.08)+"s"); items.push(c); n++; return; }
+        if(grid(c)){ var k=0; [].forEach.call(c.children,function(g){ if(g.offsetParent===null) return; g.classList.add("rv"); g.style.setProperty("--d",(Math.min(k,5)*0.09)+"s"); items.push(g); k++; }); n++; return; }
+        c.classList.add("rv"); c.style.setProperty("--d",(Math.min(n,4)*0.08)+"s"); items.push(c); n++;
+      });
+    });
+    root.classList.add("js-motion");
+    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(!e.isIntersecting) return; var t=e.target; io.unobserve(t); t.classList.add("in");
+      setTimeout(function(){ t.classList.remove("rv","rv-h","in"); t.style.removeProperty("--d"); }, 1700); }); }, {rootMargin:"0px 0px -6% 0px", threshold:0});
+    items.forEach(function(i){ io.observe(i); });
+    if(innerWidth>=900) par=[].slice.call(document.querySelectorAll(".hero-vid .phone,.hero-vis .portrait,.hero-art,.founder .stats"));
+  }
+  var ticking=false;
+  function frame(){ ticking=false; var h=root.scrollHeight-innerHeight, y=scrollY;
+    bar.style.transform="scaleX("+(h>0?Math.min(1,y/h):0)+")";
+    par.forEach(function(el){ var r=el.parentNode.getBoundingClientRect(), mid=r.top+r.height/2-innerHeight/2; el.style.transform="translate3d(0,"+(mid*-0.06).toFixed(1)+"px,0)"; }); }
+  addEventListener("scroll",function(){ if(!ticking){ ticking=true; requestAnimationFrame(frame); } },{passive:true});
+  addEventListener("resize",frame); frame();
+})();
+</script>
+<style id="ccc-depth">
+main{position:relative}
+main>section>.wrap,main>section>.cadre,main>.strip>.wrap{position:relative;z-index:1}
+.depth{position:absolute;left:0;top:0;width:100%;height:100%;overflow:hidden;pointer-events:none;z-index:0}
+.depth .dp{position:absolute;will-change:transform}
+.depth svg{display:block;width:100%;height:100%;overflow:visible}
+.souffle{padding:clamp(120px,17vw,230px) 0;text-align:center;background:transparent}
+.souffle .big{font-family:Lora,Georgia,serif;font-weight:400;font-size:clamp(30px,5.2vw,62px);line-height:1.18;letter-spacing:-.01em;color:var(--souffle-ink);max-width:16em;margin:0 auto}
+.souffle .big b{font-weight:600}
+.souffle .big em{font-style:italic;font-size:1.18em;color:var(--souffle-acc)}
+@media(max-width:760px){.depth .dp.hide-m{display:none}}
+</style>
+<script>
+/* Couche de profondeur : formes de marque derrière les sections, parallaxe selon la profondeur. */
+(function(){
+  var main=document.querySelector("main"), layer=main&&main.querySelector(".depth"); if(!layer) return;
+  var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var secs=[].slice.call(main.querySelectorAll(":scope > section, :scope > .strip")), items=[].slice.call(layer.children);
+  function place(){
+    var mt=main.getBoundingClientRect().top+scrollY;
+    items.forEach(function(el){
+      var s=secs[Math.min(+el.dataset.sec, secs.length-1)]; if(!s){el.style.display="none";return;}
+      var top=s.getBoundingClientRect().top+scrollY-mt + (+el.dataset.fy)*s.offsetHeight - el.offsetHeight/2;
+      el.style.top=top+"px"; var x=(+el.dataset.x)+"px";
+      if(el.dataset.side==="left"){el.style.left=x;el.style.right="";} else {el.style.right=x;el.style.left="";}
+    });
+    move();
+  }
+  var ticking=false;
+  function move(){ ticking=false; if(reduce) return;
+    var mt=main.getBoundingClientRect().top+scrollY;
+    items.forEach(function(el){ var mid=mt+el.offsetTop+el.offsetHeight/2-scrollY-innerHeight/2;
+      var k=(1-(+el.dataset.depth))*0.35; el.style.transform="translate3d(0,"+(mid*k).toFixed(1)+"px,0)"; }); }
+  addEventListener("scroll",function(){ if(!ticking){ticking=true;requestAnimationFrame(move);} },{passive:true});
+  addEventListener("resize",place); addEventListener("load",place);
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(place);
+  place();
+})();
+</script>
+<style id="ccc-menu">
+.mnu-btn{display:none;align-items:center;justify-content:center;width:44px;height:44px;margin-left:6px;border:1px solid rgba(255,255,255,.7);border-radius:12px;background:transparent;color:#fff;cursor:pointer;flex:none;padding:0}
+.mnu-btn svg{width:22px;height:22px}
+.mnu-btn:focus-visible,.mnu a:focus-visible,.mnu-x:focus-visible{outline:2px solid #FFC40C;outline-offset:3px}
+.mnu{position:fixed;inset:0;z-index:2000;display:none;flex-direction:column;overflow-y:auto;padding:20px 24px calc(28px + env(safe-area-inset-bottom,0px));color:#fff}
+.mnu.ouvert{display:flex}
+.mnu-haut{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.mnu-haut img{width:155px;height:22px}
+.mnu-x{width:44px;height:44px;border:1px solid rgba(255,255,255,.6);border-radius:12px;background:transparent;color:#fff;font-size:26px;line-height:1;cursor:pointer}
+.mnu-g{margin:14px 0 4px;font:600 12.5px/1.2 Inter,system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;opacity:.75}
+.mnu a{display:flex;justify-content:space-between;align-items:center;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.18);color:#fff;text-decoration:none;font:500 22px/1.25 Lora,Georgia,serif}
+.mnu a[aria-current="page"]{color:var(--mnu-acc,#FFC40C)}
+.mnu a[aria-current="page"]::after{content:"•";font-size:22px}
+.mnu .mnu-mail{font:600 17px/1.3 Inter,system-ui,sans-serif;border-bottom:0;margin-top:14px}
+@media(max-width:760px){.mnu-btn{display:inline-flex!important}.nav-at,header.top nav>a,.top-ccc nav,.top-ccc .dedans>a:not(:first-child){display:none!important}.top-ccc .dedans{flex-wrap:nowrap!important}}
+@media(max-width:380px){.mnu-btn{width:40px;height:40px;margin-left:4px}header.top .wrap,header.tete .cadre{gap:8px!important}}
+@media(max-width:380px){header .brand img,header .logo img,.top-ccc img{width:112px!important;height:16px!important}.langs button,.langue button{padding-left:9px!important;padding-right:9px!important}}
+body.mnu-fige{overflow:hidden}
+</style>
+<script>
+/* Menu ☰ (téléphone) : toutes les pages du site, dans la langue choisie. */
+(function(){
+  var root=document.documentElement;
+  var bar=null; ["header.top .wrap","header.top",".top-ccc .dedans",".top-ccc","header.tete .cadre","header.tete"].some(function(q){ bar=document.querySelector(q); return !!bar; });
+  if(!bar) return;
+  var T={
+    menu:{fr:"Menu",en:"Menu",es:"Menú"}, fermer:{fr:"Fermer le menu",en:"Close menu",es:"Cerrar el menú"},
+    accueil:{fr:"Accueil",en:"Home",es:"Inicio"},
+    affaires:{fr:"Branche d'affaires",en:"Business branch",es:"Rama de negocios"},
+    services:{fr:"Services aux entreprises",en:"Business services",es:"Servicios para empresas"},
+    jenn:{fr:"Jennifer, actrice IA",en:"Jennifer, AI actress",es:"Jennifer, actriz IA"},
+    charte:{fr:"Charte de Jennifer",en:"Jennifer's charter",es:"Carta de Jennifer"},
+    auth:{fr:"Authentifier une image",en:"Verify an image",es:"Verificar una imagen"},
+    creative:{fr:"Branche créative",en:"Creative branch",es:"Rama creativa"},
+    creations:{fr:"Univers, séries et jeux",en:"Worlds, series and games",es:"Universos, series y juegos"},
+    ateliers:{fr:"Ateliers jeunesse",en:"Youth workshops",es:"Talleres juveniles"},
+    studio:{fr:"Le studio",en:"The studio",es:"El estudio"},
+    apropos:{fr:"À propos",en:"About",es:"Acerca de"},
+    conf:{fr:"Confidentialité",en:"Privacy",es:"Privacidad"}
+  };
+  var ITEMS=[["g","studio"],["/","accueil"],["/a-propos/","apropos"],
+             ["g","affaires"],["/services/","services"],["/jennshems/","jenn"],["/jennshems/charte/","charte"],["/jennshems/authentifier/","auth"],
+             ["g","creative"],["/creatif/","creations"],["/creatif/ateliers/","ateliers"],
+             ["g",""],["/confidentialite/","conf"]];
+  function langue(){var l=root.getAttribute("data-lang")||root.getAttribute("data-l")||root.lang||"fr";l=l.slice(0,2);return T.menu[l]?l:"fr";}
+  var hb=getComputedStyle(document.querySelector("header.top, .top-ccc, header.tete")).backgroundColor;
+  if(!hb||hb==="rgba(0, 0, 0, 0)"||hb==="transparent") hb="#180D00";
+  var acc=/30, 0, 7|89, 0, 22|195, 0, 1|31, 0, 7/.test(hb)?"#FEDADA":"#FFC40C";
+  var btn=document.createElement("button"); btn.type="button"; btn.className="mnu-btn"; btn.setAttribute("aria-expanded","false"); btn.setAttribute("aria-controls","ccc-mnu");
+  btn.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
+  var lg=bar.querySelector(".langs, .langue");
+  if(lg&&lg.parentNode){ lg.parentNode.insertBefore(btn, lg.nextSibling); } else { bar.appendChild(btn); }
+  var pan=document.createElement("div"); pan.id="ccc-mnu"; pan.className="mnu"; pan.setAttribute("role","dialog"); pan.setAttribute("aria-modal","true");
+  pan.style.background=hb; pan.style.setProperty("--mnu-acc",acc);
+  document.body.appendChild(pan);
+  var ici=location.pathname.replace(/index\.html$/,"");
+  function rendre(){
+    var l=langue(); btn.setAttribute("aria-label",T.menu[l]); pan.setAttribute("aria-label",T.menu[l]);
+    var h='<div class="mnu-haut"><img src="/logo-ccc.svg" alt="CCC Studios" width="155" height="22"><button type="button" class="mnu-x" aria-label="'+T.fermer[l]+'">×</button></div>';
+    ITEMS.forEach(function(it){
+      if(it[0]==="g"){ if(it[1]) h+='<p class="mnu-g">'+T[it[1]][l]+'</p>'; else h+='<p class="mnu-g" aria-hidden="true">&nbsp;</p>'; return; }
+      var cur=(ici===it[0]||(it[0]!=="/"&&ici.indexOf(it[0])===0&&ici.length===it[0].length));
+      h+='<a href="'+it[0]+'"'+(cur?' aria-current="page"':'')+'>'+T[it[1]][l]+'</a>';
+    });
+    h+='<a class="mnu-mail" href="mailto:bonjour@ccc-studios.com">bonjour@ccc-studios.com</a>';
+    pan.innerHTML=h;
+    pan.querySelector(".mnu-x").addEventListener("click",fermer);
+  }
+  function ouvrir(){ rendre(); pan.classList.add("ouvert"); btn.setAttribute("aria-expanded","true"); document.body.classList.add("mnu-fige"); var a=pan.querySelector("a,button"); if(a) a.focus(); }
+  function fermer(){ pan.classList.remove("ouvert"); btn.setAttribute("aria-expanded","false"); document.body.classList.remove("mnu-fige"); btn.focus(); }
+  btn.addEventListener("click",function(){ pan.classList.contains("ouvert")?fermer():ouvrir(); });
+  document.addEventListener("keydown",function(e){
+    if(!pan.classList.contains("ouvert")) return;
+    if(e.key==="Escape"){ fermer(); }
+    if(e.key==="Tab"){ var f=[].slice.call(pan.querySelectorAll("a,button")); if(!f.length) return; var a=f[0], z=f[f.length-1];
+      if(e.shiftKey&&document.activeElement===a){ z.focus(); e.preventDefault(); } else if(!e.shiftKey&&document.activeElement===z){ a.focus(); e.preventDefault(); } }
+  });
+  pan.addEventListener("click",function(e){ if(e.target.tagName==="A") { pan.classList.remove("ouvert"); document.body.classList.remove("mnu-fige"); } });
+  rendre();
+  new MutationObserver(rendre).observe(root,{attributes:true,attributeFilter:["data-lang","data-l","lang"]});
 })();
 </script>
 </body>

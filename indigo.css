@@ -151,7 +151,7 @@ footer{background:var(--noir);font-size:13.5px;padding:30px 0}
 footer .wrap{display:grid;gap:8px}
 footer a{color:var(--blanc)}
 
-/* portraits */
+/* portraits des cofondateurs */
 .face{border-radius:50%;object-fit:cover;display:block;border:2px solid var(--lavande)}
 .who-row{display:flex;align-items:center;gap:16px;margin:4px 0 14px}
 .who-row .face{width:88px;height:88px}
