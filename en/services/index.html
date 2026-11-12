@@ -1,0 +1,858 @@
+<!doctype html>
+<html lang="en" data-lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Google profile and video ads for contractors · Montreal</title>
+<meta name="description" content="Free audit of your Google Business Profile in 1 business day. 15-second video ads from your real photos in 5 days, no shoot. Montreal, Laval, North Shore.">
+<meta property="og:title" content="Google profile and video ads for contractors · Montreal">
+<meta property="og:description" content="Free audit of your Google Business Profile in 1 business day. 15-second video ads from your real photos in 5 days, no shoot. Montreal, Laval, North Shore.">
+<meta property="og:image" content="https://ccc-studios.com/jennshems/media/og-jennifer.jpg">
+<meta property="og:url" content="https://ccc-studios.com/en/services/">
+<meta property="og:type" content="website">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<style>
+/* Branche Crème (marketing, documents et pages pour les entreprises clientes), kit de marque v1.4.2.
+   Bronze minuit #180D00 pour les grandes surfaces sombres, Bronze #735827 pour les surtitres et lignes secondaires,
+   Ambre #FFC40C seulement en filet ou en texte sur le foncé (jamais sur blanc ou crème), Crème #F5F2EC pour les panneaux. Aucun gris. */
+:root{
+  --minuit:#180D00; --bronze:#735827; --ambre:#FFC40C; --creme:#F5F2EC; --blanc:#FFFFFF; --noir:#000000;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;color:var(--noir);background:var(--blanc);line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+html[data-lang="fr"] [lang="en"],html[data-lang="fr"] [lang="es"],
+html[data-lang="en"] [lang="fr"],html[data-lang="en"] [lang="es"],
+html[data-lang="es"] [lang="fr"],html[data-lang="es"] [lang="en"]{display:none!important}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:Lora,Georgia,serif;font-weight:500;letter-spacing:-.01em}
+.it{font-style:italic}
+
+/* barre du haut : filet Ambre sous l'en-tête */
+.top{position:sticky;top:0;z-index:10;background:var(--minuit);color:var(--blanc);border-bottom:2px solid var(--ambre)}
+.top .wrap{display:flex;align-items:center;gap:12px;height:60px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:"Tenor Sans",Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase}
+.brand img{width:36px;height:36px;border-radius:50%;background:var(--blanc)}
+.top nav{margin-left:auto;display:flex;align-items:center;gap:18px;font-size:14px}
+.top nav a{text-decoration:none}
+.top nav a[aria-current="page"]{text-decoration:underline;text-decoration-color:var(--ambre);text-underline-offset:6px}
+.navlinks{display:none}
+@media(min-width:760px){.navlinks{display:flex;gap:18px}}
+.langs{display:flex;border:1px solid var(--creme);border-radius:999px;overflow:hidden}
+.langs button{background:none;border:0;color:var(--blanc);font:600 12px Inter,sans-serif;padding:6px 10px;cursor:pointer;letter-spacing:.06em}
+.langs button[aria-pressed="true"]{background:var(--creme);color:var(--minuit)}
+:focus-visible{outline:2px solid var(--bronze);outline-offset:3px}
+.top :focus-visible,.dark :focus-visible{outline-color:var(--ambre)}
+
+/* héros */
+.hero{background:var(--minuit);color:var(--blanc)}
+.hero .wrap{padding-top:56px;padding-bottom:64px;display:grid;gap:24px}
+@media(min-width:900px){.hero .wrap{grid-template-columns:1.2fr .8fr;align-items:end}}
+.kicker{font-size:12.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ambre)}
+.hero h1{font-size:clamp(36px,6vw,60px);line-height:1.05;margin:14px 0 18px;text-wrap:balance}
+.hero h1 .it{color:var(--ambre)}
+.lead{font-size:18px;max-width:34em}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 22px;border-radius:10px;font-weight:600;font-size:15.5px;text-decoration:none;border:1px solid transparent}
+.btn-main{background:var(--ambre);color:var(--noir)}
+.btn-main:hover{background:var(--blanc)}
+.btn-line{border-color:var(--creme);color:var(--blanc)}
+.btn-line:hover{border-color:var(--ambre)}
+.proof{border:1px solid var(--creme);border-radius:16px;padding:20px;display:grid;gap:12px;align-content:start;align-self:end}
+.proof b{font-family:Lora,Georgia,serif;font-weight:500;font-size:20px;display:block}
+.proof ul{padding-left:18px;display:grid;gap:6px;font-size:15px}
+
+section{padding:68px 0}
+h2{font-size:clamp(28px,4vw,40px);line-height:1.12;margin-bottom:10px;color:var(--minuit);text-wrap:balance}
+.dark h2{color:var(--blanc)}
+.sub{max-width:42em;margin-bottom:32px;font-size:16.5px}
+.rule{width:56px;height:3px;background:var(--ambre);margin-bottom:18px;border:0}
+
+/* audit */
+.audit{background:var(--creme)}
+.checks{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));counter-reset:c}
+@media(min-width:960px){.checks{grid-template-columns:repeat(5,1fr)}}
+.check{border-top:2px solid var(--bronze);padding-top:14px}
+.check::before{counter-increment:c;content:counter(c);font-family:Lora,Georgia,serif;font-style:italic;font-size:28px;color:var(--bronze);display:block}
+.check b{display:block;margin:2px 0 4px;color:var(--minuit)}
+.check p{font-size:14.5px}
+
+/* services */
+.svc{display:grid;gap:20px}
+@media(min-width:900px){.svc{grid-template-columns:repeat(3,1fr)}}
+.card{border:1px solid var(--bronze);border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:12px;background:var(--blanc)}
+.card .letter{font-family:"Tenor Sans",Inter,sans-serif;letter-spacing:.14em;font-size:13px;color:var(--bronze)}
+.card h3{font-size:24px;color:var(--minuit);line-height:1.15}
+.card .what{font-size:15px}
+.opt{border-top:1px solid var(--bronze);padding-top:12px;display:grid;gap:4px}
+.opt .name{font-weight:600;color:var(--minuit)}
+.opt .price{font-size:15px}
+.opt .price b{font-size:22px;font-weight:700;color:var(--minuit);letter-spacing:-.01em}
+.opt ul{padding-left:18px;font-size:14px;display:grid;gap:3px;margin-top:4px}
+.card .cond{font-size:13.5px;margin-top:auto;padding-top:6px;color:var(--bronze);font-weight:500}
+.founder{margin-top:26px;background:var(--creme);border-radius:16px;padding:20px 22px;display:grid;gap:6px}
+.founder b{font-family:Lora,Georgia,serif;font-weight:500;font-size:21px;color:var(--minuit)}
+.small{font-size:14px;margin-top:16px;max-width:52em;color:var(--bronze)}
+
+/* comment */
+.how{background:var(--minuit);color:var(--blanc)}
+.steps{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));counter-reset:s}
+.step{border-top:2px solid var(--creme);padding-top:14px}
+.step::before{counter-increment:s;content:counter(s);font-family:Lora,Georgia,serif;font-style:italic;font-size:30px;display:block;color:var(--ambre)}
+.step b{display:block;margin:2px 0 4px}
+.step p{font-size:14.5px}
+.month{margin-top:36px;border:1px solid var(--creme);border-radius:16px;padding:20px 22px}
+.month h3{font-size:21px;margin-bottom:10px}
+.month ol{padding-left:20px;display:grid;gap:6px;font-size:15px}
+@media(min-width:900px){.month.first ol{grid-template-columns:1fr 1fr;column-gap:36px}}
+.month.first{border-color:var(--ambre,#FFC40C)}
+
+/* promesses */
+.prom{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.p{border:1px solid var(--bronze);border-radius:14px;padding:18px}
+.p b{display:block;margin-bottom:4px;color:var(--minuit)}
+.p p{font-size:14.5px}
+
+/* faq */
+.faq{background:var(--creme)}
+details{border-bottom:1px solid var(--bronze);padding:16px 0}
+summary{cursor:pointer;font-weight:600;font-size:16.5px;list-style:none;color:var(--minuit)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";float:right;color:var(--bronze);font-weight:700}
+details[open] summary::after{content:"–"}
+details p{margin-top:10px;max-width:46em}
+
+/* contact */
+.contact{background:var(--minuit);color:var(--blanc);text-align:center}
+.contact h2{margin:0 auto 12px;max-width:18em}
+.contact .ctas{justify-content:center}
+footer{background:var(--noir);color:var(--blanc);font-size:13.5px;padding:30px 0}
+footer .wrap{display:grid;gap:8px}
+footer a{color:var(--blanc)}
+
+/* Logo : éclipse triple lune + CCC STUDIOS, comme la page créative */
+.brand img{width:155px;height:22px;border-radius:0;background:none;display:block}
+@media(max-width:420px){.brand img{width:124px;height:18px}}
+
+/* Étiquette de branche, comme « Branche créative » */
+.brand{gap:14px}.brand .branche{font:400 12px/1 "Tenor Sans",Inter,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#F5F2EC;padding-left:14px;border-left:1px solid rgba(245,242,236,.25);white-space:nowrap}
+@media(max-width:1024px){.brand .branche{display:none}}
+
+/* Trois familles (1er nov.) */
+.fam{display:flex;gap:16px;align-items:baseline;margin:44px 0 18px;padding-top:18px;border-top:1px solid var(--bronze)}
+.fam:first-of-type{margin-top:8px}
+.fam-n{font-family:Lora,Georgia,serif;font-style:italic;font-size:34px;line-height:1;color:var(--bronze)}
+.fam-t{font-size:clamp(24px,3vw,30px);color:var(--minuit);line-height:1.1}
+.fam p{font-size:15.5px;margin-top:4px}
+.ops{background:var(--minuit);color:var(--blanc);border-radius:18px;padding:clamp(22px,4vw,40px);display:grid;gap:26px}
+.ops .letter{font-family:"Tenor Sans",Inter,sans-serif;letter-spacing:.14em;font-size:13px;color:var(--ambre)}
+.ops h3{font-size:clamp(24px,3.4vw,34px);line-height:1.12;margin:8px 0 12px;text-wrap:balance}
+.ops h3 .it{color:var(--ambre)}
+.ops-lead{font-size:17px;max-width:40em}
+.method{list-style:none;padding:0;display:grid;gap:14px;grid-template-columns:repeat(2,1fr);counter-reset:m}
+@media(min-width:640px){.method{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:960px){.method{grid-template-columns:repeat(6,1fr)}}
+.method li{border-top:2px solid var(--ambre);padding-top:10px;display:grid;gap:4px;align-content:start;font-size:14px}
+.method li::before{counter-increment:m;content:counter(m);font-family:Lora,Georgia,serif;font-style:italic;font-size:24px;color:var(--ambre);line-height:1}
+.method b{font-size:15.5px}
+.ops-grid{display:grid;gap:16px}
+@media(min-width:860px){.ops-grid{grid-template-columns:1fr 1fr}}
+.ops-box{border:1px solid rgba(245,242,236,.35);border-radius:14px;padding:20px;display:grid;gap:12px;align-content:start}
+.ops-k{font-family:Lora,Georgia,serif;font-weight:500;font-size:20px}
+.ops .opt{border-top:1px solid rgba(245,242,236,.35)}
+.ops .opt .name,.ops .opt .price b{color:var(--blanc)}
+.ops .opt p{font-size:14.5px}
+.ops-next{font-size:14px;color:var(--creme)}
+.ba{font-size:15px;display:grid;gap:2px}
+.ba-k{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ambre)}
+.ops-foot{display:grid;gap:10px;font-size:14.5px;border-top:1px solid rgba(245,242,236,.35);padding-top:18px}
+.ops :focus-visible{outline-color:var(--ambre)}
+
+/* Offre renforcée (2 nov.) */
+.facts{list-style:none;padding:0;margin-top:22px;display:flex;flex-wrap:wrap;gap:8px 20px;font-size:14.5px}
+.facts li{display:flex;gap:8px;align-items:center}
+.facts li::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--ambre);flex:none}
+.pain{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.pain-i{background:var(--minuit);color:var(--blanc);border-radius:14px;padding:20px}
+.pain-i b{display:block;font-family:Lora,Georgia,serif;font-weight:500;font-size:20px;line-height:1.2;margin-bottom:8px;color:var(--ambre)}
+.pain-i p{font-size:15px}
+.live{margin-top:28px;border:1px solid var(--bronze);border-radius:14px;padding:20px;display:grid;gap:12px}
+.live-k{font-family:Lora,Georgia,serif;font-weight:500;font-size:20px;color:var(--minuit)}
+.live-g{display:grid;gap:16px}
+@media(min-width:760px){.live-g{grid-template-columns:1fr 1fr}}
+.live-g b{display:block;margin-bottom:4px;color:var(--minuit)}
+.live-g p{font-size:14.5px}
+.why{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.why-i{border-top:2px solid var(--bronze);padding-top:14px}
+.why-i b{display:block;font-family:Lora,Georgia,serif;font-weight:500;font-size:20px;line-height:1.2;margin-bottom:6px;color:var(--minuit)}
+.why-i p{font-size:15px}
+.when{display:block;font-size:12.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ambre);margin-bottom:2px}
+.measure{margin-top:16px}
+.measure ul{padding-left:20px;display:grid;gap:6px;font-size:15px}
+.measure-note{margin-top:12px;font-size:14px;color:var(--creme)}
+
+/* Vidéo d'abord (2 nov.) */
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:30px;max-width:560px}
+.stat{border-top:1px solid rgba(245,242,236,.4);padding-top:10px;display:grid;gap:2px}
+.stat b{font-family:Lora,Georgia,serif;font-weight:500;font-size:40px;line-height:1;color:var(--ambre)}
+.stat span{font-size:13.5px;line-height:1.35}
+.meta-line{margin-top:18px;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--creme)}
+.hero-vid{position:relative;margin:0;justify-self:center;width:min(300px,100%);align-self:center}
+.phone{border:1px solid rgba(245,242,236,.5);border-radius:30px;padding:8px;background:#000}
+.phone video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:23px;background:#000}
+.float{position:absolute;background:var(--blanc);color:var(--minuit);border-radius:14px;padding:10px 14px;box-shadow:0 10px 30px rgba(0,0,0,.35);display:grid;gap:2px;max-width:200px}
+.float b{font-family:Lora,Georgia,serif;font-weight:500;font-size:26px;line-height:1}
+.float span{font-size:12.5px}
+.float .f-v{white-space:nowrap}
+.f-top{top:34%;right:-8px}
+.f-bot{bottom:24%;left:-8px}
+.f-bot .dot{display:none}
+.f-k{font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:12px!important;color:var(--bronze)}
+@media(min-width:1100px){.f-top{right:-48px}.f-bot{left:-56px}}
+.hero-vid figcaption{margin-top:12px;font-size:13px;color:var(--creme);text-align:center}
+.strip{background:var(--ambre);color:var(--noir)}
+.strip .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;padding-top:14px;padding-bottom:14px;font-family:Lora,Georgia,serif;font-size:clamp(18px,2.4vw,24px)}
+.strip .wrap>span::before{content:"✦ ";font-size:.7em;vertical-align:.15em}
+.eyebrow{font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--bronze);margin-bottom:10px}
+.cons{display:grid;gap:12px}
+.con{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:center;border:1px solid var(--bronze);border-radius:14px;padding:18px 20px}
+.con-b p{font-size:15.5px;color:var(--minuit)}
+.con-a{font-family:Lora,Georgia,serif;font-size:28px;color:var(--bronze)}
+.con-f{background:var(--minuit);color:var(--blanc);border-radius:10px;padding:14px 16px}
+.con-f p{font-size:15px}
+@media(max-width:700px){.con{grid-template-columns:1fr}.con-a{transform:rotate(90deg);justify-self:start}}
+.mbar{display:none}
+@media(max-width:760px){
+  .mbar{display:flex;gap:8px;position:fixed;left:12px;right:12px;bottom:calc(10px + env(safe-area-inset-bottom,0px));z-index:50;background:var(--minuit);padding:8px;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.35);transition:transform .25s,opacity .25s}
+  .mbar .btn{flex:1;justify-content:center;padding:12px 10px}
+  .mbar.off{transform:translateY(130%);opacity:0;pointer-events:none}
+  body{padding-bottom:84px}
+  .stat b{font-size:32px}
+}
+@media(prefers-reduced-motion:reduce){.mbar{transition:none}}
+.demo-how{margin-top:14px;font-size:14px;color:var(--creme);max-width:36em}
+.demo-how a{color:var(--ambre)}
+</style>
+<style>.metiers-l{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}.metiers-l a{display:grid;gap:4px;text-decoration:none;border:1px solid rgba(115,88,39,.4);border-radius:14px;padding:18px 20px;background:var(--creme);font-size:14.5px}.metiers-l a:hover{border-color:var(--bronze)}.metiers-l b{font-family:Lora,Georgia,serif;font-weight:500;font-size:20px;color:var(--minuit)}</style>
+
+<meta property="og:site_name" content="CCC Studios">
+<meta property="og:locale" content="en_CA">
+<link rel="canonical" href="https://ccc-studios.com/en/services/">
+<link rel="alternate" hreflang="fr-CA" href="https://ccc-studios.com/services/">
+<link rel="alternate" hreflang="en-CA" href="https://ccc-studios.com/en/services/">
+<link rel="alternate" hreflang="es" href="https://ccc-studios.com/es/services/">
+<link rel="alternate" hreflang="x-default" href="https://ccc-studios.com/services/">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://ccc-studios.com/en/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://ccc-studios.com/en/services/"}]},{"@type":"WebPage","@id":"https://ccc-studios.com/en/services/","url":"https://ccc-studios.com/en/services/","name":"Google profile and video ads for contractors · Montreal","description":"Free audit of your Google Business Profile in 1 business day. 15-second video ads from your real photos in 5 days, no shoot. Montreal, Laval, North Shore.","inLanguage":"en-CA","isPartOf":{"@id":"https://ccc-studios.com/#site"},"about":{"@id":"https://ccc-studios.com/#org"}},{"@type":"Service","name":"Video ads with your photos","serviceType":"Video ads with your photos","provider":{"@id":"https://ccc-studios.com/#org"},"areaServed":[{"@type":"AdministrativeArea","name":"Montréal"},{"@type":"AdministrativeArea","name":"Laval"},{"@type":"AdministrativeArea","name":"Rive-Nord de Montréal"},{"@type":"AdministrativeArea","name":"Ouest-de-l'Île de Montréal"},{"@type":"AdministrativeArea","name":"Québec"}],"availableLanguage":["fr","en","es"]},{"@type":"Service","name":"Social media","serviceType":"Social media","provider":{"@id":"https://ccc-studios.com/#org"},"areaServed":[{"@type":"AdministrativeArea","name":"Montréal"},{"@type":"AdministrativeArea","name":"Laval"},{"@type":"AdministrativeArea","name":"Rive-Nord de Montréal"},{"@type":"AdministrativeArea","name":"Ouest-de-l'Île de Montréal"},{"@type":"AdministrativeArea","name":"Québec"}],"availableLanguage":["fr","en","es"]},{"@type":"Service","name":"Advertising strategy","serviceType":"Advertising strategy","provider":{"@id":"https://ccc-studios.com/#org"},"areaServed":[{"@type":"AdministrativeArea","name":"Montréal"},{"@type":"AdministrativeArea","name":"Laval"},{"@type":"AdministrativeArea","name":"Rive-Nord de Montréal"},{"@type":"AdministrativeArea","name":"Ouest-de-l'Île de Montréal"},{"@type":"AdministrativeArea","name":"Québec"}],"availableLanguage":["fr","en","es"]},{"@type":"Service","name":"Website design","serviceType":"Website design","provider":{"@id":"https://ccc-studios.com/#org"},"areaServed":[{"@type":"AdministrativeArea","name":"Montréal"},{"@type":"AdministrativeArea","name":"Laval"},{"@type":"AdministrativeArea","name":"Rive-Nord de Montréal"},{"@type":"AdministrativeArea","name":"Ouest-de-l'Île de Montréal"},{"@type":"AdministrativeArea","name":"Québec"}],"availableLanguage":["fr","en","es"]},{"@type":"Service","name":"Google profile and SEO","serviceType":"Google profile and SEO","provider":{"@id":"https://ccc-studios.com/#org"},"areaServed":[{"@type":"AdministrativeArea","name":"Montréal"},{"@type":"AdministrativeArea","name":"Laval"},{"@type":"AdministrativeArea","name":"Rive-Nord de Montréal"},{"@type":"AdministrativeArea","name":"Ouest-de-l'Île de Montréal"},{"@type":"AdministrativeArea","name":"Québec"}],"availableLanguage":["fr","en","es"]},{"@type":"Service","name":"Visual identity","serviceType":"Visual identity","provider":{"@id":"https://ccc-studios.com/#org"},"areaServed":[{"@type":"AdministrativeArea","name":"Montréal"},{"@type":"AdministrativeArea","name":"Laval"},{"@type":"AdministrativeArea","name":"Rive-Nord de Montréal"},{"@type":"AdministrativeArea","name":"Ouest-de-l'Île de Montréal"},{"@type":"AdministrativeArea","name":"Québec"}],"availableLanguage":["fr","en","es"]},{"@type":"Service","name":"Operations optimization: AI and automation","serviceType":"Operations optimization: AI and automation","provider":{"@id":"https://ccc-studios.com/#org"},"areaServed":[{"@type":"AdministrativeArea","name":"Montréal"},{"@type":"AdministrativeArea","name":"Laval"},{"@type":"AdministrativeArea","name":"Rive-Nord de Montréal"},{"@type":"AdministrativeArea","name":"Ouest-de-l'Île de Montréal"},{"@type":"AdministrativeArea","name":"Québec"}],"availableLanguage":["fr","en","es"]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why start with the Google profile?","acceptedAnswer":{"@type":"Answer","text":"Because that's often where customers find you first, before your site or social media. A wrong category or wrong contact details can cost calls without anyone noticing."}},{"@type":"Question","name":"Will it look AI-made?","acceptedAnswer":{"@type":"Answer","text":"What we show of your work is your real photos. The voice is synthetic, and the video says so. If you prefer a presenter on screen, Jennifer is an option, always declared as AI. A person writes every script and chooses every image."}},{"@type":"Question","name":"Do I have to take several services?","acceptedAnswer":{"@type":"Answer","text":"No. Each service stands alone, once or monthly. The one rule: a video comes with service B, so your social accounts are ready for it."}},{"@type":"Question","name":"Does a Google profile cost money?","acceptedAnswer":{"@type":"Answer","text":"No. A Google Business Profile is free: Google doesn’t sell it. What you pay for is our work. You stay the owner of your profile; we’re only a manager, and you can remove us at any time. Google explains what to know before working with an agency on this page."}},{"@type":"Question","name":"How does payment work?","acceptedAnswer":{"@type":"Answer","text":"For a one-time service: half to start, half on acceptance. For a monthly service: paid in advance on the 1st of each month. By Interac e-Transfer."}},{"@type":"Question","name":"Do you speak Spanish?","acceptedAnswer":{"@type":"Answer","text":"Yes. Dan handles calls and meetings in French, English or Spanish, and your posts can have a Spanish version."}},{"@type":"Question","name":"What about paid ads?","acceptedAnswer":{"@type":"Answer","text":"That's service C. We do the plan and the tracking, once your accounts are in order. The budget goes straight from you to the platform, in your own accounts; it never passes through us."}},{"@type":"Question","name":"Is optimization only about AI?","acceptedAnswer":{"@type":"Answer","text":"No. We start with AI because it's our specialty, but the method comes from industrial engineering: we improve the process first, then pick the tool. Sometimes a simple formula does better than AI, and we'll tell you so."}}]}]}</script></head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/en/" aria-label="CCC Studios, accueil"><img src="/logo-ccc.svg" alt="CCC Studios" width="155" height="22"><span class="branche"><span lang="en">Business branch</span></span></a>
+    <nav>
+      <div class="navlinks">
+        <a href="/en/services/" aria-current="page">Services</a>
+        <a href="/en/jennshems/">Jennifer</a>
+        <a href="/jennshems/charte/"><span lang="en">Charter</span></a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="langs" role="group" aria-label="Langue / Language / Idioma">
+        <button type="button" data-set="fr" aria-pressed="false">FR</button>
+        <button type="button" data-set="en" aria-pressed="true">EN</button>
+        <button type="button" data-set="es" aria-pressed="false">ES</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="depth" aria-hidden="true"><div class="dp hide-m" data-sec="2" data-fy="0.42" data-side="left" data-x="-330" data-depth="0.85" style="width:520px;opacity:0.75"><svg viewBox="0 0 400 400" aria-hidden="true"><path d="M30 390A360 360 0 0 1 390 30" fill="none" stroke="#FFC40C" stroke-width="2.5"></path><path d="M70 395A325 325 0 0 1 395 70" fill="none" stroke="#735827" stroke-width="22" stroke-dasharray="2.5 11" opacity=".55"></path></svg></div><div class="dp hide-m" data-sec="2" data-fy="-0.1" data-side="left" data-x="120" data-depth="0.25" style="width:16px;opacity:0.9"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="#FFC40C"></circle></svg></div><div class="dp " data-sec="3" data-fy="0.0" data-side="right" data-x="-60" data-depth="0.55" style="width:300px;opacity:0.75"><svg viewBox="0 0 300 110" aria-hidden="true"><circle cx="55" cy="55" r="48" fill="none" stroke="#FFC40C" stroke-width="2.5"></circle><circle cx="150" cy="55" r="48" fill="none" stroke="#FFC40C" stroke-width="2.5"></circle><circle cx="245" cy="55" r="48" fill="none" stroke="#FFC40C" stroke-width="2.5"></circle><circle cx="168" cy="55" r="44" fill="#FFC40C" opacity=".18"></circle></svg></div><div class="dp hide-m" data-sec="3" data-fy="0.5" data-side="left" data-x="-90" data-depth="0.35" style="width:180px;opacity:0.75"><svg viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="92" fill="none" stroke="#735827" stroke-width="2" stroke-dasharray="1 9" stroke-linecap="round"></circle></svg></div><div class="dp hide-m" data-sec="4" data-fy="0.0" data-side="right" data-x="70" data-depth="0.4" style="width:110px;opacity:0.9"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="54" fill="none" stroke="#FFC40C" stroke-width="3"></circle><path d="M40 62l14 14 28-32" fill="none" stroke="#FFC40C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path></svg></div><div class="dp hide-m" data-sec="5" data-fy="0.0" data-side="left" data-x="-120" data-depth="0.7" style="width:620px;opacity:0.75"><svg viewBox="0 0 600 120" aria-hidden="true"><path d="M0 90C120 90 150 20 300 20S480 100 600 60" fill="none" stroke="#FFC40C" stroke-width="2.5"></path></svg></div><div class="dp hide-m" data-sec="5" data-fy="0.3" data-side="right" data-x="160" data-depth="0.2" style="width:12px;opacity:0.9"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="#FFC40C"></circle></svg></div><div class="dp hide-m" data-sec="7" data-fy="0.0" data-side="right" data-x="-200" data-depth="0.8" style="width:460px;opacity:0.75"><svg viewBox="0 0 400 400" aria-hidden="true"><path d="M30 390A360 360 0 0 1 390 30" fill="none" stroke="#FFC40C" stroke-width="2.5"></path><path d="M70 395A325 325 0 0 1 395 70" fill="none" stroke="#735827" stroke-width="22" stroke-dasharray="2.5 11" opacity=".55"></path></svg></div><div class="dp hide-m" data-sec="8" data-fy="0.0" data-side="left" data-x="-40" data-depth="0.45" style="width:260px;opacity:0.75"><svg viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="92" fill="none" stroke="#735827" stroke-width="2" stroke-dasharray="1 9" stroke-linecap="round"></circle></svg></div><div class="dp hide-m" data-sec="9" data-fy="0.0" data-side="left" data-x="-90" data-depth="0.5" style="width:240px;opacity:0.75"><svg viewBox="0 0 300 110" aria-hidden="true"><circle cx="55" cy="55" r="48" fill="none" stroke="#FFC40C" stroke-width="2.5"></circle><circle cx="150" cy="55" r="48" fill="none" stroke="#FFC40C" stroke-width="2.5"></circle><circle cx="245" cy="55" r="48" fill="none" stroke="#FFC40C" stroke-width="2.5"></circle><circle cx="168" cy="55" r="44" fill="#FFC40C" opacity=".18"></circle></svg></div></div>
+
+<section class="hero dark" style="padding:0">
+  <div class="wrap">
+    <div>
+      <div class="kicker"><span lang="en">Business branch · Quebec service businesses</span></div>
+      <h1><span lang="en">Your customers look for you on Google. <span class="it">Do they find you?</span></span></h1>
+      <p class="lead"><span lang="en">We start with a free audit of your Google profile: three fixes you can do yourself. After that, if you want, we take care of your social media, your website and short video ads made with your real photos. Any AI-made voice or image is always declared.</span></p>
+      <div class="ctas">
+        <a class="btn btn-main js-mail" href="mailto:bonjour@ccc-studios.com"><span lang="en">Ask for a free express audit</span></a>
+        <a class="btn btn-line" href="#demo"><span lang="en">Watch the demo</span></a>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>1</b><span lang="en">business day for your free audit</span></div>
+        <div class="stat"><b>5</b><span lang="en">business days for a video</span></div>
+        <div class="stat"><b>3</b><span lang="en">languages: French, English, Spanish</span></div>
+      </div>
+      <p class="meta-line"><span lang="en">No contract · A real person on the phone · AI always declared</span></p>
+    </div>
+    <figure class="hero-vid" id="demo">
+      <div class="phone">
+        <video controls="" playsinline="" preload="none" data-base="/jennshems/media/demo-reno-v2" poster="/jennshems/media/demo-reno-v2-fr.jpg"><source src="/jennshems/media/demo-reno-v2-fr.mp4" type="video/mp4"></video>
+      </div>
+      <div class="float f-top"><b>15 s</b><span lang="en">ad format, vertical</span></div>
+      <div class="float f-bot"><span class="dot"></span><span class="f-k" lang="en">Demo · renovation</span><span class="f-v" lang="en">AI label on screen ✓</span></div>
+      <figcaption><span lang="en">Demo: a renovation ad for a fictional company, with Jennifer, AI actress.</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<div class="strip" aria-hidden="true"><div class="wrap"><span><span lang="en">Be seen</span></span><span><span lang="en">Be chosen</span></span><span><span lang="en">Get the call</span></span><span><span lang="en">Run better</span></span></div></div>
+
+<section class="souffle" style="--souffle-ink:#180D00;--souffle-acc:#735827"><div class="wrap"><p class="big"><span lang="en">Your work is <b>excellent</b>.<br>It deserves to be <em>seen</em>.</span></p></div></section>
+
+
+<section class="probleme" id="probleme">
+  <div class="wrap">
+    <hr class="rule">
+    <h2><span lang="en">The problem is rarely your work</span></h2>
+    <p class="sub"><span lang="en">It's everything that happens before the call. Three leaks, and what we do about them:</span></p>
+    <div class="cons">
+      <article class="con"><div class="con-b"><p lang="en">They scroll Facebook and Instagram. A still photo doesn't stop them.</p></div><span class="con-a" aria-hidden="true">→</span><div class="con-f"><p lang="en">A 15-second video, with your real photos and a voice, that stops them and tells them what to do.</p></div></article>
+      <article class="con"><div class="con-b"><p lang="en">They search your trade and their town. An old site or a wrong number makes them hesitate.</p></div><span class="con-a" aria-hidden="true">→</span><div class="con-f"><p lang="en">A clear site, an accurate Google profile and a call button that dials the right number.</p></div></article>
+      <article class="con"><div class="con-b"><p lang="en">They call whoever answers first. One missed call, and they're calling the next one.</p></div><span class="con-a" aria-hidden="true">→</span><div class="con-f"><p lang="en">We time your response, then set up what helps you answer faster.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="audit" id="audit">
+  <div class="wrap">
+    <hr class="rule">
+    <p class="eyebrow"><span lang="en">Free express audit · 1 business day · no commitment</span></p>
+    <h2><span lang="en">What we check first</span></h2>
+    <p class="sub"><span lang="en">Often a business already has good reviews and good work to show. The problem is that people can't find it, or find the wrong details.</span></p>
+    <div class="checks">
+      <div class="check"><b lang="en">The Google category</b><p lang="en">The wrong category, and you don't show up when people search for your trade.</p></div>
+      <div class="check"><b lang="en">Your details everywhere</b><p lang="en">The same phone, email and address on Google, your site and your social accounts.</p></div>
+      <div class="check"><b lang="en">Your reviews</b><p lang="en">Good reviews sitting on Google can work for you on your site and social media.</p></div>
+      <div class="check"><b lang="en">Your social media</b><p lang="en">A consistent look, up-to-date posts, and nothing that feels off to local customers.</p></div>
+      <div class="check"><b lang="en">Your website</b><p lang="en">Readable on a phone, fast, in French and English, and findable by your own name.</p></div>
+    </div>
+    <div class="live">
+      <b class="live-k"><span lang="en">Plus 2 live tests</span></b>
+      <div class="live-g">
+        <div><b lang="en">The call-button test</b><p lang="en">We open your site on a phone and tap your number. We've already seen a site dial the wrong number.</p></div>
+        <div><b lang="en">The customer test</b><p lang="en">With your OK, we send you a test request, through your form or by message, and time the reply. You get the exact time.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <hr class="rule">
+    <h2><span lang="en">Three families of services</span></h2>
+    <p class="sub"><span lang="en">Be seen, be chosen, run better. Take what you need, once or every month. Starting prices in Canadian dollars, before tax; your quote gives the exact price for your situation.</span></p>
+
+    <div class="fam">
+      <span class="fam-n">1</span>
+      <div><h3 class="fam-t"><span lang="en">Be seen</span></h3><p><span lang="en">Get found, on social media and in ads.</span></p></div>
+    </div>
+    <div class="svc">
+      <article class="card">
+        <span class="letter">A</span>
+        <h3><span lang="en">Video ads with your photos</span></h3>
+        <p class="what"><span lang="en">A 30 to 40-second explainer video in French and English, made with your real photos and a voice-over. If you like, Jennifer, our AI actress, presents it on screen. Any AI-made voice or image is declared in the video.</span></p>
+        <div class="opt">
+          <span class="name"><span lang="en">Once</span></span>
+          <span class="price"><span lang="en">from <b>$499</b></span></span>
+        </div>
+        <div class="opt">
+          <span class="name"><span lang="en">Every month</span></span>
+          <span class="price"><span lang="en">from <b>$399</b> / month</span></span>
+          
+          <ul lang="en"><li>12-month licence for your accounts and ads</li><li>One round of revisions per video</li><li>Spanish version as an option</li></ul>
+          
+        </div>
+        <p class="cond"><span lang="en">Comes with service B: your social accounts get fixed before a video goes on them. For a 15-second ad, see <a href="/en/jennshems/?lang=en#offres">Jennifer's offers</a>.</span></p>
+      </article>
+      <article class="card">
+        <span class="letter">B</span>
+        <h3><span lang="en">Social media</span></h3>
+        <p class="what"><span lang="en">Facebook, Instagram and a YouTube channel for your videos: a clear, consistent look, then regular posts.</span></p>
+        <div class="opt">
+          <span class="name"><span lang="en">Refresh</span></span>
+          <span class="price"><span lang="en">from <b>$599</b></span></span>
+          
+          <ul lang="en"><li>Bio, profile photo and banner</li><li>High-quality logo</li><li>Numbered checklist, shown before anything goes live</li></ul>
+          
+        </div>
+        <div class="opt">
+          <span class="name"><span lang="en">Monthly management</span></span>
+          <span class="price"><span lang="en">from <b>$750</b> / month</span></span>
+          
+          <ul lang="en"><li>Posts in French, then English</li><li>Each month's calendar approved by you, in writing</li><li>Monthly report</li></ul>
+          
+        </div>
+        <p class="cond"><span lang="en">One-time setup fee; the refresh is included.</span></p>
+      </article>
+      <article class="card">
+        <span class="letter">C</span>
+        <h3><span lang="en">Advertising strategy</span></h3>
+        <p class="what"><span lang="en">Where to advertise, to whom, with what budget and how often: Facebook, Instagram, Google and YouTube. Then we track the numbers every month.</span></p>
+        <div class="opt">
+          <span class="name"><span lang="en">Advertising plan</span></span>
+          <span class="price"><span lang="en"><b>Custom quote</b></span></span>
+          
+          <ul lang="en"><li>Channels and target audiences</li><li>Budget and frequency per channel</li><li>Campaigns set up in your own accounts</li></ul>
+          
+        </div>
+        <div class="opt">
+          <span class="name"><span lang="en">Monthly management and tracking</span></span>
+          <span class="price"><span lang="en"><b>Custom quote</b></span></span>
+          
+          <ul lang="en"><li>Adjustments based on results</li><li>Cost per click, per call and per lead</li><li>Monthly report against the starting point</li></ul>
+          
+        </div>
+        <p class="cond"><span lang="en">Your ad budget is paid by you, directly to the platform; it never passes through us. Our fees are separate.</span></p>
+      </article>
+    </div>
+
+    <div class="fam">
+      <span class="fam-n">2</span>
+      <div><h3 class="fam-t"><span lang="en">Be chosen</span></h3><p><span lang="en">Once they find you, they pick you: a site, a profile and a look people trust.</span></p></div>
+    </div>
+    <div class="svc">
+      <article class="card">
+        <span class="letter">D</span>
+        <h3><span lang="en">Website design</span></h3>
+        <p class="what"><span lang="en">A new site, or a redesign of yours: clear on a phone, fast, in French and English, and built to lead to the call.</span></p>
+        <div class="opt">
+          <span class="name"><span lang="en">New site or redesign</span></span>
+          <span class="price"><span lang="en"><b>Custom quote</b></span></span>
+          
+          <ul lang="en"><li>Custom structure and design, in your colours</li><li>Copy in French and English, Spanish as an option</li><li>Tested on desktop and phone before going live</li></ul>
+          
+        </div>
+        <p class="cond"><span lang="en">The site stays in your name. Monthly upkeep comes with service E.</span></p>
+      </article>
+      <article class="card">
+        <span class="letter">E</span>
+        <h3><span lang="en">Google profile and SEO</span></h3>
+        <p class="what"><span lang="en">What customers see when they search for you: the right category, the right services, the right contact details, and a site that leads them to call.</span></p>
+        <div class="opt">
+          <span class="name"><span lang="en">Refresh</span></span>
+          <span class="price"><span lang="en">from <b>$1,200</b></span></span>
+          
+          <ul lang="en"><li>Complete Google profile: category, services, photos</li><li>Contact details fixed everywhere</li><li>Website copy in French and English, basic SEO</li></ul>
+          
+        </div>
+        <div class="opt">
+          <span class="name"><span lang="en">Monthly SEO and upkeep</span></span>
+          <span class="price"><span lang="en">from <b>$750</b> / month</span></span>
+          
+          <ul lang="en"><li>Posts on your Google profile</li><li>Website updates</li><li>Monthly report against the starting point</li></ul>
+          
+        </div>
+        <p class="cond"><span lang="en">For an editable site (WordPress, Wix, Squarespace); otherwise, a separate quote. One-time setup fee for monthly upkeep; the refresh is included.</span></p>
+      </article>
+      <article class="card">
+        <span class="letter">F</span>
+        <h3><span lang="en">Visual identity</span></h3>
+        <p class="what"><span lang="en">A sharper logo, colours and fonts that work together, and templates ready for your social media, quotes and business cards.</span></p>
+        <div class="opt">
+          <span class="name"><span lang="en">Refresh</span></span>
+          <span class="price"><span lang="en"><b>Custom quote</b></span></span>
+          
+          <ul lang="en"><li>Reworked logo, in high quality</li><li>Colour palette and fonts</li><li>Templates for your social media and documents, with a short guide</li></ul>
+          
+        </div>
+        <p class="cond"><span lang="en">Your logo stays yours: we modernize it, and never replace it without your OK.</span></p>
+      </article>
+    </div>
+
+    <div class="fam">
+      <span class="fam-n">3</span>
+      <div><h3 class="fam-t"><span lang="en">Run better</span></h3><p><span lang="en">Less wasted time, lower costs, fewer errors, behind the counter.</span></p></div>
+    </div>
+
+    <div class="ops">
+      <div class="ops-head">
+        <span class="letter">G</span>
+        <h3><span lang="en">Operations optimization: <span class="it">AI and automation</span></span></h3>
+        <p class="ops-lead"><span lang="en">Does your business run on an Excel file only you understand? Do hours go every week into quotes, follow-ups and scheduling? We organize your operations, then build the tools around them.</span></p>
+      </div>
+      <ol class="method"><li><b><span lang="en">Diagnose</span></b><span><span lang="en">We watch one process and measure the time it takes.</span></span></li><li><b><span lang="en">Clean up</span></b><span><span lang="en">Your data gathered in one clean, reliable place.</span></span></li><li><b><span lang="en">Structure</span></b><span><span lang="en">Well-designed data, easy to sort and follow.</span></span></li><li><b><span lang="en">Connect</span></b><span><span lang="en">Formulas, calendar, email and AI tools do the repetitive work.</span></span></li><li><b><span lang="en">Deploy</span></b><span><span lang="en">A dashboard for you, simple tools for your team.</span></span></li><li><b><span lang="en">Measure</span></b><span><span lang="en">We compare against the starting point: hours, errors, delays.</span></span></li></ol>
+      <div class="ops-grid">
+        <div class="ops-box">
+          <b class="ops-k"><span lang="en">Two ways to start</span></b>
+          <div class="opt">
+            <span class="name"><span lang="en">AI diagnostic</span></span>
+            <span class="price"><span lang="en"><b>Custom quote</b></span></span>
+            <p><span lang="en">One process analysed, the time lost put into numbers, and the AI tools that would cut it, with their cost and the expected gain.</span></p>
+          </div>
+          <div class="opt">
+            <span class="name"><span lang="en">Spreadsheet rescue</span></span>
+            <span class="price"><span lang="en"><b>Fixed price</b>, quoted</span></span>
+            <p><span lang="en">Your Excel file becomes a clean Google Sheet the whole team can trust.</span></p>
+          </div>
+          <p class="ops-next"><span lang="en">Then, if needed: a connected system, custom apps, monthly care.</span></p>
+        </div>
+        <div class="ops-box ops-case">
+          <b class="ops-k"><span lang="en">Pilot project: a rental agency in Montreal</span></b>
+          <p class="ba"><span class="ba-k"><span lang="en">Before</span></span><span lang="en">A messy Excel file only the owner understood.</span></p>
+          <p class="ba"><span class="ba-k"><span lang="en">After</span></span><span lang="en">A clean database, a shared inventory, visits booked into the calendar automatically, a dashboard for management and an app for each agent.</span></p>
+        </div>
+      </div>
+      <div class="ops-foot">
+        <p><a href="/en/a-propos/"><b>Dan Ortega</b></a> · <span lang="en">Industrial Engineering BEng graduate, Concordia University, Gina Cody School of Engineering and Computer Science, 2021 · former project manager at Airbus. He learned to optimize production lines there; he brings the same method to your office.</span></p>
+        <p><span lang="en"><b>Your data first.</b> Before any tool touches your customers' personal information, we check with you that it complies with Quebec's Law 25. Your tools and data stay in your name.</span></p>
+      </div>
+    </div>
+
+    <div class="founder">
+      <b><span lang="en">Founding price for our first clients</span></b>
+      
+      <p lang="en">A limited number of businesses pay the lower founding price on every service, in exchange for two things: permission to show the work and its results, and an honest testimonial after a month.</p>
+      
+    </div>
+    <p class="small"><span lang="en">“Custom quote”: the price is set after the express audit or the diagnostic, for your situation. Ad budget is always paid by you, directly to the platform.</span></p>
+  </div>
+</section>
+
+<section id="metiers" class="metiers">
+  <div class="wrap">
+    <hr class="rule">
+    <h2><span lang="en">By trade</span></h2>
+    <p class="sub"><span lang="en">The same services, explained for your trade: what your customers search for, and what we fix first.</span></p>
+    <div class="metiers-l">
+      <a href="/en/metiers/plombiers/"><b><span lang="en">Plumbing and heating</span></b><span lang="en">Google profile, video ads and winter emergencies →</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="pourquoi" id="pourquoi">
+  <div class="wrap">
+    <hr class="rule">
+    <h2><span lang="en">Why CCC Studios</span></h2>
+    <div class="why">
+      <div class="why-i"><b lang="en">The content, not just the system</b><p lang="en">A site and ads need something to show. We make it: short videos made with your real photos, a voice-over and, if you want, Jennifer, our declared AI actress. Delivered in 5 business days.</p></div>
+      <div class="why-i"><b lang="en">Three languages, one person</b><p lang="en">Dan answers you himself, in French, English or Spanish, from the first call to the monthly report.</p></div>
+      <div class="why-i"><b lang="en">Numbers, not adjectives</b><p lang="en">We record your starting point, fix what pays most first, and show you the real numbers every month.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="how dark" id="comment">
+  <div class="wrap">
+    <hr class="rule">
+    <h2><span lang="en">How it works</span></h2>
+    <p class="sub"><span lang="en">You deal with a real person from start to finish. Nothing goes live without your written OK.</span></p>
+    <div class="steps">
+      <div class="step"><span class="when"><span lang="en">1 business day</span></span><b lang="en">The express audit</b><p lang="en">One page on what a customer sees of you, and the 3 fixes worth the most.</p></div>
+      <div class="step"><span class="when"><span lang="en">Quote in 1 business day</span></span><b lang="en">A call, a quote</b><p lang="en">We pick the services together. The quote is clear, line by line.</p></div>
+      <div class="step"><span class="when"><span lang="en">Before we start</span></span><b lang="en">The starting point</b><p lang="en">We record your numbers before we start, so each month compares honestly.</p></div>
+      <div class="step"><span class="when"><span lang="en">5 business days after the deposit</span></span><b lang="en">The refresh</b><p lang="en">Prepared as a draft, shown with its checklist, then put live.</p></div>
+    </div>
+    <div class="month first">
+      <h3><span lang="en">The first month, in detail</span></h3>
+      
+      <ol lang="en"><li>We learn your business: your services, your best customers, what sets you apart.</li><li>We take stock of what exists: Google profile, site, social media, messages.</li><li>We set the strategy: 3 or 4 post themes and your main message.</li><li>We define your style: colours, fonts, images and tone.</li><li>We prepare your first calendar and the first posts.</li><li>You approve, we set up the routine, then we post.</li></ol>
+      
+      <p class="measure-note" lang="en">After 4 weeks: your strategy on one page, your style defined and your first posts approved.</p>
+    </div>
+    <div class="month">
+      <h3><span lang="en">Then, every month</span></h3>
+      
+      <ol lang="en"><li>The month's report and what we change.</li><li>You drop your photos and videos into a shared folder.</li><li>We prepare the calendar: every post, every caption, and a preview of your profile.</li><li>You approve in writing, then we post on the planned days.</li></ol>
+      
+    </div>
+    <div class="month measure">
+      <h3><span lang="en">What we measure, before and after</span></h3>
+      
+      <ul lang="en"><li>Calls, directions and clicks from your Google profile</li><li>Site visits and quote requests</li><li>Response time to a request</li><li>Site speed on a phone</li><li>Messages and followers on your social media</li></ul>
+      
+      <p class="measure-note" lang="en">Your numbers stay yours: we never publish a client's results without their written OK.</p>
+    </div>
+  </div>
+</section>
+
+<section id="promesses">
+  <div class="wrap">
+    <hr class="rule">
+    <h2><span lang="en">What we promise, and what we don't</span></h2>
+    <div class="prom">
+      <div class="p"><b lang="en">No guaranteed results</b><p lang="en">No one can guarantee sales. We measure, compare against the starting point, and show you the real numbers.</p></div>
+      <div class="p"><b lang="en">You keep your accounts</b><p lang="en">Your accounts stay in your name. You give us access, and you can remove it any time.</p></div>
+      <div class="p"><b lang="en">AI is declared</b><p lang="en">Jennifer always carries the AI label, and an AI-made image is marked as such. Your real work is shown with your real photos.</p></div>
+      <div class="p"><b lang="en">French first</b><p lang="en">Every commercial post has its French version, as Quebec law requires. English follows; Spanish on request.</p></div>
+      <div class="p"><b lang="en">A simple commitment</b><p lang="en">No contract: monthly services run month to month, with 30 days' notice to stop. Setup is paid once. Commit to 3 months: −10% on the monthly price.</p></div>
+      <div class="p"><b lang="en">Your claims, approved</b><p lang="en">We publish nothing about your services, prices or years in business that you haven't confirmed in writing.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="wrap">
+    <h2><span lang="en">Questions</span></h2>
+    <details><summary><span lang="en">Why start with the Google profile?</span></summary><p lang="en">Because that's often where customers find you first, before your site or social media. A wrong category or wrong contact details can cost calls without anyone noticing.</p></details>
+    <details><summary><span lang="en">Will it look AI-made?</span></summary><p lang="en">What we show of your work is your real photos. The voice is synthetic, and the video says so. If you prefer a presenter on screen, Jennifer is an option, always declared as AI. A person writes every script and chooses every image.</p></details>
+    <details><summary><span lang="en">Do I have to take several services?</span></summary><p lang="en">No. Each service stands alone, once or monthly. The one rule: a video comes with service B, so your social accounts are ready for it.</p></details>
+    <details><summary><span lang="en">Does a Google profile cost money?</span></summary><p lang="en">No. A Google Business Profile is free: Google doesn’t sell it. What you pay for is our work. You stay the owner of your profile; we’re only a manager, and you can remove us at any time. Google explains what to know before working with an agency <a href="https://support.google.com/business/answer/7163406?hl=en">on this page</a>.</p></details>
+    <details><summary><span lang="en">How does payment work?</span></summary><p lang="en">For a one-time service: half to start, half on acceptance. For a monthly service: paid in advance on the 1st of each month. By Interac e-Transfer.</p></details>
+    <details><summary><span lang="en">Do you speak Spanish?</span></summary><p lang="en">Yes. Dan handles calls and meetings in French, English or Spanish, and your posts can have a Spanish version.</p></details>
+    <details><summary><span lang="en">What about paid ads?</span></summary><p lang="en">That's service C. We do the plan and the tracking, once your accounts are in order. The budget goes straight from you to the platform, in your own accounts; it never passes through us.</p></details>
+    <details><summary><span lang="en">Is optimization only about AI?</span></summary><p lang="en">No. We start with AI because it's our specialty, but the method comes from industrial engineering: we improve the process first, then pick the tool. Sometimes a simple formula does better than AI, and we'll tell you so.</p></details>
+  </div>
+</section>
+
+<section class="contact dark" id="contact">
+  <div class="wrap">
+    <h2><span lang="en">First, let's see what people see of you</span></h2>
+    <p><span lang="en">Send us your business name; Dan sends you your express audit.</span></p>
+    <p class="zone" style="margin-top:10px;font-size:15px"><span lang="en">We serve businesses in Montreal, Laval, the North Shore and the West Island, and across Quebec. Everything is done remotely, with your photos; an in-person meeting is possible on request.</span></p>
+    <div class="ctas">
+      <a class="btn btn-main js-mail" href="mailto:bonjour@ccc-studios.com"><span lang="en">Ask for my express audit</span></a>
+    </div>
+    <p style="margin-top:16px;font-size:14px"><span lang="en">Or call Dan at </span><a href="tel:+14384043409" style="color:var(--ambre)">438-404-3409</a> · bonjour@ccc-studios.com</p>
+  </div>
+</section>
+</main>
+<nav class="mbar" aria-label="Actions">
+  <a class="btn btn-main js-mail" href="mailto:bonjour@ccc-studios.com"><span lang="en">Free audit</span></a>
+  <a class="btn btn-line" href="#demo"><span lang="en">Demo</span></a>
+</nav>
+
+
+<footer>
+  <div class="wrap">
+    <p>CCC Studios · <span lang="en">Creative studio · AI-declared</span></p>
+    <p>bonjour@ccc-studios.com · <a href="tel:+14384043409">438-404-3409</a> · <a href="/jennshems/charte/"><span lang="en">Charter</span></a> · <a href="/en/confidentialite/"><span lang="en">Privacy</span></a> · <a lang="en" href="https://support.google.com/business/answer/7163406?hl=en">Google profiles and agencies</a></p>
+  </div>
+</footer>
+
+<script>/* Langue par adresse : chaque langue a sa page (/, /en/, /es/). */
+(function(){var L="en",P="/services/",T=["/","/a-propos/","/services/","/metiers/plombiers/","/jennshems/","/confidentialite/","/creatif/","/creatif/ateliers/"];function loc(p,l){return(l==="fr"?"":"/"+l)+p}try{var q=new URLSearchParams(location.search).get("lang");if(q&&q!==L&&/^(fr|en|es)$/.test(q)){location.replace(loc(P,q)+location.hash);return}}catch(e){}function fix(a){var m=(a.getAttribute("href")||"").match(/^(\/[^#?]*)(.*)$/);if(m&&T.indexOf(m[1])>-1)a.setAttribute("href",loc(m[1],L)+m[2])}if(L!=="fr"){new MutationObserver(function(r){r.forEach(function(x){x.addedNodes.forEach(function(n){if(n.nodeType!==1)return;if(n.matches&&n.matches("a[href^=\"/\"]"))fix(n);n.querySelectorAll&&n.querySelectorAll("a[href^=\"/\"]").forEach(fix)})})}).observe(document.documentElement,{childList:true,subtree:true})}document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest(".langs button[data-set],#btn-fr,#btn-en,#btn-es");if(!b)return;var l=b.getAttribute("data-set")||b.id.slice(4);if(!/^(fr|en|es)$/.test(l))return;e.stopImmediatePropagation();e.preventDefault();if(l!==L)location.href=loc(P,l)+location.hash},true);})();
+</script>
+<script>
+(function(){
+  var root=document.documentElement;
+  var mail={
+    fr:{s:"Audit express · [votre entreprise]",b:"Bonjour Dan,\n\nEntreprise :\nSite web :\nVille ou secteur :\nTéléphone :\n\nMerci!"},
+    en:{s:"Express audit · [your business]",b:"Hi Dan,\n\nBusiness:\nWebsite:\nCity or service area:\nPhone:\n\nThanks!"},
+    es:{s:"Auditoría exprés · [su empresa]",b:"Hola Dan:\n\nEmpresa:\nSitio web:\nCiudad o zona:\nTeléfono:\n\n¡Gracias!"}
+  };
+  var demo={
+    fr:{s:"Démo pour mon métier · [votre entreprise]",b:"Bonjour Dan,\n\nEntreprise :\nMétier :\nVille ou secteur :\nCe que je veux annoncer :\n\nMerci!"},
+    en:{s:"Demo for my trade · [your business]",b:"Hi Dan,\n\nBusiness:\nTrade:\nCity or service area:\nWhat I want to advertise:\n\nThanks!"},
+    es:{s:"Demo para mi oficio · [su empresa]",b:"Hola Dan:\n\nEmpresa:\nOficio:\nCiudad o zona:\nLo que quiero anunciar:\n\n¡Gracias!"}
+  };
+  var titles={fr:"Fiche Google et pubs vidéo pour entrepreneurs · Montréal",en:"Google profile and video ads for contractors · Montreal",es:"Ficha de Google y anuncios en video para contratistas"};
+  function setLang(l){
+    root.setAttribute("data-lang",l); root.lang=l;
+    document.querySelectorAll(".langs button").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.set===l?"true":"false");});
+    var m=mail[l], href="mailto:bonjour@ccc-studios.com?subject="+encodeURIComponent(m.s)+"&body="+encodeURIComponent(m.b);
+    document.querySelectorAll(".js-mail").forEach(function(a){a.href=href;});
+    var d=demo[l]; document.querySelectorAll(".js-demo").forEach(function(a){a.href="mailto:bonjour@ccc-studios.com?subject="+encodeURIComponent(d.s)+"&body="+encodeURIComponent(d.b);});
+    document.title=titles[l];
+    try{localStorage.setItem("lang",l);}catch(e){}
+  }
+  var ok={fr:1,en:1,es:1}, start="fr", q="en";
+  if(ok[q]){start=q;} else {try{var s=localStorage.getItem("lang"); if(ok[s])start=s;}catch(e){}}
+  document.querySelectorAll(".langs button").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.set);});});
+  setLang(start);
+})();
+</script>
+<script>
+/* « Branche d'affaires » : visible seulement s'il reste au moins 24 px avant le menu (police, zoom, langue). */
+(function () {
+  var lab = document.querySelector(".branche"); if (!lab) return;
+  var barre = lab.closest(".top, .top-ccc");
+  function ajuste() {
+    lab.style.display = "";
+    if (getComputedStyle(lab).display === "none") return;
+    var menu = barre.querySelector("nav"); if (!menu) return;
+    var fin = lab.getBoundingClientRect().right, debut = menu.getBoundingClientRect().left;
+    var premier = menu.firstElementChild; if (premier) debut = Math.min(debut, premier.getBoundingClientRect().left);
+    if (fin + 24 > debut || lab.getBoundingClientRect().height > 18) lab.style.display = "none";
+  }
+  ajuste(); addEventListener("resize", ajuste); addEventListener("load", ajuste);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(ajuste);
+  new MutationObserver(ajuste).observe(document.documentElement, { attributes: true, attributeFilter: ["data-lang", "lang"] });
+})();
+</script>
+<script>
+/* Démo vidéo : FR ou EN selon la langue; barre d'actions mobile après le haut de page. */
+(function(){
+  var root=document.documentElement;
+  function vids(){var l=root.getAttribute("data-lang")==="en"?"en":"fr";
+    document.querySelectorAll("video[data-base]").forEach(function(v){var src=v.dataset.base+"-"+l+".mp4", so=v.querySelector("source");
+      if(so.getAttribute("src")!==src){v.pause();so.setAttribute("src",src);v.setAttribute("poster",v.dataset.base+"-"+l+".jpg");v.load();}});}
+  vids(); new MutationObserver(vids).observe(root,{attributes:true,attributeFilter:["data-lang"]});
+  var bar=document.querySelector(".mbar"), hero=document.querySelector(".hero .ctas"), contact=document.getElementById("contact");
+  if(!bar||!("IntersectionObserver" in window))return;
+  var inHero=true, inContact=false;
+  function upd(){bar.classList.toggle("off",inHero||inContact);}
+  new IntersectionObserver(function(e){inHero=e[0].isIntersecting;upd();}).observe(hero);
+  if(contact)new IntersectionObserver(function(e){inContact=e[0].isIntersecting;upd();}).observe(contact);
+  upd();
+})();
+</script>
+<style id="ccc-motion">
+.mprog{position:fixed;top:0;left:0;right:0;height:3px;transform-origin:0 50%;transform:scaleX(0);background:var(--mprog,#FFC40C);z-index:1000;pointer-events:none}
+.js-motion .rv{opacity:0;transform:translateY(32px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform 1.15s cubic-bezier(.16,1,.3,1);transition-delay:var(--d,0s)}
+.js-motion .rv-h{clip-path:inset(-15% -4% 100% -4%);transform:translateY(.45em);transition:clip-path 1.15s cubic-bezier(.16,1,.3,1),transform 1.15s cubic-bezier(.16,1,.3,1);transition-delay:var(--d,0s)}
+.js-motion .rv.in{opacity:1;transform:none}
+.js-motion .rv-h.in{clip-path:inset(-15% -4% -30% -4%);transform:none}
+@media (prefers-reduced-motion:reduce){.js-motion .rv,.js-motion .rv-h{opacity:1!important;transform:none!important;clip-path:none!important;transition:none!important}}
+</style>
+<script data-color="#FFC40C">
+/* Défilement fluide : barre de progression, titres qui se dévoilent, blocs qui montent en cascade, léger parallaxe du visuel du haut. */
+(function(){
+  var me=document.currentScript, root=document.documentElement;
+  var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var bar=document.createElement("div"); bar.className="mprog"; bar.setAttribute("aria-hidden","true");
+  bar.style.setProperty("--mprog", me.getAttribute("data-color")); document.body.appendChild(bar);
+  var par=[];
+  if(!reduce && "IntersectionObserver" in window){
+    var secs=[].slice.call(document.querySelectorAll("main section")).slice(1), items=[];
+    function grid(el){ if(/^(P|H\d|UL|OL|A|IMG|VIDEO|BUTTON)$/.test(el.tagName)) return false; var d=getComputedStyle(el).display; return (d==="grid"||d==="flex"||d==="inline-grid") && el.children.length>=2; }
+    secs.forEach(function(s){
+      var w=s.querySelector(".wrap,.cadre")||s, n=0;
+      [].forEach.call(w.children,function(c){
+        if(c.offsetParent===null && getComputedStyle(c).position!=="fixed") return;
+        if(/^H[12]$/.test(c.tagName)){ c.classList.add("rv-h"); c.style.setProperty("--d",(Math.min(n,4)*0.08)+"s"); items.push(c); n++; return; }
+        if(grid(c)){ var k=0; [].forEach.call(c.children,function(g){ if(g.offsetParent===null) return; g.classList.add("rv"); g.style.setProperty("--d",(Math.min(k,5)*0.09)+"s"); items.push(g); k++; }); n++; return; }
+        c.classList.add("rv"); c.style.setProperty("--d",(Math.min(n,4)*0.08)+"s"); items.push(c); n++;
+      });
+    });
+    root.classList.add("js-motion");
+    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(!e.isIntersecting) return; var t=e.target; io.unobserve(t); t.classList.add("in");
+      setTimeout(function(){ t.classList.remove("rv","rv-h","in"); t.style.removeProperty("--d"); }, 1700); }); }, {rootMargin:"0px 0px -6% 0px", threshold:0});
+    items.forEach(function(i){ io.observe(i); });
+    if(innerWidth>=900) par=[].slice.call(document.querySelectorAll(".hero-vid .phone,.hero-vis .portrait,.hero-art,.founder .stats"));
+  }
+  var ticking=false;
+  function frame(){ ticking=false; var h=root.scrollHeight-innerHeight, y=scrollY;
+    bar.style.transform="scaleX("+(h>0?Math.min(1,y/h):0)+")";
+    par.forEach(function(el){ var r=el.parentNode.getBoundingClientRect(), mid=r.top+r.height/2-innerHeight/2; el.style.transform="translate3d(0,"+(mid*-0.06).toFixed(1)+"px,0)"; }); }
+  addEventListener("scroll",function(){ if(!ticking){ ticking=true; requestAnimationFrame(frame); } },{passive:true});
+  addEventListener("resize",frame); frame();
+})();
+</script>
+<style id="ccc-depth">
+main{position:relative}
+main>section>.wrap,main>section>.cadre,main>.strip>.wrap{position:relative;z-index:1}
+.depth{position:absolute;left:0;top:0;width:100%;height:100%;overflow:hidden;pointer-events:none;z-index:0}
+.depth .dp{position:absolute;will-change:transform}
+.depth svg{display:block;width:100%;height:100%;overflow:visible}
+.souffle{padding:clamp(120px,17vw,230px) 0;text-align:center;background:transparent}
+.souffle .big{font-family:Lora,Georgia,serif;font-weight:400;font-size:clamp(30px,5.2vw,62px);line-height:1.18;letter-spacing:-.01em;color:var(--souffle-ink);max-width:16em;margin:0 auto}
+.souffle .big b{font-weight:600}
+.souffle .big em{font-style:italic;font-size:1.18em;color:var(--souffle-acc)}
+@media(max-width:760px){.depth .dp.hide-m{display:none}}
+</style>
+<script>
+/* Couche de profondeur : formes de marque derrière les sections, parallaxe selon la profondeur. */
+(function(){
+  var main=document.querySelector("main"), layer=main&&main.querySelector(".depth"); if(!layer) return;
+  var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var secs=[].slice.call(main.querySelectorAll(":scope > section, :scope > .strip")), items=[].slice.call(layer.children);
+  function place(){
+    var mt=main.getBoundingClientRect().top+scrollY;
+    items.forEach(function(el){
+      var s=secs[Math.min(+el.dataset.sec, secs.length-1)]; if(!s){el.style.display="none";return;}
+      var top=s.getBoundingClientRect().top+scrollY-mt + (+el.dataset.fy)*s.offsetHeight - el.offsetHeight/2;
+      el.style.top=top+"px"; var x=(+el.dataset.x)+"px";
+      if(el.dataset.side==="left"){el.style.left=x;el.style.right="";} else {el.style.right=x;el.style.left="";}
+    });
+    move();
+  }
+  var ticking=false;
+  function move(){ ticking=false; if(reduce) return;
+    var mt=main.getBoundingClientRect().top+scrollY;
+    items.forEach(function(el){ var mid=mt+el.offsetTop+el.offsetHeight/2-scrollY-innerHeight/2;
+      var k=(1-(+el.dataset.depth))*0.35; el.style.transform="translate3d(0,"+(mid*k).toFixed(1)+"px,0)"; }); }
+  addEventListener("scroll",function(){ if(!ticking){ticking=true;requestAnimationFrame(move);} },{passive:true});
+  addEventListener("resize",place); addEventListener("load",place);
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(place);
+  place();
+})();
+</script>
+<style id="ccc-menu">
+.mnu-btn{display:none;align-items:center;justify-content:center;width:44px;height:44px;margin-left:6px;border:1px solid rgba(255,255,255,.7);border-radius:12px;background:transparent;color:#fff;cursor:pointer;flex:none;padding:0}
+.mnu-btn svg{width:22px;height:22px}
+.mnu-btn:focus-visible,.mnu a:focus-visible,.mnu-x:focus-visible{outline:2px solid #FFC40C;outline-offset:3px}
+.mnu{position:fixed;inset:0;z-index:2000;display:none;flex-direction:column;overflow-y:auto;padding:20px 24px calc(28px + env(safe-area-inset-bottom,0px));color:#fff}
+.mnu.ouvert{display:flex}
+.mnu-haut{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.mnu-haut img{width:155px;height:22px}
+.mnu-x{width:44px;height:44px;border:1px solid rgba(255,255,255,.6);border-radius:12px;background:transparent;color:#fff;font-size:26px;line-height:1;cursor:pointer}
+.mnu-g{margin:14px 0 4px;font:600 12.5px/1.2 Inter,system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;opacity:.75}
+.mnu a{display:flex;justify-content:space-between;align-items:center;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.18);color:#fff;text-decoration:none;font:500 22px/1.25 Lora,Georgia,serif}
+.mnu a[aria-current="page"]{color:var(--mnu-acc,#FFC40C)}
+.mnu a[aria-current="page"]::after{content:"•";font-size:22px}
+.mnu .mnu-mail{font:600 17px/1.3 Inter,system-ui,sans-serif;border-bottom:0;margin-top:14px}
+@media(max-width:760px){.mnu-btn{display:inline-flex!important}.nav-at,header.top nav>a,.top-ccc nav,.top-ccc .dedans>a:not(:first-child){display:none!important}.top-ccc .dedans{flex-wrap:nowrap!important}}
+@media(max-width:380px){.mnu-btn{width:40px;height:40px;margin-left:4px}header.top .wrap,header.tete .cadre{gap:8px!important}}
+@media(max-width:380px){header .brand img,header .logo img,.top-ccc img{width:112px!important;height:16px!important}.langs button,.langue button{padding-left:9px!important;padding-right:9px!important}}
+body.mnu-fige{overflow:hidden}
+</style>
+<script>
+/* Menu ☰ (téléphone) : toutes les pages du site, dans la langue choisie. */
+(function(){
+  var root=document.documentElement;
+  var bar=null; ["header.top .wrap","header.top",".top-ccc .dedans",".top-ccc","header.tete .cadre","header.tete"].some(function(q){ bar=document.querySelector(q); return !!bar; });
+  if(!bar) return;
+  var T={
+    menu:{fr:"Menu",en:"Menu",es:"Menú"}, fermer:{fr:"Fermer le menu",en:"Close menu",es:"Cerrar el menú"},
+    accueil:{fr:"Accueil",en:"Home",es:"Inicio"},
+    affaires:{fr:"Branche d'affaires",en:"Business branch",es:"Rama de negocios"},
+    services:{fr:"Services aux entreprises",en:"Business services",es:"Servicios para empresas"},
+    plombiers:{fr:"Plomberie et chauffage",en:"Plumbing and heating",es:"Plomería y calefacción"},
+    jenn:{fr:"Jennifer, actrice IA",en:"Jennifer, AI actress",es:"Jennifer, actriz IA"},
+    charte:{fr:"Charte de Jennifer",en:"Jennifer's charter",es:"Carta de Jennifer"},
+    auth:{fr:"Authentifier une image",en:"Verify an image",es:"Verificar una imagen"},
+    creative:{fr:"Branche créative",en:"Creative branch",es:"Rama creativa"},
+    creations:{fr:"Univers, séries et jeux",en:"Worlds, series and games",es:"Universos, series y juegos"},
+    ateliers:{fr:"Ateliers jeunesse",en:"Youth workshops",es:"Talleres juveniles"},
+    studio:{fr:"Le studio",en:"The studio",es:"El estudio"},
+    apropos:{fr:"À propos",en:"About",es:"Acerca de"},
+    conf:{fr:"Confidentialité",en:"Privacy",es:"Privacidad"}
+  };
+  var ITEMS=[["g","studio"],["/","accueil"],["/a-propos/","apropos"],
+             ["g","affaires"],["/services/","services"],["/metiers/plombiers/","plombiers"],["/jennshems/","jenn"],["/jennshems/charte/","charte"],["/jennshems/authentifier/","auth"],
+             ["g","creative"],["/creatif/","creations"],["/creatif/ateliers/","ateliers"],
+             ["g",""],["/confidentialite/","conf"]];
+  function langue(){var l=root.getAttribute("data-lang")||root.getAttribute("data-l")||root.lang||"fr";l=l.slice(0,2);return T.menu[l]?l:"fr";}
+  var hb=getComputedStyle(document.querySelector("header.top, .top-ccc, header.tete")).backgroundColor;
+  if(!hb||hb==="rgba(0, 0, 0, 0)"||hb==="transparent") hb="#180D00";
+  var acc=/30, 0, 7|89, 0, 22|195, 0, 1|31, 0, 7/.test(hb)?"#FEDADA":"#FFC40C";
+  var btn=document.createElement("button"); btn.type="button"; btn.className="mnu-btn"; btn.setAttribute("aria-expanded","false"); btn.setAttribute("aria-controls","ccc-mnu");
+  btn.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
+  var lg=bar.querySelector(".langs, .langue");
+  if(lg&&lg.parentNode){ lg.parentNode.insertBefore(btn, lg.nextSibling); } else { bar.appendChild(btn); }
+  var pan=document.createElement("div"); pan.id="ccc-mnu"; pan.className="mnu"; pan.setAttribute("role","dialog"); pan.setAttribute("aria-modal","true");
+  pan.style.background=hb; pan.style.setProperty("--mnu-acc",acc);
+  document.body.appendChild(pan);
+  var ici=location.pathname.replace(/^\/(en|es)(?=\/)/,"").replace(/index\.html$/,"");
+  function rendre(){
+    var l=langue(); btn.setAttribute("aria-label",T.menu[l]); pan.setAttribute("aria-label",T.menu[l]);
+    var h='<div class="mnu-haut"><img src="/logo-ccc.svg" alt="CCC Studios" width="155" height="22"><button type="button" class="mnu-x" aria-label="'+T.fermer[l]+'">×</button></div>';
+    ITEMS.forEach(function(it){
+      if(it[0]==="g"){ if(it[1]) h+='<p class="mnu-g">'+T[it[1]][l]+'</p>'; else h+='<p class="mnu-g" aria-hidden="true">&nbsp;</p>'; return; }
+      var cur=(ici===it[0]||(it[0]!=="/"&&ici.indexOf(it[0])===0&&ici.length===it[0].length));
+      h+='<a href="'+it[0]+'"'+(cur?' aria-current="page"':'')+'>'+T[it[1]][l]+'</a>';
+    });
+    h+='<a class="mnu-mail" href="mailto:bonjour@ccc-studios.com">bonjour@ccc-studios.com</a>';
+    pan.innerHTML=h;
+    pan.querySelector(".mnu-x").addEventListener("click",fermer);
+  }
+  function ouvrir(){ rendre(); pan.classList.add("ouvert"); btn.setAttribute("aria-expanded","true"); document.body.classList.add("mnu-fige"); var a=pan.querySelector("a,button"); if(a) a.focus(); }
+  function fermer(){ pan.classList.remove("ouvert"); btn.setAttribute("aria-expanded","false"); document.body.classList.remove("mnu-fige"); btn.focus(); }
+  btn.addEventListener("click",function(){ pan.classList.contains("ouvert")?fermer():ouvrir(); });
+  document.addEventListener("keydown",function(e){
+    if(!pan.classList.contains("ouvert")) return;
+    if(e.key==="Escape"){ fermer(); }
+    if(e.key==="Tab"){ var f=[].slice.call(pan.querySelectorAll("a,button")); if(!f.length) return; var a=f[0], z=f[f.length-1];
+      if(e.shiftKey&&document.activeElement===a){ z.focus(); e.preventDefault(); } else if(!e.shiftKey&&document.activeElement===z){ a.focus(); e.preventDefault(); } }
+  });
+  pan.addEventListener("click",function(e){ if(e.target.tagName==="A") { pan.classList.remove("ouvert"); document.body.classList.remove("mnu-fige"); } });
+  rendre();
+  new MutationObserver(rendre).observe(root,{attributes:true,attributeFilter:["data-lang","data-l","lang"]});
+})();
+</script>
+
+
+</body></html>

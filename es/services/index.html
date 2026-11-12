@@ -1,0 +1,858 @@
+<!doctype html>
+<html lang="es" data-lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ficha de Google y anuncios en video para contratistas</title>
+<meta name="description" content="Auditoría gratuita de su ficha de Google en 1 día hábil. Anuncios de 15 segundos con sus fotos reales en 5 días, sin rodaje. Montreal, Laval, Rive-Nord.">
+<meta property="og:title" content="Ficha de Google y anuncios en video para contratistas">
+<meta property="og:description" content="Auditoría gratuita de su ficha de Google en 1 día hábil. Anuncios de 15 segundos con sus fotos reales en 5 días, sin rodaje. Montreal, Laval, Rive-Nord.">
+<meta property="og:image" content="https://ccc-studios.com/jennshems/media/og-jennifer.jpg">
+<meta property="og:url" content="https://ccc-studios.com/es/services/">
+<meta property="og:type" content="website">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<style>
+/* Branche Crème (marketing, documents et pages pour les entreprises clientes), kit de marque v1.4.2.
+   Bronze minuit #180D00 pour les grandes surfaces sombres, Bronze #735827 pour les surtitres et lignes secondaires,
+   Ambre #FFC40C seulement en filet ou en texte sur le foncé (jamais sur blanc ou crème), Crème #F5F2EC pour les panneaux. Aucun gris. */
+:root{
+  --minuit:#180D00; --bronze:#735827; --ambre:#FFC40C; --creme:#F5F2EC; --blanc:#FFFFFF; --noir:#000000;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;color:var(--noir);background:var(--blanc);line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+html[data-lang="fr"] [lang="en"],html[data-lang="fr"] [lang="es"],
+html[data-lang="en"] [lang="fr"],html[data-lang="en"] [lang="es"],
+html[data-lang="es"] [lang="fr"],html[data-lang="es"] [lang="en"]{display:none!important}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:Lora,Georgia,serif;font-weight:500;letter-spacing:-.01em}
+.it{font-style:italic}
+
+/* barre du haut : filet Ambre sous l'en-tête */
+.top{position:sticky;top:0;z-index:10;background:var(--minuit);color:var(--blanc);border-bottom:2px solid var(--ambre)}
+.top .wrap{display:flex;align-items:center;gap:12px;height:60px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:"Tenor Sans",Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase}
+.brand img{width:36px;height:36px;border-radius:50%;background:var(--blanc)}
+.top nav{margin-left:auto;display:flex;align-items:center;gap:18px;font-size:14px}
+.top nav a{text-decoration:none}
+.top nav a[aria-current="page"]{text-decoration:underline;text-decoration-color:var(--ambre);text-underline-offset:6px}
+.navlinks{display:none}
+@media(min-width:760px){.navlinks{display:flex;gap:18px}}
+.langs{display:flex;border:1px solid var(--creme);border-radius:999px;overflow:hidden}
+.langs button{background:none;border:0;color:var(--blanc);font:600 12px Inter,sans-serif;padding:6px 10px;cursor:pointer;letter-spacing:.06em}
+.langs button[aria-pressed="true"]{background:var(--creme);color:var(--minuit)}
+:focus-visible{outline:2px solid var(--bronze);outline-offset:3px}
+.top :focus-visible,.dark :focus-visible{outline-color:var(--ambre)}
+
+/* héros */
+.hero{background:var(--minuit);color:var(--blanc)}
+.hero .wrap{padding-top:56px;padding-bottom:64px;display:grid;gap:24px}
+@media(min-width:900px){.hero .wrap{grid-template-columns:1.2fr .8fr;align-items:end}}
+.kicker{font-size:12.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ambre)}
+.hero h1{font-size:clamp(36px,6vw,60px);line-height:1.05;margin:14px 0 18px;text-wrap:balance}
+.hero h1 .it{color:var(--ambre)}
+.lead{font-size:18px;max-width:34em}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 22px;border-radius:10px;font-weight:600;font-size:15.5px;text-decoration:none;border:1px solid transparent}
+.btn-main{background:var(--ambre);color:var(--noir)}
+.btn-main:hover{background:var(--blanc)}
+.btn-line{border-color:var(--creme);color:var(--blanc)}
+.btn-line:hover{border-color:var(--ambre)}
+.proof{border:1px solid var(--creme);border-radius:16px;padding:20px;display:grid;gap:12px;align-content:start;align-self:end}
+.proof b{font-family:Lora,Georgia,serif;font-weight:500;font-size:20px;display:block}
+.proof ul{padding-left:18px;display:grid;gap:6px;font-size:15px}
+
+section{padding:68px 0}
+h2{font-size:clamp(28px,4vw,40px);line-height:1.12;margin-bottom:10px;color:var(--minuit);text-wrap:balance}
+.dark h2{color:var(--blanc)}
+.sub{max-width:42em;margin-bottom:32px;font-size:16.5px}
+.rule{width:56px;height:3px;background:var(--ambre);margin-bottom:18px;border:0}
+
+/* audit */
+.audit{background:var(--creme)}
+.checks{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));counter-reset:c}
+@media(min-width:960px){.checks{grid-template-columns:repeat(5,1fr)}}
+.check{border-top:2px solid var(--bronze);padding-top:14px}
+.check::before{counter-increment:c;content:counter(c);font-family:Lora,Georgia,serif;font-style:italic;font-size:28px;color:var(--bronze);display:block}
+.check b{display:block;margin:2px 0 4px;color:var(--minuit)}
+.check p{font-size:14.5px}
+
+/* services */
+.svc{display:grid;gap:20px}
+@media(min-width:900px){.svc{grid-template-columns:repeat(3,1fr)}}
+.card{border:1px solid var(--bronze);border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:12px;background:var(--blanc)}
+.card .letter{font-family:"Tenor Sans",Inter,sans-serif;letter-spacing:.14em;font-size:13px;color:var(--bronze)}
+.card h3{font-size:24px;color:var(--minuit);line-height:1.15}
+.card .what{font-size:15px}
+.opt{border-top:1px solid var(--bronze);padding-top:12px;display:grid;gap:4px}
+.opt .name{font-weight:600;color:var(--minuit)}
+.opt .price{font-size:15px}
+.opt .price b{font-size:22px;font-weight:700;color:var(--minuit);letter-spacing:-.01em}
+.opt ul{padding-left:18px;font-size:14px;display:grid;gap:3px;margin-top:4px}
+.card .cond{font-size:13.5px;margin-top:auto;padding-top:6px;color:var(--bronze);font-weight:500}
+.founder{margin-top:26px;background:var(--creme);border-radius:16px;padding:20px 22px;display:grid;gap:6px}
+.founder b{font-family:Lora,Georgia,serif;font-weight:500;font-size:21px;color:var(--minuit)}
+.small{font-size:14px;margin-top:16px;max-width:52em;color:var(--bronze)}
+
+/* comment */
+.how{background:var(--minuit);color:var(--blanc)}
+.steps{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));counter-reset:s}
+.step{border-top:2px solid var(--creme);padding-top:14px}
+.step::before{counter-increment:s;content:counter(s);font-family:Lora,Georgia,serif;font-style:italic;font-size:30px;display:block;color:var(--ambre)}
+.step b{display:block;margin:2px 0 4px}
+.step p{font-size:14.5px}
+.month{margin-top:36px;border:1px solid var(--creme);border-radius:16px;padding:20px 22px}
+.month h3{font-size:21px;margin-bottom:10px}
+.month ol{padding-left:20px;display:grid;gap:6px;font-size:15px}
+@media(min-width:900px){.month.first ol{grid-template-columns:1fr 1fr;column-gap:36px}}
+.month.first{border-color:var(--ambre,#FFC40C)}
+
+/* promesses */
+.prom{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.p{border:1px solid var(--bronze);border-radius:14px;padding:18px}
+.p b{display:block;margin-bottom:4px;color:var(--minuit)}
+.p p{font-size:14.5px}
+
+/* faq */
+.faq{background:var(--creme)}
+details{border-bottom:1px solid var(--bronze);padding:16px 0}
+summary{cursor:pointer;font-weight:600;font-size:16.5px;list-style:none;color:var(--minuit)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";float:right;color:var(--bronze);font-weight:700}
+details[open] summary::after{content:"–"}
+details p{margin-top:10px;max-width:46em}
+
+/* contact */
+.contact{background:var(--minuit);color:var(--blanc);text-align:center}
+.contact h2{margin:0 auto 12px;max-width:18em}
+.contact .ctas{justify-content:center}
+footer{background:var(--noir);color:var(--blanc);font-size:13.5px;padding:30px 0}
+footer .wrap{display:grid;gap:8px}
+footer a{color:var(--blanc)}
+
+/* Logo : éclipse triple lune + CCC STUDIOS, comme la page créative */
+.brand img{width:155px;height:22px;border-radius:0;background:none;display:block}
+@media(max-width:420px){.brand img{width:124px;height:18px}}
+
+/* Étiquette de branche, comme « Branche créative » */
+.brand{gap:14px}.brand .branche{font:400 12px/1 "Tenor Sans",Inter,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#F5F2EC;padding-left:14px;border-left:1px solid rgba(245,242,236,.25);white-space:nowrap}
+@media(max-width:1024px){.brand .branche{display:none}}
+
+/* Trois familles (1er nov.) */
+.fam{display:flex;gap:16px;align-items:baseline;margin:44px 0 18px;padding-top:18px;border-top:1px solid var(--bronze)}
+.fam:first-of-type{margin-top:8px}
+.fam-n{font-family:Lora,Georgia,serif;font-style:italic;font-size:34px;line-height:1;color:var(--bronze)}
+.fam-t{font-size:clamp(24px,3vw,30px);color:var(--minuit);line-height:1.1}
+.fam p{font-size:15.5px;margin-top:4px}
+.ops{background:var(--minuit);color:var(--blanc);border-radius:18px;padding:clamp(22px,4vw,40px);display:grid;gap:26px}
+.ops .letter{font-family:"Tenor Sans",Inter,sans-serif;letter-spacing:.14em;font-size:13px;color:var(--ambre)}
+.ops h3{font-size:clamp(24px,3.4vw,34px);line-height:1.12;margin:8px 0 12px;text-wrap:balance}
+.ops h3 .it{color:var(--ambre)}
+.ops-lead{font-size:17px;max-width:40em}
+.method{list-style:none;padding:0;display:grid;gap:14px;grid-template-columns:repeat(2,1fr);counter-reset:m}
+@media(min-width:640px){.method{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:960px){.method{grid-template-columns:repeat(6,1fr)}}
+.method li{border-top:2px solid var(--ambre);padding-top:10px;display:grid;gap:4px;align-content:start;font-size:14px}
+.method li::before{counter-increment:m;content:counter(m);font-family:Lora,Georgia,serif;font-style:italic;font-size:24px;color:var(--ambre);line-height:1}
+.method b{font-size:15.5px}
+.ops-grid{display:grid;gap:16px}
+@media(min-width:860px){.ops-grid{grid-template-columns:1fr 1fr}}
+.ops-box{border:1px solid rgba(245,242,236,.35);border-radius:14px;padding:20px;display:grid;gap:12px;align-content:start}
+.ops-k{font-family:Lora,Georgia,serif;font-weight:500;font-size:20px}
+.ops .opt{border-top:1px solid rgba(245,242,236,.35)}
+.ops .opt .name,.ops .opt .price b{color:var(--blanc)}
+.ops .opt p{font-size:14.5px}
+.ops-next{font-size:14px;color:var(--creme)}
+.ba{font-size:15px;display:grid;gap:2px}
+.ba-k{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ambre)}
+.ops-foot{display:grid;gap:10px;font-size:14.5px;border-top:1px solid rgba(245,242,236,.35);padding-top:18px}
+.ops :focus-visible{outline-color:var(--ambre)}
+
+/* Offre renforcée (2 nov.) */
+.facts{list-style:none;padding:0;margin-top:22px;display:flex;flex-wrap:wrap;gap:8px 20px;font-size:14.5px}
+.facts li{display:flex;gap:8px;align-items:center}
+.facts li::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--ambre);flex:none}
+.pain{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.pain-i{background:var(--minuit);color:var(--blanc);border-radius:14px;padding:20px}
+.pain-i b{display:block;font-family:Lora,Georgia,serif;font-weight:500;font-size:20px;line-height:1.2;margin-bottom:8px;color:var(--ambre)}
+.pain-i p{font-size:15px}
+.live{margin-top:28px;border:1px solid var(--bronze);border-radius:14px;padding:20px;display:grid;gap:12px}
+.live-k{font-family:Lora,Georgia,serif;font-weight:500;font-size:20px;color:var(--minuit)}
+.live-g{display:grid;gap:16px}
+@media(min-width:760px){.live-g{grid-template-columns:1fr 1fr}}
+.live-g b{display:block;margin-bottom:4px;color:var(--minuit)}
+.live-g p{font-size:14.5px}
+.why{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.why-i{border-top:2px solid var(--bronze);padding-top:14px}
+.why-i b{display:block;font-family:Lora,Georgia,serif;font-weight:500;font-size:20px;line-height:1.2;margin-bottom:6px;color:var(--minuit)}
+.why-i p{font-size:15px}
+.when{display:block;font-size:12.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ambre);margin-bottom:2px}
+.measure{margin-top:16px}
+.measure ul{padding-left:20px;display:grid;gap:6px;font-size:15px}
+.measure-note{margin-top:12px;font-size:14px;color:var(--creme)}
+
+/* Vidéo d'abord (2 nov.) */
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:30px;max-width:560px}
+.stat{border-top:1px solid rgba(245,242,236,.4);padding-top:10px;display:grid;gap:2px}
+.stat b{font-family:Lora,Georgia,serif;font-weight:500;font-size:40px;line-height:1;color:var(--ambre)}
+.stat span{font-size:13.5px;line-height:1.35}
+.meta-line{margin-top:18px;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--creme)}
+.hero-vid{position:relative;margin:0;justify-self:center;width:min(300px,100%);align-self:center}
+.phone{border:1px solid rgba(245,242,236,.5);border-radius:30px;padding:8px;background:#000}
+.phone video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:23px;background:#000}
+.float{position:absolute;background:var(--blanc);color:var(--minuit);border-radius:14px;padding:10px 14px;box-shadow:0 10px 30px rgba(0,0,0,.35);display:grid;gap:2px;max-width:200px}
+.float b{font-family:Lora,Georgia,serif;font-weight:500;font-size:26px;line-height:1}
+.float span{font-size:12.5px}
+.float .f-v{white-space:nowrap}
+.f-top{top:34%;right:-8px}
+.f-bot{bottom:24%;left:-8px}
+.f-bot .dot{display:none}
+.f-k{font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:12px!important;color:var(--bronze)}
+@media(min-width:1100px){.f-top{right:-48px}.f-bot{left:-56px}}
+.hero-vid figcaption{margin-top:12px;font-size:13px;color:var(--creme);text-align:center}
+.strip{background:var(--ambre);color:var(--noir)}
+.strip .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;padding-top:14px;padding-bottom:14px;font-family:Lora,Georgia,serif;font-size:clamp(18px,2.4vw,24px)}
+.strip .wrap>span::before{content:"✦ ";font-size:.7em;vertical-align:.15em}
+.eyebrow{font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--bronze);margin-bottom:10px}
+.cons{display:grid;gap:12px}
+.con{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:center;border:1px solid var(--bronze);border-radius:14px;padding:18px 20px}
+.con-b p{font-size:15.5px;color:var(--minuit)}
+.con-a{font-family:Lora,Georgia,serif;font-size:28px;color:var(--bronze)}
+.con-f{background:var(--minuit);color:var(--blanc);border-radius:10px;padding:14px 16px}
+.con-f p{font-size:15px}
+@media(max-width:700px){.con{grid-template-columns:1fr}.con-a{transform:rotate(90deg);justify-self:start}}
+.mbar{display:none}
+@media(max-width:760px){
+  .mbar{display:flex;gap:8px;position:fixed;left:12px;right:12px;bottom:calc(10px + env(safe-area-inset-bottom,0px));z-index:50;background:var(--minuit);padding:8px;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.35);transition:transform .25s,opacity .25s}
+  .mbar .btn{flex:1;justify-content:center;padding:12px 10px}
+  .mbar.off{transform:translateY(130%);opacity:0;pointer-events:none}
+  body{padding-bottom:84px}
+  .stat b{font-size:32px}
+}
+@media(prefers-reduced-motion:reduce){.mbar{transition:none}}
+.demo-how{margin-top:14px;font-size:14px;color:var(--creme);max-width:36em}
+.demo-how a{color:var(--ambre)}
+</style>
+<style>.metiers-l{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}.metiers-l a{display:grid;gap:4px;text-decoration:none;border:1px solid rgba(115,88,39,.4);border-radius:14px;padding:18px 20px;background:var(--creme);font-size:14.5px}.metiers-l a:hover{border-color:var(--bronze)}.metiers-l b{font-family:Lora,Georgia,serif;font-weight:500;font-size:20px;color:var(--minuit)}</style>
+
+<meta property="og:site_name" content="CCC Studios">
+<meta property="og:locale" content="es_ES">
+<link rel="canonical" href="https://ccc-studios.com/es/services/">
+<link rel="alternate" hreflang="fr-CA" href="https://ccc-studios.com/services/">
+<link rel="alternate" hreflang="en-CA" href="https://ccc-studios.com/en/services/">
+<link rel="alternate" hreflang="es" href="https://ccc-studios.com/es/services/">
+<link rel="alternate" hreflang="x-default" href="https://ccc-studios.com/services/">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://ccc-studios.com/es/"},{"@type":"ListItem","position":2,"name":"Servicios","item":"https://ccc-studios.com/es/services/"}]},{"@type":"WebPage","@id":"https://ccc-studios.com/es/services/","url":"https://ccc-studios.com/es/services/","name":"Ficha de Google y anuncios en video para contratistas","description":"Auditoría gratuita de su ficha de Google en 1 día hábil. Anuncios de 15 segundos con sus fotos reales en 5 días, sin rodaje. Montreal, Laval, Rive-Nord.","inLanguage":"es","isPartOf":{"@id":"https://ccc-studios.com/#site"},"about":{"@id":"https://ccc-studios.com/#org"}},{"@type":"Service","name":"Anuncios en video con sus fotos","serviceType":"Anuncios en video con sus fotos","provider":{"@id":"https://ccc-studios.com/#org"},"areaServed":[{"@type":"AdministrativeArea","name":"Montréal"},{"@type":"AdministrativeArea","name":"Laval"},{"@type":"AdministrativeArea","name":"Rive-Nord de Montréal"},{"@type":"AdministrativeArea","name":"Ouest-de-l'Île de Montréal"},{"@type":"AdministrativeArea","name":"Québec"}],"availableLanguage":["fr","en","es"]},{"@type":"Service","name":"Redes sociales","serviceType":"Redes sociales","provider":{"@id":"https://ccc-studios.com/#org"},"areaServed":[{"@type":"AdministrativeArea","name":"Montréal"},{"@type":"AdministrativeArea","name":"Laval"},{"@type":"AdministrativeArea","name":"Rive-Nord de Montréal"},{"@type":"AdministrativeArea","name":"Ouest-de-l'Île de Montréal"},{"@type":"AdministrativeArea","name":"Québec"}],"availableLanguage":["fr","en","es"]},{"@type":"Service","name":"Estrategia publicitaria","serviceType":"Estrategia publicitaria","provider":{"@id":"https://ccc-studios.com/#org"},"areaServed":[{"@type":"AdministrativeArea","name":"Montréal"},{"@type":"AdministrativeArea","name":"Laval"},{"@type":"AdministrativeArea","name":"Rive-Nord de Montréal"},{"@type":"AdministrativeArea","name":"Ouest-de-l'Île de Montréal"},{"@type":"AdministrativeArea","name":"Québec"}],"availableLanguage":["fr","en","es"]},{"@type":"Service","name":"Diseño de sitio web","serviceType":"Diseño de sitio web","provider":{"@id":"https://ccc-studios.com/#org"},"areaServed":[{"@type":"AdministrativeArea","name":"Montréal"},{"@type":"AdministrativeArea","name":"Laval"},{"@type":"AdministrativeArea","name":"Rive-Nord de Montréal"},{"@type":"AdministrativeArea","name":"Ouest-de-l'Île de Montréal"},{"@type":"AdministrativeArea","name":"Québec"}],"availableLanguage":["fr","en","es"]},{"@type":"Service","name":"Perfil de Google y SEO","serviceType":"Perfil de Google y SEO","provider":{"@id":"https://ccc-studios.com/#org"},"areaServed":[{"@type":"AdministrativeArea","name":"Montréal"},{"@type":"AdministrativeArea","name":"Laval"},{"@type":"AdministrativeArea","name":"Rive-Nord de Montréal"},{"@type":"AdministrativeArea","name":"Ouest-de-l'Île de Montréal"},{"@type":"AdministrativeArea","name":"Québec"}],"availableLanguage":["fr","en","es"]},{"@type":"Service","name":"Imagen de marca","serviceType":"Imagen de marca","provider":{"@id":"https://ccc-studios.com/#org"},"areaServed":[{"@type":"AdministrativeArea","name":"Montréal"},{"@type":"AdministrativeArea","name":"Laval"},{"@type":"AdministrativeArea","name":"Rive-Nord de Montréal"},{"@type":"AdministrativeArea","name":"Ouest-de-l'Île de Montréal"},{"@type":"AdministrativeArea","name":"Québec"}],"availableLanguage":["fr","en","es"]},{"@type":"Service","name":"Optimización de operaciones: IA y automatización","serviceType":"Optimización de operaciones: IA y automatización","provider":{"@id":"https://ccc-studios.com/#org"},"areaServed":[{"@type":"AdministrativeArea","name":"Montréal"},{"@type":"AdministrativeArea","name":"Laval"},{"@type":"AdministrativeArea","name":"Rive-Nord de Montréal"},{"@type":"AdministrativeArea","name":"Ouest-de-l'Île de Montréal"},{"@type":"AdministrativeArea","name":"Québec"}],"availableLanguage":["fr","en","es"]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Por qué empezar por el perfil de Google?","acceptedAnswer":{"@type":"Answer","text":"Porque muchas veces es ahí donde el cliente lo encuentra primero, antes que su sitio o sus redes. Una categoría o datos equivocados pueden hacerle perder llamadas sin que nadie lo note."}},{"@type":"Question","name":"¿Se va a notar que lo hizo una IA?","acceptedAnswer":{"@type":"Answer","text":"Lo que mostramos de su trabajo son sus fotos reales. La voz es sintética, y el video lo indica. Si prefiere una presentadora en pantalla, Jennifer es una opción, siempre declarada como IA. Una persona escribe cada guion y elige cada imagen."}},{"@type":"Question","name":"¿Tengo que tomar varios servicios?","acceptedAnswer":{"@type":"Answer","text":"No. Cada servicio se toma solo, una vez o cada mes. La única regla: un video va con el servicio B, para que sus redes estén listas para recibirlo."}},{"@type":"Question","name":"¿La ficha de Google cuesta dinero?","acceptedAnswer":{"@type":"Answer","text":"No. La ficha de empresa de Google es gratuita: Google no la vende. Lo que usted paga es nuestro trabajo. Usted sigue siendo el propietario de su ficha; nosotros solo somos administradores, y puede quitarnos cuando quiera. Google explica lo que hay que saber antes de trabajar con una agencia en esta página."}},{"@type":"Question","name":"¿Cómo se paga?","acceptedAnswer":{"@type":"Answer","text":"Para un servicio de una vez: la mitad al inicio y la mitad al aceptar. Para un servicio mensual: se paga por adelantado el día 1 de cada mes. Por transferencia Interac."}},{"@type":"Question","name":"¿Hablan español?","acceptedAnswer":{"@type":"Answer","text":"Sí. Dan hace las llamadas y reuniones en francés, inglés o español, y sus publicaciones pueden tener una versión en español."}},{"@type":"Question","name":"¿Y la publicidad pagada?","acceptedAnswer":{"@type":"Answer","text":"Es el servicio C. Hacemos el plan y el seguimiento, una vez que sus cuentas estén en orden. El presupuesto va directo de usted a la plataforma, en sus propias cuentas; nunca pasa por nosotros."}},{"@type":"Question","name":"¿La optimización es solo IA?","acceptedAnswer":{"@type":"Answer","text":"No. Empezamos por la IA porque es nuestra especialidad, pero el método viene de la ingeniería industrial: primero mejoramos el proceso y luego elegimos la herramienta. A veces una simple fórmula funciona mejor que una IA, y se lo diremos."}}]}]}</script></head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/es/" aria-label="CCC Studios, accueil"><img src="/logo-ccc.svg" alt="CCC Studios" width="155" height="22"><span class="branche"><span lang="es">Rama de negocios</span></span></a>
+    <nav>
+      <div class="navlinks">
+        <a href="/es/services/" aria-current="page">Services</a>
+        <a href="/es/jennshems/">Jennifer</a>
+        <a href="/jennshems/charte/"><span lang="es">Carta</span></a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="langs" role="group" aria-label="Langue / Language / Idioma">
+        <button type="button" data-set="fr" aria-pressed="false">FR</button>
+        <button type="button" data-set="en" aria-pressed="false">EN</button>
+        <button type="button" data-set="es" aria-pressed="true">ES</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="depth" aria-hidden="true"><div class="dp hide-m" data-sec="2" data-fy="0.42" data-side="left" data-x="-330" data-depth="0.85" style="width:520px;opacity:0.75"><svg viewBox="0 0 400 400" aria-hidden="true"><path d="M30 390A360 360 0 0 1 390 30" fill="none" stroke="#FFC40C" stroke-width="2.5"></path><path d="M70 395A325 325 0 0 1 395 70" fill="none" stroke="#735827" stroke-width="22" stroke-dasharray="2.5 11" opacity=".55"></path></svg></div><div class="dp hide-m" data-sec="2" data-fy="-0.1" data-side="left" data-x="120" data-depth="0.25" style="width:16px;opacity:0.9"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="#FFC40C"></circle></svg></div><div class="dp " data-sec="3" data-fy="0.0" data-side="right" data-x="-60" data-depth="0.55" style="width:300px;opacity:0.75"><svg viewBox="0 0 300 110" aria-hidden="true"><circle cx="55" cy="55" r="48" fill="none" stroke="#FFC40C" stroke-width="2.5"></circle><circle cx="150" cy="55" r="48" fill="none" stroke="#FFC40C" stroke-width="2.5"></circle><circle cx="245" cy="55" r="48" fill="none" stroke="#FFC40C" stroke-width="2.5"></circle><circle cx="168" cy="55" r="44" fill="#FFC40C" opacity=".18"></circle></svg></div><div class="dp hide-m" data-sec="3" data-fy="0.5" data-side="left" data-x="-90" data-depth="0.35" style="width:180px;opacity:0.75"><svg viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="92" fill="none" stroke="#735827" stroke-width="2" stroke-dasharray="1 9" stroke-linecap="round"></circle></svg></div><div class="dp hide-m" data-sec="4" data-fy="0.0" data-side="right" data-x="70" data-depth="0.4" style="width:110px;opacity:0.9"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="54" fill="none" stroke="#FFC40C" stroke-width="3"></circle><path d="M40 62l14 14 28-32" fill="none" stroke="#FFC40C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path></svg></div><div class="dp hide-m" data-sec="5" data-fy="0.0" data-side="left" data-x="-120" data-depth="0.7" style="width:620px;opacity:0.75"><svg viewBox="0 0 600 120" aria-hidden="true"><path d="M0 90C120 90 150 20 300 20S480 100 600 60" fill="none" stroke="#FFC40C" stroke-width="2.5"></path></svg></div><div class="dp hide-m" data-sec="5" data-fy="0.3" data-side="right" data-x="160" data-depth="0.2" style="width:12px;opacity:0.9"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="#FFC40C"></circle></svg></div><div class="dp hide-m" data-sec="7" data-fy="0.0" data-side="right" data-x="-200" data-depth="0.8" style="width:460px;opacity:0.75"><svg viewBox="0 0 400 400" aria-hidden="true"><path d="M30 390A360 360 0 0 1 390 30" fill="none" stroke="#FFC40C" stroke-width="2.5"></path><path d="M70 395A325 325 0 0 1 395 70" fill="none" stroke="#735827" stroke-width="22" stroke-dasharray="2.5 11" opacity=".55"></path></svg></div><div class="dp hide-m" data-sec="8" data-fy="0.0" data-side="left" data-x="-40" data-depth="0.45" style="width:260px;opacity:0.75"><svg viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="92" fill="none" stroke="#735827" stroke-width="2" stroke-dasharray="1 9" stroke-linecap="round"></circle></svg></div><div class="dp hide-m" data-sec="9" data-fy="0.0" data-side="left" data-x="-90" data-depth="0.5" style="width:240px;opacity:0.75"><svg viewBox="0 0 300 110" aria-hidden="true"><circle cx="55" cy="55" r="48" fill="none" stroke="#FFC40C" stroke-width="2.5"></circle><circle cx="150" cy="55" r="48" fill="none" stroke="#FFC40C" stroke-width="2.5"></circle><circle cx="245" cy="55" r="48" fill="none" stroke="#FFC40C" stroke-width="2.5"></circle><circle cx="168" cy="55" r="44" fill="#FFC40C" opacity=".18"></circle></svg></div></div>
+
+<section class="hero dark" style="padding:0">
+  <div class="wrap">
+    <div>
+      <div class="kicker"><span lang="es">Rama de negocios · empresas de servicios en Quebec</span></div>
+      <h1><span lang="es">Sus clientes lo buscan en Google. <span class="it">¿Lo encuentran?</span></span></h1>
+      <p class="lead"><span lang="es">Empezamos con una auditoría gratuita de su perfil de Google: tres arreglos que usted mismo puede hacer. Después, si quiere, nos ocupamos de sus redes, de su sitio y de anuncios cortos en video hechos con sus fotos reales. Toda voz o imagen creada con IA se declara siempre.</span></p>
+      <div class="ctas">
+        <a class="btn btn-main js-mail" href="mailto:bonjour@ccc-studios.com"><span lang="es">Pedir una auditoría exprés gratuita</span></a>
+        <a class="btn btn-line" href="#demo"><span lang="es">Ver la demo</span></a>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>1</b><span lang="es">día hábil para su auditoría gratuita</span></div>
+        <div class="stat"><b>5</b><span lang="es">días hábiles para un video</span></div>
+        <div class="stat"><b>3</b><span lang="es">idiomas: francés, inglés, español</span></div>
+      </div>
+      <p class="meta-line"><span lang="es">Sin contrato · Una persona real al teléfono · IA siempre declarada</span></p>
+    </div>
+    <figure class="hero-vid" id="demo">
+      <div class="phone">
+        <video controls="" playsinline="" preload="none" data-base="/jennshems/media/demo-reno-v2" poster="/jennshems/media/demo-reno-v2-fr.jpg"><source src="/jennshems/media/demo-reno-v2-fr.mp4" type="video/mp4"></video>
+      </div>
+      <div class="float f-top"><b>15 s</b><span lang="es">formato anuncio, vertical</span></div>
+      <div class="float f-bot"><span class="dot"></span><span class="f-k" lang="es">Demo · renovación</span><span class="f-v" lang="es">Mención IA en pantalla ✓</span></div>
+      <figcaption><span lang="es">Demo: un anuncio de renovación para una empresa ficticia, con Jennifer, actriz IA.</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<div class="strip" aria-hidden="true"><div class="wrap"><span><span lang="es">Que lo vean</span></span><span><span lang="es">Que lo elijan</span></span><span><span lang="es">Que lo llamen</span></span><span><span lang="es">Operar mejor</span></span></div></div>
+
+<section class="souffle" style="--souffle-ink:#180D00;--souffle-acc:#735827"><div class="wrap"><p class="big"><span lang="es">Su trabajo es <b>excelente</b>.<br>Merece que lo <em>vean</em>.</span></p></div></section>
+
+
+<section class="probleme" id="probleme">
+  <div class="wrap">
+    <hr class="rule">
+    <h2><span lang="es">El problema casi nunca es su trabajo</span></h2>
+    <p class="sub"><span lang="es">Es todo lo que pasa antes de la llamada. Tres fugas, y lo que hacemos:</span></p>
+    <div class="cons">
+      <article class="con"><div class="con-b"><p lang="es">Pasa por Facebook e Instagram. Una foto fija no lo detiene.</p></div><span class="con-a" aria-hidden="true">→</span><div class="con-f"><p lang="es">Un video de 15 segundos, con sus fotos reales y una voz, que lo detiene y le dice qué hacer.</p></div></article>
+      <article class="con"><div class="con-b"><p lang="es">Busca su oficio y su ciudad. Un sitio viejo o un número equivocado lo hace dudar.</p></div><span class="con-a" aria-hidden="true">→</span><div class="con-f"><p lang="es">Un sitio claro, un perfil de Google exacto y un botón de llamada que marca el número correcto.</p></div></article>
+      <article class="con"><div class="con-b"><p lang="es">Llama al primero que contesta. Una llamada perdida, y ya está con el siguiente.</p></div><span class="con-a" aria-hidden="true">→</span><div class="con-f"><p lang="es">Medimos su tiempo de respuesta y luego ponemos en marcha lo que le ayuda a responder más rápido.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="audit" id="audit">
+  <div class="wrap">
+    <hr class="rule">
+    <p class="eyebrow"><span lang="es">Auditoría exprés gratuita · 1 día hábil · sin compromiso</span></p>
+    <h2><span lang="es">Lo primero que revisamos</span></h2>
+    <p class="sub"><span lang="es">Muchas veces una empresa ya tiene buenas reseñas y buen trabajo que mostrar. El problema es que no la encuentran, o encuentran datos equivocados.</span></p>
+    <div class="checks">
+      <div class="check"><b lang="es">La categoría en Google</b><p lang="es">Con la categoría equivocada, no aparece cuando buscan su oficio.</p></div>
+      <div class="check"><b lang="es">Sus datos en todas partes</b><p lang="es">El mismo teléfono, correo y dirección en Google, el sitio y las redes.</p></div>
+      <div class="check"><b lang="es">Sus reseñas</b><p lang="es">Las buenas reseñas que duermen en Google pueden trabajar en su sitio y sus redes.</p></div>
+      <div class="check"><b lang="es">Sus redes</b><p lang="es">Una imagen uniforme, publicaciones al día y nada que desentone para los clientes de aquí.</p></div>
+      <div class="check"><b lang="es">Su sitio web</b><p lang="es">Fácil de leer en el celular, rápido, en francés e inglés, y que aparezca al buscar su propio nombre.</p></div>
+    </div>
+    <div class="live">
+      <b class="live-k"><span lang="es">Y 2 pruebas en vivo</span></b>
+      <div class="live-g">
+        <div><b lang="es">La prueba del botón de llamada</b><p lang="es">Abrimos su sitio en un celular y tocamos su número. Ya vimos un sitio que marcaba el número equivocado.</p></div>
+        <div><b lang="es">La prueba del cliente</b><p lang="es">Con su permiso, le enviamos una solicitud de prueba, por su formulario o por mensaje, y medimos el tiempo de respuesta. Usted recibe el tiempo exacto.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <hr class="rule">
+    <h2><span lang="es">Tres familias de servicios</span></h2>
+    <p class="sub"><span lang="es">Que lo vean, que lo elijan, operar mejor. Elija lo que necesita, una vez o cada mes. Precios de base en dólares canadienses, antes de impuestos; la cotización da el precio exacto según su caso.</span></p>
+
+    <div class="fam">
+      <span class="fam-n">1</span>
+      <div><h3 class="fam-t"><span lang="es">Que lo vean</span></h3><p><span lang="es">Que lo encuentren, en las redes y en los anuncios.</span></p></div>
+    </div>
+    <div class="svc">
+      <article class="card">
+        <span class="letter">A</span>
+        <h3><span lang="es">Anuncios en video con sus fotos</span></h3>
+        <p class="what"><span lang="es">Un video explicativo de 30 a 40 segundos, en francés e inglés, hecho con sus fotos reales y una voz en off. Si lo desea, Jennifer, nuestra actriz IA, lo presenta en pantalla. Toda voz o imagen creada con IA se declara en el video.</span></p>
+        <div class="opt">
+          <span class="name"><span lang="es">Una vez</span></span>
+          <span class="price"><span lang="es">desde <b>$499</b></span></span>
+        </div>
+        <div class="opt">
+          <span class="name"><span lang="es">Cada mes</span></span>
+          <span class="price"><span lang="es">desde <b>$399</b> / mes</span></span>
+          
+          
+          <ul lang="es"><li>Licencia de 12 meses para sus cuentas y anuncios</li><li>Una ronda de cambios por video</li><li>Versión en español como opción</li></ul>
+        </div>
+        <p class="cond"><span lang="es">Va con el servicio B: arreglamos sus redes antes de publicar un video en ellas. Para un anuncio de 15 segundos, vea <a href="/es/jennshems/#offres">las ofertas de Jennifer</a>.</span></p>
+      </article>
+      <article class="card">
+        <span class="letter">B</span>
+        <h3><span lang="es">Redes sociales</span></h3>
+        <p class="what"><span lang="es">Facebook, Instagram y un canal de YouTube para sus videos: una imagen clara y uniforme, y luego publicaciones regulares.</span></p>
+        <div class="opt">
+          <span class="name"><span lang="es">Puesta a punto</span></span>
+          <span class="price"><span lang="es">desde <b>$599</b></span></span>
+          
+          
+          <ul lang="es"><li>Biografía, foto de perfil y portada</li><li>Logo en alta calidad</li><li>Lista de control numerada, mostrada antes de publicar</li></ul>
+        </div>
+        <div class="opt">
+          <span class="name"><span lang="es">Gestión mensual</span></span>
+          <span class="price"><span lang="es">desde <b>$750</b> / mes</span></span>
+          
+          
+          <ul lang="es"><li>Publicaciones en francés y luego en inglés</li><li>Calendario del mes aprobado por usted, por escrito</li><li>Informe mensual</li></ul>
+        </div>
+        <p class="cond"><span lang="es">Cargo de apertura la primera vez; incluye la puesta a punto.</span></p>
+      </article>
+      <article class="card">
+        <span class="letter">C</span>
+        <h3><span lang="es">Estrategia publicitaria</span></h3>
+        <p class="what"><span lang="es">Dónde anunciarse, a quién, con qué presupuesto y con qué frecuencia: Facebook, Instagram, Google y YouTube. Luego seguimos las cifras cada mes.</span></p>
+        <div class="opt">
+          <span class="name"><span lang="es">Plan publicitario</span></span>
+          <span class="price"><span lang="es"><b>Bajo cotización</b></span></span>
+          
+          
+          <ul lang="es"><li>Canales y públicos objetivo</li><li>Presupuesto y frecuencia por canal</li><li>Campañas creadas en sus propias cuentas</li></ul>
+        </div>
+        <div class="opt">
+          <span class="name"><span lang="es">Gestión y seguimiento mensual</span></span>
+          <span class="price"><span lang="es"><b>Bajo cotización</b></span></span>
+          
+          
+          <ul lang="es"><li>Ajustes según los resultados</li><li>Costo por clic, por llamada y por solicitud</li><li>Informe mensual comparado con el punto de partida</li></ul>
+        </div>
+        <p class="cond"><span lang="es">El presupuesto publicitario lo paga usted, directamente a la plataforma; nunca pasa por nosotros. Nuestros honorarios van aparte.</span></p>
+      </article>
+    </div>
+
+    <div class="fam">
+      <span class="fam-n">2</span>
+      <div><h3 class="fam-t"><span lang="es">Que lo elijan</span></h3><p><span lang="es">Una vez que lo encuentran, que lo elijan: un sitio, un perfil y una imagen que inspiran confianza.</span></p></div>
+    </div>
+    <div class="svc">
+      <article class="card">
+        <span class="letter">D</span>
+        <h3><span lang="es">Diseño de sitio web</span></h3>
+        <p class="what"><span lang="es">Un sitio nuevo, o el rediseño del suyo: claro en el celular, rápido, en francés e inglés, y pensado para llevar a la llamada.</span></p>
+        <div class="opt">
+          <span class="name"><span lang="es">Sitio nuevo o rediseño</span></span>
+          <span class="price"><span lang="es"><b>Bajo cotización</b></span></span>
+          
+          
+          <ul lang="es"><li>Estructura y diseño a medida, con sus colores</li><li>Textos en francés e inglés, español como opción</li><li>Probado en computadora y celular antes de publicarlo</li></ul>
+        </div>
+        <p class="cond"><span lang="es">El sitio queda a su nombre. El mantenimiento mensual va con el servicio E.</span></p>
+      </article>
+      <article class="card">
+        <span class="letter">E</span>
+        <h3><span lang="es">Perfil de Google y SEO</span></h3>
+        <p class="what"><span lang="es">Lo que ve un cliente al buscarlo: la categoría correcta, los servicios correctos, los datos de contacto correctos y un sitio que lo lleva a llamar.</span></p>
+        <div class="opt">
+          <span class="name"><span lang="es">Puesta a punto</span></span>
+          <span class="price"><span lang="es">desde <b>$1,200</b></span></span>
+          
+          
+          <ul lang="es"><li>Perfil de Google completo: categoría, servicios, fotos</li><li>Datos de contacto corregidos en todas partes</li><li>Textos del sitio en francés e inglés, SEO básico</li></ul>
+        </div>
+        <div class="opt">
+          <span class="name"><span lang="es">SEO y mantenimiento mensual</span></span>
+          <span class="price"><span lang="es">desde <b>$750</b> / mes</span></span>
+          
+          
+          <ul lang="es"><li>Publicaciones en su perfil de Google</li><li>Actualizaciones del sitio</li><li>Informe mensual comparado con el punto de partida</li></ul>
+        </div>
+        <p class="cond"><span lang="es">Para un sitio editable (WordPress, Wix, Squarespace); si no, cotización aparte. Cargo de apertura para el mantenimiento mensual; incluye la puesta a punto.</span></p>
+      </article>
+      <article class="card">
+        <span class="letter">F</span>
+        <h3><span lang="es">Imagen de marca</span></h3>
+        <p class="what"><span lang="es">Un logo más nítido, colores y tipografías que combinan, y plantillas listas para sus redes, cotizaciones y tarjetas.</span></p>
+        <div class="opt">
+          <span class="name"><span lang="es">Puesta a punto</span></span>
+          <span class="price"><span lang="es"><b>Bajo cotización</b></span></span>
+          
+          
+          <ul lang="es"><li>Logo renovado, en alta calidad</li><li>Paleta de colores y tipografías</li><li>Plantillas para sus redes y documentos, con una pequeña guía</li></ul>
+        </div>
+        <p class="cond"><span lang="es">Su logo sigue siendo suyo: lo modernizamos, y no lo reemplazamos sin su aprobación.</span></p>
+      </article>
+    </div>
+
+    <div class="fam">
+      <span class="fam-n">3</span>
+      <div><h3 class="fam-t"><span lang="es">Operar mejor</span></h3><p><span lang="es">Menos tiempo perdido, menos costos, menos errores, detrás del mostrador.</span></p></div>
+    </div>
+
+    <div class="ops">
+      <div class="ops-head">
+        <span class="letter">G</span>
+        <h3><span lang="es">Optimización de operaciones: <span class="it">IA y automatización</span></span></h3>
+        <p class="ops-lead"><span lang="es">¿Su empresa funciona con un archivo de Excel que solo usted entiende? ¿Se van horas cada semana en cotizaciones, seguimientos y horarios? Organizamos sus operaciones y luego construimos las herramientas a su alrededor.</span></p>
+      </div>
+      <ol class="method"><li><b><span lang="es">Diagnosticar</span></b><span><span lang="es">Observamos un proceso y medimos el tiempo que toma.</span></span></li><li><b><span lang="es">Ordenar</span></b><span><span lang="es">Sus datos reunidos en un solo lugar limpio y confiable.</span></span></li><li><b><span lang="es">Estructurar</span></b><span><span lang="es">Datos bien pensados, fáciles de ordenar y seguir.</span></span></li><li><b><span lang="es">Conectar</span></b><span><span lang="es">Fórmulas, calendario, correos y herramientas de IA hacen el trabajo repetitivo.</span></span></li><li><b><span lang="es">Implementar</span></b><span><span lang="es">Un panel para usted, herramientas simples para su equipo.</span></span></li><li><b><span lang="es">Medir</span></b><span><span lang="es">Comparamos con el punto de partida: horas, errores, plazos.</span></span></li></ol>
+      <div class="ops-grid">
+        <div class="ops-box">
+          <b class="ops-k"><span lang="es">Dos formas de empezar</span></b>
+          <div class="opt">
+            <span class="name"><span lang="es">Diagnóstico de IA</span></span>
+            <span class="price"><span lang="es"><b>Bajo cotización</b></span></span>
+            <p><span lang="es">Un proceso analizado, las pérdidas de tiempo cuantificadas y las herramientas de IA que las reducirían, con su costo y la ganancia estimada.</span></p>
+          </div>
+          <div class="opt">
+            <span class="name"><span lang="es">Rescate de hoja de cálculo</span></span>
+            <span class="price"><span lang="es"><b>Precio fijo</b>, bajo cotización</span></span>
+            <p><span lang="es">Su archivo de Excel se convierte en una hoja de Google limpia, que todo el equipo puede usar con confianza.</span></p>
+          </div>
+          <p class="ops-next"><span lang="es">Después, si hace falta: sistema conectado, aplicaciones a medida, mantenimiento mensual.</span></p>
+        </div>
+        <div class="ops-box ops-case">
+          <b class="ops-k"><span lang="es">Proyecto piloto: una agencia de alquiler en Montreal</span></b>
+          <p class="ba"><span class="ba-k"><span lang="es">Antes</span></span><span lang="es">Un archivo de Excel desordenado que solo el dueño entendía.</span></p>
+          <p class="ba"><span class="ba-k"><span lang="es">Después</span></span><span lang="es">Una base de datos limpia, un inventario compartido, las visitas anotadas en el calendario automáticamente, un panel para la dirección y una aplicación para cada agente.</span></p>
+        </div>
+      </div>
+      <div class="ops-foot">
+        <p><a href="/es/a-propos/"><b>Dan Ortega</b></a> · <span lang="es">Graduado del bachillerato en ingeniería industrial (BEng), Universidad Concordia, Escuela de Ingeniería e Informática Gina Cody, 2021 · ex gerente de proyectos en Airbus. Allí aprendió a optimizar líneas de producción; aplica el mismo método a su oficina.</span></p>
+        <p><span lang="es"><b>Primero sus datos.</b> Antes de que una herramienta toque la información de sus clientes, verificamos con usted que cumpla con la Ley 25 de Quebec. Sus herramientas y sus datos quedan a su nombre.</span></p>
+      </div>
+    </div>
+
+    <div class="founder">
+      <b><span lang="es">Precio fundador para nuestros primeros clientes</span></b>
+      
+      
+      <p lang="es">Un número limitado de empresas paga el precio fundador, más bajo, en cada servicio, a cambio de dos cosas: permiso para mostrar el trabajo y sus resultados, y un testimonio honesto después de un mes.</p>
+    </div>
+    <p class="small"><span lang="es">«Bajo cotización»: el precio se fija después de la auditoría exprés o del diagnóstico, según su caso. El presupuesto publicitario siempre lo paga usted, directamente a la plataforma.</span></p>
+  </div>
+</section>
+
+<section id="metiers" class="metiers">
+  <div class="wrap">
+    <hr class="rule">
+    <h2><span lang="es">Por oficio</span></h2>
+    <p class="sub"><span lang="es">Los mismos servicios, explicados para su oficio: lo que buscan sus clientes y lo que corregimos primero.</span></p>
+    <div class="metiers-l">
+      <a href="/es/metiers/plombiers/"><b><span lang="es">Plomería y calefacción</span></b><span lang="es">Ficha de Google, anuncios en video y urgencias de invierno →</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="pourquoi" id="pourquoi">
+  <div class="wrap">
+    <hr class="rule">
+    <h2><span lang="es">Por qué CCC Studios</span></h2>
+    <div class="why">
+      <div class="why-i"><b lang="es">El contenido, no solo el sistema</b><p lang="es">Un sitio y unos anuncios necesitan algo que mostrar. Lo creamos: videos cortos hechos con sus fotos reales, una voz en off y, si quiere, Jennifer, nuestra actriz IA declarada. Entregados en 5 días hábiles.</p></div>
+      <div class="why-i"><b lang="es">Tres idiomas, una sola persona</b><p lang="es">Dan le responde personalmente, en francés, inglés o español, desde la primera llamada hasta el informe del mes.</p></div>
+      <div class="why-i"><b lang="es">Cifras, no adjetivos</b><p lang="es">Anotamos su punto de partida, corregimos primero lo que más rinde y cada mes le mostramos las cifras reales.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="how dark" id="comment">
+  <div class="wrap">
+    <hr class="rule">
+    <h2><span lang="es">Cómo funciona</span></h2>
+    <p class="sub"><span lang="es">Usted trata con una persona real de principio a fin. Nada se publica sin su aprobación por escrito.</span></p>
+    <div class="steps">
+      <div class="step"><span class="when"><span lang="es">1 día hábil</span></span><b lang="es">La auditoría exprés</b><p lang="es">Una página sobre lo que un cliente ve de usted, y las 3 correcciones que más valen.</p></div>
+      <div class="step"><span class="when"><span lang="es">Cotización en 1 día hábil</span></span><b lang="es">Una llamada, una cotización</b><p lang="es">Elegimos juntos los servicios. La cotización es clara, línea por línea.</p></div>
+      <div class="step"><span class="when"><span lang="es">Antes de empezar</span></span><b lang="es">El punto de partida</b><p lang="es">Anotamos sus cifras antes de empezar, para comparar con honestidad cada mes.</p></div>
+      <div class="step"><span class="when"><span lang="es">5 días hábiles después del depósito</span></span><b lang="es">La puesta a punto</b><p lang="es">Se prepara en borrador, se muestra con su lista de control y luego se publica.</p></div>
+    </div>
+    <div class="month first">
+      <h3><span lang="es">El primer mes, en detalle</span></h3>
+      
+      
+      <ol lang="es"><li>Conocemos su empresa: sus servicios, sus mejores clientes, lo que lo distingue.</li><li>Revisamos lo que ya existe: perfil de Google, sitio, redes, mensajes.</li><li>Fijamos la estrategia: 3 o 4 temas de publicación y su mensaje principal.</li><li>Definimos su estilo: colores, tipografías, imágenes y tono.</li><li>Preparamos su primer calendario y las primeras publicaciones.</li><li>Usted aprueba, ponemos la rutina en marcha y publicamos.</li></ol>
+      <p class="measure-note" lang="es">Después de 4 semanas: su estrategia en una página, su estilo definido y sus primeras publicaciones aprobadas.</p>
+    </div>
+    <div class="month">
+      <h3><span lang="es">Después, cada mes</span></h3>
+      
+      
+      <ol lang="es"><li>El informe del mes y lo que cambiamos.</li><li>Usted deja sus fotos y videos en una carpeta compartida.</li><li>Preparamos el calendario: cada publicación, cada texto y una vista previa de su perfil.</li><li>Usted aprueba por escrito y publicamos en los días previstos.</li></ol>
+    </div>
+    <div class="month measure">
+      <h3><span lang="es">Lo que medimos, antes y después</span></h3>
+      
+      
+      <ul lang="es"><li>Llamadas, rutas y clics desde su perfil de Google</li><li>Visitas al sitio y solicitudes de cotización</li><li>Tiempo de respuesta a una solicitud</li><li>Velocidad del sitio en el celular</li><li>Mensajes y seguidores en sus redes</li></ul>
+      <p class="measure-note" lang="es">Sus cifras son suyas: nunca publicamos los resultados de un cliente sin su aprobación por escrito.</p>
+    </div>
+  </div>
+</section>
+
+<section id="promesses">
+  <div class="wrap">
+    <hr class="rule">
+    <h2><span lang="es">Lo que prometemos, y lo que no</span></h2>
+    <div class="prom">
+      <div class="p"><b lang="es">Sin resultados garantizados</b><p lang="es">Nadie puede garantizar ventas. Medimos, comparamos con el punto de partida y le mostramos las cifras reales.</p></div>
+      <div class="p"><b lang="es">Usted conserva sus cuentas</b><p lang="es">Sus cuentas siguen a su nombre. Usted nos da acceso y puede quitarlo cuando quiera.</p></div>
+      <div class="p"><b lang="es">La IA se declara</b><p lang="es">Jennifer siempre lleva la mención IA, y una imagen creada con IA se indica como tal. Sus trabajos reales se muestran con sus fotos reales.</p></div>
+      <div class="p"><b lang="es">Primero el francés</b><p lang="es">Cada publicación comercial tiene su versión en francés, como lo exige la ley en Quebec. Sigue el inglés; el español, si lo pide.</p></div>
+      <div class="p"><b lang="es">Un compromiso simple</b><p lang="es">Sin contrato: los servicios mensuales se toman mes a mes, con 30 días de aviso para terminar. La puesta en marcha se paga una sola vez. Comprométase 3 meses: −10 % en el precio mensual.</p></div>
+      <div class="p"><b lang="es">Sus afirmaciones, aprobadas</b><p lang="es">No publicamos nada sobre sus servicios, precios o años de experiencia que usted no haya confirmado por escrito.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="wrap">
+    <h2><span lang="es">Preguntas</span></h2>
+    <details><summary><span lang="es">¿Por qué empezar por el perfil de Google?</span></summary><p lang="es">Porque muchas veces es ahí donde el cliente lo encuentra primero, antes que su sitio o sus redes. Una categoría o datos equivocados pueden hacerle perder llamadas sin que nadie lo note.</p></details>
+    <details><summary><span lang="es">¿Se va a notar que lo hizo una IA?</span></summary><p lang="es">Lo que mostramos de su trabajo son sus fotos reales. La voz es sintética, y el video lo indica. Si prefiere una presentadora en pantalla, Jennifer es una opción, siempre declarada como IA. Una persona escribe cada guion y elige cada imagen.</p></details>
+    <details><summary><span lang="es">¿Tengo que tomar varios servicios?</span></summary><p lang="es">No. Cada servicio se toma solo, una vez o cada mes. La única regla: un video va con el servicio B, para que sus redes estén listas para recibirlo.</p></details>
+    <details><summary><span lang="es">¿La ficha de Google cuesta dinero?</span></summary><p lang="es">No. La ficha de empresa de Google es gratuita: Google no la vende. Lo que usted paga es nuestro trabajo. Usted sigue siendo el propietario de su ficha; nosotros solo somos administradores, y puede quitarnos cuando quiera. Google explica lo que hay que saber antes de trabajar con una agencia <a href="https://support.google.com/business/answer/7163406?hl=es">en esta página</a>.</p></details>
+    <details><summary><span lang="es">¿Cómo se paga?</span></summary><p lang="es">Para un servicio de una vez: la mitad al inicio y la mitad al aceptar. Para un servicio mensual: se paga por adelantado el día 1 de cada mes. Por transferencia Interac.</p></details>
+    <details><summary><span lang="es">¿Hablan español?</span></summary><p lang="es">Sí. Dan hace las llamadas y reuniones en francés, inglés o español, y sus publicaciones pueden tener una versión en español.</p></details>
+    <details><summary><span lang="es">¿Y la publicidad pagada?</span></summary><p lang="es">Es el servicio C. Hacemos el plan y el seguimiento, una vez que sus cuentas estén en orden. El presupuesto va directo de usted a la plataforma, en sus propias cuentas; nunca pasa por nosotros.</p></details>
+    <details><summary><span lang="es">¿La optimización es solo IA?</span></summary><p lang="es">No. Empezamos por la IA porque es nuestra especialidad, pero el método viene de la ingeniería industrial: primero mejoramos el proceso y luego elegimos la herramienta. A veces una simple fórmula funciona mejor que una IA, y se lo diremos.</p></details>
+  </div>
+</section>
+
+<section class="contact dark" id="contact">
+  <div class="wrap">
+    <h2><span lang="es">Primero, veamos lo que la gente ve de usted</span></h2>
+    <p><span lang="es">Escríbanos el nombre de su empresa; Dan le envía su auditoría exprés.</span></p>
+    <p class="zone" style="margin-top:10px;font-size:15px"><span lang="es">Atendemos a empresas de Montreal, Laval, la Rive-Nord y el West Island, y en todo Quebec. Todo se hace a distancia, con sus fotos; una reunión en persona es posible si la pide.</span></p>
+    <div class="ctas">
+      <a class="btn btn-main js-mail" href="mailto:bonjour@ccc-studios.com"><span lang="es">Pedir mi auditoría exprés</span></a>
+    </div>
+    <p style="margin-top:16px;font-size:14px"><span lang="es">O llame a Dan al </span><a href="tel:+14384043409" style="color:var(--ambre)">438-404-3409</a> · bonjour@ccc-studios.com</p>
+  </div>
+</section>
+</main>
+<nav class="mbar" aria-label="Actions">
+  <a class="btn btn-main js-mail" href="mailto:bonjour@ccc-studios.com"><span lang="es">Auditoría gratis</span></a>
+  <a class="btn btn-line" href="#demo"><span lang="es">Demo</span></a>
+</nav>
+
+
+<footer>
+  <div class="wrap">
+    <p>CCC Studios · <span lang="es">Estudio creativo · IA declarada</span></p>
+    <p>bonjour@ccc-studios.com · <a href="tel:+14384043409">438-404-3409</a> · <a href="/jennshems/charte/"><span lang="es">Carta</span></a> · <a href="/es/confidentialite/"><span lang="es">Privacidad</span></a> · <a lang="es" href="https://support.google.com/business/answer/7163406?hl=es">Fichas de Google y agencias</a></p>
+  </div>
+</footer>
+
+<script>/* Langue par adresse : chaque langue a sa page (/, /en/, /es/). */
+(function(){var L="es",P="/services/",T=["/","/a-propos/","/services/","/metiers/plombiers/","/jennshems/","/confidentialite/","/creatif/","/creatif/ateliers/"];function loc(p,l){return(l==="fr"?"":"/"+l)+p}try{var q=new URLSearchParams(location.search).get("lang");if(q&&q!==L&&/^(fr|en|es)$/.test(q)){location.replace(loc(P,q)+location.hash);return}}catch(e){}function fix(a){var m=(a.getAttribute("href")||"").match(/^(\/[^#?]*)(.*)$/);if(m&&T.indexOf(m[1])>-1)a.setAttribute("href",loc(m[1],L)+m[2])}if(L!=="fr"){new MutationObserver(function(r){r.forEach(function(x){x.addedNodes.forEach(function(n){if(n.nodeType!==1)return;if(n.matches&&n.matches("a[href^=\"/\"]"))fix(n);n.querySelectorAll&&n.querySelectorAll("a[href^=\"/\"]").forEach(fix)})})}).observe(document.documentElement,{childList:true,subtree:true})}document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest(".langs button[data-set],#btn-fr,#btn-en,#btn-es");if(!b)return;var l=b.getAttribute("data-set")||b.id.slice(4);if(!/^(fr|en|es)$/.test(l))return;e.stopImmediatePropagation();e.preventDefault();if(l!==L)location.href=loc(P,l)+location.hash},true);})();
+</script>
+<script>
+(function(){
+  var root=document.documentElement;
+  var mail={
+    fr:{s:"Audit express · [votre entreprise]",b:"Bonjour Dan,\n\nEntreprise :\nSite web :\nVille ou secteur :\nTéléphone :\n\nMerci!"},
+    en:{s:"Express audit · [your business]",b:"Hi Dan,\n\nBusiness:\nWebsite:\nCity or service area:\nPhone:\n\nThanks!"},
+    es:{s:"Auditoría exprés · [su empresa]",b:"Hola Dan:\n\nEmpresa:\nSitio web:\nCiudad o zona:\nTeléfono:\n\n¡Gracias!"}
+  };
+  var demo={
+    fr:{s:"Démo pour mon métier · [votre entreprise]",b:"Bonjour Dan,\n\nEntreprise :\nMétier :\nVille ou secteur :\nCe que je veux annoncer :\n\nMerci!"},
+    en:{s:"Demo for my trade · [your business]",b:"Hi Dan,\n\nBusiness:\nTrade:\nCity or service area:\nWhat I want to advertise:\n\nThanks!"},
+    es:{s:"Demo para mi oficio · [su empresa]",b:"Hola Dan:\n\nEmpresa:\nOficio:\nCiudad o zona:\nLo que quiero anunciar:\n\n¡Gracias!"}
+  };
+  var titles={fr:"Fiche Google et pubs vidéo pour entrepreneurs · Montréal",en:"Google profile and video ads for contractors · Montreal",es:"Ficha de Google y anuncios en video para contratistas"};
+  function setLang(l){
+    root.setAttribute("data-lang",l); root.lang=l;
+    document.querySelectorAll(".langs button").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.set===l?"true":"false");});
+    var m=mail[l], href="mailto:bonjour@ccc-studios.com?subject="+encodeURIComponent(m.s)+"&body="+encodeURIComponent(m.b);
+    document.querySelectorAll(".js-mail").forEach(function(a){a.href=href;});
+    var d=demo[l]; document.querySelectorAll(".js-demo").forEach(function(a){a.href="mailto:bonjour@ccc-studios.com?subject="+encodeURIComponent(d.s)+"&body="+encodeURIComponent(d.b);});
+    document.title=titles[l];
+    try{localStorage.setItem("lang",l);}catch(e){}
+  }
+  var ok={fr:1,en:1,es:1}, start="fr", q="es";
+  if(ok[q]){start=q;} else {try{var s=localStorage.getItem("lang"); if(ok[s])start=s;}catch(e){}}
+  document.querySelectorAll(".langs button").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.set);});});
+  setLang(start);
+})();
+</script>
+<script>
+/* « Branche d'affaires » : visible seulement s'il reste au moins 24 px avant le menu (police, zoom, langue). */
+(function () {
+  var lab = document.querySelector(".branche"); if (!lab) return;
+  var barre = lab.closest(".top, .top-ccc");
+  function ajuste() {
+    lab.style.display = "";
+    if (getComputedStyle(lab).display === "none") return;
+    var menu = barre.querySelector("nav"); if (!menu) return;
+    var fin = lab.getBoundingClientRect().right, debut = menu.getBoundingClientRect().left;
+    var premier = menu.firstElementChild; if (premier) debut = Math.min(debut, premier.getBoundingClientRect().left);
+    if (fin + 24 > debut || lab.getBoundingClientRect().height > 18) lab.style.display = "none";
+  }
+  ajuste(); addEventListener("resize", ajuste); addEventListener("load", ajuste);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(ajuste);
+  new MutationObserver(ajuste).observe(document.documentElement, { attributes: true, attributeFilter: ["data-lang", "lang"] });
+})();
+</script>
+<script>
+/* Démo vidéo : FR ou EN selon la langue; barre d'actions mobile après le haut de page. */
+(function(){
+  var root=document.documentElement;
+  function vids(){var l=root.getAttribute("data-lang")==="en"?"en":"fr";
+    document.querySelectorAll("video[data-base]").forEach(function(v){var src=v.dataset.base+"-"+l+".mp4", so=v.querySelector("source");
+      if(so.getAttribute("src")!==src){v.pause();so.setAttribute("src",src);v.setAttribute("poster",v.dataset.base+"-"+l+".jpg");v.load();}});}
+  vids(); new MutationObserver(vids).observe(root,{attributes:true,attributeFilter:["data-lang"]});
+  var bar=document.querySelector(".mbar"), hero=document.querySelector(".hero .ctas"), contact=document.getElementById("contact");
+  if(!bar||!("IntersectionObserver" in window))return;
+  var inHero=true, inContact=false;
+  function upd(){bar.classList.toggle("off",inHero||inContact);}
+  new IntersectionObserver(function(e){inHero=e[0].isIntersecting;upd();}).observe(hero);
+  if(contact)new IntersectionObserver(function(e){inContact=e[0].isIntersecting;upd();}).observe(contact);
+  upd();
+})();
+</script>
+<style id="ccc-motion">
+.mprog{position:fixed;top:0;left:0;right:0;height:3px;transform-origin:0 50%;transform:scaleX(0);background:var(--mprog,#FFC40C);z-index:1000;pointer-events:none}
+.js-motion .rv{opacity:0;transform:translateY(32px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform 1.15s cubic-bezier(.16,1,.3,1);transition-delay:var(--d,0s)}
+.js-motion .rv-h{clip-path:inset(-15% -4% 100% -4%);transform:translateY(.45em);transition:clip-path 1.15s cubic-bezier(.16,1,.3,1),transform 1.15s cubic-bezier(.16,1,.3,1);transition-delay:var(--d,0s)}
+.js-motion .rv.in{opacity:1;transform:none}
+.js-motion .rv-h.in{clip-path:inset(-15% -4% -30% -4%);transform:none}
+@media (prefers-reduced-motion:reduce){.js-motion .rv,.js-motion .rv-h{opacity:1!important;transform:none!important;clip-path:none!important;transition:none!important}}
+</style>
+<script data-color="#FFC40C">
+/* Défilement fluide : barre de progression, titres qui se dévoilent, blocs qui montent en cascade, léger parallaxe du visuel du haut. */
+(function(){
+  var me=document.currentScript, root=document.documentElement;
+  var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var bar=document.createElement("div"); bar.className="mprog"; bar.setAttribute("aria-hidden","true");
+  bar.style.setProperty("--mprog", me.getAttribute("data-color")); document.body.appendChild(bar);
+  var par=[];
+  if(!reduce && "IntersectionObserver" in window){
+    var secs=[].slice.call(document.querySelectorAll("main section")).slice(1), items=[];
+    function grid(el){ if(/^(P|H\d|UL|OL|A|IMG|VIDEO|BUTTON)$/.test(el.tagName)) return false; var d=getComputedStyle(el).display; return (d==="grid"||d==="flex"||d==="inline-grid") && el.children.length>=2; }
+    secs.forEach(function(s){
+      var w=s.querySelector(".wrap,.cadre")||s, n=0;
+      [].forEach.call(w.children,function(c){
+        if(c.offsetParent===null && getComputedStyle(c).position!=="fixed") return;
+        if(/^H[12]$/.test(c.tagName)){ c.classList.add("rv-h"); c.style.setProperty("--d",(Math.min(n,4)*0.08)+"s"); items.push(c); n++; return; }
+        if(grid(c)){ var k=0; [].forEach.call(c.children,function(g){ if(g.offsetParent===null) return; g.classList.add("rv"); g.style.setProperty("--d",(Math.min(k,5)*0.09)+"s"); items.push(g); k++; }); n++; return; }
+        c.classList.add("rv"); c.style.setProperty("--d",(Math.min(n,4)*0.08)+"s"); items.push(c); n++;
+      });
+    });
+    root.classList.add("js-motion");
+    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(!e.isIntersecting) return; var t=e.target; io.unobserve(t); t.classList.add("in");
+      setTimeout(function(){ t.classList.remove("rv","rv-h","in"); t.style.removeProperty("--d"); }, 1700); }); }, {rootMargin:"0px 0px -6% 0px", threshold:0});
+    items.forEach(function(i){ io.observe(i); });
+    if(innerWidth>=900) par=[].slice.call(document.querySelectorAll(".hero-vid .phone,.hero-vis .portrait,.hero-art,.founder .stats"));
+  }
+  var ticking=false;
+  function frame(){ ticking=false; var h=root.scrollHeight-innerHeight, y=scrollY;
+    bar.style.transform="scaleX("+(h>0?Math.min(1,y/h):0)+")";
+    par.forEach(function(el){ var r=el.parentNode.getBoundingClientRect(), mid=r.top+r.height/2-innerHeight/2; el.style.transform="translate3d(0,"+(mid*-0.06).toFixed(1)+"px,0)"; }); }
+  addEventListener("scroll",function(){ if(!ticking){ ticking=true; requestAnimationFrame(frame); } },{passive:true});
+  addEventListener("resize",frame); frame();
+})();
+</script>
+<style id="ccc-depth">
+main{position:relative}
+main>section>.wrap,main>section>.cadre,main>.strip>.wrap{position:relative;z-index:1}
+.depth{position:absolute;left:0;top:0;width:100%;height:100%;overflow:hidden;pointer-events:none;z-index:0}
+.depth .dp{position:absolute;will-change:transform}
+.depth svg{display:block;width:100%;height:100%;overflow:visible}
+.souffle{padding:clamp(120px,17vw,230px) 0;text-align:center;background:transparent}
+.souffle .big{font-family:Lora,Georgia,serif;font-weight:400;font-size:clamp(30px,5.2vw,62px);line-height:1.18;letter-spacing:-.01em;color:var(--souffle-ink);max-width:16em;margin:0 auto}
+.souffle .big b{font-weight:600}
+.souffle .big em{font-style:italic;font-size:1.18em;color:var(--souffle-acc)}
+@media(max-width:760px){.depth .dp.hide-m{display:none}}
+</style>
+<script>
+/* Couche de profondeur : formes de marque derrière les sections, parallaxe selon la profondeur. */
+(function(){
+  var main=document.querySelector("main"), layer=main&&main.querySelector(".depth"); if(!layer) return;
+  var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var secs=[].slice.call(main.querySelectorAll(":scope > section, :scope > .strip")), items=[].slice.call(layer.children);
+  function place(){
+    var mt=main.getBoundingClientRect().top+scrollY;
+    items.forEach(function(el){
+      var s=secs[Math.min(+el.dataset.sec, secs.length-1)]; if(!s){el.style.display="none";return;}
+      var top=s.getBoundingClientRect().top+scrollY-mt + (+el.dataset.fy)*s.offsetHeight - el.offsetHeight/2;
+      el.style.top=top+"px"; var x=(+el.dataset.x)+"px";
+      if(el.dataset.side==="left"){el.style.left=x;el.style.right="";} else {el.style.right=x;el.style.left="";}
+    });
+    move();
+  }
+  var ticking=false;
+  function move(){ ticking=false; if(reduce) return;
+    var mt=main.getBoundingClientRect().top+scrollY;
+    items.forEach(function(el){ var mid=mt+el.offsetTop+el.offsetHeight/2-scrollY-innerHeight/2;
+      var k=(1-(+el.dataset.depth))*0.35; el.style.transform="translate3d(0,"+(mid*k).toFixed(1)+"px,0)"; }); }
+  addEventListener("scroll",function(){ if(!ticking){ticking=true;requestAnimationFrame(move);} },{passive:true});
+  addEventListener("resize",place); addEventListener("load",place);
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(place);
+  place();
+})();
+</script>
+<style id="ccc-menu">
+.mnu-btn{display:none;align-items:center;justify-content:center;width:44px;height:44px;margin-left:6px;border:1px solid rgba(255,255,255,.7);border-radius:12px;background:transparent;color:#fff;cursor:pointer;flex:none;padding:0}
+.mnu-btn svg{width:22px;height:22px}
+.mnu-btn:focus-visible,.mnu a:focus-visible,.mnu-x:focus-visible{outline:2px solid #FFC40C;outline-offset:3px}
+.mnu{position:fixed;inset:0;z-index:2000;display:none;flex-direction:column;overflow-y:auto;padding:20px 24px calc(28px + env(safe-area-inset-bottom,0px));color:#fff}
+.mnu.ouvert{display:flex}
+.mnu-haut{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.mnu-haut img{width:155px;height:22px}
+.mnu-x{width:44px;height:44px;border:1px solid rgba(255,255,255,.6);border-radius:12px;background:transparent;color:#fff;font-size:26px;line-height:1;cursor:pointer}
+.mnu-g{margin:14px 0 4px;font:600 12.5px/1.2 Inter,system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;opacity:.75}
+.mnu a{display:flex;justify-content:space-between;align-items:center;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.18);color:#fff;text-decoration:none;font:500 22px/1.25 Lora,Georgia,serif}
+.mnu a[aria-current="page"]{color:var(--mnu-acc,#FFC40C)}
+.mnu a[aria-current="page"]::after{content:"•";font-size:22px}
+.mnu .mnu-mail{font:600 17px/1.3 Inter,system-ui,sans-serif;border-bottom:0;margin-top:14px}
+@media(max-width:760px){.mnu-btn{display:inline-flex!important}.nav-at,header.top nav>a,.top-ccc nav,.top-ccc .dedans>a:not(:first-child){display:none!important}.top-ccc .dedans{flex-wrap:nowrap!important}}
+@media(max-width:380px){.mnu-btn{width:40px;height:40px;margin-left:4px}header.top .wrap,header.tete .cadre{gap:8px!important}}
+@media(max-width:380px){header .brand img,header .logo img,.top-ccc img{width:112px!important;height:16px!important}.langs button,.langue button{padding-left:9px!important;padding-right:9px!important}}
+body.mnu-fige{overflow:hidden}
+</style>
+<script>
+/* Menu ☰ (téléphone) : toutes les pages du site, dans la langue choisie. */
+(function(){
+  var root=document.documentElement;
+  var bar=null; ["header.top .wrap","header.top",".top-ccc .dedans",".top-ccc","header.tete .cadre","header.tete"].some(function(q){ bar=document.querySelector(q); return !!bar; });
+  if(!bar) return;
+  var T={
+    menu:{fr:"Menu",en:"Menu",es:"Menú"}, fermer:{fr:"Fermer le menu",en:"Close menu",es:"Cerrar el menú"},
+    accueil:{fr:"Accueil",en:"Home",es:"Inicio"},
+    affaires:{fr:"Branche d'affaires",en:"Business branch",es:"Rama de negocios"},
+    services:{fr:"Services aux entreprises",en:"Business services",es:"Servicios para empresas"},
+    plombiers:{fr:"Plomberie et chauffage",en:"Plumbing and heating",es:"Plomería y calefacción"},
+    jenn:{fr:"Jennifer, actrice IA",en:"Jennifer, AI actress",es:"Jennifer, actriz IA"},
+    charte:{fr:"Charte de Jennifer",en:"Jennifer's charter",es:"Carta de Jennifer"},
+    auth:{fr:"Authentifier une image",en:"Verify an image",es:"Verificar una imagen"},
+    creative:{fr:"Branche créative",en:"Creative branch",es:"Rama creativa"},
+    creations:{fr:"Univers, séries et jeux",en:"Worlds, series and games",es:"Universos, series y juegos"},
+    ateliers:{fr:"Ateliers jeunesse",en:"Youth workshops",es:"Talleres juveniles"},
+    studio:{fr:"Le studio",en:"The studio",es:"El estudio"},
+    apropos:{fr:"À propos",en:"About",es:"Acerca de"},
+    conf:{fr:"Confidentialité",en:"Privacy",es:"Privacidad"}
+  };
+  var ITEMS=[["g","studio"],["/","accueil"],["/a-propos/","apropos"],
+             ["g","affaires"],["/services/","services"],["/metiers/plombiers/","plombiers"],["/jennshems/","jenn"],["/jennshems/charte/","charte"],["/jennshems/authentifier/","auth"],
+             ["g","creative"],["/creatif/","creations"],["/creatif/ateliers/","ateliers"],
+             ["g",""],["/confidentialite/","conf"]];
+  function langue(){var l=root.getAttribute("data-lang")||root.getAttribute("data-l")||root.lang||"fr";l=l.slice(0,2);return T.menu[l]?l:"fr";}
+  var hb=getComputedStyle(document.querySelector("header.top, .top-ccc, header.tete")).backgroundColor;
+  if(!hb||hb==="rgba(0, 0, 0, 0)"||hb==="transparent") hb="#180D00";
+  var acc=/30, 0, 7|89, 0, 22|195, 0, 1|31, 0, 7/.test(hb)?"#FEDADA":"#FFC40C";
+  var btn=document.createElement("button"); btn.type="button"; btn.className="mnu-btn"; btn.setAttribute("aria-expanded","false"); btn.setAttribute("aria-controls","ccc-mnu");
+  btn.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
+  var lg=bar.querySelector(".langs, .langue");
+  if(lg&&lg.parentNode){ lg.parentNode.insertBefore(btn, lg.nextSibling); } else { bar.appendChild(btn); }
+  var pan=document.createElement("div"); pan.id="ccc-mnu"; pan.className="mnu"; pan.setAttribute("role","dialog"); pan.setAttribute("aria-modal","true");
+  pan.style.background=hb; pan.style.setProperty("--mnu-acc",acc);
+  document.body.appendChild(pan);
+  var ici=location.pathname.replace(/^\/(en|es)(?=\/)/,"").replace(/index\.html$/,"");
+  function rendre(){
+    var l=langue(); btn.setAttribute("aria-label",T.menu[l]); pan.setAttribute("aria-label",T.menu[l]);
+    var h='<div class="mnu-haut"><img src="/logo-ccc.svg" alt="CCC Studios" width="155" height="22"><button type="button" class="mnu-x" aria-label="'+T.fermer[l]+'">×</button></div>';
+    ITEMS.forEach(function(it){
+      if(it[0]==="g"){ if(it[1]) h+='<p class="mnu-g">'+T[it[1]][l]+'</p>'; else h+='<p class="mnu-g" aria-hidden="true">&nbsp;</p>'; return; }
+      var cur=(ici===it[0]||(it[0]!=="/"&&ici.indexOf(it[0])===0&&ici.length===it[0].length));
+      h+='<a href="'+it[0]+'"'+(cur?' aria-current="page"':'')+'>'+T[it[1]][l]+'</a>';
+    });
+    h+='<a class="mnu-mail" href="mailto:bonjour@ccc-studios.com">bonjour@ccc-studios.com</a>';
+    pan.innerHTML=h;
+    pan.querySelector(".mnu-x").addEventListener("click",fermer);
+  }
+  function ouvrir(){ rendre(); pan.classList.add("ouvert"); btn.setAttribute("aria-expanded","true"); document.body.classList.add("mnu-fige"); var a=pan.querySelector("a,button"); if(a) a.focus(); }
+  function fermer(){ pan.classList.remove("ouvert"); btn.setAttribute("aria-expanded","false"); document.body.classList.remove("mnu-fige"); btn.focus(); }
+  btn.addEventListener("click",function(){ pan.classList.contains("ouvert")?fermer():ouvrir(); });
+  document.addEventListener("keydown",function(e){
+    if(!pan.classList.contains("ouvert")) return;
+    if(e.key==="Escape"){ fermer(); }
+    if(e.key==="Tab"){ var f=[].slice.call(pan.querySelectorAll("a,button")); if(!f.length) return; var a=f[0], z=f[f.length-1];
+      if(e.shiftKey&&document.activeElement===a){ z.focus(); e.preventDefault(); } else if(!e.shiftKey&&document.activeElement===z){ a.focus(); e.preventDefault(); } }
+  });
+  pan.addEventListener("click",function(e){ if(e.target.tagName==="A") { pan.classList.remove("ouvert"); document.body.classList.remove("mnu-fige"); } });
+  rendre();
+  new MutationObserver(rendre).observe(root,{attributes:true,attributeFilter:["data-lang","data-l","lang"]});
+})();
+</script>
+
+
+</body></html>

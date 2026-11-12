@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="es" data-lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CCC Studios · Ficha de Google, anuncios en video y creación</title>
+<meta name="description" content="Estudio de Quebec con dos ramas: ficha de Google, anuncios en video y redes para empresas de servicios; universos, series y juegos en la rama creativa.">
+<meta property="og:title" content="CCC Studios · Ficha de Google, anuncios en video y creación">
+<meta property="og:description" content="Estudio de Quebec con dos ramas: ficha de Google, anuncios en video y redes para empresas de servicios; universos, series y juegos en la rama creativa.">
+<meta property="og:url" content="https://ccc-studios.com/es/">
+<meta property="og:type" content="website">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<style>
+/* CCC Studios · branche Indigo (page principale et pages d'entreprise), kit de marque v1.4.2.
+   Indigo minuit #04001B (fond), Encre #221B55 (panneaux, filets), Royal #2B0071 (aplats seulement, jamais en filet sur le minuit),
+   Lavande #F9F7FF (texte secondaire, accents), blanc. Aucun gris, aucun dégradé.
+   Les portes vers les branches portent les couleurs de leur branche : Crème, Cramoisi, Bronze. */
+:root{
+  --minuit:#04001B; --encre:#221B55; --royal:#2B0071; --lavande:#F9F7FF; --blanc:#FFFFFF; --noir:#000000;
+  --creme:#F5F2EC; --bronze:#735827; --bronze-minuit:#180D00; --ambre:#FFC40C;
+  --cr-nuit:#1E0007; --cr-bordeaux:#590016; --cr:#C30001; --cr-rose:#FEDADA;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scrollbar-color:var(--encre) var(--minuit)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+::selection{background:var(--royal);color:var(--blanc)}
+body{font-family:Inter,system-ui,sans-serif;background:var(--minuit);color:var(--blanc);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--lavande);outline-offset:3px}
+html[data-lang="fr"] [lang="en"],html[data-lang="fr"] [lang="es"],
+html[data-lang="en"] [lang="fr"],html[data-lang="en"] [lang="es"],
+html[data-lang="es"] [lang="fr"],html[data-lang="es"] [lang="en"]{display:none!important}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+h1,h2,h3,.title{font-family:Lora,Georgia,serif;font-weight:500;letter-spacing:-.01em;text-wrap:balance}
+em{font-style:italic}
+.logotype{font-family:"Tenor Sans",Inter,sans-serif;font-weight:400;letter-spacing:.14em;text-transform:uppercase}
+
+/* barre du haut */
+.top{position:sticky;top:0;z-index:20;background:var(--minuit);border-bottom:1px solid var(--encre)}
+.top .wrap{display:flex;align-items:center;gap:12px;height:60px}
+.brand{display:flex;align-items:center;text-decoration:none}
+.brand img{width:155px;height:22px;display:block}
+@media(max-width:420px){.brand img{width:124px;height:18px}}
+.top nav{margin-left:auto;display:flex;align-items:center;gap:18px;font-size:14px}
+.navlinks{display:none;gap:18px}
+@media(min-width:820px){.navlinks{display:flex}}
+.navlinks a{text-decoration:none;color:var(--lavande)}
+.navlinks a:hover,.navlinks a[aria-current="page"]{color:var(--blanc);text-decoration:underline;text-decoration-color:var(--lavande);text-underline-offset:6px}
+.langs{display:flex;border:1px solid var(--lavande);border-radius:999px;overflow:hidden}
+.langs button{background:none;border:0;color:var(--blanc);font:600 12px Inter,sans-serif;padding:6px 10px;cursor:pointer;letter-spacing:.06em}
+.langs button[aria-pressed="true"]{background:var(--lavande);color:var(--minuit)}
+
+/* commun */
+section{padding:72px 0}
+h2{font-size:clamp(28px,4vw,40px);line-height:1.12;margin-bottom:14px}
+.kicker{font-size:12.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--lavande)}
+.lead{font-size:18px;max-width:36em;color:var(--lavande)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 20px;border-radius:10px;font-weight:600;font-size:15px;text-decoration:none;border:1px solid var(--lavande);color:var(--blanc);transition:background-color .2s ease,color .2s ease}
+.btn:hover{background:var(--lavande);color:var(--minuit)}
+.btn-main{background:var(--lavande);color:var(--minuit)}
+.btn-main:hover{background:var(--blanc)}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:22px}
+
+/* héros */
+.hero{padding:64px 0 56px;border-bottom:1px solid var(--encre)}
+.hero-grid{display:grid;gap:28px;align-items:center}
+@media(min-width:860px){.hero-grid{grid-template-columns:1.25fr .75fr}}
+.big{font-size:clamp(40px,8vw,84px);line-height:1;margin:14px 0 10px;letter-spacing:.1em}
+.ccc{font-family:"Tenor Sans",Inter,sans-serif;letter-spacing:.22em;text-transform:uppercase;font-size:13px;color:var(--lavande)}
+.motto{font-family:Lora,Georgia,serif;font-size:clamp(24px,3.4vw,34px);margin:26px 0 14px;line-height:1.2}
+.motto em{color:var(--lavande)}
+.hero-art{width:min(360px,70vw);height:auto;justify-self:center;opacity:.95}
+@media(max-width:859px){.hero-art{order:-1;width:min(220px,56vw)}}
+.hero-small{padding:56px 0 48px}
+.title{font-size:clamp(34px,6vw,58px);line-height:1.08;margin:14px 0 18px}
+.title em{color:var(--lavande)}
+
+/* portes vers les branches */
+.door-grid{display:grid;gap:18px;margin-top:10px}
+@media(min-width:900px){.door-grid{grid-template-columns:repeat(3,1fr)}}
+.door{display:flex;flex-direction:column;border-radius:18px;overflow:hidden;text-decoration:none;border:1px solid transparent;transition:transform .25s cubic-bezier(.2,.7,.2,1),border-color .25s ease}
+.door:hover{transform:translateY(-3px)}
+@media(prefers-reduced-motion:reduce){.door,.door:hover{transform:none;transition:none}}
+.door-vis{position:relative;aspect-ratio:16/10;overflow:hidden}
+.door-vis img{width:100%;height:100%;object-fit:cover;display:block}
+.door-bronze .door-vis img{object-position:50% 18%}
+.door-vis .ia{position:absolute;left:10px;top:10px;font:600 12px/1 Inter,sans-serif;letter-spacing:.06em;padding:6px 9px;border-radius:999px;background:rgba(0,0,0,.62);color:var(--blanc)}
+.vis-fam{display:grid;align-content:center;gap:4px;padding:22px 24px;font-family:Lora,Georgia,serif;font-size:clamp(22px,2.4vw,28px);line-height:1.15}
+.door-body{display:flex;flex-direction:column;gap:8px;padding:20px 22px 22px;flex:1}
+.door-k{font-family:"Tenor Sans",Inter,sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase}
+.door-t{font-family:Lora,Georgia,serif;font-weight:500;font-size:24px;line-height:1.15}
+.door-body p{font-size:15px}
+.door-go{margin-top:auto;padding-top:8px;font-weight:600;font-size:15px}
+.door-creme{background:var(--blanc);color:var(--noir)}
+.door-creme .vis-fam{background:var(--bronze-minuit);color:var(--blanc);border-bottom:2px solid var(--ambre)}
+.door-creme .vis-fam em{color:var(--ambre)}
+.door-creme .door-k,.door-creme .door-go{color:var(--bronze)}
+.door-creme .door-t{color:var(--bronze-minuit)}
+.door-creme:hover{border-color:var(--ambre)}
+.door-cramoisi{background:var(--cr-nuit);color:var(--blanc)}
+.door-cramoisi .door-vis{border-bottom:2px solid var(--cr)}
+.door-cramoisi .door-k,.door-cramoisi .door-go{color:var(--cr-rose)}
+.door-cramoisi:hover{border-color:var(--cr)}
+.door-bronze{background:var(--bronze-minuit);color:var(--blanc)}
+.door-bronze .door-vis{border-bottom:2px solid var(--ambre)}
+.door-bronze .door-k,.door-bronze .door-go{color:var(--ambre)}
+.door-bronze:hover{border-color:var(--ambre)}
+
+/* fondateur (accueil) */
+.founder{background:var(--encre)}
+.founder-grid{display:grid;gap:32px;align-items:center}
+@media(min-width:900px){.founder-grid{grid-template-columns:1.1fr .9fr}}
+.founder p{margin:12px 0 22px;max-width:36em}
+.founder h2{margin-top:10px}
+.stats{list-style:none;padding:0;display:grid;gap:14px}
+.stats li{background:var(--minuit);border-radius:14px;padding:16px 18px;display:grid;gap:4px}
+.stats b{font-family:Lora,Georgia,serif;font-weight:500;font-size:34px;line-height:1}
+.stats span{font-size:14.5px;color:var(--lavande)}
+
+/* engagements */
+.val-grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));margin-top:8px}
+.val{border-top:2px solid var(--encre);padding-top:14px}
+.val b{display:block;font-size:16.5px;margin-bottom:6px}
+.val p{font-size:14.5px;color:var(--lavande)}
+.val a{color:var(--blanc)}
+
+/* contact */
+.reach{text-align:center;background:var(--royal)}
+.reach p{color:var(--lavande);margin-bottom:6px}
+.reach .wrap > .btn-main{margin-top:16px}
+
+/* à propos */
+.block{border-bottom:1px solid var(--encre)}
+.block-encre{background:var(--encre);border-bottom:0}
+.two{display:grid;gap:32px}
+@media(min-width:900px){.two{grid-template-columns:.9fr 1.1fr}}
+.block p+p{margin-top:12px}
+.block p{max-width:38em}
+.who{font-size:20px;font-family:Lora,Georgia,serif;margin-bottom:6px}
+
+.cards2{display:grid;gap:14px}
+.mini{display:grid;gap:6px;border-radius:14px;padding:18px 20px;text-decoration:none}
+.mini b{font-family:"Tenor Sans",Inter,sans-serif;font-weight:400;font-size:12.5px;letter-spacing:.22em;text-transform:uppercase}
+.mini span{font-size:15px}
+.mini-creme{background:var(--creme);color:var(--noir);border-left:4px solid var(--ambre)}
+.mini-creme b{color:var(--bronze)}
+.mini-cramoisi{background:var(--cr-nuit);color:var(--blanc);border-left:4px solid var(--cr)}
+.mini-cramoisi b{color:var(--cr-rose)}
+h3{font-size:22px;margin-bottom:14px}
+.tl{list-style:none;padding:0;display:grid;gap:0}
+.tl li{display:grid;grid-template-columns:96px 1fr;gap:14px;padding:14px 0;border-top:1px solid rgba(249,247,255,.25)}
+.tl-y{font-size:13px;font-weight:600;color:var(--lavande);padding-top:2px}
+.tl b{display:block;font-size:16px}
+.tl-r{display:block;font-size:14px;color:var(--lavande);margin:2px 0 4px}
+.tl p{font-size:14.5px}
+@media(max-width:480px){.tl li{grid-template-columns:1fr;gap:4px}}
+.steps4{list-style:none;padding:0;display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));counter-reset:k;margin-top:10px}
+.steps4 li{border-top:2px solid var(--lavande);padding-top:12px;display:grid;gap:4px;align-content:start}
+.steps4 li::before{counter-increment:k;content:counter(k);font-family:Lora,Georgia,serif;font-style:italic;font-size:28px;line-height:1;color:var(--lavande)}
+.steps4 b{font-size:16.5px}
+.steps4 span{font-size:14.5px;color:var(--lavande)}
+
+footer{background:var(--noir);font-size:13.5px;padding:30px 0}
+footer .wrap{display:grid;gap:8px}
+footer a{color:var(--blanc)}
+
+/* portraits des cofondateurs */
+.face{border-radius:50%;object-fit:cover;display:block;border:2px solid var(--lavande)}
+.who-row{display:flex;align-items:center;gap:16px;margin:4px 0 14px}
+.who-row .face{width:88px;height:88px}
+.who-row .who{margin:0}
+.who2{margin-top:30px;padding-top:24px;border-top:1px solid rgba(249,247,255,.25)}
+.duo{display:flex;gap:18px;margin:14px 0 4px}
+.duo figure{margin:0;display:grid;justify-items:center;gap:6px;font-size:13px;color:var(--lavande)}
+.duo .face{width:76px;height:76px}
+
+
+.reach-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.door-free{font-weight:600}
+</style>
+
+<meta property="og:site_name" content="CCC Studios">
+<meta property="og:locale" content="es_ES">
+<link rel="canonical" href="https://ccc-studios.com/es/">
+<link rel="alternate" hreflang="fr-CA" href="https://ccc-studios.com/">
+<link rel="alternate" hreflang="en-CA" href="https://ccc-studios.com/en/">
+<link rel="alternate" hreflang="es" href="https://ccc-studios.com/es/">
+<link rel="alternate" hreflang="x-default" href="https://ccc-studios.com/">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://ccc-studios.com/#org","name":"CCC Studios","alternateName":["Compagnie Canadienne Créative","Canadian Creative Company"],"url":"https://ccc-studios.com/","logo":"https://ccc-studios.com/logo-ccc.png","email":"bonjour@ccc-studios.com","founder":[{"@type":"Person","name":"Dan Ortega"},{"@type":"Person","name":"Emilien Spriet"}],"telephone":"+1-438-404-3409","areaServed":[{"@type":"AdministrativeArea","name":"Montréal"},{"@type":"AdministrativeArea","name":"Laval"},{"@type":"AdministrativeArea","name":"Rive-Nord de Montréal"},{"@type":"AdministrativeArea","name":"Ouest-de-l'Île de Montréal"},{"@type":"AdministrativeArea","name":"Québec"}],"knowsLanguage":["fr","en","es"],"sameAs":["https://www.tiktok.com/@cccstudiosinc","https://www.instagram.com/jennshems/","https://www.tiktok.com/@jennshems","https://www.youtube.com/@jennshems"]},{"@type":"WebSite","@id":"https://ccc-studios.com/#site","url":"https://ccc-studios.com/","name":"CCC Studios","inLanguage":"es","publisher":{"@id":"https://ccc-studios.com/#org"}},{"@type":"WebPage","@id":"https://ccc-studios.com/es/","url":"https://ccc-studios.com/es/","name":"CCC Studios · Ficha de Google, anuncios en video y creación","description":"Estudio de Quebec con dos ramas: ficha de Google, anuncios en video y redes para empresas de servicios; universos, series y juegos en la rama creativa.","inLanguage":"es","isPartOf":{"@id":"https://ccc-studios.com/#site"},"about":{"@id":"https://ccc-studios.com/#org"}}]}</script></head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/es/" aria-label="CCC Studios, accueil"><img src="/logo-ccc.svg" alt="CCC Studios" width="155" height="22"></a>
+    <nav>
+      <div class="navlinks"><a href="/es/services/"><span lang="es">Servicios</span></a><a href="/es/creatif/"><span lang="es">Creativo</span></a><a href="/es/jennshems/">Jennifer</a><a href="/es/a-propos/"><span lang="es">Nosotros</span></a></div>
+      <div class="langs" role="group" aria-label="Langue / Language / Idioma">
+        <button type="button" data-set="fr" aria-pressed="false">FR</button>
+        <button type="button" data-set="en" aria-pressed="false">EN</button>
+        <button type="button" data-set="es" aria-pressed="true">ES</button>
+      </div>
+    </nav>
+  </div>
+</header>
+<main>
+<div class="depth" aria-hidden="true"><div class="dp " data-sec="2" data-fy="-0.0" data-side="left" data-x="-170" data-depth="0.85" style="width:520px;opacity:0.75"><svg viewBox="0 0 400 400" aria-hidden="true"><path d="M30 390A360 360 0 0 1 390 30" fill="none" stroke="#F9F7FF" stroke-width="2.5"></path><path d="M70 395A325 325 0 0 1 395 70" fill="none" stroke="#8F86E8" stroke-width="22" stroke-dasharray="2.5 11" opacity=".55"></path></svg></div><div class="dp hide-m" data-sec="2" data-fy="-0.1" data-side="left" data-x="120" data-depth="0.25" style="width:16px;opacity:0.9"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="#F9F7FF"></circle></svg></div><div class="dp " data-sec="3" data-fy="0.0" data-side="right" data-x="-60" data-depth="0.55" style="width:300px;opacity:0.75"><svg viewBox="0 0 300 110" aria-hidden="true"><circle cx="55" cy="55" r="48" fill="none" stroke="#F9F7FF" stroke-width="2.5"></circle><circle cx="150" cy="55" r="48" fill="none" stroke="#F9F7FF" stroke-width="2.5"></circle><circle cx="245" cy="55" r="48" fill="none" stroke="#F9F7FF" stroke-width="2.5"></circle><circle cx="168" cy="55" r="44" fill="#F9F7FF" opacity=".18"></circle></svg></div><div class="dp hide-m" data-sec="3" data-fy="0.5" data-side="left" data-x="-90" data-depth="0.35" style="width:180px;opacity:0.75"><svg viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="92" fill="none" stroke="#8F86E8" stroke-width="2" stroke-dasharray="1 9" stroke-linecap="round"></circle></svg></div><div class="dp hide-m" data-sec="4" data-fy="0.0" data-side="right" data-x="70" data-depth="0.4" style="width:110px;opacity:0.9"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="54" fill="none" stroke="#F9F7FF" stroke-width="3"></circle><path d="M40 62l14 14 28-32" fill="none" stroke="#F9F7FF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path></svg></div><div class="dp hide-m" data-sec="5" data-fy="0.0" data-side="left" data-x="-120" data-depth="0.7" style="width:620px;opacity:0.75"><svg viewBox="0 0 600 120" aria-hidden="true"><path d="M0 90C120 90 150 20 300 20S480 100 600 60" fill="none" stroke="#F9F7FF" stroke-width="2.5"></path></svg></div><div class="dp hide-m" data-sec="5" data-fy="0.3" data-side="right" data-x="160" data-depth="0.2" style="width:12px;opacity:0.9"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="#F9F7FF"></circle></svg></div><div class="dp hide-m" data-sec="6" data-fy="0.0" data-side="right" data-x="-200" data-depth="0.8" style="width:460px;opacity:0.75"><svg viewBox="0 0 400 400" aria-hidden="true"><path d="M30 390A360 360 0 0 1 390 30" fill="none" stroke="#F9F7FF" stroke-width="2.5"></path><path d="M70 395A325 325 0 0 1 395 70" fill="none" stroke="#8F86E8" stroke-width="22" stroke-dasharray="2.5 11" opacity=".55"></path></svg></div><div class="dp hide-m" data-sec="7" data-fy="0.0" data-side="left" data-x="-40" data-depth="0.45" style="width:260px;opacity:0.75"><svg viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="92" fill="none" stroke="#8F86E8" stroke-width="2" stroke-dasharray="1 9" stroke-linecap="round"></circle></svg></div><div class="dp hide-m" data-sec="8" data-fy="0.0" data-side="left" data-x="-90" data-depth="0.5" style="width:240px;opacity:0.75"><svg viewBox="0 0 300 110" aria-hidden="true"><circle cx="55" cy="55" r="48" fill="none" stroke="#F9F7FF" stroke-width="2.5"></circle><circle cx="150" cy="55" r="48" fill="none" stroke="#F9F7FF" stroke-width="2.5"></circle><circle cx="245" cy="55" r="48" fill="none" stroke="#F9F7FF" stroke-width="2.5"></circle><circle cx="168" cy="55" r="44" fill="#F9F7FF" opacity=".18"></circle></svg></div></div>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-txt">
+      <p class="kicker"><span lang="es">Estudio de Quebec · desde 2022</span></p>
+      <h1 class="logotype big">CCC Studios</h1>
+      <p class="ccc"><span lang="es">Compañía Creativa Canadiense</span></p>
+      <p class="motto"><span lang="es">Crear. Hacer ver. <em>Mejorar.</em></span></p>
+      <p class="lead"><span lang="es">Dos ramas, una misma exigencia. Una ayuda a las empresas locales a que las vean, las elijan y funcionen mejor. La otra crea universos, series y juegos. La IA siempre se declara.</span></p>
+    </div>
+    <img class="hero-art" src="/logo-ccc-blanc.png" width="400" height="400" alt="">
+  </div>
+</section>
+
+<section class="doors" aria-labelledby="t-branches">
+  <div class="wrap">
+    <h2 id="t-branches"><span lang="es">¿Por dónde empezar?</span></h2>
+    <div class="door-grid">
+      <a class="door door-creme" href="/es/services/">
+        <div class="door-vis vis-fam"><span><span lang="es">Que lo vean</span></span><span><span lang="es">Que lo elijan</span></span><span><em><span lang="es">Operar mejor</span></em></span></div>
+        <div class="door-body">
+          <span class="door-k"><span lang="es">Rama de negocios</span></span>
+          <b class="door-t"><span lang="es">Servicios para empresas</span></b>
+          <p><span lang="es">Perfil de Google, redes, sitio web, anuncios en video, imagen de marca y optimización de operaciones con IA, para empresas de servicios de Quebec.</span></p>
+          <p class="door-free"><span lang="es">Empiece con una auditoría exprés gratuita.</span></p>
+          <span class="door-go"><span lang="es">Ver los servicios</span> →</span>
+        </div>
+      </a>
+      <a class="door door-cramoisi" href="/es/creatif/">
+        <div class="door-vis"><img src="/creatif/m/donjon.webp" width="784" height="625" alt="Donjon généré par IA" loading="lazy"><span class="ia"><span lang="es">Imagen generada por IA</span></span></div>
+        <div class="door-body">
+          <span class="door-k"><span lang="es">Rama creativa</span></span>
+          <b class="door-t"><span lang="es">Universos, series y juegos</span></b>
+          <p><span lang="es">El mundo de Croussus y sus relatos, escritos por personas y luego llevados a imágenes y movimiento por la IA.</span></p>
+          <span class="door-go"><span lang="es">Entrar al universo</span> →</span>
+        </div>
+      </a>
+      <a class="door door-bronze" href="/es/jennshems/">
+        <div class="door-vis"><img src="/jennshems/media/jennifer-studio.jpg" width="720" height="1280" alt="Jennifer Shems-Mylie" loading="lazy"><span class="ia"><span lang="es">Actriz IA</span></span></div>
+        <div class="door-body">
+          <span class="door-k"><span lang="es">Nuestra actriz IA</span></span>
+          <b class="door-t">Jennifer Shems-Mylie</b>
+          <p><span lang="es">Anuncios en francés e inglés para pymes, presentados por una actriz IA siempre declarada como tal.</span></p>
+          <span class="door-go"><span lang="es">Conocer a Jennifer</span> →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="souffle" style="--souffle-ink:#FFFFFF;--souffle-acc:#F9F7FF"><div class="wrap"><p class="big"><span lang="es">Todo se puede <b>mejorar</b>.<br>Lo <em>demostramos</em>.</span></p></div></section>
+<section class="founder" aria-labelledby="t-fondateur">
+  <div class="wrap founder-grid">
+    <div>
+      <p class="kicker"><span lang="es">Quién está detrás</span></p>
+      <div class="duo"><figure><img class="face" src="/a-propos/dan.webp" width="480" height="480" alt="Dan Ortega" loading="lazy"><figcaption>Dan Ortega</figcaption></figure><figure><img class="face" src="/a-propos/emilien.webp" width="480" height="480" alt="Emilien Spriet" loading="lazy"><figcaption>Emilien Spriet</figcaption></figure></div>
+      <h2 id="t-fondateur"><span lang="es">Dos cofundadores que conocen el terreno</span></h2>
+      <p><span lang="es">CCC Studios lo dirige <b>Dan Ortega</b>, graduado del bachillerato en ingeniería industrial (BEng), Universidad Concordia, Escuela de Ingeniería e Informática Gina Cody, 2021, y ex gerente de proyectos de industrialización en Airbus. Su convicción: todo se puede mejorar.<br><br>Su socio, <b>Emilien Spriet</b>, dirige su propia agencia de alquiler y conoce desde adentro la construcción, la renovación y la administración de inmuebles. Compositor desde niño, cocreó con Dan el universo fantástico de CCC.</span></p>
+      <a class="btn" href="/es/a-propos/"><span lang="es">Leer nuestra historia</span> →</a>
+    </div>
+    <ul class="stats">
+      <li><b>A220</b><span><span lang="es">Proyectos de mejora de la línea de ensamblaje final · Airbus, Mirabel, 2021–2024</span></span></li>
+      <li><b>75 %</b><span><span lang="es">de las tareas de un puesto eliminadas al quitar pasos redundantes · Airbus, 2019</span></span></li>
+      <li><b>50 %</b><span><span lang="es">menos tiempo en tareas repetitivas, gracias a la automatización · Revenu Québec, 2016–2018</span></span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="values" aria-labelledby="t-engagements">
+  <div class="wrap">
+    <h2 id="t-engagements"><span lang="es">Nuestros compromisos</span></h2>
+    <div class="val-grid">
+      <div class="val"><b><span lang="es">La IA, siempre declarada</span></b><p><span lang="es">Cada imagen, video o voz creada con IA se indica como tal. Nuestras reglas son públicas en la <a href="/jennshems/charte/">Carta</a>.</span></p></div>
+      <div class="val"><b><span lang="es">Primero el francés</span></b><p><span lang="es">Todo se hace primero en francés, luego en inglés, y en español si lo pide.</span></p></div>
+      <div class="val"><b><span lang="es">Medir antes de prometer</span></b><p><span lang="es">Anotamos el punto de partida y luego mostramos las cifras reales. Sin resultados garantizados.</span></p></div>
+      <div class="val"><b><span lang="es">Sus datos siguen siendo suyos</span></b><p><span lang="es">Sus cuentas y herramientas quedan a su nombre. Este sitio no usa cookies de seguimiento.</span></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="reach">
+  <div class="wrap">
+    <h2><span lang="es">Hablemos de su proyecto</span></h2>
+    <p><span lang="es">Escríbanos en francés, inglés o español.</span></p>
+    <div class="reach-btns"><a class="btn btn-main" href="/es/services/#contact"><span lang="es">Pedir una auditoría exprés gratuita</span></a><a class="btn" href="mailto:bonjour@ccc-studios.com">bonjour@ccc-studios.com</a></div>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <p><span class="logotype">CCC Studios</span> · <span lang="es">Compañía Creativa Canadiense</span> · <span lang="es">IA siempre declarada</span></p>
+    <p><a href="mailto:bonjour@ccc-studios.com">bonjour@ccc-studios.com</a> · <a href="tel:+14384043409">438-404-3409</a> · <a href="/es/a-propos/"><span lang="es">Nosotros</span></a> · <a href="/jennshems/charte/"><span lang="es">Carta</span></a> · <a href="/es/confidentialite/"><span lang="es">Privacidad</span></a></p>
+  </div>
+</footer>
+<script>/* Langue par adresse : chaque langue a sa page (/, /en/, /es/). */
+(function(){var L="es",P="/",T=["/","/a-propos/","/services/","/metiers/plombiers/","/jennshems/","/confidentialite/","/creatif/","/creatif/ateliers/"];function loc(p,l){return(l==="fr"?"":"/"+l)+p}try{var q=new URLSearchParams(location.search).get("lang");if(q&&q!==L&&/^(fr|en|es)$/.test(q)){location.replace(loc(P,q)+location.hash);return}}catch(e){}function fix(a){var m=(a.getAttribute("href")||"").match(/^(\/[^#?]*)(.*)$/);if(m&&T.indexOf(m[1])>-1)a.setAttribute("href",loc(m[1],L)+m[2])}if(L!=="fr"){new MutationObserver(function(r){r.forEach(function(x){x.addedNodes.forEach(function(n){if(n.nodeType!==1)return;if(n.matches&&n.matches("a[href^=\"/\"]"))fix(n);n.querySelectorAll&&n.querySelectorAll("a[href^=\"/\"]").forEach(fix)})})}).observe(document.documentElement,{childList:true,subtree:true})}document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest(".langs button[data-set],#btn-fr,#btn-en,#btn-es");if(!b)return;var l=b.getAttribute("data-set")||b.id.slice(4);if(!/^(fr|en|es)$/.test(l))return;e.stopImmediatePropagation();e.preventDefault();if(l!==L)location.href=loc(P,l)+location.hash},true);})();
+</script>
+<script>
+(function(){
+  var root=document.documentElement, titles={fr:"CCC Studios · Fiche Google, pubs vidéo et création au Québec",en:"CCC Studios · Google profile, video ads and creative studio",es:"CCC Studios · Ficha de Google, anuncios en video y creación"};
+  function setLang(l){
+    root.setAttribute("data-lang",l); root.lang=l;
+    document.querySelectorAll(".langs button").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.set===l?"true":"false");});
+    document.title=titles[l];
+    try{localStorage.setItem("lang",l);}catch(e){}
+  }
+  var ok={fr:1,en:1,es:1}, start="fr", q=null;
+  try{q="es";}catch(e){}
+  if(ok[q]){start=q;} else {try{var s=localStorage.getItem("lang"); if(ok[s])start=s;}catch(e){}}
+  document.querySelectorAll(".langs button").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.set);});});
+  setLang(start);
+})();
+</script>
+<style id="ccc-motion">
+.mprog{position:fixed;top:0;left:0;right:0;height:3px;transform-origin:0 50%;transform:scaleX(0);background:var(--mprog,#FFC40C);z-index:1000;pointer-events:none}
+.js-motion .rv{opacity:0;transform:translateY(32px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform 1.15s cubic-bezier(.16,1,.3,1);transition-delay:var(--d,0s)}
+.js-motion .rv-h{clip-path:inset(-15% -4% 100% -4%);transform:translateY(.45em);transition:clip-path 1.15s cubic-bezier(.16,1,.3,1),transform 1.15s cubic-bezier(.16,1,.3,1);transition-delay:var(--d,0s)}
+.js-motion .rv.in{opacity:1;transform:none}
+.js-motion .rv-h.in{clip-path:inset(-15% -4% -30% -4%);transform:none}
+@media (prefers-reduced-motion:reduce){.js-motion .rv,.js-motion .rv-h{opacity:1!important;transform:none!important;clip-path:none!important;transition:none!important}}
+</style>
+<script data-color="#F9F7FF">
+/* Défilement fluide : barre de progression, titres qui se dévoilent, blocs qui montent en cascade, léger parallaxe du visuel du haut. */
+(function(){
+  var me=document.currentScript, root=document.documentElement;
+  var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var bar=document.createElement("div"); bar.className="mprog"; bar.setAttribute("aria-hidden","true");
+  bar.style.setProperty("--mprog", me.getAttribute("data-color")); document.body.appendChild(bar);
+  var par=[];
+  if(!reduce && "IntersectionObserver" in window){
+    var secs=[].slice.call(document.querySelectorAll("main section")).slice(1), items=[];
+    function grid(el){ if(/^(P|H\d|UL|OL|A|IMG|VIDEO|BUTTON)$/.test(el.tagName)) return false; var d=getComputedStyle(el).display; return (d==="grid"||d==="flex"||d==="inline-grid") && el.children.length>=2; }
+    secs.forEach(function(s){
+      var w=s.querySelector(".wrap,.cadre")||s, n=0;
+      [].forEach.call(w.children,function(c){
+        if(c.offsetParent===null && getComputedStyle(c).position!=="fixed") return;
+        if(/^H[12]$/.test(c.tagName)){ c.classList.add("rv-h"); c.style.setProperty("--d",(Math.min(n,4)*0.08)+"s"); items.push(c); n++; return; }
+        if(grid(c)){ var k=0; [].forEach.call(c.children,function(g){ if(g.offsetParent===null) return; g.classList.add("rv"); g.style.setProperty("--d",(Math.min(k,5)*0.09)+"s"); items.push(g); k++; }); n++; return; }
+        c.classList.add("rv"); c.style.setProperty("--d",(Math.min(n,4)*0.08)+"s"); items.push(c); n++;
+      });
+    });
+    root.classList.add("js-motion");
+    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(!e.isIntersecting) return; var t=e.target; io.unobserve(t); t.classList.add("in");
+      setTimeout(function(){ t.classList.remove("rv","rv-h","in"); t.style.removeProperty("--d"); }, 1700); }); }, {rootMargin:"0px 0px -6% 0px", threshold:0});
+    items.forEach(function(i){ io.observe(i); });
+    if(innerWidth>=900) par=[].slice.call(document.querySelectorAll(".hero-vid .phone,.hero-vis .portrait,.hero-art,.founder .stats"));
+  }
+  var ticking=false;
+  function frame(){ ticking=false; var h=root.scrollHeight-innerHeight, y=scrollY;
+    bar.style.transform="scaleX("+(h>0?Math.min(1,y/h):0)+")";
+    par.forEach(function(el){ var r=el.parentNode.getBoundingClientRect(), mid=r.top+r.height/2-innerHeight/2; el.style.transform="translate3d(0,"+(mid*-0.06).toFixed(1)+"px,0)"; }); }
+  addEventListener("scroll",function(){ if(!ticking){ ticking=true; requestAnimationFrame(frame); } },{passive:true});
+  addEventListener("resize",frame); frame();
+})();
+</script>
+<style id="ccc-depth">
+main{position:relative}
+main>section>.wrap,main>section>.cadre,main>.strip>.wrap{position:relative;z-index:1}
+.depth{position:absolute;left:0;top:0;width:100%;height:100%;overflow:hidden;pointer-events:none;z-index:0}
+.depth .dp{position:absolute;will-change:transform}
+.depth svg{display:block;width:100%;height:100%;overflow:visible}
+.souffle{padding:clamp(120px,17vw,230px) 0;text-align:center;background:transparent}
+.souffle .big{font-family:Lora,Georgia,serif;font-weight:400;font-size:clamp(30px,5.2vw,62px);line-height:1.18;letter-spacing:-.01em;color:var(--souffle-ink);max-width:16em;margin:0 auto}
+.souffle .big b{font-weight:600}
+.souffle .big em{font-style:italic;font-size:1.18em;color:var(--souffle-acc)}
+@media(max-width:760px){.depth .dp.hide-m{display:none}}
+</style>
+<script>
+/* Couche de profondeur : formes de marque derrière les sections, parallaxe selon la profondeur. */
+(function(){
+  var main=document.querySelector("main"), layer=main&&main.querySelector(".depth"); if(!layer) return;
+  var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var secs=[].slice.call(main.querySelectorAll(":scope > section, :scope > .strip")), items=[].slice.call(layer.children);
+  function place(){
+    var mt=main.getBoundingClientRect().top+scrollY;
+    items.forEach(function(el){
+      var s=secs[Math.min(+el.dataset.sec, secs.length-1)]; if(!s){el.style.display="none";return;}
+      var top=s.getBoundingClientRect().top+scrollY-mt + (+el.dataset.fy)*s.offsetHeight - el.offsetHeight/2;
+      el.style.top=top+"px"; var x=(+el.dataset.x)+"px";
+      if(el.dataset.side==="left"){el.style.left=x;el.style.right="";} else {el.style.right=x;el.style.left="";}
+    });
+    move();
+  }
+  var ticking=false;
+  function move(){ ticking=false; if(reduce) return;
+    var mt=main.getBoundingClientRect().top+scrollY;
+    items.forEach(function(el){ var mid=mt+el.offsetTop+el.offsetHeight/2-scrollY-innerHeight/2;
+      var k=(1-(+el.dataset.depth))*0.35; el.style.transform="translate3d(0,"+(mid*k).toFixed(1)+"px,0)"; }); }
+  addEventListener("scroll",function(){ if(!ticking){ticking=true;requestAnimationFrame(move);} },{passive:true});
+  addEventListener("resize",place); addEventListener("load",place);
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(place);
+  place();
+})();
+</script>
+<style id="ccc-menu">
+.mnu-btn{display:none;align-items:center;justify-content:center;width:44px;height:44px;margin-left:6px;border:1px solid rgba(255,255,255,.7);border-radius:12px;background:transparent;color:#fff;cursor:pointer;flex:none;padding:0}
+.mnu-btn svg{width:22px;height:22px}
+.mnu-btn:focus-visible,.mnu a:focus-visible,.mnu-x:focus-visible{outline:2px solid #FFC40C;outline-offset:3px}
+.mnu{position:fixed;inset:0;z-index:2000;display:none;flex-direction:column;overflow-y:auto;padding:20px 24px calc(28px + env(safe-area-inset-bottom,0px));color:#fff}
+.mnu.ouvert{display:flex}
+.mnu-haut{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.mnu-haut img{width:155px;height:22px}
+.mnu-x{width:44px;height:44px;border:1px solid rgba(255,255,255,.6);border-radius:12px;background:transparent;color:#fff;font-size:26px;line-height:1;cursor:pointer}
+.mnu-g{margin:14px 0 4px;font:600 12.5px/1.2 Inter,system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;opacity:.75}
+.mnu a{display:flex;justify-content:space-between;align-items:center;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.18);color:#fff;text-decoration:none;font:500 22px/1.25 Lora,Georgia,serif}
+.mnu a[aria-current="page"]{color:var(--mnu-acc,#FFC40C)}
+.mnu a[aria-current="page"]::after{content:"•";font-size:22px}
+.mnu .mnu-mail{font:600 17px/1.3 Inter,system-ui,sans-serif;border-bottom:0;margin-top:14px}
+@media(max-width:760px){.mnu-btn{display:inline-flex!important}.nav-at,header.top nav>a,.top-ccc nav,.top-ccc .dedans>a:not(:first-child){display:none!important}.top-ccc .dedans{flex-wrap:nowrap!important}}
+@media(max-width:380px){.mnu-btn{width:40px;height:40px;margin-left:4px}header.top .wrap,header.tete .cadre{gap:8px!important}}
+@media(max-width:380px){header .brand img,header .logo img,.top-ccc img{width:112px!important;height:16px!important}.langs button,.langue button{padding-left:9px!important;padding-right:9px!important}}
+body.mnu-fige{overflow:hidden}
+</style>
+<script>
+/* Menu ☰ (téléphone) : toutes les pages du site, dans la langue choisie. */
+(function(){
+  var root=document.documentElement;
+  var bar=null; ["header.top .wrap","header.top",".top-ccc .dedans",".top-ccc","header.tete .cadre","header.tete"].some(function(q){ bar=document.querySelector(q); return !!bar; });
+  if(!bar) return;
+  var T={
+    menu:{fr:"Menu",en:"Menu",es:"Menú"}, fermer:{fr:"Fermer le menu",en:"Close menu",es:"Cerrar el menú"},
+    accueil:{fr:"Accueil",en:"Home",es:"Inicio"},
+    affaires:{fr:"Branche d'affaires",en:"Business branch",es:"Rama de negocios"},
+    services:{fr:"Services aux entreprises",en:"Business services",es:"Servicios para empresas"},
+    plombiers:{fr:"Plomberie et chauffage",en:"Plumbing and heating",es:"Plomería y calefacción"},
+    jenn:{fr:"Jennifer, actrice IA",en:"Jennifer, AI actress",es:"Jennifer, actriz IA"},
+    charte:{fr:"Charte de Jennifer",en:"Jennifer's charter",es:"Carta de Jennifer"},
+    auth:{fr:"Authentifier une image",en:"Verify an image",es:"Verificar una imagen"},
+    creative:{fr:"Branche créative",en:"Creative branch",es:"Rama creativa"},
+    creations:{fr:"Univers, séries et jeux",en:"Worlds, series and games",es:"Universos, series y juegos"},
+    ateliers:{fr:"Ateliers jeunesse",en:"Youth workshops",es:"Talleres juveniles"},
+    studio:{fr:"Le studio",en:"The studio",es:"El estudio"},
+    apropos:{fr:"À propos",en:"About",es:"Acerca de"},
+    conf:{fr:"Confidentialité",en:"Privacy",es:"Privacidad"}
+  };
+  var ITEMS=[["g","studio"],["/","accueil"],["/a-propos/","apropos"],
+             ["g","affaires"],["/services/","services"],["/metiers/plombiers/","plombiers"],["/jennshems/","jenn"],["/jennshems/charte/","charte"],["/jennshems/authentifier/","auth"],
+             ["g","creative"],["/creatif/","creations"],["/creatif/ateliers/","ateliers"],
+             ["g",""],["/confidentialite/","conf"]];
+  function langue(){var l=root.getAttribute("data-lang")||root.getAttribute("data-l")||root.lang||"fr";l=l.slice(0,2);return T.menu[l]?l:"fr";}
+  var hb=getComputedStyle(document.querySelector("header.top, .top-ccc, header.tete")).backgroundColor;
+  if(!hb||hb==="rgba(0, 0, 0, 0)"||hb==="transparent") hb="#180D00";
+  var acc=/30, 0, 7|89, 0, 22|195, 0, 1|31, 0, 7/.test(hb)?"#FEDADA":"#FFC40C";
+  var btn=document.createElement("button"); btn.type="button"; btn.className="mnu-btn"; btn.setAttribute("aria-expanded","false"); btn.setAttribute("aria-controls","ccc-mnu");
+  btn.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
+  var lg=bar.querySelector(".langs, .langue");
+  if(lg&&lg.parentNode){ lg.parentNode.insertBefore(btn, lg.nextSibling); } else { bar.appendChild(btn); }
+  var pan=document.createElement("div"); pan.id="ccc-mnu"; pan.className="mnu"; pan.setAttribute("role","dialog"); pan.setAttribute("aria-modal","true");
+  pan.style.background=hb; pan.style.setProperty("--mnu-acc",acc);
+  document.body.appendChild(pan);
+  var ici=location.pathname.replace(/^\/(en|es)(?=\/)/,"").replace(/index\.html$/,"");
+  function rendre(){
+    var l=langue(); btn.setAttribute("aria-label",T.menu[l]); pan.setAttribute("aria-label",T.menu[l]);
+    var h='<div class="mnu-haut"><img src="/logo-ccc.svg" alt="CCC Studios" width="155" height="22"><button type="button" class="mnu-x" aria-label="'+T.fermer[l]+'">×</button></div>';
+    ITEMS.forEach(function(it){
+      if(it[0]==="g"){ if(it[1]) h+='<p class="mnu-g">'+T[it[1]][l]+'</p>'; else h+='<p class="mnu-g" aria-hidden="true">&nbsp;</p>'; return; }
+      var cur=(ici===it[0]||(it[0]!=="/"&&ici.indexOf(it[0])===0&&ici.length===it[0].length));
+      h+='<a href="'+it[0]+'"'+(cur?' aria-current="page"':'')+'>'+T[it[1]][l]+'</a>';
+    });
+    h+='<a class="mnu-mail" href="mailto:bonjour@ccc-studios.com">bonjour@ccc-studios.com</a>';
+    pan.innerHTML=h;
+    pan.querySelector(".mnu-x").addEventListener("click",fermer);
+  }
+  function ouvrir(){ rendre(); pan.classList.add("ouvert"); btn.setAttribute("aria-expanded","true"); document.body.classList.add("mnu-fige"); var a=pan.querySelector("a,button"); if(a) a.focus(); }
+  function fermer(){ pan.classList.remove("ouvert"); btn.setAttribute("aria-expanded","false"); document.body.classList.remove("mnu-fige"); btn.focus(); }
+  btn.addEventListener("click",function(){ pan.classList.contains("ouvert")?fermer():ouvrir(); });
+  document.addEventListener("keydown",function(e){
+    if(!pan.classList.contains("ouvert")) return;
+    if(e.key==="Escape"){ fermer(); }
+    if(e.key==="Tab"){ var f=[].slice.call(pan.querySelectorAll("a,button")); if(!f.length) return; var a=f[0], z=f[f.length-1];
+      if(e.shiftKey&&document.activeElement===a){ z.focus(); e.preventDefault(); } else if(!e.shiftKey&&document.activeElement===z){ a.focus(); e.preventDefault(); } }
+  });
+  pan.addEventListener("click",function(e){ if(e.target.tagName==="A") { pan.classList.remove("ouvert"); document.body.classList.remove("mnu-fige"); } });
+  rendre();
+  new MutationObserver(rendre).observe(root,{attributes:true,attributeFilter:["data-lang","data-l","lang"]});
+})();
+</script>
+
+
+</body></html>

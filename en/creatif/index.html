@@ -1,0 +1,645 @@
+<!doctype html>
+<html lang="en" data-l="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+
+<title>CCC Studios Creative · Fantasy universe, series and games</title>
+<meta name="description" content="CCC Studios, creative branch: explorers of AI-generated content. A fantasy universe written 100% by humans.">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+/* Mise en page : une nuit cramoisie ; titres en Lora à gauche, marque en Tenor Sans, chaque œuvre porte sa provenance (humain ou IA).
+   Kit CCC v1.4.2, branche Cramoisi (créative) : super-foncée, foncée, principale (discrète), claire, + blanc et noir. Aucun gris. */
+:root {
+  --nuit: #1E0007;          /* Cramoisi minuit : fond */
+  --bordeaux: #590016;      /* foncée : surfaces, traits */
+  --cramoisi: #C30001;      /* principale : filets et repères seulement */
+  --rose: #FEDADA;          /* claire : texte secondaire, étiquettes */
+  --blanc: #FFFFFF;
+  --noir: #000000;
+  --trait: rgba(254, 218, 218, 0.16);
+  --police-marque: "Tenor Sans", "Inter", "Helvetica Neue", Arial, sans-serif;
+  --police-titre: "Lora", Georgia, "Times New Roman", serif;
+  --police-texte: "Inter", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+/* Surfaces du navigateur aux couleurs de la marque (sélection, curseur de saisie, barre de défilement) */
+::selection { background: var(--cramoisi); color: var(--blanc); }
+html { caret-color: var(--rose); scrollbar-color: var(--bordeaux) var(--nuit); }
+::-webkit-scrollbar { width: 10px; } ::-webkit-scrollbar-track { background: var(--nuit); }
+::-webkit-scrollbar-thumb { background: var(--bordeaux); border-radius: 10px; border: 2px solid var(--nuit); }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0; background: var(--nuit); color: var(--blanc);
+  font: 400 17px/1.6 var(--police-texte);
+}
+:root:not([data-l="en"]) [data-en], :root:not([data-l="es"]) [data-es], :root[data-l="en"] [data-fr], :root[data-l="es"] [data-fr] { display: none; }
+:root[data-l="en"] [data-en], :root[data-l="es"] [data-es] { display: revert; }
+a { color: var(--rose); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:hover { color: var(--blanc); }
+:focus-visible { outline: 2px solid var(--rose); outline-offset: 3px; border-radius: 4px; }
+
+.bande { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.cadre { max-width: 1120px; margin: 0 auto; }
+
+/* En-tête */
+.tete { padding-block: 22px; border-bottom: 1px solid var(--trait); position: sticky; top: 0; z-index: 50; background: var(--nuit); transition: padding-block 200ms ease, box-shadow 200ms ease; }
+.tete.collee { padding-block: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.45); }
+html { scroll-padding-top: 76px; }
+.tete .cadre { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.logo { display: flex; align-items: center; gap: 14px; min-width: 0; text-decoration: none; }
+.logo img { height: 22px; width: auto; display: block; }
+.logo > span { font: 400 12px/1 var(--police-marque); letter-spacing: 0.22em; text-transform: uppercase; color: var(--rose); padding-left: 14px; border-left: 1px solid var(--trait); }
+.langue { display: flex; border: 1px solid var(--trait); border-radius: 999px; overflow: hidden; }
+.langue button { font: 500 12px var(--police-texte); letter-spacing: 0.08em; background: transparent; color: var(--rose); border: 0; padding: 7px 13px; cursor: pointer; }
+.langue button[aria-pressed="true"] { background: var(--rose); color: var(--nuit); }
+
+.surtitre { font: 400 12px/1.4 var(--police-marque); letter-spacing: 0.24em; text-transform: uppercase; color: var(--rose); margin: 0; display: flex; align-items: center; gap: 12px; }
+.surtitre::before { content: ""; width: 28px; height: 2px; background: var(--cramoisi); flex: none; }
+h1, h2 { font-family: var(--police-titre); font-weight: 500; text-wrap: balance; margin: 0; }
+h1, h2.grand { font-size: clamp(42px, 7.2vw, 88px); line-height: 1.02; letter-spacing: -0.015em; }
+
+/* Écran vidéo plein cadre (comme gouttieres4ever.ca : vidéo en fond, voile, un seul titre) */
+.ecran-video { position: relative; height: 100svh; min-height: 520px; overflow: hidden; background: var(--noir); display: grid; place-items: center; isolation: isolate; }
+@supports not (height: 100svh) { .ecran-video { height: 100vh; } }
+.ecran-fond { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+.ecran-voile { position: absolute; inset: 0; z-index: -1;
+  background: radial-gradient(ellipse at 50% 50%, rgba(30, 0, 7, 0.15) 0%, rgba(30, 0, 7, 0.55) 70%, rgba(30, 0, 7, 0.8) 100%),
+              linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 30%, rgba(30, 0, 7, 0.0) 70%, var(--nuit) 100%); }
+.ecran-texte { text-align: center; display: grid; gap: clamp(10px, 1.6vw, 18px); padding-inline: max(16px, env(safe-area-inset-left, 0px)) max(16px, env(safe-area-inset-right, 0px)); }
+.video-titre { font: 400 clamp(40px, 8.4vw, 124px)/0.98 var(--police-marque); text-transform: uppercase; letter-spacing: 0.04em; text-shadow: 0 2px 30px rgba(0,0,0,0.55); }
+.video-titre em { font: italic 500 1.02em/1 var(--police-titre); text-transform: none; letter-spacing: -0.01em; color: var(--blanc); display: block; }
+.video-sous { font: italic 500 clamp(18px, 2.2vw, 26px)/1.4 var(--police-titre); color: var(--rose); text-shadow: 0 1px 16px rgba(0,0,0,0.7); }
+.ecran-ia { position: absolute; left: max(16px, env(safe-area-inset-left, 0px)); bottom: calc(18px + env(safe-area-inset-bottom, 0px)); font: 500 12px/1.3 var(--police-texte); letter-spacing: 0.06em; color: rgba(255,255,255,0.78); }
+.ecran-suite { position: absolute; left: 50%; bottom: calc(22px + env(safe-area-inset-bottom, 0px)); width: 22px; height: 36px; margin-left: -11px; border: 1.5px solid rgba(255,255,255,0.7); border-radius: 12px; }
+.ecran-suite::after { content: ""; position: absolute; left: 50%; top: 7px; width: 3px; height: 7px; margin-left: -1.5px; border-radius: 2px; background: var(--blanc); }
+@media (prefers-reduced-motion: no-preference) { .ecran-suite::after { animation: glisse 1.8s ease-in-out infinite; } @keyframes glisse { 0%,100% { transform: translateY(0); opacity: 1; } 60% { transform: translateY(10px); opacity: 0.2; } } }
+@media (max-width: 560px) { .ecran-ia { right: max(16px, env(safe-area-inset-right, 0px)); text-align: center; } .ecran-suite { display: none; } }
+h1 em, h2 em { font-style: italic; color: var(--rose); }
+h2 { font-size: clamp(32px, 4.6vw, 54px); line-height: 1.08; letter-spacing: -0.01em; }
+.chapeau { font-size: clamp(18px, 2vw, 21px); line-height: 1.55; color: var(--rose); max-width: 38ch; margin: 0; text-wrap: pretty; }
+p { margin: 0; }
+.texte { max-width: 62ch; display: grid; gap: 14px; }
+
+/* Héros */
+.heros { padding-block: clamp(40px, 7vw, 88px) clamp(40px, 6vw, 72px); }
+.heros .cadre { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 64px); align-items: center; }
+.heros-texte { display: grid; gap: 26px; min-width: 0; }
+.appels { display: flex; flex-wrap: wrap; gap: 12px; }
+.bouton { font: 500 15px var(--police-texte); text-decoration: none; padding: 13px 20px; border-radius: 999px; border: 1px solid var(--rose); color: var(--nuit); background: var(--rose); }
+.bouton:hover { background: var(--blanc); border-color: var(--blanc); color: var(--nuit); }
+.bouton.vide { background: transparent; color: var(--rose); border-color: var(--trait); }
+.bouton.vide:hover { color: var(--blanc); border-color: var(--rose); background: transparent; }
+
+/* Œuvre (vidéo ou image) avec sa provenance */
+.oeuvre { margin: 0; display: grid; gap: 10px; min-width: 0; }
+.media { position: relative; border-radius: 6px; overflow: hidden; background: var(--noir); border: 1px solid var(--trait); }
+.media video, .media img { display: block; width: 100%; height: 100%; object-fit: cover; max-width: 100%; }
+.media.pixel img { image-rendering: pixelated; }
+.provenance { position: absolute; left: 10px; top: 10px; font: 600 12px/1 var(--police-texte); letter-spacing: 0.06em; padding: 6px 9px; border-radius: 999px; background: rgba(0, 0, 0, 0.62); color: var(--blanc); backdrop-filter: blur(4px); }
+.son { position: absolute; right: 10px; bottom: 10px; font: 600 12px var(--police-texte); padding: 7px 11px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.5); background: rgba(0, 0, 0, 0.55); color: var(--blanc); cursor: pointer; }
+figcaption { font-size: 14px; line-height: 1.45; color: var(--rose); display: flex; justify-content: space-between; gap: 12px; }
+figcaption b { font: 400 12px/1.5 var(--police-marque); letter-spacing: 0.16em; text-transform: uppercase; color: var(--blanc); }
+.heros .media { aspect-ratio: 1376 / 928; }
+
+/* Formats */
+.formats { padding-block: clamp(36px, 5vw, 56px); border-block: 1px solid var(--trait); background: linear-gradient(180deg, rgba(89, 0, 22, 0.35), rgba(89, 0, 22, 0)); }
+.formats .cadre { display: grid; gap: 22px; }
+.liste-formats { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 0; font: 400 clamp(24px, 3.6vw, 44px)/1.2 var(--police-marque); text-transform: uppercase; letter-spacing: 0.04em; }
+.liste-formats li { display: inline-flex; align-items: center; }
+.liste-formats li:not(:last-child)::after { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--cramoisi); margin: 0 clamp(12px, 1.8vw, 22px); box-shadow: inset -3px 0 0 var(--nuit); }
+.liste-formats .plus { font-family: var(--police-titre); font-style: italic; text-transform: none; letter-spacing: 0; color: var(--rose); }
+
+/* Galerie */
+.section { padding-block: clamp(56px, 8vw, 104px); }
+.section .cadre { display: grid; gap: clamp(28px, 4vw, 44px); }
+.entete-section { display: grid; gap: 18px; }
+.galerie { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 18px; }
+.g-duo { grid-column: span 7; } .g-duo .media { aspect-ratio: 1376 / 928; }
+.g-guerriere { grid-column: span 5; } .g-guerriere .media { aspect-ratio: 1 / 1; }
+.g-mages { grid-column: span 4; } .g-mages .media { aspect-ratio: 1080 / 1600; }
+.g-firbolg { grid-column: span 4; } .g-firbolg .media { aspect-ratio: 1080 / 1600; background: radial-gradient(circle at 50% 40%, var(--bordeaux), var(--nuit) 70%); }
+.g-firbolg .media img, .g-chauve .media img { object-fit: contain; }
+.g-foret { grid-column: span 4; } .g-foret .media { aspect-ratio: 1080 / 1600; }
+.g-donjon { grid-column: span 6; } .g-donjon .media { aspect-ratio: 784 / 625; }
+.g-chauve { grid-column: span 6; } .g-chauve .media { aspect-ratio: 784 / 625; background: radial-gradient(circle at 50% 45%, var(--bordeaux), var(--nuit) 72%); }
+
+/* Univers humain */
+.univers { background: var(--bordeaux); }
+.univers .cadre { grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr); align-items: center; }
+.registre { list-style: none; margin: 0; padding: 0; display: grid; border-top: 1px solid var(--trait); }
+.registre li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; padding: 13px 0; border-bottom: 1px solid var(--trait); align-items: baseline; }
+.registre .qui { font: 500 12px/1.3 var(--police-texte); letter-spacing: 0.08em; text-transform: uppercase; color: var(--rose); white-space: nowrap; }
+.registre .qui.ia { color: var(--blanc); }
+.dames { justify-self: center; width: min(100%, 420px); aspect-ratio: 1; }
+.dames img { width: 100%; height: auto; display: block; }
+
+/* Livres */
+.livres { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0 32px; }
+.livres li { display: grid; gap: 6px; padding: 20px 0; border-top: 1px solid var(--trait); }
+.livres .titre-livre { font: italic 500 22px/1.25 var(--police-titre); color: var(--blanc); }
+.livres p { font-size: 15px; color: var(--rose); }
+
+/* Lien vers les ateliers */
+.ateliers-lien { border-top: 1px solid var(--trait); }
+
+/* Contact */
+.contact { background: var(--bordeaux); }
+.contact .cadre { grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); align-items: end; }
+.carte-contact { display: grid; gap: 14px; padding: 26px; border: 1px solid var(--trait); border-radius: 6px; background: var(--nuit); min-width: 0; }
+.adresse { font: 500 clamp(20px, 2.4vw, 26px)/1.3 var(--police-texte); color: var(--blanc); user-select: all; overflow-wrap: anywhere; }
+.carte-contact .appels { align-items: center; }
+.copie-ok { font-size: 14px; color: var(--rose); min-height: 1.4em; }
+.idees { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.idees li { font-size: 14px; padding: 6px 12px; border: 1px solid var(--trait); border-radius: 999px; color: var(--rose); }
+@media (max-width: 860px) { .contact .cadre { grid-template-columns: 1fr; } }
+
+/* IA déclarée + suivre */
+.declaree { border-top: 1px solid var(--trait); }
+.liens { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+.liens a { display: grid; gap: 4px; padding: 18px 20px; border: 1px solid var(--trait); border-radius: 6px; text-decoration: none; color: var(--blanc); }
+.liens a:hover { border-color: var(--rose); }
+.liens .ou { font: 400 12px/1.4 var(--police-marque); letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose); }
+.liens .qui { font: 500 18px var(--police-texte); overflow-wrap: anywhere; }
+
+footer { padding-block: 32px 48px; border-top: 1px solid var(--trait); font-size: 13px; color: var(--rose); }
+footer .cadre { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 24px; }
+footer .signature { font: 400 12px var(--police-marque); letter-spacing: 0.2em; text-transform: uppercase; }
+
+@media (max-width: 860px) {
+  .heros .cadre, .univers .cadre { grid-template-columns: 1fr; }
+  .galerie { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .galerie > * { grid-column: span 2; }
+  .g-mages, .g-firbolg, .g-foret { grid-column: span 1; }
+  .g-foret { grid-column: span 2; } .g-foret .media { aspect-ratio: 4 / 5; }
+  .dames { width: min(70%, 300px); }
+}
+@media (max-width: 480px) {
+  .logo > span { display: none; }
+  figcaption { flex-direction: column; gap: 2px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .heros-texte > * { animation: monte 700ms cubic-bezier(.2,.7,.2,1) both; }
+  .heros-texte > *:nth-child(2) { animation-delay: 80ms; } .heros-texte > *:nth-child(3) { animation-delay: 160ms; } .heros-texte > *:nth-child(4) { animation-delay: 240ms; }
+  @keyframes monte { from { transform: translateY(10px); opacity: 0.35; } to { transform: none; opacity: 1; } }
+}
+
+/* Lien Ateliers dans la barre du haut (2 nov.) */
+.droite { display: flex; align-items: center; gap: 18px; }
+.nav-at { font: 500 14px var(--police-texte); color: var(--rose); text-decoration: none; white-space: nowrap; padding: 6px 2px; border-bottom: 1px solid transparent; }
+.nav-at:hover { border-bottom-color: var(--rose); }
+@media (max-width: 480px) { .droite { gap: 12px; } .logo img { height: 18px; } }
+@media (max-width: 360px) { .tete .cadre { gap: 10px; } .droite { gap: 8px; } .langue button { padding: 7px 9px; } .logo img { height: 15px; } }
+</style>
+
+<meta property="og:title" content="CCC Studios Creative · Fantasy universe, series and games">
+<meta property="og:description" content="CCC Studios, creative branch: explorers of AI-generated content. A fantasy universe written 100% by humans.">
+<meta property="og:url" content="https://ccc-studios.com/en/creatif/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CCC Studios">
+<meta property="og:locale" content="en_CA">
+<link rel="canonical" href="https://ccc-studios.com/en/creatif/">
+<link rel="alternate" hreflang="fr-CA" href="https://ccc-studios.com/creatif/">
+<link rel="alternate" hreflang="en-CA" href="https://ccc-studios.com/en/creatif/">
+<link rel="alternate" hreflang="es" href="https://ccc-studios.com/es/creatif/">
+<link rel="alternate" hreflang="x-default" href="https://ccc-studios.com/creatif/">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://ccc-studios.com/en/"},{"@type":"ListItem","position":2,"name":"Creative branch","item":"https://ccc-studios.com/en/creatif/"}]},{"@type":"WebPage","@id":"https://ccc-studios.com/en/creatif/","url":"https://ccc-studios.com/en/creatif/","name":"CCC Studios Creative · Fantasy universe, series and games","description":"CCC Studios, creative branch: explorers of AI-generated content. A fantasy universe written 100% by humans.","inLanguage":"en-CA","isPartOf":{"@id":"https://ccc-studios.com/#site"},"about":{"@id":"https://ccc-studios.com/#org"}}]}</script></head>
+<body>
+
+<section class="ecran-video" aria-labelledby="titre-video">
+  <video id="v-ecran" class="ecran-fond" muted="" loop="" playsinline="" autoplay="" preload="auto" poster="/creatif/m/heros-bureau.jpg" aria-hidden="true"></video>
+  <div class="ecran-voile" aria-hidden="true"></div>
+  <div class="ecran-texte">
+    <h1 id="titre-video" class="video-titre"><span data-en="">Creativity <em>unleashed</em></span></h1>
+    <p class="video-sous"><span data-en="">Where every idea comes to life.</span></p>
+  </div>
+  <span class="ecran-ia"><span data-en="">AI-generated videos · human-written universe</span></span>
+  <a class="ecran-suite" href="#haut" aria-label="Défiler / Scroll"></a>
+</section>
+
+<header class="bande tete">
+  <div class="cadre">
+    <a class="logo" href="/en/" id="haut" aria-label="CCC Studios, accueil">
+      <img src="/creatif/m/logo.svg" alt="CCC Studios" width="155" height="22">
+      <span><span data-en="">Creative branch</span></span>
+    </a>
+    <div class="droite">
+      <a class="nav-at" href="/en/creatif/ateliers/"><span data-en="">Workshops</span></a>
+      <div class="langue" role="group" aria-label="Langue / Language / Idioma">
+        <button type="button" id="btn-fr" aria-pressed="false">FR</button>
+        <button type="button" id="btn-en" aria-pressed="true">EN</button>
+        <button type="button" id="btn-es" aria-pressed="false">ES</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="bande heros" aria-labelledby="titre">
+    <div class="cadre">
+      <div class="heros-texte">
+        <p class="surtitre"><span data-en="">CCC Studios · Canadian studio</span></p>
+        <h2 id="titre" class="grand"><span data-en="">Explorers of <em>AI-generated</em> content.</span></h2>
+        <p class="chapeau"><span data-en="">Images, videos, series, reels, music, games and stories. Our worlds are written by hand: AI brings them to the screen, people imagine them.</span></p>
+        <div class="appels">
+          <a class="bouton" href="https://www.tiktok.com/@cccstudiosinc" rel="noopener"><span data-en="">Watch on TikTok</span></a>
+          <a class="bouton vide" href="#univers"><span data-en="">Our universe</span></a>
+          <a class="bouton vide" href="#contact"><span data-en="">Create with us</span></a>
+        </div>
+      </div>
+      <figure class="oeuvre">
+        <div class="media">
+          <video id="v-heros" src="/creatif/m/dungeon-dweller.mp4" poster="/creatif/m/dungeon-dweller.jpg" autoplay="" muted="" loop="" playsinline="" preload="metadata" aria-label="Dungeon Dweller"></video>
+          <span class="provenance"><span data-en="">AI-generated video</span></span>
+          <button class="son" type="button" data-video="v-heros" aria-pressed="false"><span data-en="">Sound</span></button>
+        </div>
+        <figcaption><b>Dungeon Dweller</b><span><span data-en="">Creature · Crab's Collar Continent</span></span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="bande formats" aria-labelledby="titre-formats">
+    <div class="cadre">
+      <p class="surtitre" id="titre-formats"><span data-en="">What we make</span></p>
+      <ul class="liste-formats">
+        <li><span data-en="">Images</span></li>
+        <li><span data-en="">Videos</span></li>
+        <li><span data-en="">Series</span></li>
+        <li>Reels</li>
+        <li><span data-en="">Music</span></li>
+        <li><span data-en="">Games</span></li>
+        <li><span data-en="">Storytelling</span></li>
+        <li><span data-en="">Short stories</span></li>
+        <li class="plus"><span data-en="">and more</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="bande section" aria-labelledby="titre-galerie">
+    <div class="cadre">
+      <div class="entete-section">
+        <p class="surtitre"><span data-en="">Gallery</span></p>
+        <h2 id="titre-galerie"><span data-en="">Creatures, heroes <em>and dungeons</em></span></h2>
+        <p class="chapeau"><span data-en="">Pieces from our channels. Each one says how it was made.</span></p>
+      </div>
+      <div class="galerie">
+        <figure class="oeuvre g-duo">
+          <div class="media">
+            <video id="v-duo" src="/creatif/m/darkness-duo.mp4" poster="/creatif/m/darkness-duo.jpg" autoplay="" muted="" loop="" playsinline="" preload="metadata" aria-label="Darkness Duo"></video>
+            <span class="provenance"><span data-en="">AI-generated video</span></span>
+            <button class="son" type="button" data-video="v-duo" aria-pressed="false"><span data-en="">Sound</span></button>
+          </div>
+          <figcaption><b>Darkness Duo</b><span><span data-en="">Creature intro</span></span></figcaption>
+        </figure>
+        <figure class="oeuvre g-guerriere">
+          <div class="media">
+            <video id="v-guerriere" src="/creatif/m/guerriere.mp4" poster="/creatif/m/guerriere.jpg" autoplay="" muted="" loop="" playsinline="" preload="metadata" aria-label="Guerrière en armure noire"></video>
+            <span class="provenance"><span data-en="">AI-generated video</span></span>
+            <button class="son" type="button" data-video="v-guerriere" aria-pressed="false"><span data-en="">Sound</span></button>
+          </div>
+          <figcaption><b><span data-en="">Series</span></b><span><span data-en="">A warrior of the universe</span></span></figcaption>
+        </figure>
+        <figure class="oeuvre g-mages">
+          <div class="media">
+            <video id="v-mages" src="/creatif/m/mages.mp4" poster="/creatif/m/mages.jpg" autoplay="" muted="" loop="" playsinline="" preload="metadata" aria-label="Deux mages"></video>
+            <span class="provenance"><span data-en="">AI-generated video</span></span>
+            <button class="son" type="button" data-video="v-mages" aria-pressed="false"><span data-en="">Sound</span></button>
+          </div>
+          <figcaption><b><span data-en="">Magic</span></b><span>Reel</span></figcaption>
+        </figure>
+        <figure class="oeuvre g-firbolg">
+          <div class="media"><img src="/creatif/m/firbolg.webp" alt="Un firbolg à la barbe rousse, couvert de mousse et de feuilles" loading="lazy"><span class="provenance"><span data-en="">AI-generated image</span></span></div>
+          <figcaption><b><span data-en="">Characters</span></b><span>Firbolg</span></figcaption>
+        </figure>
+        <figure class="oeuvre g-foret">
+          <div class="media"><img src="/creatif/m/foret.webp" alt="Forêt enchantée en pixel art, champignons lumineux" loading="lazy"><span class="provenance"><span data-en="">AI-generated image</span></span></div>
+          <figcaption><b><span data-en="">Games</span></b><span><span data-en="">Enchanted forest, pixel art</span></span></figcaption>
+        </figure>
+        <figure class="oeuvre g-donjon">
+          <div class="media pixel"><img src="/creatif/m/donjon.webp" alt="Couloir de donjon en pixel art, torches et pierres moussues" loading="lazy"><span class="provenance"><span data-en="">AI-generated image</span></span></div>
+          <figcaption><b><span data-en="">Games</span></b><span><span data-en="">Dungeon, pixel art</span></span></figcaption>
+        </figure>
+        <figure class="oeuvre g-chauve">
+          <div class="media"><img src="/creatif/m/chauve-souris.webp" alt="Chauve-souris géante aux yeux rouges" loading="lazy"><span class="provenance"><span data-en="">AI-generated image</span></span></div>
+          <figcaption><b><span data-en="">Creatures</span></b><span><span data-en="">Giant bat</span></span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="bande section univers" id="univers" aria-labelledby="titre-univers">
+    <div class="cadre">
+      <div class="entete-section">
+        <p class="surtitre"><span data-en="">Our universe</span></p>
+        <h2 id="titre-univers"><span data-en="">A <em>100% human</em> world</span></h2>
+        <div class="texte">
+          <p><span data-en="">The World of Croussus and its Crab's Collar Continent are imagined and written by people: their peoples, their creatures, their wars, including the Raven War. AI comes after, to bring them to images and motion. And we always say so.</span></p>
+        </div>
+        <ul class="registre" aria-label="Qui fait quoi / Who makes what">
+          <li><span data-en="">The world, its history, its peoples</span><span class="qui"><span data-en="">Human</span></span></li>
+          <li><span data-en="">The stories, books and short stories</span><span class="qui"><span data-en="">Human</span></span></li>
+          <li><span data-en="">Images, videos, reels</span><span class="qui ia"><span data-en="">AI, declared</span></span></li>
+        </ul>
+        <div class="appels">
+          <a class="bouton" href="https://worldofcroussus.fandom.com/" rel="noopener"><span data-en="">Explore the wiki</span></a>
+        </div>
+      </div>
+      <div class="dames" aria-hidden="true"><img src="/creatif/m/trois-femmes.webp" alt="" width="640" height="640"></div>
+    </div>
+  </section>
+
+  <section class="bande section" aria-labelledby="titre-livres">
+    <div class="cadre">
+      <div class="entete-section">
+        <p class="surtitre"><span data-en="">The books</span></p>
+        <h2 id="titre-livres"><span data-en="">Written <em>by hand</em></span></h2>
+        <p class="chapeau"><span data-en="">Books by Dan Ortega, co-founder of the studio, published on Wattpad as TheNewWorldProphet: prophecies, travellers, storms.</span></p>
+      </div>
+      <ul class="livres">
+        <li><span class="titre-livre">The Traveller &amp; the Gambler</span><p><span data-en="">The Viktorrious Games, in the city of Pyr.</span></p></li>
+        <li><span class="titre-livre">Smoke on the Water</span><p><span data-en="">A coming-of-age fantasy on a forbidden island.</span></p></li>
+        <li><span class="titre-livre">The Prophecy of the Elohim</span><p><span data-en="">In English, French and Spanish.</span></p></li>
+        <li><span class="titre-livre">Aditya and the Storm</span><p><span data-en="">A tale of storm and choice.</span></p></li>
+      </ul>
+      <div class="appels">
+        <a class="bouton" href="https://www.wattpad.com/user/TheNewWorldProphet" rel="noopener"><span data-en="">Read on Wattpad</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bande section ateliers-lien" id="ateliers-lien" aria-labelledby="titre-ateliers-lien">
+    <div class="cadre">
+      <div class="entete-section">
+        <p class="surtitre"><span data-en="">CCC Studios Education</span></p>
+        <h2 id="titre-ateliers-lien"><span data-en="">Workshops for <em>young people</em></span></h2>
+        <p class="chapeau"><span data-en="">In two hours, they invent a character, a world or a mini-film, with AI as a tool. For schools, libraries and youth organizations.</span></p>
+        <div class="appels"><a class="bouton" href="/en/creatif/ateliers/"><span data-en="">Discover the workshops</span></a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bande section contact" id="contact" aria-labelledby="titre-contact">
+    <div class="cadre">
+      <div class="entete-section">
+        <p class="surtitre"><span data-en="">Contact us</span></p>
+        <h2 id="titre-contact"><span data-en="">Your world, <em>on screen</em></span></h2>
+        <p class="chapeau"><span data-en="">Have a world, a story, a character or an idea waiting to exist? We bring it to life in images, video, series, music or games, together with you. Write to us.</span></p>
+        <ul class="idees">
+          <li><span data-en="">Worlds and lore</span></li>
+          <li><span data-en="">Characters</span></li>
+          <li><span data-en="">Book trailers</span></li>
+          <li><span data-en="">Series and reels</span></li>
+          <li><span data-en="">Games</span></li>
+          <li><span data-en="">Music</span></li>
+        </ul>
+      </div>
+      <div class="carte-contact">
+        <p class="surtitre"><span data-en="">Email</span></p>
+        <p class="adresse" id="courriel">bonjour@ccc-studios.com</p>
+        <div class="appels">
+          <button class="bouton" type="button" id="copier"><span data-en="">Copy address</span></button>
+          <a class="bouton vide" href="mailto:bonjour@ccc-studios.com?subject=Projet%20cr%C3%A9atif"><span data-en="">Write</span></a>
+        </div>
+        <p class="copie-ok" id="copie-ok" aria-live="polite"></p>
+        <p style="font-size:14px;color:var(--rose)"><span data-en="">Tell us what you want to create. A person replies, in English, French or Spanish.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bande section declaree" aria-labelledby="titre-suivre">
+    <div class="cadre">
+      <div class="entete-section">
+        <p class="surtitre"><span data-en="">AI, declared</span></p>
+        <h2 id="titre-suivre"><span data-en="">What AI makes, <em>we label</em></span></h2>
+        <p class="chapeau"><span data-en="">Every AI-generated image and video is labelled as such, here and on our channels.</span></p>
+      </div>
+      <div class="liens">
+        <a href="https://www.tiktok.com/@cccstudiosinc" rel="noopener"><span class="ou">TikTok</span><span class="qui">@cccstudiosinc</span></a>
+        <a href="https://worldofcroussus.fandom.com/" rel="noopener"><span class="ou"><span data-en="">Universe wiki</span></span><span class="qui">World of Croussus</span></a>
+        <a href="https://www.wattpad.com/user/TheNewWorldProphet" rel="noopener"><span class="ou">Wattpad</span><span class="qui">TheNewWorldProphet</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="bande">
+  <div class="cadre">
+    <span class="signature"><span data-en="">CCC Studios · Canadian creative studio · AI-declared</span></span>
+    <span><span data-en="">Universe and books written by people. Images and videos generated by AI.</span></span>
+  </div>
+</footer>
+
+<script>/* Langue par adresse : chaque langue a sa page (/, /en/, /es/). */
+(function(){var L="en",P="/creatif/",T=["/","/a-propos/","/services/","/metiers/plombiers/","/jennshems/","/confidentialite/","/creatif/","/creatif/ateliers/"];function loc(p,l){return(l==="fr"?"":"/"+l)+p}try{var q=new URLSearchParams(location.search).get("lang");if(q&&q!==L&&/^(fr|en|es)$/.test(q)){location.replace(loc(P,q)+location.hash);return}}catch(e){}function fix(a){var m=(a.getAttribute("href")||"").match(/^(\/[^#?]*)(.*)$/);if(m&&T.indexOf(m[1])>-1)a.setAttribute("href",loc(m[1],L)+m[2])}if(L!=="fr"){new MutationObserver(function(r){r.forEach(function(x){x.addedNodes.forEach(function(n){if(n.nodeType!==1)return;if(n.matches&&n.matches("a[href^=\"/\"]"))fix(n);n.querySelectorAll&&n.querySelectorAll("a[href^=\"/\"]").forEach(fix)})})}).observe(document.documentElement,{childList:true,subtree:true})}document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest(".langs button[data-set],#btn-fr,#btn-en,#btn-es");if(!b)return;var l=b.getAttribute("data-set")||b.id.slice(4);if(!/^(fr|en|es)$/.test(l))return;e.stopImmediatePropagation();e.preventDefault();if(l!==L)location.href=loc(P,l)+location.hash},true);})();
+</script>
+<script>
+(function () {
+  "use strict";
+  var racine = document.documentElement;
+  racine.classList.add("fr-en");
+  function langue(l) {
+    racine.setAttribute("data-l", l);
+    racine.setAttribute("lang", l);
+    document.getElementById("btn-fr").setAttribute("aria-pressed", String(l === "fr"));
+    document.getElementById("btn-en").setAttribute("aria-pressed", String(l === "en"));
+    document.getElementById("btn-es").setAttribute("aria-pressed", String(l === "es"));
+    try { localStorage.setItem("ccc-langue", l); localStorage.setItem("lang", l); } catch (e) {}
+  }
+  var choisie = "fr";
+  try { var q = "en"; choisie = q || localStorage.getItem("lang") || localStorage.getItem("ccc-langue") || "fr"; } catch (e) {}
+  langue(choisie === "en" || choisie === "es" ? choisie : "fr");
+  document.getElementById("btn-fr").addEventListener("click", function () { langue("fr"); });
+  document.getElementById("btn-en").addEventListener("click", function () { langue("en"); });
+  document.getElementById("btn-es").addEventListener("click", function () { langue("es"); });
+
+  // Son : un seul à la fois ; les vidéos restent muettes au chargement.
+  var boutons = Array.prototype.slice.call(document.querySelectorAll(".son"));
+  boutons.forEach(function (b) {
+    b.addEventListener("click", function () {
+      var v = document.getElementById(b.getAttribute("data-video"));
+      var allumer = v.muted;
+      boutons.forEach(function (x) {
+        var vx = document.getElementById(x.getAttribute("data-video"));
+        vx.muted = true; x.setAttribute("aria-pressed", "false");
+      });
+      if (allumer) { v.muted = false; v.play().catch(function () {}); b.setAttribute("aria-pressed", "true"); }
+    });
+  });
+  // Copier l'adresse (le lien mailto ne marche pas pour tout le monde).
+  var ok = document.getElementById("copie-ok");
+  document.getElementById("copier").addEventListener("click", function () {
+    var adr = document.getElementById("courriel").textContent.trim();
+    var en = racine.getAttribute("data-l") === "en", es = racine.getAttribute("data-l") === "es";
+    function choisir() { var r = document.createRange(); r.selectNodeContents(document.getElementById("courriel")); var s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+    try {
+      navigator.clipboard.writeText(adr).then(function () { ok.textContent = es ? "Dirección copiada." : (en ? "Address copied." : "Adresse copiée."); },
+        function () { choisir(); ok.textContent = es ? "Seleccionada: cópiela con Ctrl+C." : (en ? "Selected: copy it with Ctrl+C." : "Sélectionnée : copiez-la avec Ctrl+C."); });
+    } catch (e) { choisir(); ok.textContent = es ? "Seleccionada: cópiela con Ctrl+C." : (en ? "Selected: copy it with Ctrl+C." : "Sélectionnée : copiez-la avec Ctrl+C."); }
+  });
+  // Vidéo de l'écran d'accueil : 9:16 en portrait (téléphone), 16:9 en paysage (ordinateur).
+  var ecran = document.getElementById("v-ecran");
+  var portrait = window.matchMedia("(max-aspect-ratio: 4/5)");
+  function choisirVideo() {
+    var nom = portrait.matches ? "tel" : "bureau";
+    if (ecran.dataset.format === nom) return;
+    ecran.dataset.format = nom;
+    ecran.poster = "/creatif/m/heros-" + nom + ".jpg";
+    ecran.src = "/creatif/m/heros-" + nom + ".mp4";
+    if (!reduit) ecran.play().catch(function () {});
+  }
+  var reduit = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduit) ecran.removeAttribute("autoplay");
+  choisirVideo();
+  if (portrait.addEventListener) portrait.addEventListener("change", choisirVideo);
+  // Mouvement réduit : pas de lecture automatique.
+  if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    document.querySelectorAll("video").forEach(function (v) { v.removeAttribute("autoplay"); v.pause(); });
+  }
+  // Les vidéos hors de l'écran se mettent en pause (batterie, données) et reprennent quand on y revient.
+  if ("IntersectionObserver" in window && !reduit) {
+    var vu = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { var v = e.target; if (e.isIntersecting) v.play().catch(function () {}); else v.pause(); });
+    }, { threshold: 0.15 });
+    document.querySelectorAll("video").forEach(function (v) { vu.observe(v); });
+  }
+})();
+</script>
+
+<script>
+(function () {
+  var tete = document.querySelector(".tete"), ecran = document.querySelector(".ecran-video");
+  if (!tete || !ecran || !("IntersectionObserver" in window)) return;
+  new IntersectionObserver(function (e) { tete.classList.toggle("collee", !e[0].isIntersecting); }).observe(ecran);
+})();
+</script>
+<style id="ccc-motion">
+.mprog{position:fixed;top:0;left:0;right:0;height:3px;transform-origin:0 50%;transform:scaleX(0);background:var(--mprog,#FFC40C);z-index:1000;pointer-events:none}
+.js-motion .rv{opacity:0;transform:translateY(32px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform 1.15s cubic-bezier(.16,1,.3,1);transition-delay:var(--d,0s)}
+.js-motion .rv-h{clip-path:inset(-15% -4% 100% -4%);transform:translateY(.45em);transition:clip-path 1.15s cubic-bezier(.16,1,.3,1),transform 1.15s cubic-bezier(.16,1,.3,1);transition-delay:var(--d,0s)}
+.js-motion .rv.in{opacity:1;transform:none}
+.js-motion .rv-h.in{clip-path:inset(-15% -4% -30% -4%);transform:none}
+@media (prefers-reduced-motion:reduce){.js-motion .rv,.js-motion .rv-h{opacity:1!important;transform:none!important;clip-path:none!important;transition:none!important}}
+</style>
+<script data-color="#FEDADA">
+/* Défilement fluide : barre de progression, titres qui se dévoilent, blocs qui montent en cascade, léger parallaxe du visuel du haut. */
+(function(){
+  var me=document.currentScript, root=document.documentElement;
+  var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var bar=document.createElement("div"); bar.className="mprog"; bar.setAttribute("aria-hidden","true");
+  bar.style.setProperty("--mprog", me.getAttribute("data-color")); document.body.appendChild(bar);
+  var par=[];
+  if(!reduce && "IntersectionObserver" in window){
+    var secs=[].slice.call(document.querySelectorAll("main section")).slice(1), items=[];
+    function grid(el){ if(/^(P|H\d|UL|OL|A|IMG|VIDEO|BUTTON)$/.test(el.tagName)) return false; var d=getComputedStyle(el).display; return (d==="grid"||d==="flex"||d==="inline-grid") && el.children.length>=2; }
+    secs.forEach(function(s){
+      var w=s.querySelector(".wrap,.cadre")||s, n=0;
+      [].forEach.call(w.children,function(c){
+        if(c.offsetParent===null && getComputedStyle(c).position!=="fixed") return;
+        if(/^H[12]$/.test(c.tagName)){ c.classList.add("rv-h"); c.style.setProperty("--d",(Math.min(n,4)*0.08)+"s"); items.push(c); n++; return; }
+        if(grid(c)){ var k=0; [].forEach.call(c.children,function(g){ if(g.offsetParent===null) return; g.classList.add("rv"); g.style.setProperty("--d",(Math.min(k,5)*0.09)+"s"); items.push(g); k++; }); n++; return; }
+        c.classList.add("rv"); c.style.setProperty("--d",(Math.min(n,4)*0.08)+"s"); items.push(c); n++;
+      });
+    });
+    root.classList.add("js-motion");
+    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(!e.isIntersecting) return; var t=e.target; io.unobserve(t); t.classList.add("in");
+      setTimeout(function(){ t.classList.remove("rv","rv-h","in"); t.style.removeProperty("--d"); }, 1700); }); }, {rootMargin:"0px 0px -6% 0px", threshold:0});
+    items.forEach(function(i){ io.observe(i); });
+    if(innerWidth>=900) par=[].slice.call(document.querySelectorAll(".hero-vid .phone,.hero-vis .portrait,.hero-art,.founder .stats"));
+  }
+  var ticking=false;
+  function frame(){ ticking=false; var h=root.scrollHeight-innerHeight, y=scrollY;
+    bar.style.transform="scaleX("+(h>0?Math.min(1,y/h):0)+")";
+    par.forEach(function(el){ var r=el.parentNode.getBoundingClientRect(), mid=r.top+r.height/2-innerHeight/2; el.style.transform="translate3d(0,"+(mid*-0.06).toFixed(1)+"px,0)"; }); }
+  addEventListener("scroll",function(){ if(!ticking){ ticking=true; requestAnimationFrame(frame); } },{passive:true});
+  addEventListener("resize",frame); frame();
+})();
+</script>
+<style id="ccc-menu">
+.mnu-btn{display:none;align-items:center;justify-content:center;width:44px;height:44px;margin-left:6px;border:1px solid rgba(255,255,255,.7);border-radius:12px;background:transparent;color:#fff;cursor:pointer;flex:none;padding:0}
+.mnu-btn svg{width:22px;height:22px}
+.mnu-btn:focus-visible,.mnu a:focus-visible,.mnu-x:focus-visible{outline:2px solid #FFC40C;outline-offset:3px}
+.mnu{position:fixed;inset:0;z-index:2000;display:none;flex-direction:column;overflow-y:auto;padding:20px 24px calc(28px + env(safe-area-inset-bottom,0px));color:#fff}
+.mnu.ouvert{display:flex}
+.mnu-haut{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.mnu-haut img{width:155px;height:22px}
+.mnu-x{width:44px;height:44px;border:1px solid rgba(255,255,255,.6);border-radius:12px;background:transparent;color:#fff;font-size:26px;line-height:1;cursor:pointer}
+.mnu-g{margin:14px 0 4px;font:600 12.5px/1.2 Inter,system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;opacity:.75}
+.mnu a{display:flex;justify-content:space-between;align-items:center;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.18);color:#fff;text-decoration:none;font:500 22px/1.25 Lora,Georgia,serif}
+.mnu a[aria-current="page"]{color:var(--mnu-acc,#FFC40C)}
+.mnu a[aria-current="page"]::after{content:"•";font-size:22px}
+.mnu .mnu-mail{font:600 17px/1.3 Inter,system-ui,sans-serif;border-bottom:0;margin-top:14px}
+@media(max-width:760px){.mnu-btn{display:inline-flex!important}.nav-at,header.top nav>a,.top-ccc nav,.top-ccc .dedans>a:not(:first-child){display:none!important}.top-ccc .dedans{flex-wrap:nowrap!important}}
+@media(max-width:380px){.mnu-btn{width:40px;height:40px;margin-left:4px}header.top .wrap,header.tete .cadre{gap:8px!important}}
+@media(max-width:380px){header .brand img,header .logo img,.top-ccc img{width:112px!important;height:16px!important}.langs button,.langue button{padding-left:9px!important;padding-right:9px!important}}
+body.mnu-fige{overflow:hidden}
+</style>
+<script>
+/* Menu ☰ (téléphone) : toutes les pages du site, dans la langue choisie. */
+(function(){
+  var root=document.documentElement;
+  var bar=null; ["header.top .wrap","header.top",".top-ccc .dedans",".top-ccc","header.tete .cadre","header.tete"].some(function(q){ bar=document.querySelector(q); return !!bar; });
+  if(!bar) return;
+  var T={
+    menu:{fr:"Menu",en:"Menu",es:"Menú"}, fermer:{fr:"Fermer le menu",en:"Close menu",es:"Cerrar el menú"},
+    accueil:{fr:"Accueil",en:"Home",es:"Inicio"},
+    affaires:{fr:"Branche d'affaires",en:"Business branch",es:"Rama de negocios"},
+    services:{fr:"Services aux entreprises",en:"Business services",es:"Servicios para empresas"},
+    plombiers:{fr:"Plomberie et chauffage",en:"Plumbing and heating",es:"Plomería y calefacción"},
+    jenn:{fr:"Jennifer, actrice IA",en:"Jennifer, AI actress",es:"Jennifer, actriz IA"},
+    charte:{fr:"Charte de Jennifer",en:"Jennifer's charter",es:"Carta de Jennifer"},
+    auth:{fr:"Authentifier une image",en:"Verify an image",es:"Verificar una imagen"},
+    creative:{fr:"Branche créative",en:"Creative branch",es:"Rama creativa"},
+    creations:{fr:"Univers, séries et jeux",en:"Worlds, series and games",es:"Universos, series y juegos"},
+    ateliers:{fr:"Ateliers jeunesse",en:"Youth workshops",es:"Talleres juveniles"},
+    studio:{fr:"Le studio",en:"The studio",es:"El estudio"},
+    apropos:{fr:"À propos",en:"About",es:"Acerca de"},
+    conf:{fr:"Confidentialité",en:"Privacy",es:"Privacidad"}
+  };
+  var ITEMS=[["g","studio"],["/","accueil"],["/a-propos/","apropos"],
+             ["g","affaires"],["/services/","services"],["/metiers/plombiers/","plombiers"],["/jennshems/","jenn"],["/jennshems/charte/","charte"],["/jennshems/authentifier/","auth"],
+             ["g","creative"],["/creatif/","creations"],["/creatif/ateliers/","ateliers"],
+             ["g",""],["/confidentialite/","conf"]];
+  function langue(){var l=root.getAttribute("data-lang")||root.getAttribute("data-l")||root.lang||"fr";l=l.slice(0,2);return T.menu[l]?l:"fr";}
+  var hb=getComputedStyle(document.querySelector("header.top, .top-ccc, header.tete")).backgroundColor;
+  if(!hb||hb==="rgba(0, 0, 0, 0)"||hb==="transparent") hb="#180D00";
+  var acc=/30, 0, 7|89, 0, 22|195, 0, 1|31, 0, 7/.test(hb)?"#FEDADA":"#FFC40C";
+  var btn=document.createElement("button"); btn.type="button"; btn.className="mnu-btn"; btn.setAttribute("aria-expanded","false"); btn.setAttribute("aria-controls","ccc-mnu");
+  btn.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
+  var lg=bar.querySelector(".langs, .langue");
+  if(lg&&lg.parentNode){ lg.parentNode.insertBefore(btn, lg.nextSibling); } else { bar.appendChild(btn); }
+  var pan=document.createElement("div"); pan.id="ccc-mnu"; pan.className="mnu"; pan.setAttribute("role","dialog"); pan.setAttribute("aria-modal","true");
+  pan.style.background=hb; pan.style.setProperty("--mnu-acc",acc);
+  document.body.appendChild(pan);
+  var ici=location.pathname.replace(/^\/(en|es)(?=\/)/,"").replace(/index\.html$/,"");
+  function rendre(){
+    var l=langue(); btn.setAttribute("aria-label",T.menu[l]); pan.setAttribute("aria-label",T.menu[l]);
+    var h='<div class="mnu-haut"><img src="/logo-ccc.svg" alt="CCC Studios" width="155" height="22"><button type="button" class="mnu-x" aria-label="'+T.fermer[l]+'">×</button></div>';
+    ITEMS.forEach(function(it){
+      if(it[0]==="g"){ if(it[1]) h+='<p class="mnu-g">'+T[it[1]][l]+'</p>'; else h+='<p class="mnu-g" aria-hidden="true">&nbsp;</p>'; return; }
+      var cur=(ici===it[0]||(it[0]!=="/"&&ici.indexOf(it[0])===0&&ici.length===it[0].length));
+      h+='<a href="'+it[0]+'"'+(cur?' aria-current="page"':'')+'>'+T[it[1]][l]+'</a>';
+    });
+    h+='<a class="mnu-mail" href="mailto:bonjour@ccc-studios.com">bonjour@ccc-studios.com</a>';
+    pan.innerHTML=h;
+    pan.querySelector(".mnu-x").addEventListener("click",fermer);
+  }
+  function ouvrir(){ rendre(); pan.classList.add("ouvert"); btn.setAttribute("aria-expanded","true"); document.body.classList.add("mnu-fige"); var a=pan.querySelector("a,button"); if(a) a.focus(); }
+  function fermer(){ pan.classList.remove("ouvert"); btn.setAttribute("aria-expanded","false"); document.body.classList.remove("mnu-fige"); btn.focus(); }
+  btn.addEventListener("click",function(){ pan.classList.contains("ouvert")?fermer():ouvrir(); });
+  document.addEventListener("keydown",function(e){
+    if(!pan.classList.contains("ouvert")) return;
+    if(e.key==="Escape"){ fermer(); }
+    if(e.key==="Tab"){ var f=[].slice.call(pan.querySelectorAll("a,button")); if(!f.length) return; var a=f[0], z=f[f.length-1];
+      if(e.shiftKey&&document.activeElement===a){ z.focus(); e.preventDefault(); } else if(!e.shiftKey&&document.activeElement===z){ a.focus(); e.preventDefault(); } }
+  });
+  pan.addEventListener("click",function(e){ if(e.target.tagName==="A") { pan.classList.remove("ouvert"); document.body.classList.remove("mnu-fige"); } });
+  rendre();
+  new MutationObserver(rendre).observe(root,{attributes:true,attributeFilter:["data-lang","data-l","lang"]});
+})();
+</script>
+</body></html>
